@@ -141,6 +141,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Github-Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/19/Github-Hexo/">Github+Hexo</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/19/Github-Hexo/" class="archive-article-date">
+  	<time datetime="2017-02-18T23:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>github账号</li>
+<li>node.js npm git<h3 id="搭建一个github博客"><a href="#搭建一个github博客" class="headerlink" title="搭建一个github博客"></a>搭建一个github博客</h3></li>
+</ul>
+<p>新建一个名为你的用户名.github.io的仓库，比如说，如果你的<br>github用户名是test，那么你就新建test.github.io的仓库。</p>
+<p>配置SSH key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ cd ~/. ssh #检查本机已存在的ssh密钥</div><div class="line">如果提示：No such file or directory 说明你是第一次使用git</div><div class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;	</div><div class="line">   ssh-keygen -t rsa	</div><div class="line">然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：将复制内容填写到key,title随便填写</div></pre></td></tr></table></figure></p>
+<p>测试是否成功.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com # 注意邮箱地址不用改</div></pre></td></tr></table></figure></p>
+<p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，然后会看到：Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access. 看到这个信息说明SSH已配好<br>配置个人信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，然后会看到：Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access. 看到这个信息说明SSH已配好</div><div class="line">配置个人信息</div></pre></td></tr></table></figure>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo</div><div class="line">初始化</div><div class="line">$ hexo init</div><div class="line">生成</div><div class="line">$ hexo g </div><div class="line">启动服务</div><div class="line">$ hexo s </div><div class="line">打开浏览器访问 http:\//localhost:4000</div><div class="line">`</div></pre></td></tr></table></figure>
+<h3 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h3><p>配置hexo根目录下_config.yml中 deploy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:gongzichen/gongzichen.github.io.git</div><div class="line">  branch: master</div><div class="line">//安装插件</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">//提交到github </div><div class="line">hexo d</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/19/Github-Hexo/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-hexo基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -888,88 +957,6 @@
 
 
   
-    <article id="post-bower" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/07/bower/">bower</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/07/bower/" class="archive-article-date">
-  	<time datetime="2017-02-07T12:59:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Bower是一个软件，-是用来管理我们的静态资源的。twitter公司开发。它是使用Node-js开发的。所以要先安装Node-js"><a href="#Bower是一个软件，-是用来管理我们的静态资源的。twitter公司开发。它是使用Node-js开发的。所以要先安装Node-js" class="headerlink" title="Bower是一个软件， 是用来管理我们的静态资源的。twitter公司开发。它是使用Node.js开发的。所以要先安装Node.js"></a>Bower是一个软件， 是用来管理我们的静态资源的。twitter公司开发。它是使用Node.js开发的。所以要先安装Node.js</h5><h3 id="Bower要依赖NodeJS环境和git工具。"><a href="#Bower要依赖NodeJS环境和git工具。" class="headerlink" title="Bower要依赖NodeJS环境和git工具。"></a>Bower要依赖NodeJS环境和git工具。</h3><p>1.安装NodeJs软件。</p>
-<p>2.验证是否安装 执行命令：node -v npm -v.<br>Npm(nodejs package manager) 专门用来管理nodejs开发的工具的管理器。</p>
-<p>3.安装bower<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Npm install 工具名称（bower） 全局安装-g    [可以加上镜像地址]</div><div class="line"></div><div class="line">淘宝镜像地址：--registry=https://registry.npm.taobao.org</div><div class="line"></div><div class="line">全局安装代表安装完毕后，操作系统的任何一个场合都可以使用它。</div></pre></td></tr></table></figure></p>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
-<li>Bower install -g bower 安装bower<ul>
-<li>Bower search 查找资源信息</li>
-<li>Bower info 查看资源信息</li>
-<li>Bower uninstall 卸载资源</li>
-<li>Bower init 初始化，用来记录资源信息及依赖。</li>
-</ul>
-</li>
-</ul>
-<h3 id="bower特点"><a href="#bower特点" class="headerlink" title="bower特点"></a>bower特点</h3><ul>
-<li>允许我们下载指定的版本。<ul>
-<li>Bower info jquery 查看版本</li>
-<li>Bower install jquery#版本号</li>
-<li>可以帮我们自动的解决插件依赖。可以把依赖的库下载下来。</li>
-<li>下载是捆绑下载，卸载也是捆绑卸载。</li>
-<li>bower描述信息</li>
-<li>Bower通过描述信息来知道一个库依赖哪些库。</li>
-<li>会存在一个bower.json文件，里面就是一些描述信息。包括名字下载依赖等。是下载时， 帮我们写好的文件。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/07/bower/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1066,15 +1053,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gulp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
