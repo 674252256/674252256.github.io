@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sky Club</title>
+  <title>Archives: 2016 | Sky Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Sky Club">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
 <meta property="og:site_name" content="Sky Club">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sky Club">
@@ -137,111 +137,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-JS学习笔记-1-基本概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/02/07/JS学习笔记-1-基本概念/" class="archive-article-date">
+  	<time datetime="2016-02-07T03:05:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-07</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/07/JS学习笔记-1-基本概念/">JS学习笔记(1) 基本概念</a>
+      <a class="archive-article-title" href="/2016/02/07/JS学习笔记-1-基本概念/">JS学习笔记(1) 基本概念</a>
     </h1>
   
 
-        
-        <a href="/2016/02/07/JS学习笔记-1-基本概念/" class="archive-article-date">
-  	<time datetime="2016-02-07T03:05:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、JavaScript简介"><a href="#一、JavaScript简介" class="headerlink" title="一、JavaScript简介"></a>一、JavaScript简介</h2><p><strong>JavaScript</strong>诞生于1995年，它的主要目的是处理以前由服务器端语言负责的一些输入验证操作。</p>
-<ul>
-<li>JavaScript由 ECMAScript 、 DOM 、 BOM 三部分组成；</li>
-<li>ECMAScript由ECMA-262定义，提供核心语言功能；</li>
-<li>文档对象模型（DOM），提供访问和操作网页内容的方法和接口；</li>
-<li>浏览器对象模型（BOM），提供与浏览器交互的方法和接口；</li>
-<li>把JavaScript插入到HTML页面中要使用script元素，可以内嵌，也可外链文件；</li>
-<li>使用 defer 属性可以让脚本在文档完全呈现之后再执行，延迟脚本总* 是按照它们的顺序执行；</li>
-<li>使用async 属性表示当前脚本不必等待其他脚本，也不必阻塞文档呈现，不能保证按照它们在页面中出现的顺序执行。</li>
-<li>使用noscript元素可以指定在不支持脚本的浏览器中显示的提示内容</li>
-</ul>
-<h2 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h2><ul>
-<li><p>区分大小写。</p>
-</li>
-<li><p>标识符指变量、函数、属性的名字、函数的参数。第一个字符必须是字母、下划线、$符号。其他字符可以是字母、下划线、$、数字。采用驼峰命名法。不能用保留字符。</p>
-</li>
-<li>严格模式 （strict mode）可以在整个脚本中启用严格模式，也可以在函数内的顶部启用</li>
-</ul>
-<ol>
-<li>“use strict”;</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">      &quot;use strict&quot;;</div><div class="line">    function doSomething()&#123;</div><div class="line">        &quot;use strict&quot;;</div><div class="line">          	// 函数体</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="语句-ECMASCRIPT中的语句以一个分号结尾；如果省略分号，则由解析器确定语句的结尾。-建议在可用可不用分号的地方使用分号。"><a href="#语句-ECMASCRIPT中的语句以一个分号结尾；如果省略分号，则由解析器确定语句的结尾。-建议在可用可不用分号的地方使用分号。" class="headerlink" title="语句 ECMASCRIPT中的语句以一个分号结尾；如果省略分号，则由解析器确定语句的结尾。 建议在可用可不用分号的地方使用分号。"></a>语句 ECMASCRIPT中的语句以一个分号结尾；如果省略分号，则由解析器确定语句的结尾。 建议在可用可不用分号的地方使用分号。</h4><h4 id="关键字和保留字"><a href="#关键字和保留字" class="headerlink" title="关键字和保留字"></a>关键字和保留字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">关键字</div><div class="line">break do instanceof typeof</div><div class="line">case else new var</div><div class="line">catch finally return void</div><div class="line">continue for switch while</div><div class="line">debugger function this with</div><div class="line">default if throw delete</div><div class="line">in try</div><div class="line"></div><div class="line">保留字</div><div class="line">abstract enum int short</div><div class="line">boolean export interface static</div><div class="line">byte extends long super</div><div class="line">char final native synchronized</div><div class="line">class float package throws</div><div class="line">const goto private transient</div><div class="line">debugger implements protected volatile</div><div class="line">double import public</div></pre></td></tr></table></figure>
-<h4 id="变量、变量提升"><a href="#变量、变量提升" class="headerlink" title="变量、变量提升"></a>变量、变量提升</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* ECMAScript的变量是 松散类型 的，所谓 松散类型 就是可以用来保存任何类型的数据。定义变量时要使用 var 操作符，后</div><div class="line">跟变量名。</div><div class="line"></div><div class="line">* 变量提升是指所有变量的声明语句，都会被提升到代码的头部</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">console.log(a); // undefined</div><div class="line">var a = 1;</div><div class="line">function test()&#123;</div><div class="line">console.log(a); // undefined</div><div class="line">var a = 2;</div><div class="line">&#125;</div><div class="line">test();</div><div class="line">//对于上面的代码，JavaScript会这样解释代码</div><div class="line">var a;</div><div class="line">console.log(a); // undefined</div><div class="line">a = 1;</div><div class="line">function test()&#123;</div><div class="line">var a;</div><div class="line">console.log(a); // undefined</div><div class="line">a = 2;</div><div class="line">&#125;</div><div class="line">test();</div></pre></td></tr></table></figure>
-<ul>
-<li>复制变量值</li>
-<li><p>如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var num1 = 5;</div><div class="line">var num2 = num1;</div><div class="line">num2 += 5;</div><div class="line">console.log(num1); //5</div><div class="line">console.log(num2); // 10</div><div class="line">//num1中的5和num2中的5是完全独立的，num2中的5只是num1中的5的一个副本</div></pre></td></tr></table></figure>
-</li>
-<li><p>一个变量向另一个变量复制引用类型的值时，同样会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不<br>同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引<br>用同一个对象。因此，改变其中一个变量，就会影响到另一个变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var obj1 = new Object();</div><div class="line">var obj2 = obj1;</div><div class="line">obj2.name = &apos;test&apos;;</div><div class="line">console.log(obj1.name); // &quot;test</div><div class="line">obj1赋给了obj2，两者就指向了同一个对象，然后给obj2添加了一个属性name，接着访问obj1中的</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="name，发现值和obj2中的name是一样，因为这两个变量引用的都是同一个对象。"><a href="#name，发现值和obj2中的name是一样，因为这两个变量引用的都是同一个对象。" class="headerlink" title="name，发现值和obj2中的name是一样，因为这两个变量引用的都是同一个对象。"></a>name，发现值和obj2中的name是一样，因为这两个变量引用的都是同一个对象。</h4><ul>
-<li>ECMAScript中有5种简单数据类型 Undefined 、 Nul 、 Boolean 、 Number 和 String ,一种复杂的数据类型Object。但是object本质上也是有一组无序名值组成的。</li>
-<li><p>JS中typeof可以检测6中类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;undefined&quot; 这个值未定义</div><div class="line">&quot;boolean&quot; 这个值是布尔值</div><div class="line">&quot;string&quot; 这个值是字符串</div><div class="line">&quot;number&quot; 这个值是数值</div><div class="line">&quot;object&quot; 这个值是对象或null</div><div class="line">&quot;function&quot; 这个值是函数</div></pre></td></tr></table></figure>
-</li>
-<li><p>Undefined 类型只有一个值，即特殊的 undefined 。</p>
-</li>
-<li><p>Null类型也是只有一个值的数据类型，这个特殊值就是 null 。 null 值可以看作是一个空对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//undefined 其实是派生自 null 值：</div><div class="line">console.log(null == undefined); // true</div></pre></td></tr></table></figure>
-</li>
-<li><p>NaN 非数值 任何涉及NaN的操作都会返回NaN。</p>
-<h4 id="NaN与任何值都不相等，包括NaN本身"><a href="#NaN与任何值都不相等，包括NaN本身" class="headerlink" title="NaN与任何值都不相等，包括NaN本身"></a>NaN与任何值都不相等，包括NaN本身</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//常用 isNaN() 函数来判断是否非数值</div><div class="line">console.log(isNaN(NaN)); // true</div><div class="line">console.log(isNaN(10)); // false</div></pre></td></tr></table></figure>
-</li>
-<li><p>数值范围 ECMAScript能够表示的最小数值保存在 Number.MIN_VALUE （最小值）中，这个值是5e-324；能够表示的最大数值保存<br>在 Number.MAX_VALUE （最大值）中，这个值是1.7976931348623157e+308. 超过范围值则会被转换为- Infinity （负无穷）/ Infinity （正无穷）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// isFinite() 来判断这个值是否无穷</div><div class="line">console.log(isFinite(1)); //true</div><div class="line">console.log(isFinite(Infinity)); // false</div></pre></td></tr></table></figure>
-</li>
-<li><p>数值转换</p>
-<ul>
-<li>如果是Boolean值，true和false将分别转换为1和0</li>
-<li>如果是数字值，只是简单的传入和返回</li>
-<li>如果是null值，返回0</li>
-<li>如果是undefined，返回NaN</li>
-<li>如果是字符串，遵循下列规则：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">字符串 ：</div><div class="line"> 如果是字符串中只包含数字（包括前面带正负号），则   将其转换为十进制数值（前导的零会被忽略）</div><div class="line"> 如果字符串中包含有效的浮点格式，如1.1，则将其转换为对应的浮点数值</div><div class="line"> 如果字符串中包含有效的十六进制，如0xf，则将其转换为相同大小的十进制数值</div><div class="line"> 如果字符串是空的，返回0</div><div class="line"> 如果字符串中包含上述格式以外的字符，返回NaN</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h2><p>  string类型用于表示由零或多个16位Unicode字符组成的字符序列，即字符串。字符串可以由双引号或单引号表示。用双引号表示的字符串和用单引号表示的字符串完全相同，但要确保引号前后一致，也就是说以双引号开头的必须以双引号<br>  结尾，以单引号开头的必须以单引号结尾。</p>
-<ul>
-<li>字符字面量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">\n 换号</div><div class="line">\t 制表</div><div class="line">\b 空格</div><div class="line">\r 回车</div><div class="line">\f 进纸</div><div class="line">\\ 斜杠</div><div class="line">\&apos; 单引号</div><div class="line">\&quot; 双引号</div><div class="line">\xnn 以十六进制代码nn表示的一个字符（n为0~F），比如：\x41表示&quot;A&quot;</div><div class="line">\unnn 以十六进制代码nnnn表示的一个Unicode字符（n为0~F）。比如：\u03a3表示Σ</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>  ECMAScript中的对象其实就是一组数据和功能的集合,<br>  对象可通过执行new操作符后跟创建的对象类型的名称来创建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//    创建</div><div class="line">    var o = new Object();</div><div class="line">//    如果不传参，可以省略后面的圆括号（不推荐）</div><div class="line">    var o = new Object;</div></pre></td></tr></table></figure></p>
-<p> 在ECMAScript中， Object 类型是所有对象的基础。</p>
-<h4 id="Object-的每个实例都具有下列属性和方法："><a href="#Object-的每个实例都具有下列属性和方法：" class="headerlink" title="Object 的每个实例都具有下列属性和方法："></a>Object 的每个实例都具有下列属性和方法：</h4><ul>
-<li>Constructor ：保存着用于创建当前对象的函数，比如上面的例子，构造函数就是Object()</li>
-<li>hasOwnProperty(propertyName) ：用于检查给定的属性在当前对象实例中是否存在（而不是在实例的原型中），参数必须是字符串形式</li>
-<li>isPrototypeOf(object)：用于检查传入的对象是否是另一个对象的原型</li>
-<li>propertyIsEnumerable(propertyName) ：用于检查给定的属性是否能够使用for-in语句来枚举，参数必须是字符<br>串形式</li>
-<li>toLocaleString()：返回对象的字符串表示，该字符串与执行环境的地区对应</li>
-<li>toString() ：返回对象的字符串表</li>
-<li>valueOf() ：返回对象的字符串、数值或布尔值表示，通常和toString()返回的值相同</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -253,26 +176,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/07/JS学习笔记-1-基本概念/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -294,9 +210,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
