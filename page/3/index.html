@@ -141,6 +141,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS-6-继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/26/JS-6-继承/">JS-6-继承</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/26/JS-6-继承/" class="archive-article-date">
+  	<time datetime="2017-01-26T11:52:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>Object是所有对象的父级|父类型|超类型：js中所有的对象都直接或间接的继承自Object。<br>继承有两种方式：接口继承和实现继承，在js中只支持实现继承，实现继承主要依赖原型链来完成。<br>JavaScript中实现继承的几种方式:</p>
+<h4 id="1-拷贝属性"><a href="#1-拷贝属性" class="headerlink" title="1 拷贝属性"></a>1 拷贝属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for (var k  in obj1)</div><div class="line">&#123;</div><div class="line">    obj2[k] = obj1[k];</div><div class="line">&#125;</div><div class="line">console.log(obj2);</div><div class="line">如果属性的值是引用类型,那么子对象和父对象的数据共享,修改了某个对象对另外一个对象有影响.</div></pre></td></tr></table></figure>
+<h4 id="assign"><a href="#assign" class="headerlink" title="assign"></a>assign</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var o = &#123;&#125;;</div><div class="line">    var obj1 = &#123;name:&quot;name&quot;&#125;;</div><div class="line">    var obj2 = &#123;age:20&#125;;</div><div class="line">    var obj3 = &#123;car:&#123;type:&quot;猎人&quot;&#125;&#125;;</div><div class="line">// 第一个参数是目标对象,第二个,三个是要拷贝属性的对象;</div><div class="line">    Object.assign(o,obj2,obj1,obj3);</div><div class="line">    console.log(o);</div><div class="line">    obj3.car.type = &apos;盗贼&apos;;</div><div class="line">    console.log(o);</div></pre></td></tr></table></figure>
+<h3 id="2-原型式继承"><a href="#2-原型式继承" class="headerlink" title="2 原型式继承"></a>2 原型式继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function A()&#123;</div><div class="line">       this.name = &quot;gzc&quot;;</div><div class="line">       this.age = 26;</div><div class="line">   &#125;;</div><div class="line">   function B()&#123;&#125;;</div><div class="line">   A.prototype.des = &quot;gc&quot;;</div><div class="line">   //设置B的原型对象</div><div class="line">   B.prototype = A.prototype;</div><div class="line">   B.prototype.constructor = B;</div><div class="line">  无法得到实例的属性和方法,构造器属性默认指向父亲</div></pre></td></tr></table></figure>
+<h3 id="3-原型链继承"><a href="#3-原型链继承" class="headerlink" title="3 原型链继承"></a>3 原型链继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function A()&#123;</div><div class="line">      this.age = 25;</div><div class="line">      this.showAge = function()&#123;</div><div class="line">           console.log(this.age);</div><div class="line">     &#125;</div><div class="line">&#125;;</div><div class="line"> //设置A的属性和方法</div><div class="line"> A.prototype.logDes = function()&#123;</div><div class="line">     console.log(&quot;des&quot;);</div><div class="line"> &#125;</div><div class="line">function B()&#123;</div><div class="line">&#125;;</div><div class="line">//设置原型链继承</div><div class="line">B.prototype = new A();</div><div class="line">B.prototype.des = &quot;des&quot;;</div><div class="line">B.prototype.show = function()&#123;</div><div class="line">    console.log(&quot;show&quot;);</div><div class="line">&#125;;</div><div class="line">    * 在设置完原型链之后需要修正构造器属性的指向(Student.prototype.constructor)</div><div class="line">    * 要在设置完原型继承之后再来为原型对象添加属性和方法</div><div class="line">    * 要在设置完原型继承之后只能通过对象的动态特性来设置原型对象的属性和方法，不要使用字面量的方式</div></pre></td></tr></table></figure>
+<h3 id="4-借用构造函数继承"><a href="#4-借用构造函数继承" class="headerlink" title="4 借用构造函数继承"></a>4 借用构造函数继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;;</div><div class="line">function Boy(bookName,name,age)&#123;</div><div class="line">    this.bookName = bookName;</div><div class="line">    //借用构造函数</div><div class="line">    Person.call(this,name,age);</div><div class="line">&#125;</div><div class="line">//创建对象</div><div class="line">var boy = new Boy(&quot;LOL&quot;,&quot;gzc&quot;,22);</div><div class="line">var boy02 = new Boy(&quot;WOW&quot;,&quot;gc&quot;,30);</div><div class="line">console.log(boy);</div><div class="line">console.log(boy02);</div></pre></td></tr></table></figure>
+<h3 id="5-组合继承"><a href="#5-组合继承" class="headerlink" title="5 组合继承"></a>5 组合继承</h3><p>原型 + 借用构造函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">     this.name = name;</div><div class="line">     this.age = age;</div><div class="line">&#125;;</div><div class="line">Person.prototype.des = &quot;描述信息&quot;;</div><div class="line">Person.prototype.logDes = function()&#123;</div><div class="line">    console.log(this.des);</div><div class="line">&#125;;</div><div class="line">function Boy(bookName,name,age)&#123;</div><div class="line">   this.bookName = bookName;</div><div class="line"> //借用构造函数</div><div class="line">   Person.call(this,name,age);</div><div class="line">&#125;</div><div class="line">//设置原型继承</div><div class="line">//Boy.prototype = new Person();避免属性重复</div><div class="line">Boy.prototype = Person.prototype;</div><div class="line">//创建对象</div><div class="line">var boy = new Boy(&quot;LOL&quot;,&quot;gzc&quot;,22);</div><div class="line">var boy02 = new Boy(&quot;WOW&quot;,&quot;gc&quot;,30);</div><div class="line">console.log(boy);</div><div class="line">console.log(boy02);</div><div class="line">boy.logDes();</div></pre></td></tr></table></figure></p>
+<h3 id="专门的方法来实现继承-Object-creare"><a href="#专门的方法来实现继承-Object-creare" class="headerlink" title="专门的方法来实现继承(Object.creare)"></a>专门的方法来实现继承(Object.creare)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;name:&quot;gc&quot;&#125;;</div><div class="line">var obj2 = Object.create(obj);  //创建一个对象，并且设置这个对象的原型对象为obj</div><div class="line">console.log(obj2.name);</div></pre></td></tr></table></figure>
+<h3 id="完全拷贝-直接拷贝原型的成员"><a href="#完全拷贝-直接拷贝原型的成员" class="headerlink" title="完全拷贝(直接拷贝原型的成员)"></a>完全拷贝(直接拷贝原型的成员)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function deepCopy(obj1,obj2) &#123;</div><div class="line">   obj1 = obj1 || &#123;&#125;;</div><div class="line">   for (var i in obj2)</div><div class="line">   &#123;</div><div class="line">       if (obj2.hasOwnProperty(i))</div><div class="line">       &#123;</div><div class="line">           if( typeof obj2[i] == &quot;object&quot;)</div><div class="line">           &#123;</div><div class="line">               //判断是数组还是对象</div><div class="line">              obj1[i] = Array.isArray(obj2[i])?[]:&#123;&#125;;</div><div class="line">              //引用类型</div><div class="line">              deepCopy(obj1[i],obj2[i]);   //函数调用</div><div class="line">              &#125;else</div><div class="line">             &#123;</div><div class="line">                //值类型</div><div class="line">                obj1[i] = obj2[i];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/26/JS-6-继承/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-JS-5-函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -742,6 +808,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
             
             <div class="clearfix"></div>
