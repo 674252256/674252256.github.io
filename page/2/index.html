@@ -137,6 +137,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS-3-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/23/JS-3-基础知识/">JS(3) 基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/23/JS-3-基础知识/" class="archive-article-date">
+  	<time datetime="2017-01-23T04:04:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li>POP 删除最后一项,删除最后一项,并返回删除元素的值；如果数组为空则返回undefine.</li>
+<li>shift 删除第一项,删除原数组第一项，并返回删除元素的值；如果数组为空则返undefine.</li>
+<li>push 增加到最后，并返回新数组长度.</li>
+<li>unshift增加到最前，并返回新数组长度.</li>
+<li><p>reverse数组翻转.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3,4,5]; </div><div class="line">a.reverse()// 返回[5, 4, 3, 2, 1]</div></pre></td></tr></table></figure>
+</li>
+<li><p>join数组转成字符串,并返回字符串，原数组不变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3,4,5]; </div><div class="line">var b=a.join(&apos;||&apos;);//b:&quot;1||2||3||4||5&quot; a:[1,2,3,4,5]</div></pre></td></tr></table></figure>
+</li>
+<li><p>indexOf数组元素索引,并返回元素索引，不存在返回-1,索引从0开始</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]; </div><div class="line">a.indexOf(&apos;a&apos;);//0</div><div class="line">a.indexOf(a);//-1</div><div class="line">a.indexOf(&apos;f&apos;);//-1</div><div class="line">a.indexOf(&apos;e&apos;);//4</div></pre></td></tr></table></figure>
+</li>
+<li><p>slice截取(切片)数组 得到截取的数组<br>返回从原数组中指定开始索引(包含)到结束索引(不包含)之间的项组成的新数组,原数组木变 ，索引从0开始</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]; </div><div class="line">a.slice(1,3);//[&quot;b&quot;, &quot;c&quot;] a:[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]</div><div class="line">a.slice(0,4);//[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</div><div class="line">a.slice(3,4);//[&quot;d&quot;]</div></pre></td></tr></table></figure>
+</li>
+<li><p>splice剪接数组原数组变化可以实现shift前删除，pop后删除,unshift前增加,同push后增加一样的效果返回剪接的元素数组,原数组变化，索引从0开始<br>/参数是2个/<br>//第一参数是索引（从0开始），第二是长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]; </div><div class="line">a.splice(0,2);//[&quot;a&quot;, &quot;b&quot;] a:[&quot;c&quot;, &quot;d&quot;, &quot;e&quot;]</div><div class="line">a.splice(0,2);//[&quot;c&quot;, &quot;d&quot;] a:[&quot;e&quot;]</div><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]; </div><div class="line">a.splice(0,1);//[&quot;a&quot;] a:[&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;] 同shift前删除</div><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]</div><div class="line">a.splice(a.length-1,1)l//[&quot;e&quot;] a:[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;] 同pop前删除</div><div class="line">/*参数大于2个*/</div><div class="line">//splice(start,deleteCount,val1,val2,...)：从start位置开始删除deleteCount项，并从该位置起插入val1,val2,... </div><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]; </div><div class="line">a.splice(3,1,10,21,238,99);//[&quot;d&quot;] a:[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 10, 21, 238, 99, &quot;e&quot;]</div><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]; </div><div class="line">a.splice(a.length,100000000,88)//返回 [] 从最后元素后面的元素，截取长度任意个，肯定是空 a：[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, 88] 同push后增加</div><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]; </div><div class="line">a.splice(a.length,0,88)//返回 [] 从最后元素后面的元素，截取长度任意个，肯定是空 a：[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, 88] 同push后增加</div><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;];</div><div class="line">a.splice(0,0,88,99)//返回 [] 从第一个元素，截取长度0个 肯定是空 a:[88, 99, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;] 同unshift前增加</div></pre></td></tr></table></figure>
+</li>
+<li><p>concat数组合并,返回合并后的新数组,原数组木变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]; </div><div class="line">a.concat([88,99]);//[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, 88, 99] a:[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]</div><div class="line">var b= [9999,10000]</div><div class="line">a.concat(b);// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, 9999, 10000] a:[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]</div><div class="line">~~~javascript</div><div class="line">*  sort()先将数组通过sort转化为ascii值 然后通过sort函数参数的比较排序</div><div class="line">numArray.sort();  //将数组转化ascii值</div><div class="line">~~~javascript</div><div class="line">    // sort排序 但是通过ascii 转化后排序 </div><div class="line">    numArray.sort(function(a,b)&#123;</div><div class="line">             return a&gt;b?1:-1;  //从小到大   </div><div class="line">    //      return a&lt;b?1:-1;  //从大到小</div><div class="line">    &#125;)</div><div class="line">    console.log(numArray);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li><p>获取某一个位置上的字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var test = &apos;testtea飒飒大大&apos;;</div><div class="line"> 	 var t = test.charAt(5);</div><div class="line">       console.log(t); //e</div></pre></td></tr></table></figure>
+</li>
+<li><p>字符串转化大小写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var lowString = &apos;abc cddfff&apos;;</div><div class="line">  //转化成大写</div><div class="line">  var newLowString = lowString.toUpperCase();</div><div class="line">  console.log(newLowString);</div></pre></td></tr></table></figure>
+</li>
+<li><p>字符串截取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var test = &apos;testtea飒飒大大&apos;;</div><div class="line">     var t =test.slice(2,5)</div><div class="line">     console.log(t); //stt </div><div class="line">var test = &apos;testtea飒飒大大&apos;;</div><div class="line">     var t =test.slice(2)</div><div class="line">    console.log(t); //sttea飒飒大大</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取某一个字符的位置 从头indexOf/从末尾lastIndexOf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var charString = &apos;my is abc dcf a&apos;;</div><div class="line">    //获取某一个字符的位置</div><div class="line">    var poiont = charString.indexOf(&apos;n&apos;);</div><div class="line">    console.log(poiont);</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/23/JS-3-基础知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-JS-2-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -422,6 +517,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
