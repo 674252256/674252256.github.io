@@ -141,6 +141,115 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS-hack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/13/CSS-hack/">CSS hack</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/13/CSS-hack/" class="archive-article-date">
+  	<time datetime="2017-02-13T13:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>HACK就是只有特定浏览器才能识别这段hack代码。</p>
+<h3 id="主要有3中表现形式"><a href="#主要有3中表现形式" class="headerlink" title="主要有3中表现形式:"></a>主要有3中表现形式:</h3><ul>
+<li>属性前缀法(即类内部Hack)：例如 IE6能识别下划线”<em>“和星号” <em> “，IE7能识别星号”</em>“，但不能识别下划线”</em>“，IE6~IE10都认识”\9”，但firefox对前面三个都不能认识。著作权归作者所有。</li>
+<li>CSS选择器前缀法：比如IE6能识别+html.class{}，IE7能识别+html.class{}或者:first-child+html.class{}。</li>
+<li>IE条件注释法：针对所有IE， 。比如：针对IE6及以下版本： 。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效(注：IE10+已经不再支持条件注释)。</li>
+</ul>
+<h3 id="CSS-属性前缀法"><a href="#CSS-属性前缀法" class="headerlink" title="CSS 属性前缀法"></a>CSS 属性前缀法</h3><h3 id="（1）IE6（-）"><a href="#（1）IE6（-）" class="headerlink" title="（1）IE6（_）"></a>（1）IE6（_）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test1 &#123; _color: red; &#125;</div></pre></td></tr></table></figure>
+<h3 id="（2）IE7及其以下版本（-）"><a href="#（2）IE7及其以下版本（-）" class="headerlink" title="（2）IE7及其以下版本（*）"></a>（2）IE7及其以下版本（*）</h3><p>如下设置，IE7及其以下版本中都会生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test2 &#123; *color: yellow; &#125;</div></pre></td></tr></table></figure>
+<p>如果是在选择器上设置，则只会在IE6中生效：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*html .test &#123; color: gold; &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="（3）IE6-IE7-IE8（-9）"><a href="#（3）IE6-IE7-IE8（-9）" class="headerlink" title="（3）IE6/IE7/IE8（\9）"></a>（3）IE6/IE7/IE8（\9）</h3><p>网上的资料说只有IE6/IE7/IE8中生效，可是经测试，在IE9/IE10中也同样生效（如果知道原因的，请告知）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test3 &#123; color: purple\9; &#125;</div></pre></td></tr></table></figure>
+<h3 id="（4）IE8-IE9-IE10-IE11（-0）"><a href="#（4）IE8-IE9-IE10-IE11（-0）" class="headerlink" title="（4）IE8/IE9/IE10/IE11（\0）"></a>（4）IE8/IE9/IE10/IE11（\0）</h3><p>在IE8/IE9/IE10/IE11中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">.test4 &#123; color: green\0; &#125;</div></pre></td></tr></table></figure>
+<h3 id="（5）IE6（-）"><a href="#（5）IE6（-）" class="headerlink" title="（5）IE6（-）"></a>（5）IE6（-）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在IE6中生效：</div></pre></td></tr></table></figure>
+<h3 id="（6）IE6-IE7（-）"><a href="#（6）IE6-IE7（-）" class="headerlink" title="（6）IE6/IE7（+）"></a>（6）IE6/IE7（+）</h3><p>在IE6/IE7中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test6 &#123; +color: gold; &#125;</div></pre></td></tr></table></figure>
+<h3 id="（7）IE6-IE7（-）"><a href="#（7）IE6-IE7（-）" class="headerlink" title="（7）IE6/IE7（*+）"></a>（7）IE6/IE7（*+）</h3><p>如果在类的属性上加，会在IE6/IE7都生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test7 &#123; *+color: blue; &#125;</div></pre></td></tr></table></figure>
+<p>如果在选择器上加，只会在IE7生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*+html .test &#123; color: black; &#125;</div></pre></td></tr></table></figure>
+<h3 id="（8）-important"><a href="#（8）-important" class="headerlink" title="（8）!important"></a>（8）!important</h3><p>除了IE6，其他浏览器中都生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test8 &#123; color: #fff !important; &#125;</div></pre></td></tr></table></figure>
+<h3 id="（9）IE9-IE10（-9-0）"><a href="#（9）IE9-IE10（-9-0）" class="headerlink" title="（9）IE9/IE10（\9\0）"></a>（9）IE9/IE10（\9\0）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test9 &#123; color: orange\9\0; &#125;</div></pre></td></tr></table></figure>
+<p>一般写HACK的顺序：从最新版本到低版本，比如：新版本、IE（10/9/8）、IE（7/6）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">color: black;  /* 所有 */</div><div class="line">color: white !important; /* 除了IE6外 */</div><div class="line">color: orange\9\0; /* IE 9/10 */</div><div class="line">color: green\0;  /* IE 8/9/10 */</div><div class="line">*color: yellow;   /* IE6/7 */</div><div class="line">+color: gold;  /* IE6/7 */</div><div class="line">*+color: blue; /* IE6/7 */</div><div class="line">_color: red;  /* IE6 */</div></pre></td></tr></table></figure>
+<h3 id="CSS选择器前缀法"><a href="#CSS选择器前缀法" class="headerlink" title="CSS选择器前缀法"></a>CSS选择器前缀法</h3><p>（1）*</p>
+<p>只在IE6中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1</div><div class="line">*html .test21 &#123; color: gold; &#125;</div></pre></td></tr></table></figure>
+<p>（2）*+</p>
+<p>只在IE7中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*+html .test22 &#123; color: blue; &#125;</div></pre></td></tr></table></figure>
+<p>（3）IE6/IE7</p>
+<p>在IE6/IE7中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media screen\9 &#123;   </div><div class="line">  .test23 &#123; color: purple; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>（4）IE6/IE7/IE8</p>
+<p>在IE6/IE7/IE8中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media \0screen\,screen\9 &#123;   </div><div class="line">  .test24 &#123; color: gold; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>（5）IE8</p>
+<p>在IE8中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media \0screen &#123;   </div><div class="line">  .test25 &#123; color: orange; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>（6）IE8/IE9/IE10/IE11</p>
+<p>在IE8/IE9/IE10/IE11中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media screen\0 &#123;   </div><div class="line">  .test26 &#123; color: green; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>（7）IE9/IE10/IE11<br>在IE9/IE10/IE11中生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media screen and (min-width: 0\0) &#123;   </div><div class="line">  .test27 &#123; color: red; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="条件注释"><a href="#条件注释" class="headerlink" title="条件注释"></a>条件注释</h3><p>下面的N表示版本。</p>
+<p>（1）IE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>### </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/13/CSS-hack/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-LESS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -821,75 +930,9 @@
 
 
   
-    <article id="post-事件的代理和委托" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/03/事件的代理和委托/">事件的代理和委托</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/03/事件的代理和委托/" class="archive-article-date">
-  	<time datetime="2017-02-03T12:30:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>事件在冒泡阶段向上传播到父节点，我们可以将子节点的监听事件定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。<br>这种方法叫做事件的代理,常用解决场景：</p>
-<p>当动态创建需要监听的对象时时 如果直接绑定onclick事件时需要不停的绑定监听，此时可直接将项目绑定给父节点减少操作步骤</p>
-<p>当事件目标是文档或文档元素时，它会在不同的DOM节点之间传播（propagation）。<br>分为三个阶段：</p>
-<ul>
-<li>捕获阶段（capture phase）：从window对象传导到目标对象。（window–document–….–目标对象）</li>
-<li>目标阶段（target phase）：目标对象本身的事件处理程序调用。</li>
-<li>冒泡阶段（bubblingphase）：从目标对象传导回window对象。（目标对象–父元素–….–document–window）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//添加事件处理器</div><div class="line">var addEvent = function(element, type, handler, useCapture) &#123;</div><div class="line">if(element.addEventListener) &#123;</div><div class="line">useCapture 是否监听捕获阶段 默认是false</div><div class="line">element.addEventListener(type, handler, useCapture ? true : false);</div><div class="line">&#125; else if(element.attachEvent) &#123;</div><div class="line">element.attachEvent(&apos;on&apos; + type, handler);</div><div class="line">&#125; else if(element != window)&#123;</div><div class="line">element[&apos;on&apos; + type] = handler;</div><div class="line">&#125;</div><div class="line">&#125;;</div><div class="line">//移除某个事件处理器</div><div class="line">var removeEvent = function(element, type, handler, useCapture) &#123;</div><div class="line">if(element.removeEventListener) &#123;</div><div class="line">element.removeEventListener(type, handler, useCapture ? true : false); &#125; else if(element.detachEvent) &#123;</div><div class="line">element.detachEvent(&apos;on&apos; + type, handler);</div><div class="line">&#125; else if(element != window)&#123;</div><div class="line">element[&apos;on&apos; + type] = null;</div><div class="line">&#125;</div><div class="line">&#125;;</div><div class="line">// 事件取消</div><div class="line">function cancelHandler(event)&#123;</div><div class="line">var event = event || window.event;</div><div class="line">if(event.preventDefault) &#123;event.preventDefault();&#125; //标准</div><div class="line">if(event.returnValue) &#123; event.returnValue = false;&#125; // IE</div><div class="line">return false; //用于处理使用对象属性注册的处理程序</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/03/事件的代理和委托/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -975,7 +1018,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,7 +1026,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
