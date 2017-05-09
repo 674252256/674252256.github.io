@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/1 | Sky Club</title>
+  <title>JS(5)函数 | Sky Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sky Club">
-<meta property="og:url" content="http://yoursite.com/archives/2017/01/index.html">
+  <meta name="description" content="函数本身也是对象(第一型对象)凡是可以使用对象的地方,都可以使用函数. 函数可以创建作用域,可以模拟块级作用域 函数可以被调用Function和Object关系  Function是Object构造函数的实例对象Object可以看作是Function的实例对象1234console.log(Function instanceof Function);     //trueconsole.log(">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS(5)函数">
+<meta property="og:url" content="http://yoursite.com/2017/01/25/JS-5-函数/index.html">
 <meta property="og:site_name" content="Sky Club">
+<meta property="og:description" content="函数本身也是对象(第一型对象)凡是可以使用对象的地方,都可以使用函数. 函数可以创建作用域,可以模拟块级作用域 函数可以被调用Function和Object关系  Function是Object构造函数的实例对象Object可以看作是Function的实例对象1234console.log(Function instanceof Function);     //trueconsole.log(">
+<meta property="og:updated_time" content="2017-05-09T11:47:29.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sky Club">
+<meta name="twitter:title" content="JS(5)函数">
+<meta name="twitter:description" content="函数本身也是对象(第一型对象)凡是可以使用对象的地方,都可以使用函数. 函数可以创建作用域,可以模拟块级作用域 函数可以被调用Function和Object关系  Function是Object构造函数的实例对象Object可以看作是Function的实例对象1234console.log(Function instanceof Function);     //trueconsole.log(">
   
     <link rel="alternative" href="/atom.xml" title="Sky Club" type="application/atom+xml">
   
@@ -135,36 +140,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JS-5-函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JS(5)函数
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/25/JS-5-函数/" class="archive-article-date">
+
+        
+        <a href="/2017/01/25/JS-5-函数/" class="archive-article-date">
   	<time datetime="2017-01-25T10:28:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/25/JS-5-函数/">JS(5)函数</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>函数本身也是对象(第一型对象)凡是可以使用对象的地方,都可以使用函数.</li>
+<li>函数可以创建作用域,可以模拟块级作用域</li>
+<li>函数可以被调用<h4 id="Function和Object关系"><a href="#Function和Object关系" class="headerlink" title="Function和Object关系"></a>Function和Object关系</h4></li>
+</ul>
+<p>Function是Object构造函数的实例对象<br>Object可以看作是Function的实例对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">console.log(Function instanceof Function);     //true</div><div class="line">console.log(Function instanceof Object);       //true</div><div class="line">console.log(Object instanceof Object);         //true</div><div class="line">console.log(Object instanceof Function);        //true</div></pre></td></tr></table></figure></p>
+<h4 id="函数的声明"><a href="#函数的声明" class="headerlink" title="函数的声明"></a>函数的声明</h4><ul>
+<li><p>声明函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function 函数名称 (形参1,形参2)</div><div class="line">   &#123;</div><div class="line">       //函数体</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>函数表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//01 匿名函数</div><div class="line"> var func01 = function ()&#123;</div><div class="line"> &#125;;</div><div class="line"> //02 命名的函数表达式</div><div class="line"> var func02 = function func()&#123;</div><div class="line"> &#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用构造函数创建函数对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var func = new Function();   //没有内容(没有函数体)</div><div class="line">一个参数都没有，那么创建的是一个空函数</div><div class="line">有一个参数，这个参数作为新创建出来的函数的函数体</div><div class="line">有多个参数，最后一个参数是新创建的函数的函数体，其它的参数是形参列表</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>JS中变量对象在创建过程中，函数声明比变量声明具有更为优先的执行顺序，因此我们常常提到的函数声明提前。因此我们在执行上下文中，无论在什么位置声明了函数，我们都可以在同一个执行上下文中直接使用该函数。</p>
+<h4 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply:"></a>call和apply:</h4><p>apply运行效率会高于call因为javascript内部参数就用是数组表示,<br>call可以当成是apply的语法糖.<br>对象1.方法.call(调用方法的真正的对象，参数1，参数2，参数3)；<br>对象1.方法.apply(调用方法的真正的对象，[参数1，参数2，参数3…])</p>
+<h4 id="callee与caller"><a href="#callee与caller" class="headerlink" title="callee与caller"></a>callee与caller</h4><p>caller:函数自身.<br>caller:调用函数的函数,在全局作用域中指向null.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">console.log((function (n) &#123;</div><div class="line">    if (n == 1) &#123;</div><div class="line">        return 1;</div><div class="line">    &#125;</div><div class="line">    //如果函数的匿名函数，那么要在函数内部调用自身，可以使用arguments.callee</div><div class="line">    return arguments.callee(n - 1) + n;</div><div class="line">&#125;)(100));</div></pre></td></tr></table></figure></p>
+<h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h4><p>arguments:接收实参该参数是一个类似于数组的结构（可以像数组一样遍历 + 还可以使用下标来访问数据,有length属性），但是并不是数组。</p>
+<ul>
+<li>01 函数调用的时候，会把实参的值赋值给形参，而且会使用arguments来接收实参</li>
+<li>02 如果实参的个数超过形参的个数，那么可以通过arguments来获取超出的数据</li>
+<li>03 如果实参的格式小于形参的个数，那么不足的全部设置为undefined<h4 id="为什么需要使用this"><a href="#为什么需要使用this" class="headerlink" title="为什么需要使用this?"></a>为什么需要使用this?</h4></li>
+<li>我们函数中可以节省一个参数（代码会灵活）<br>this：this指向的是一个对象，具体指向的是哪个对象由函数调用方式来决定。</li>
+<li>01 函数以普通方式调用：this指向window(注释：在非严格模式下指向window)</li>
+<li>02 以对象的方法来调用：this指向调用方法的对象</li>
+<li>03 以构造函数的方式来调用：this指向的是构造函数内部新创建的对象</li>
+<li><p>04 上下文的方式调用（call|apply）:第一个参数</p>
+<h4 id="函数的私有变量和私有函数"><a href="#函数的私有变量和私有函数" class="headerlink" title="函数的私有变量和私有函数"></a>函数的私有变量和私有函数</h4></li>
+<li><p>函数内部使用var 声明的变量和方法称为函数的私有变量和私有方法</p>
+</li>
+<li>特权方法:可以访问构造函数内部的变量和函数的方法被称为特权方法.<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">     this.name = &quot;momo&quot;;</div><div class="line">     this.showName = function()&#123;&#125;;</div><div class="line">	// a和 getA 是函数的私有变量和私有方法</div><div class="line">     var a = &quot;测试的值&quot;;</div><div class="line">     function getA()&#123;</div><div class="line">           return a;</div><div class="line">      &#125;;</div><div class="line">      //像test这样的实例方法，它可以访问构造函数内部的变量和函数，这种方法被称为特权方法</div><div class="line">      this.test = function()&#123;</div><div class="line">           console.log(getA());</div><div class="line">       &#125;;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="eval函数"><a href="#eval函数" class="headerlink" title="eval函数"></a>eval函数</h4><p>作用：把字符串转换为js的代码<br>new Function(“字符串”); //把字符串转换为js的代码<br>区别：<br>Function：当函数调用的时候才会执行<br>eval：立刻执行<br>使用建议：不推荐使用（js是词法作用域，eval和with可以动态的调整[破坏]js的词法作用域），性能不好。</p>
+<p>场景：页面中接收用户的js代码 + json处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = &quot;测试的字符串&quot;;</div><div class="line">   eval(&quot;var b = \&quot;测试的字符串\&quot;&quot;);</div><div class="line">   console.log(b);</div></pre></td></tr></table></figure></p>
+<h4 id="函数的变量提升"><a href="#函数的变量提升" class="headerlink" title="函数的变量提升"></a>函数的变量提升</h4><ul>
+<li>如果是函数的表达式,那么在做函数声明提升的时候,仅仅只会把var变量的名称(函数)提升到当前作用域的最顶端.</li>
+<li>函数名同名的情况下 后面会把前面的覆盖.</li>
+<li>函数和变量同名的情况:可以理解为函数声明提升而变量的声明不提升（忽略）<h4 id="函数的name属性"><a href="#函数的name属性" class="headerlink" title="函数的name属性"></a>函数的name属性</h4></li>
+</ul>
+<p>空函数相当于一个匿名函数的name是Empty<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//函数表达式(匿名)</div><div class="line">var add = function(a,b)&#123;</div><div class="line">    console.log(a + b);</div><div class="line">&#125;</div><div class="line">//函数表达式(命名)</div><div class="line">var sum = function name(a,b)&#123;</div><div class="line">    console.log(a + b);</div><div class="line">&#125;</div><div class="line">//sum.length // 形参的个数</div><div class="line">console.log(add.name);   //add 跟浏览器的实现有关系(在火狐中name的值为空)</div><div class="line">console.log(sum.name);   //name</div><div class="line">//03构造函数创建对象</div><div class="line">new Function(参数1,参数2,参数3)</div></pre></td></tr></table></figure></p>
+<h4 id="即时函数-立刻马上就调用执行的函数"><a href="#即时函数-立刻马上就调用执行的函数" class="headerlink" title="即时函数(立刻马上就调用执行的函数)"></a>即时函数(立刻马上就调用执行的函数)</h4><p>创建一个函数作用域,把所有的变量都包装在当前的作用域中,不会有全局变量污染的问题.<br>1 函数(函数名|参数|返回值|函数体)<br>2 使用一个()把函数包裹起来<br>3 使用一个()马上来调用这个函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//第一种写法</div><div class="line">   (function()&#123;</div><div class="line">       //函数体</div><div class="line">       console.log(&quot;第一种写法&quot;);</div><div class="line">   &#125;)();</div><div class="line">   //第二种写法</div><div class="line">   (function()&#123;</div><div class="line">       //函数体</div><div class="line">       console.log(&quot;第二种写法&quot;);</div><div class="line">   &#125;());</div><div class="line"> +function()&#123;</div><div class="line">       //函数体</div><div class="line">       console.log(&quot;第三种写法&quot;);</div><div class="line">   &#125;();</div><div class="line">   !function()&#123;</div><div class="line">       //函数体</div><div class="line">       console.log(&quot;第四种写法&quot;);</div><div class="line">   &#125;();</div><div class="line">   -function()&#123;</div><div class="line">       //函数体</div><div class="line">       console.log(&quot;第五种写法&quot;);</div><div class="line">   &#125;()</div></pre></td></tr></table></figure></p>
+<p>即时对象初始化<br>基本写法:<br>({init:function(){}}).init();</p>
+<h4 id="惰性函"><a href="#惰性函" class="headerlink" title="惰性函"></a>惰性函</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">函数的真正内容在调用了一次之后才确定,能够实现自我的更新.</div></pre></td></tr></table></figure>
+<p>使用注意:<br>1 如果在函数上面添加了属性,那么进行自我更新之后这个属性会丢失<br>2 如果把函数赋值给其他的变量,那么我们以变量的方式来调用,那么将会永远执行旧的函数体不会自我更新<br>3 如果把函数赋值给对象,成为对象的方法,那么我们以对象的方法来调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function foo()&#123;</div><div class="line">      console.log(&quot;foo!&quot;);</div><div class="line">      //主要处理初始化操作......</div><div class="line">      //实现函数的自我更新</div><div class="line">      foo = function ()&#123;</div><div class="line">          console.log(&quot;foo! foo!&quot;);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  foo();  //foo!</div><div class="line">  foo();  //foo!foo!</div><div class="line">  foo();  //foo!foo!</div></pre></td></tr></table></figure></p>
+<h4 id="函数的结构缓存"><a href="#函数的结构缓存" class="headerlink" title="函数的结构缓存"></a>函数的结构缓存</h4><p>某些参数需要进行大规模反复的计算,可以考虑吧计算的结果保存起来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function f1(str)&#123;</div><div class="line">    //.....</div><div class="line">    if (f1.cache[str] != undefined)</div><div class="line">    &#123;</div><div class="line">        console.log(&quot;已经存在缓存数据,直接返回&quot;);</div><div class="line">        return f1.cache[str];</div><div class="line">    &#125;</div><div class="line">    //....如果缓存中有数据,那么函数体后面的代码就不再执行(节省时间)</div><div class="line">    //执行耗时操作...</div><div class="line">    var result = str + &quot; hello world!&quot;;</div><div class="line">    f1.cache[str] = result;</div><div class="line">    console.log(&quot;第一次调用函数传入参数,返回结果&quot;);</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">f1.cache = &#123;&#125;;</div><div class="line">console.log(f1(&quot;test&quot;)); </div><div class="line">console.log(f1(&quot;test&quot;));   </div><div class="line">console.log(f1(&quot;test&quot;));</div></pre></td></tr></table></figure></p>
+<h4 id="函数的命名空间"><a href="#函数的命名空间" class="headerlink" title="函数的命名空间"></a>函数的命名空间</h4><p>就是把所有的东西都写在一个对象里面.命名空间的名称一般是项目的名称或者是简写,要求所有的字符都大写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">var MOMO = MOMO || &#123;&#125;;</div><div class="line">MOMO.namespace = function(stringParam)&#123;</div><div class="line">    var str = stringParam;</div><div class="line">    var parts = str.split(&quot;.&quot;);   //根据字符串切割字符串变成一个数组</div><div class="line">    var parent = MOMO;</div><div class="line">    console.log(parts);</div><div class="line">    if(parts[0] == &quot;MOMO&quot;)</div><div class="line">    &#123;</div><div class="line">        parts = parts.slice(1)    //作用:删除第一个元素返回一个新的数组</div><div class="line">    &#125;</div><div class="line">    for (var i = 0; i &lt; parts.length; i++) &#123;</div><div class="line">        //MOMO.name</div><div class="line">        //name.des</div><div class="line">        //des.abc</div><div class="line">        if (parent[parts[i]] == undefined)</div><div class="line">        &#123;</div><div class="line">            parent[parts[i]] = &#123;&#125;;</div><div class="line">        &#125;</div><div class="line">        //更新父节点</div><div class="line">        parent = parent[parts[i]];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">MOMO.namespace(&quot;MOMO.name.des.abc&quot;);</div><div class="line">console.log(MOMO);</div><div class="line">MOMO.namespace(&quot;MOMO.a.b.c.d.e.f.d.g.h.j.k.s.d.g.h.j.a.s.d.f.we.r&quot;);</div><div class="line">console.log(MOMO);</div><div class="line">MOMO.namespace(&quot;abc.des.abc&quot;);</div><div class="line">console.log(MOMO);</div></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -176,171 +229,89 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/25/JS-5-函数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/24/JS-4-面向对象/" class="archive-article-date">
-  	<time datetime="2017-01-24T04:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-24</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/24/JS-4-面向对象/">JS(4) 面向对象</a>
-    </h1>
+  
+    <a href="/2017/01/24/JS-4-面向对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS(4) 面向对象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/23/JS-3-基础知识/" class="archive-article-date">
-  	<time datetime="2017-01-23T04:04:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/23/JS-3-基础知识/">JS(3) 基础知识</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/22/JS-2-基础知识/" class="archive-article-date">
-  	<time datetime="2017-01-22T03:57:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/22/JS-2-基础知识/">JS(2) 基础知识</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/21/JS-1-基本概念/" class="archive-article-date">
-  	<time datetime="2017-01-21T03:05:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/21/JS-1-基本概念/">JS(1) 基本概念</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -363,8 +334,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
