@@ -137,6 +137,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS-严格模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/30/JS-严格模式/">JS-严格模式</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/30/JS-严格模式/" class="archive-article-date">
+  	<time datetime="2017-01-30T12:08:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="严格模式简单介绍"><a href="#严格模式简单介绍" class="headerlink" title="严格模式简单介绍"></a>严格模式简单介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">通过严格模式,会在函数内部进行更严格的错误条件检测。</div><div class="line">作用:提早知道代码中存在的错误,即时调整代码。</div></pre></td></tr></table></figure>
+<p>###严格模式的使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">通过使用固定的字符串来选择进入严格模式:&quot;use strict&quot;;</div><div class="line">这种语法实现了向后兼容模式,支持严格模式的引擎检测到关键字会启动严格模式,不支持的引擎就当时遇到了一个没有赋值的字符串,做忽略处理。</div><div class="line"></div><div class="line">可以把这个字符串放在整个脚本文件中,也可以把这个字符串放在某个具体的函数内部。</div></pre></td></tr></table></figure></p>
+<h3 id="严格模式影响-“use-strict”"><a href="#严格模式影响-“use-strict”" class="headerlink" title="严格模式影响 “use strict”;"></a>严格模式影响 “use strict”;</h3><ul>
+<li>所有的变量必须使用var 关键字声明</li>
+<li>不能使用delete关键字删除全局变量,以前默认删除失败,严格模式下直接报错</li>
+<li>在对象中不允许有同名的属性</li>
+<li>函数的参数必须唯一(不能出现同名的参数)</li>
+<li>arguments对象的行为不同,在非严格模式下修改形参的值会反映到arguments中,而严格模式下则相对独立</li>
+<li>禁用了argument.callee和caller函数,他们一个引用函数本身,一个引用调用函数</li>
+<li>不能在if语句中声明函数</li>
+<li>禁止使用eval和argument作为标识符</li>
+<li>修正this的值,在严格模式下,函数this的值始终是指定的值,无论指定的是什么值。</li>
+<li>禁用了with语句</li>
+<li>去掉了JavaScript中的八进制字面量(以0开头的八进制字面量是无效的语法)</li>
+</ul>
+<h3 id="严格模式的书写格式"><a href="#严格模式的书写格式" class="headerlink" title="严格模式的书写格式"></a>严格模式的书写格式</h3><p>1 必须使用单引号或者是双引号括住字符串<br>2 必须使用小写,不能出现大写字符<br>3 必须是10个字符<br>4 字符串后面的分号可以省略<br>5 必须写在当前作用域的最顶上</p>
+<h3 id="严格模式的作用域"><a href="#严格模式的作用域" class="headerlink" title="严格模式的作用域"></a>严格模式的作用域</h3><p>1 函数的顶部(只对当前的函数有效)<br>2 script标签的顶部,只对当前的标签有效,对页面中其他的script无效</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/30/JS-严格模式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Object的静态成员" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
