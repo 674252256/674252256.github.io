@@ -141,193 +141,43 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hexo基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-检测-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/17/hexo基本使用/">hexo基本使用</a>
+      <a class="article-title" href="/2017/03/05/检测-1/">检测(1)</a>
     </h1>
   
 
         
-        <a href="/2017/02/17/hexo基本使用/" class="archive-article-date">
-  	<time datetime="2017-02-16T23:24:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-17</time>
+        <a href="/2017/03/05/检测-1/" class="archive-article-date">
+  	<time datetime="2017-03-05T00:29:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g #安装 </div><div class="line">npm update hexo -g #升级 </div><div class="line">hexo init #初始化</div></pre></td></tr></table></figure>
-<h3 id="推送到服务器上"><a href="#推送到服务器上" class="headerlink" title="推送到服务器上"></a>推送到服务器上</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo n #写文章</div><div class="line">hexo g #生成</div><div class="line">hexo d #部署 #可与hexo g合并为 hexo d -g</div></pre></td></tr></table></figure>
-<h3 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hexo n &quot;我的博客&quot; == hexo </div><div class="line">new &quot;我的博客&quot; #新建文章</div><div class="line">hexo p == hexo publish</div><div class="line">hexo g == hexo generate#生成</div><div class="line">hexo s == hexo server #启动服务预览</div><div class="line">hexo d == hexo deploy#部署</div></pre></td></tr></table></figure>
-<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">*  hexo server #Hexo会监视文件变动并自动更新，您无须重启服务器。</div><div class="line">*  hexo server -s #静态模式</div><div class="line">*  hexo server -p 5000 #更改端口</div><div class="line">*  hexo server -i 192.168.1.1 #自定义 IP</div><div class="line">*  hexo clean #清除缓存 网页正常情况下可以忽略此条命令</div><div class="line">*  hexo g #生成静态网页</div><div class="line">*  hexo d #开始部署</div></pre></td></tr></table></figure>
-<p>###监视文件变动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">*  hexo generate #使用 Hexo 生成静态文件快速而且简单</div><div class="line">*  hexo generate --watch #监视文件变动</div><div class="line">*  完成后部署两个命令的作用是相同的</div><div class="line">*  hexo generate --deploy</div><div class="line">*  hexo deploy --generate</div><div class="line">*  hexo deploy -g</div><div class="line">*  hexo server -g</div></pre></td></tr></table></figure></p>
-<h3 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">*  hexo new &quot;postName&quot; #新建文章</div><div class="line">*  hexo new page &quot;pageName&quot; #新建页面</div><div class="line">*  hexo generate #生成静态页面至public目录</div><div class="line">*  hexo server #开启预览访问端口（默认端口4000，&apos;ctrl+c&apos;关闭server）</div><div class="line">*  hexo deploy #将.deploy目录部署到GitHub</div><div class="line">*  hexo new [layout] &lt;title&gt;</div><div class="line">*  hexo new photo &quot;My Gallery&quot;</div><div class="line">*  hexo new &quot;Hello World&quot; --lang tw</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/17/hexo基本使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Flex布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/15/Flex布局/">Flex布局</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/15/Flex布局/" class="archive-article-date">
-  	<time datetime="2017-02-15T14:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">* Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</div><div class="line">* Webkit内核的浏览器，必须加上-webkit前缀。</div><div class="line"></div><div class="line">容器元素</div><div class="line">.box&#123;</div><div class="line">  display: flex;</div><div class="line">&#125;</div><div class="line">行内元素</div><div class="line">.box&#123;</div><div class="line">  display: inline-flex;</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">  display: -webkit-flex; /* Safari */</div><div class="line">  display: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
-<h3 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>属性决定主轴的方向（即项目的排列方向）。<br>row（默认值）：主轴为水平方向，起点在左端。<br>row-reverse：主轴为水平方向，起点在右端。<br>column：主轴为垂直方向，起点在上沿。<br>column-reverse：主轴为垂直方向，起点在下沿。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  flex-direction: row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br>nowrap（默认）：不换行。<br>wrap：换行，第一行在上方。<br>wrap-reverse：换行，第一行在下方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    flex-wrap: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>属性定义了项目在主轴上的对齐方式。<br>flex-start（默认值）：左对齐<br>flex-end：右对齐<br>center： 居中<br>space-between：两端对齐，项目之间的间隔都相等。<br>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">	justify-content: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>属性定义项目在交叉轴上如何对齐<br>flex-start：交叉轴的起点对齐。<br>flex-end：交叉轴的终点对齐。<br>center：交叉轴的中点对齐。<br>baseline: 项目的第一行文字的基线对齐。<br>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="align-content属性"><a href="#align-content属性" class="headerlink" title="align-content属性"></a>align-content属性</h3><p>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。<br>flex-start：与交叉轴的起点对齐。<br>flex-end：与交叉轴的终点对齐。<br>center：与交叉轴的中点对齐。<br>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。<br>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-content: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h3><h3 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h3><p>属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  order: &lt;integer&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-grow属性"><a href="#flex-grow属性" class="headerlink" title="flex-grow属性"></a>flex-grow属性</h3><p>属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-grow: &lt;number&gt;; /* default 0 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###flex-shrink属性</p>
-<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。负值对该属性无效。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-shrink: &lt;number&gt;; /* default 1 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-basis属性"><a href="#flex-basis属性" class="headerlink" title="flex-basis属性"></a>flex-basis属性</h3><p>属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-basis: &lt;length&gt; | auto; /* default auto */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-属性"><a href="#flex-属性" class="headerlink" title="flex-属性"></a>flex-属性</h3><p>属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line"> flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]</div><div class="line">&#125;</div><div class="line">//该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</div></pre></td></tr></table></figure>
-<h3 id="align-self属性"><a href="#align-self属性" class="headerlink" title="align-self属性"></a>align-self属性</h3><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  align-self: auto | flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/15/Flex布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-CSS新特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/14/CSS新特性/">CSS新特性</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/14/CSS新特性/" class="archive-article-date">
-  	<time datetime="2017-02-14T14:05:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="过渡模块-transition"><a href="#过渡模块-transition" class="headerlink" title="过渡模块 transition"></a>过渡模块 transition</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">* 需要过渡的属性</div><div class="line"></div><div class="line">transition-property: width,background-color;</div><div class="line"></div><div class="line">* 过渡的时长</div><div class="line"></div><div class="line">transition-duration: 3s, 3s;</div><div class="line"></div><div class="line">* 指定过渡效果的延迟时间</div><div class="line"></div><div class="line">transition-delay: 5s;</div><div class="line"></div><div class="line">* 过渡属性运动框架</div><div class="line">transition-</div><div class="line"></div><div class="line">过渡属性连写格式:</div><div class="line"></div><div class="line">transition: property duration timing-function delay;</div><div class="line">transition: 过渡属性 过渡时间 过渡运动曲线 延迟时间</div></pre></td></tr></table></figure>
-<h3 id="维度模块-transform"><a href="#维度模块-transform" class="headerlink" title="维度模块 transform"></a>维度模块 transform</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">缩放</div><div class="line">transform: scale(1,1.5)</div><div class="line">旋转 </div><div class="line">transform: rotate(45deg);</div></pre></td></tr></table></figure>
-<h3 id="位移"><a href="#位移" class="headerlink" title="位移"></a>位移</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">transform:translateX(15px);</div><div class="line">transform:translateY(15px);</div><div class="line">transform: translate(200px, 100px); // 水平/垂直</div></pre></td></tr></table></figure>
-<h3 id="形变中心点"><a href="#形变中心点" class="headerlink" title="形变中心点"></a>形变中心点</h3><p>形变中心点会影响旋转和缩放, 但是不会影响平移以及倾斜, 但是不会影响平移</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform-origin: right center; // 或具体像素</div></pre></td></tr></table></figure>
-<h3 id="维度模块连写方式"><a href="#维度模块连写方式" class="headerlink" title="维度模块连写方式"></a>维度模块连写方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform: scale(2) rotate(45deg) translate(-100px, 0px);</div></pre></td></tr></table></figure>
-<h3 id="透视点-《需要添加到父元素上》-近大远小"><a href="#透视点-《需要添加到父元素上》-近大远小" class="headerlink" title="透视点 《需要添加到父元素上》 近大远小"></a>透视点 《需要添加到父元素上》 近大远小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">perspective: 0px;</div></pre></td></tr></table></figure>
-<h3 id="灭点"><a href="#灭点" class="headerlink" title="灭点"></a>灭点</h3><p>_ 灭点为近大远小延伸的相交点默认是父元素宽度的一半，可以通过perspective-origin：0px 0px；指定。</p>
-<h3 id="2D和3D"><a href="#2D和3D" class="headerlink" title="2D和3D"></a>2D和3D</h3><p>_ 默认情况下一个元素的transform-style等于flat<2d> 如果将transform-style设置为3D 那么给这个元素的父元素设置transform-style:preserve-3d</2d></p>
-<h3 id="如果想看到某个元素的3D效果-那么就给这个元素的父元素设置"><a href="#如果想看到某个元素的3D效果-那么就给这个元素的父元素设置" class="headerlink" title="如果想看到某个元素的3D效果, 那么就给这个元素的父元素设置"></a>如果想看到某个元素的3D效果, 那么就给这个元素的父元素设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform-style: preserve-3d;</div></pre></td></tr></table></figure>
-<h3 id="动画模块-animation"><a href="#动画模块-animation" class="headerlink" title="动画模块 animation"></a>动画模块 animation</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">动画名称:</div><div class="line">animation-name : </div><div class="line">动画时长</div><div class="line">animation-duration :</div><div class="line">动画运动曲线 linear匀速  ease逐渐慢下来 ease-in 加速 ease-out 减速 ease-in-oue先加后减                                                                     </div><div class="line">animation-timing-function:linear;</div><div class="line">动画重复次数  infinite 无穷大</div><div class="line">animation-iteration-count: </div><div class="line">指定动画需是否需要往返  alternate往返.normal默认</div><div class="line">animation-direction:alternate; </div><div class="line">暂停动画 默认是running 如果设置paused 那么动画会暂停。</div><div class="line">animation-play-state:paused;</div><div class="line">连写格式</div><div class="line">animation : 动画名称 动画时间 运动曲线 延迟时间 动画次数 往返动画；</div><div class="line">  连写格式简写</div><div class="line">animation：动画名称 动画时间；</div></pre></td></tr></table></figure>
-<h3 id="盒子投影"><a href="#盒子投影" class="headerlink" title="盒子投影"></a>盒子投影</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">box-shadow: h-shadow v-shadow blur spread color inset;</div><div class="line">box-shadow: 水平偏移量 垂直偏移量 模糊度 投影扩展 投影颜色</div></pre></td></tr></table></figure>
+        <h3 id="常见的浏览器内核"><a href="#常见的浏览器内核" class="headerlink" title="常见的浏览器内核"></a>常见的浏览器内核</h3><p>IE Trident<br>火狐 gecko<br>safari chrome :webkit<br>opera: 之前采用presto 13年改用是采用和谷歌一起研发的blink</p>
+<h3 id="link和-import的区别"><a href="#link和-import的区别" class="headerlink" title="link和@import的区别"></a>link和@import的区别</h3><p>link 是 HTML 样式 支持并行下载,可以在css中引用其它文件<br>@import是css 样式 只能串行 容易造成fouc ,支持时间早,可以使用@import对老浏览器隐藏样式.<br>性能上link要优于@import</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var myTest = &#123;</div><div class="line">    foot: &quot;gc&quot;,</div><div class="line">    func: function () &#123;</div><div class="line">        var self = this;</div><div class="line">        console.log(&quot;outerfunc:this.foo=&quot; + this.foot); //gc</div><div class="line">        console.log(&quot;outerfunc:self.foo=&quot; + self.foot);  //gc</div><div class="line">        (function () &#123;</div><div class="line">            console.log(&quot;innerfunc:this.foo=&quot; + this.foot); //undefined</div><div class="line">            console.log(&quot;innerfunc:self.foo=&quot; + self.foot); //gc</div><div class="line">        &#125;());</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">myTest.func()</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">for (vari = 0; i &lt; 5; i++) &#123;</div><div class="line">    (function (i) &#123;</div><div class="line">        setTimeout(function () &#123;</div><div class="line">            console.log(i);</div><div class="line">        &#125;, 1000);</div><div class="line">    &#125;)(i)</div><div class="line">&#125;</div><div class="line">~</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var fullname = &apos;John Doe&apos;;</div><div class="line">var obj = &#123;</div><div class="line">	fullname:&apos;Colin Ihrig&apos;,</div><div class="line">	prop:&#123;</div><div class="line">		fullname:&apos;Aurelio De Rosa&apos;,</div><div class="line">		getFullName:function()&#123;</div><div class="line">			return this.fullname;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">console.log(obj.prop.getFullName());  // Aurelio De Rosa </div><div class="line">var test = obj.prop.getFullName;    </div><div class="line">console.log(test());  //    John Doe</div></pre></td></tr></table></figure>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">console.log(isNaN(NaN)); //true</div><div class="line">console.log(isNaN(23)); //false</div><div class="line">console.log(isNaN(&apos;ds&apos;)); //true</div><div class="line">console.log(isNaN(&apos;2326test&apos;)); //true</div><div class="line">console.log(NaN === NaN); //false</div><div class="line">console.log(NaN === undefined); //false</div><div class="line">console.log(undefined === undefined); //false</div><div class="line">console.log(typeof NaN); //number</div><div class="line">console.log(Object.prototype.toString.call(NaN)); //[object Number]</div></pre></td></tr></table></figure>
+<p>###Number<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ole.log(0.1 + 0.2);   //0.30000000000000004</div><div class="line">console.log(0.1 + 0.2 == 0.3);  //false</div></pre></td></tr></table></figure></p>
+<p>JavaScript 中的 number 类型就是浮点型，JavaScript 中的浮点数采用IEEE-754 格式的规定，这是一种二进制表示法,因此JavaScript 也不能有限表示 1/10、1/2 等这样的分数。在二进制中，1/10(0.1)被表示为 0.00110011001100110011…… 注意 0011 是无限重复的，这是舍入误差造成的，所以对于 0.1 + 0.2 这样的运算，操作数会先被转成二进制，然后再计算：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">0.1 =&gt; 0.0001 1001 1001 1001…（无限循环）</div><div class="line">0.2 =&gt; 0.0011 0011 0011 0011…（无限循环）</div></pre></td></tr></table></figure>
+<p>对于保证浮点数计算的正确性，常见的解决方法有</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var sec = 0.3.toPrecision();  </div><div class="line">var test = 0.423.toFixed(2);  </div><div class="line">console.log(sec);  //0.3</div><div class="line">console.log(test); //0.42</div></pre></td></tr></table></figure>
+<p>toPrecision(n)与toFixed(n) 两者都是返回一个字符串，</p>
 <ul>
-<li>内外阴影; 让外阴影想四周扩散，可以直讲水平和垂直偏移量设置为0<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">text-shadow：</div><div class="line">text-shadow: h-shadow v-shadow blur color;</div></pre></td></tr></table></figure>
-</li>
+<li>toPrecision中n指数计数法的最小位数。该参数是 1~21之间（且包括 1 和 21）的值</li>
+<li>与toFixed中n必需。规定小数的位数，是 0 ~ 20 之间的值，包括 0 和 20，有些实现可以支持更大的数值范围。如果省略了该参数，将用 0 代替。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">先升幂再降幂</div><div class="line">var test = 12.567 +&apos;&apos;;</div><div class="line">var test1 = 1.5455 +&apos;&apos;;</div><div class="line">var newTest = test.split(&apos;.&apos;)[1].length;</div><div class="line">var newTest1 = test1.split(&apos;.&apos;)[1].length;</div><div class="line">var m = Math.pow(10,Math.max(newTest,newTest1));</div><div class="line">var result = (test * m + test1 * m) /m;</div><div class="line">console.log(result)</div></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><h3 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">background : linear-gradient ( red , blue);</div><div class="line">background: linear-gradient(to right,red, blue);</div><div class="line">background: linear-gradient(to top right,red, blue);</div><div class="line">background: linear-gradient(0deg, red, blue);</div></pre></td></tr></table></figure>
-<p>默认情况下系统会分宽度给渐变的颜色，如果不想等分，可以直接在颜色后面添加百分比<br>&lt;这里百分比是指用于计算过渡的距离&gt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">background: linear-gradient(red, blue)</div><div class="line">background: linear-gradient(red 50%, blue 60%)</div><div class="line">//red 30%, blue 40%, 那么40-30=10,所有显示完红色之后会有10%的距离用于从红色过渡到蓝色</div></pre></td></tr></table></figure>
-<h3 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">background-image: radial-gradient(red, blue)</div><div class="line">第一个参数：指定扩散范围</div><div class="line">第二个参数：指定从什么地方开始扩散</div><div class="line">	background-image: radial-gradient(150px at center center, red, blue);</div><div class="line">	background-image: radial-gradient(150px at 100px 100px, red, blue);</div><div class="line">	background-image: radial-gradient(150px at 50px 50px, red 50%, blue 50%);</div></pre></td></tr></table></figure>
-<h3 id="重复渐变"><a href="#重复渐变" class="headerlink" title="重复渐变"></a>重复渐变</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//设置background-size</div><div class="line">   .box1&#123;</div><div class="line">         width: 300px;</div><div class="line">         height: 100px;</div><div class="line">         border: 1px solid #000;</div><div class="line">         margin: 100px auto;</div><div class="line">         background: repeating-linear-gradient(to right,red, blue);</div><div class="line">         background-size:100px 100px;</div><div class="line">     &#125;  </div><div class="line">//设置渐变距离</div><div class="line">     .box2&#123;</div><div class="line">         width: 200px;</div><div class="line">         height: 200px;</div><div class="line">         border: 1px solid #000;</div><div class="line">         margin: 0px auto;</div><div class="line">         /*background: repeating-radial-gradient(red, blue, yellow);*/</div><div class="line">         background: repeating-radial-gradient(red 10%, blue 20%, yellow 30%);</div><div class="line">         /*background-size:100px 100px;*/</div><div class="line">     &#125;</div></pre></td></tr></table></figure>
+
       
 
       
@@ -340,7 +190,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">confirm</a>
         		</li>
       		
 		</ul>
@@ -350,7 +200,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/14/CSS新特性/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/05/检测-1/">展开全文 >></a>
         </p>
       
 
@@ -365,108 +215,31 @@
 
 
   
-    <article id="post-CSS-hack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Ng-1-5-常用指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/13/CSS-hack/">CSS hack</a>
+      <a class="article-title" href="/2017/03/03/Ng-1-5-常用指令/">Ng(1.5)-常用指令</a>
     </h1>
   
 
         
-        <a href="/2017/02/13/CSS-hack/" class="archive-article-date">
-  	<time datetime="2017-02-13T13:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+        <a href="/2017/03/03/Ng-1-5-常用指令/" class="archive-article-date">
+  	<time datetime="2017-03-02T23:56:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HACK就是只有特定浏览器才能识别这段hack代码。</p>
-<h3 id="主要有3中表现形式"><a href="#主要有3中表现形式" class="headerlink" title="主要有3中表现形式:"></a>主要有3中表现形式:</h3><ul>
-<li>属性前缀法(即类内部Hack)：例如 IE6能识别下划线”<em>“和星号” <em> “，IE7能识别星号”</em>“，但不能识别下划线”</em>“，IE6~IE10都认识”\9”，但firefox对前面三个都不能认识。著作权归作者所有。</li>
-<li>CSS选择器前缀法：比如IE6能识别+html.class{}，IE7能识别+html.class{}或者:first-child+html.class{}。</li>
-<li>IE条件注释法：针对所有IE， 。比如：针对IE6及以下版本： 。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效(注：IE10+已经不再支持条件注释)。</li>
-</ul>
-<h3 id="CSS-属性前缀法"><a href="#CSS-属性前缀法" class="headerlink" title="CSS 属性前缀法"></a>CSS 属性前缀法</h3><h3 id="（1）IE6（-）"><a href="#（1）IE6（-）" class="headerlink" title="（1）IE6（_）"></a>（1）IE6（_）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test1 &#123; _color: red; &#125;</div></pre></td></tr></table></figure>
-<h3 id="（2）IE7及其以下版本（-）"><a href="#（2）IE7及其以下版本（-）" class="headerlink" title="（2）IE7及其以下版本（*）"></a>（2）IE7及其以下版本（*）</h3><p>如下设置，IE7及其以下版本中都会生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test2 &#123; *color: yellow; &#125;</div></pre></td></tr></table></figure>
-<p>如果是在选择器上设置，则只会在IE6中生效：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*html .test &#123; color: gold; &#125;</div></pre></td></tr></table></figure></p>
-<h3 id="（3）IE6-IE7-IE8（-9）"><a href="#（3）IE6-IE7-IE8（-9）" class="headerlink" title="（3）IE6/IE7/IE8（\9）"></a>（3）IE6/IE7/IE8（\9）</h3><p>网上的资料说只有IE6/IE7/IE8中生效，可是经测试，在IE9/IE10中也同样生效（如果知道原因的，请告知）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test3 &#123; color: purple\9; &#125;</div></pre></td></tr></table></figure>
-<h3 id="（4）IE8-IE9-IE10-IE11（-0）"><a href="#（4）IE8-IE9-IE10-IE11（-0）" class="headerlink" title="（4）IE8/IE9/IE10/IE11（\0）"></a>（4）IE8/IE9/IE10/IE11（\0）</h3><p>在IE8/IE9/IE10/IE11中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">.test4 &#123; color: green\0; &#125;</div></pre></td></tr></table></figure>
-<h3 id="（5）IE6（-）"><a href="#（5）IE6（-）" class="headerlink" title="（5）IE6（-）"></a>（5）IE6（-）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在IE6中生效：</div></pre></td></tr></table></figure>
-<h3 id="（6）IE6-IE7（-）"><a href="#（6）IE6-IE7（-）" class="headerlink" title="（6）IE6/IE7（+）"></a>（6）IE6/IE7（+）</h3><p>在IE6/IE7中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test6 &#123; +color: gold; &#125;</div></pre></td></tr></table></figure>
-<h3 id="（7）IE6-IE7（-）"><a href="#（7）IE6-IE7（-）" class="headerlink" title="（7）IE6/IE7（*+）"></a>（7）IE6/IE7（*+）</h3><p>如果在类的属性上加，会在IE6/IE7都生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test7 &#123; *+color: blue; &#125;</div></pre></td></tr></table></figure>
-<p>如果在选择器上加，只会在IE7生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*+html .test &#123; color: black; &#125;</div></pre></td></tr></table></figure>
-<h3 id="（8）-important"><a href="#（8）-important" class="headerlink" title="（8）!important"></a>（8）!important</h3><p>除了IE6，其他浏览器中都生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test8 &#123; color: #fff !important; &#125;</div></pre></td></tr></table></figure>
-<h3 id="（9）IE9-IE10（-9-0）"><a href="#（9）IE9-IE10（-9-0）" class="headerlink" title="（9）IE9/IE10（\9\0）"></a>（9）IE9/IE10（\9\0）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.test9 &#123; color: orange\9\0; &#125;</div></pre></td></tr></table></figure>
-<p>一般写HACK的顺序：从最新版本到低版本，比如：新版本、IE（10/9/8）、IE（7/6）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">color: black;  /* 所有 */</div><div class="line">color: white !important; /* 除了IE6外 */</div><div class="line">color: orange\9\0; /* IE 9/10 */</div><div class="line">color: green\0;  /* IE 8/9/10 */</div><div class="line">*color: yellow;   /* IE6/7 */</div><div class="line">+color: gold;  /* IE6/7 */</div><div class="line">*+color: blue; /* IE6/7 */</div><div class="line">_color: red;  /* IE6 */</div></pre></td></tr></table></figure>
-<h3 id="CSS选择器前缀法"><a href="#CSS选择器前缀法" class="headerlink" title="CSS选择器前缀法"></a>CSS选择器前缀法</h3><p>（1）*</p>
-<p>只在IE6中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1</div><div class="line">*html .test21 &#123; color: gold; &#125;</div></pre></td></tr></table></figure>
-<p>（2）*+</p>
-<p>只在IE7中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*+html .test22 &#123; color: blue; &#125;</div></pre></td></tr></table></figure>
-<p>（3）IE6/IE7</p>
-<p>在IE6/IE7中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media screen\9 &#123;   </div><div class="line">  .test23 &#123; color: purple; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>（4）IE6/IE7/IE8</p>
-<p>在IE6/IE7/IE8中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media \0screen\,screen\9 &#123;   </div><div class="line">  .test24 &#123; color: gold; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>（5）IE8</p>
-<p>在IE8中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media \0screen &#123;   </div><div class="line">  .test25 &#123; color: orange; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>（6）IE8/IE9/IE10/IE11</p>
-<p>在IE8/IE9/IE10/IE11中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media screen\0 &#123;   </div><div class="line">  .test26 &#123; color: green; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>（7）IE9/IE10/IE11<br>在IE9/IE10/IE11中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media screen and (min-width: 0\0) &#123;   </div><div class="line">  .test27 &#123; color: red; &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="条件注释"><a href="#条件注释" class="headerlink" title="条件注释"></a>条件注释</h3><p>下面的N表示版本。</p>
-<p>（1）IE</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE]&gt; 所有IE中生效 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>（2）IE N</p>
-<p>比如：只在IE 7中生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE 7]&gt;  只在IE7生效 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>注意：版本之间要留空格，比如：IE7是无效的，应该是IE 7。</p>
-<p>（3）gt</p>
-<p>gt符号表示大于运算符。比如：在IE7以上（不包含IE7）生效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if gt IE 6]&gt;  在IE6以上生效 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>（4）!</p>
-<p>!符号表示非运算符。比如：在IE 6上不生效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if ! IE 6]&gt;  在IE6上不生效（非IE6生效） &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>也可以这样（所有IE都不生效）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if ! IE]&gt;  所有IE中都不生效（非IE生效） &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>（5）lt</p>
-<p>lt符号表示小于运算符。比如：IE6以下（不包含IE6）版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 6]&gt;  IE6以下可生效 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>（6）lte</p>
-<p>lte符号表示小于或等于运算符：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lte IE 6]&gt;  IE6及IE6以下可生效 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>（7） gte</p>
-<p>gte符号表示大于或等于运算符：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">&lt;!--[if gte IE 6]&gt;  IE6及IE6以上可生效 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>（8）&amp;</p>
-<p>&amp;符号表示AND运算符：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if (gt IE 6)&amp;(ltIE8)]&gt;IE6版本以上且IE8版本以下可生效&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>（9） |</p>
-<p>|符号表示OR运算符：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if (IE 6)|(IE 7)]&gt;  IE6或IE7可生效 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p>注：IE10+已经不再支持条件注释。</p>
-<h3 id="5、针对其他浏览器的HACK"><a href="#5、针对其他浏览器的HACK" class="headerlink" title="5、针对其他浏览器的HACK"></a>5、针对其他浏览器的HACK</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">（1）针对火狐</div><div class="line"></div><div class="line">只在火狐中有效：</div><div class="line">@-moz-document url-prefix() &#123;</div><div class="line">  .test &#123; color: red; &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">（2）支持所有Gecko内核的浏览器（包括火狐）</div><div class="line"></div><div class="line">*&gt;.test &#123; color: blue; &#125;</div><div class="line"></div><div class="line">（3）针对Webkit内核浏览器</div><div class="line"></div><div class="line">@media all and (min-width:0px) &#123; color: purple; &#125;</div></pre></td></tr></table></figure>
-<h3 id="6、CSS选择器的优先级"><a href="#6、CSS选择器的优先级" class="headerlink" title="6、CSS选择器的优先级"></a>6、CSS选择器的优先级</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">相同权值情况下，CSS样式的优先级是：就近原则（也就是相同权值的，后设置的优先）：</div><div class="line"></div><div class="line">.a &#123; color: red; &#125;</div><div class="line">.b &#123; color: blue; &#125;</div><div class="line">&lt;div class=&quot;b a&quot;&gt;我会是蓝色的，而不是红色&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>优先级规则：<br>内联样式 &gt; 嵌入样式 &gt; 外部样式<br>ID（100） &gt; 类选择符（10） &gt; 标签（1） &gt; 通配选择器（*）<br>在支持!important的情况下，其优先级最高。</p>
-<p>原文: <a href="http://ghmagical.com/article/page/id/I5NohCGdIxAt©ghmagical.com" target="_blank" rel="external">http://ghmagical.com/article/page/id/I5NohCGdIxAt©ghmagical.com</a></p>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngApp 定义应用程序的根元素。</div><div class="line"></div><div class="line">ngController 定义应用的控制器对象</div><div class="line"></div><div class="line">ngModel	绑定 HTML 控制器的值到应用数据</div><div class="line"></div><div class="line">ngInclude 在应用中包含 HTML 文件</div><div class="line"></div><div class="line">ngList 用来把作用域中的数组对象转换为分隔符分隔的字符串(逗号是默认的分隔符)</div><div class="line"></div><div class="line">ngNonBindable 当一个元素中存在这个指令时，AngularJS在编译时不编译或绑定元素的内容</div><div class="line"></div><div class="line">ngTransclude 用来把元素标志为装置点，供使用transclude选项来包装其他元素的指令使用</div><div class="line"></div><div class="line">ngView 把当前路由的已呈现的模板包含在主布局文件</div><div class="line"></div><div class="line">ngOpen 用于设置 details 列表的 open 属性</div><div class="line"></div><div class="line">ngPluralize 根据本地化规则显示信息</div><div class="line"></div><div class="line">ngHref 为元素指定链接</div><div class="line"></div><div class="line">ngSrc 指定元素的 src 属性</div><div class="line"></div><div class="line">ngSrcset 指定元素的 srcset 属性</div><div class="line"></div><div class="line">ngCloak 在应用正要加载时防止其闪烁</div></pre></td></tr></table></figure>
+<h3 id="扩展表单元素"><a href="#扩展表单元素" class="headerlink" title="扩展表单元素"></a>扩展表单元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">form/ngForm	指定 HTML 表单继承控制器表单</div><div class="line"></div><div class="line">ngReadonly 指定元素的 readonly 属性，定元素是否被选中</div><div class="line"></div><div class="line">ngRequired 设置必填</div><div class="line"></div><div class="line">ngSelected 指定元素的 selected 属性中</div><div class="line"></div><div class="line">ngMinlength	定义最小值</div><div class="line"></div><div class="line">ngMaxlength	定义最大值</div><div class="line"></div><div class="line">ngPattern 定义正则匹配</div><div class="line"></div><div class="line">ngTrueValue	用来设置选中复选框时的值</div><div class="line"></div><div class="line">ngFalseValue 用来设置不选中时复选框的值</div><div class="line"></div><div class="line">ngOptions 在 select 列表中指定 options</div></pre></td></tr></table></figure>
+<h3 id="把模型绑定到页面"><a href="#把模型绑定到页面" class="headerlink" title="把模型绑定到页面"></a>把模型绑定到页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngBind 绑定 HTML 元素到应用程序数据</div><div class="line"></div><div class="line">ngBindHtml 绑定 HTML 元素的 innerHTML 到应用程序数据，并移除 HTML字符串中危险字符</div><div class="line"></div><div class="line">ngBindTemplate 规定要使用模板替换的文本内容</div><div class="line"></div><div class="line">ngClass	指定 HTML 元素使用的 CSS 类</div><div class="line"></div><div class="line">ngClassEven	类似 ng-class，但只在偶数行起作用</div><div class="line"></div><div class="line">ngClassOdd 类似 ng-class，但只在奇数行起作用</div><div class="line"></div><div class="line">ngDisabled 规定一个元素是否被禁用</div><div class="line"></div><div class="line">ngHide 隐藏或显示 HTML 元素</div><div class="line"></div><div class="line">ngShow 显示或隐藏 HTML 元素</div><div class="line"></div><div class="line">ngIf 如果条件为 false 移除 HTML 元素</div><div class="line"></div><div class="line">ngRepeat 用来遍历集合(数组)，给每个元素生成模板实例</div><div class="line"></div><div class="line">ngInit 定义应用的初始化值</div><div class="line"></div><div class="line">ngStyle	指定元素的 style 属性</div><div class="line"></div><div class="line">ngSwitch 规定显示或隐藏子元素的条件</div><div class="line"></div><div class="line">ngValue	规定 input 元素的值</div></pre></td></tr></table></figure>
+<h3 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngBlur 规定 blur 事件的行为</div><div class="line"></div><div class="line">ngFocus 规定聚焦事件的行为</div><div class="line"></div><div class="line">ngChange 规定在内容改变时要执行的表达式</div><div class="line"></div><div class="line">ngClick	点击事件</div><div class="line"></div><div class="line">ngCopy 规定拷贝事件的行为</div><div class="line"></div><div class="line">ngPaste	规定粘贴事件的行为</div><div class="line"></div><div class="line">ngCut 规定剪切事件的行为</div><div class="line"></div><div class="line">ngDblclick 规定双击事件的行为</div><div class="line"></div><div class="line">ngKeydown 规定按下按键事件的行为</div><div class="line"></div><div class="line">ngKeypress 规定按下按键事件的行为</div><div class="line"></div><div class="line">ngKeyup	规定松开按键事件的行为</div><div class="line"></div><div class="line">ngMousedown	规定按下鼠标按键时的行为</div><div class="line"></div><div class="line">ngMouseenter 规定鼠标指针穿过元素时的行为</div><div class="line"></div><div class="line">ngMouseleave 规定鼠标指针离开元素时的行为</div><div class="line"></div><div class="line">ngMousemove	规定鼠标指针在指定的元素中移动时的行为</div><div class="line"></div><div class="line">ngMouseover	规定鼠标指针位于元素上方时的行为</div><div class="line"></div><div class="line">ngMouseup 规定当在元素上松开鼠标按钮时的行为</div><div class="line"></div><div class="line">ngSubmit 规定 onsubmit 事件发生时执行的表达式</div></pre></td></tr></table></figure>
+<h3 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngSwipeLeft	左滑事件</div><div class="line"></div><div class="line">ngSwipeRight 右滑事件</div></pre></td></tr></table></figure>
       
 
       
@@ -479,7 +252,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
         		</li>
       		
 		</ul>
@@ -489,7 +262,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/13/CSS-hack/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/03/Ng-1-5-常用指令/">展开全文 >></a>
         </p>
       
 
@@ -504,57 +277,41 @@
 
 
   
-    <article id="post-LESS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-API-4-JavaScript常用代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/12/LESS/">LESS</a>
+      <a class="article-title" href="/2017/03/01/API-4-JavaScript常用代码/">API(4)JavaScript常用代码</a>
     </h1>
   
 
         
-        <a href="/2017/02/12/LESS/" class="archive-article-date">
-  	<time datetime="2017-02-12T13:26:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-12</time>
+        <a href="/2017/03/01/API-4-JavaScript常用代码/" class="archive-article-date">
+  	<time datetime="2017-02-28T23:52:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="LESS-是一种动态样式语言，将-CSS-赋予了动态语言的特性，如-变量，-继承，-运算，-函数-LESS-既可以在-客户端-上运行-也可以借助Node-js或者Rhino在服务端运行。"><a href="#LESS-是一种动态样式语言，将-CSS-赋予了动态语言的特性，如-变量，-继承，-运算，-函数-LESS-既可以在-客户端-上运行-也可以借助Node-js或者Rhino在服务端运行。" class="headerlink" title="LESS 是一种动态样式语言，将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 也可以借助Node.js或者Rhino在服务端运行。"></a>LESS 是一种动态样式语言，将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 也可以借助Node.js或者Rhino在服务端运行。</h3><p>在这里可以给大家推线一款编译器, koala这个由国人编写的，用于编译sass、less、coffee利器，实时编译、错误提示、跨平台、支持多语言，最重要的是作者很负责且koala完全免费。</p>
-<h3 id="less的语法常用的有以下几种："><a href="#less的语法常用的有以下几种：" class="headerlink" title="less的语法常用的有以下几种："></a>less的语法常用的有以下几种：</h3><ul>
-<li><p>变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@nice-blue: #5B83AD;</div><div class="line">@light-blue: @nice-blue + #111;</div><div class="line">header &#123; color: @light-blue; &#125;	</div><div class="line">输出</div><div class="line">#header &#123; color: #6c94be; &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>混合</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">.bordered &#123;</div><div class="line">		border-top: dotted 1px black;</div><div class="line">			border-bottom: solid 2px black;</div><div class="line">&#125;</div><div class="line">		</div><div class="line">使用</div><div class="line">#menu a &#123;</div><div class="line">  color: #111;</div><div class="line">  .bordered;</div><div class="line">&#125;</div><div class="line">		</div><div class="line">混合可以选择带参数或者给参数是指一个默认值。</div><div class="line">		</div><div class="line">.border-radius (@radius:5px) &#123;</div><div class="line">     border-radius: @radius;</div><div class="line">    -moz-border-radius: @radius;</div><div class="line">    -webkit-border-radius: @radius;</div><div class="line">&#125;</div><div class="line">		</div><div class="line">#header &#123;</div><div class="line">			.border-radius(4px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>导引 导引中可用的全部比较运算有： &gt;、&gt;= 、= 、=&lt; 、&lt;、is*函式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">when 关键字</div><div class="line">.mixin (@a) when (lightness(@a) &gt;= 50%) &#123;</div><div class="line">  background-color: black;</div><div class="line">&#125;</div><div class="line">.mixin (@a) when (lightness(@a) &lt; 50%) &#123;</div><div class="line">  background-color: white;</div><div class="line">&#125;</div><div class="line">.mixin (@a) &#123;</div><div class="line">  color: @a;</div><div class="line">&#125;</div><div class="line">	</div><div class="line">.mixin (@a, @b: 0) when (isnumber(@b)) &#123; ... &#125;</div><div class="line">.mixin (@a, @b: black) when (iscolor(@b)) &#123; ... &#125;</div><div class="line">	</div><div class="line">and关键字实现与条件</div><div class="line">.mixin (@a) when (isnumber(@a)) and (@a &gt; 0) &#123; ... &#125;</div><div class="line">	</div><div class="line">not关键字实现或条件</div><div class="line">.mixin (@b) when not (@b &gt; 0) &#123; ... &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>嵌套</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#header &#123; color: black; &#125;</div><div class="line">#header .navigation &#123;</div><div class="line">  font-size: 12px;</div><div class="line">&#125;</div><div class="line">#header .logo &#123; </div><div class="line">  width: 300px; </div><div class="line">&#125;</div><div class="line">#header .logo:hover &#123;</div><div class="line">  text-decoration: none;</div><div class="line">&#125;</div><div class="line">		</div><div class="line">#header &#123;</div><div class="line">  color: black;</div><div class="line">  .navigation &#123;</div><div class="line">    font-size: 12px;</div><div class="line">  &#125;</div><div class="line">  .logo &#123;</div><div class="line">    width: 300px;</div><div class="line">    &amp;:hover &#123; text-decoration: none &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>运算</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@base: 5%;</div><div class="line">@filler: @base * 2;</div><div class="line">@other: @base + @filler;</div><div class="line">color: #888 / 4;</div><div class="line">background-color: @base-color + #111;</div><div class="line">height: 100% / 2 + @filler;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Color 函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">lighten(@color, 10%);</div><div class="line">@base: #f04615;</div><div class="line">.class &#123;</div><div class="line">  color: saturate(@base, 5%);</div><div class="line">  background-color: lighten(spin(@base, 8), 25%);</div><div class="line">&#125;</div><div class="line">		</div><div class="line">在一种颜色的通道上创建另一种颜色</div><div class="line">@new: hsl(hue(@old), 45%, 90%);</div></pre></td></tr></table></figure>
-</li>
-<li><p>Math 函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">round(1.67); // returns `2`</div><div class="line">ceil(2.4);   // returns `3`</div><div class="line">floor(2.6);  // returns `2`</div><div class="line">percentage(0.5); // returns `50%`</div></pre></td></tr></table></figure>
-</li>
-<li><p>命名空间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#bundle &#123;</div><div class="line">  .button () &#123;</div><div class="line">    display: block;</div><div class="line">    border: 1px solid black;</div><div class="line">    background-color: grey;</div><div class="line">    &amp;:hover &#123; background-color: white &#125;</div><div class="line">  &#125;</div><div class="line">  .tab &#123; ... &#125;</div><div class="line">  .citation &#123; ... &#125;</div><div class="line">&#125;</div><div class="line">#header a &#123;</div><div class="line">	  color: orange;</div><div class="line">	  #bundle &gt; .button;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>作用域：LESS 中的作用域跟其他编程语言非常类似，首先会从本地查找变量或者混合模块，如果没找到的话会去父级作用域中查找，直到找到为止.</p>
-</li>
-</ul>
-<p>less 中文网 <a href="http://lesscss.cn/" target="_blank" rel="external">http://lesscss.cn/</a></p>
-
+        <p>常用代码<br>字符串截取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">substr(start [, length ])</div><div class="line">返回一个从指定位置开始的指定长度的子字符串</div><div class="line">substring(start, end)</div><div class="line">返回位于 String 对象中指定位置的子字符串。</div></pre></td></tr></table></figure>
+<p>页面跳转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.navigate(&quot;top.jsp&quot;);</div><div class="line">window.history.back(-1);</div><div class="line">window.location.href=&quot;login.jsp?backurl=&quot;+window.location.href; </div><div class="line">self.location=&apos;top.htm&apos;;</div><div class="line">top.location=&apos;xx.jsp&apos;;</div></pre></td></tr></table></figure>
+<p>加载完成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">window.onload </div><div class="line">必须等页面内包括图片的所有元素加载完成后才能执行。</div><div class="line">不能同时编写多个，只执行一个</div><div class="line">$(document).ready()</div><div class="line">是DOM结构绘制完毕后就可以执行</div><div class="line">可以编写多个</div><div class="line">简写$(function()&#123;&#125;);</div><div class="line">$(window).load()等同与window.onload</div></pre></td></tr></table></figure>
+<p>刷新页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">history.go(0) </div><div class="line">location.reload() </div><div class="line">location=location </div><div class="line">location.assign(location) </div><div class="line">document.execCommand(&apos;Refresh&apos;) </div><div class="line">window.navigate(location) </div><div class="line">location.replace(location) </div><div class="line">document.URL=location.href</div></pre></td></tr></table></figure>
+<p>json转化和解析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JSON.parse(&quot;&#123;a:&apos;111&apos;,b:&apos;ccc&apos;&#125;&quot;);  //解析</div><div class="line">eval(&quot;(&quot;+&quot;&quot;+&quot;)&quot;); //解析</div></pre></td></tr></table></figure>
+<p>时间转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var day1 = parseInt(newDate().valueOf()/1000);//获得当前时间时间戳</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">day2 = new Date(day1*1000);</div><div class="line">alert(day2.getFullYear()+&quot;-&quot;+(day2.getMonth()+1)+&quot;-&quot;+day2.getDate()+&quot; &quot;+day2.getHours()+&quot;:&quot;+day2.getMinutes()+&quot;:&quot;+day2.getSeconds())</div><div class="line">d = new Date();</div><div class="line">s = d.getFullYear() + &quot;-&quot;;</div><div class="line">s += (&quot;0&quot;+(d.getMonth()+1)).slice(-2) + &quot;-&quot;;</div><div class="line">s += (&quot;0&quot;+d.getDate()).slice(-2) + &quot; &quot;;</div><div class="line">s += (&quot;0&quot;+d.getHours()).slice(-2) + &quot;:&quot;;</div><div class="line">s += (&quot;0&quot;+d.getMinutes()).slice(-2) + &quot;:&quot;;</div><div class="line">s += (&quot;0&quot;+d.getSeconds()).slice(-2) + &quot;.&quot;;</div><div class="line">s += (&quot;00&quot;+d.getMilliseconds()).slice(-3);</div></pre></td></tr></table></figure>
+<p>URI编码转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var a=&quot;&apos;:&apos;&quot;;</div><div class="line">en = encodeURI(a);    //编码</div><div class="line">a = decodeURI(en);    //解码</div><div class="line">HTML编码转换</div><div class="line">function htmlEncode(value)&#123;</div><div class="line">  return $(&apos;&lt;div/&gt;&apos;).text(value).html();</div><div class="line">&#125;</div><div class="line">function htmlDecode(value)&#123;</div><div class="line">  return $(&apos;&lt;div/&gt;&apos;).html(value).text();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -567,7 +324,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
         		</li>
       		
 		</ul>
@@ -577,385 +334,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/12/LESS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-CSS选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/11/CSS选择器/">CSS选择器</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/11/CSS选择器/" class="archive-article-date">
-  	<time datetime="2017-02-11T13:16:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="选择器的针对性越强，它的优先级就越高-选择器的权值"><a href="#选择器的针对性越强，它的优先级就越高-选择器的权值" class="headerlink" title="选择器的针对性越强，它的优先级就越高 选择器的权值"></a>选择器的针对性越强，它的优先级就越高 选择器的权值</h3><ul>
-<li>通配选择符（*）：0</li>
-<li>标签： 1</li>
-<li>类： 10</li>
-<li>属性： 10</li>
-<li>伪类： 10</li>
-<li>伪元素： 10</li>
-<li>id： 100</li>
-<li>important： 1000</li>
-</ul>
-<h3 id="原则：选择器的权值加到一起，大的优先；如果权值相同，后定义的优先"><a href="#原则：选择器的权值加到一起，大的优先；如果权值相同，后定义的优先" class="headerlink" title="原则：选择器的权值加到一起，大的优先；如果权值相同，后定义的优先"></a>原则：选择器的权值加到一起，大的优先；如果权值相同，后定义的优先</h3><h3 id="标签选择器-：根据指定标签名称，在当前界面中找到所有该名称的标签，"><a href="#标签选择器-：根据指定标签名称，在当前界面中找到所有该名称的标签，" class="headerlink" title="标签选择器 ：根据指定标签名称，在当前界面中找到所有该名称的标签，"></a>标签选择器 ：根据指定标签名称，在当前界面中找到所有该名称的标签，</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">标签名称&#123;</div><div class="line">    属性:值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="ID选择器：根据指定的ID名称找到对应的标签"><a href="#ID选择器：根据指定的ID名称找到对应的标签" class="headerlink" title="ID选择器：根据指定的ID名称找到对应的标签"></a>ID选择器：根据指定的ID名称找到对应的标签</h3><p>页面中id名称不能重复 .一个标签只能绑定一个id. 只能是数字。字母。下划线组成。不能用数字开头.不能是HTML标签名称</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#id名称&#123;</div><div class="line">      属性:值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="类选择器：命名和ID类似。"><a href="#类选择器：命名和ID类似。" class="headerlink" title="类选择器：命名和ID类似。"></a>类选择器：命名和ID类似。</h3><p>页面中类的名称可以重复。一个标签可以绑定多个类名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.类名&#123;</div><div class="line">   属性:值;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>&lt;标签名称 class=”类名1 类名2 …”&gt;</p>
-<h3 id="后代选择器：找到指定标签的所有特定后代标签。"><a href="#后代选择器：找到指定标签的所有特定后代标签。" class="headerlink" title="后代选择器：找到指定标签的所有特定后代标签。"></a>后代选择器：找到指定标签的所有特定后代标签。</h3><p>后代包括孙子、重孙。 可以通过空格一直延伸下去 可以使用其他标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">标签名称1 标签名称2&#123;</div><div class="line">    属性:值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="子元素选择器：找到指定标签中所有特定的直接子元素"><a href="#子元素选择器：找到指定标签中所有特定的直接子元素" class="headerlink" title="子元素选择器：找到指定标签中所有特定的直接子元素"></a>子元素选择器：找到指定标签中所有特定的直接子元素</h3><p>子元素标签只会查找儿子，用&gt;连接， 可以使用其他标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">标签名称1&gt;标签名称2&#123;</div><div class="line">    属性:值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="交集选择器：给所有选择器的标签中，相交的那部分标签设置属性"><a href="#交集选择器：给所有选择器的标签中，相交的那部分标签设置属性" class="headerlink" title="交集选择器：给所有选择器的标签中，相交的那部分标签设置属性."></a>交集选择器：给所有选择器的标签中，相交的那部分标签设置属性.</h3><p>选择器之间没有连接符号，可以使用其他标签，不常用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">选择器1选择器2&#123;</div><div class="line">    属性: 值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="并集选择器：给所有选择器选中的标签设置属性"><a href="#并集选择器：给所有选择器选中的标签设置属性" class="headerlink" title="并集选择器：给所有选择器选中的标签设置属性"></a>并集选择器：给所有选择器选中的标签设置属性</h3><p>使用，连接 可以使用其他标签名称</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">选择器1,选择器2&#123;</div><div class="line">    属性:值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="兄弟选择器：给指选择器后面紧跟的那个选择器选中的标签设置属性"><a href="#兄弟选择器：给指选择器后面紧跟的那个选择器选中的标签设置属性" class="headerlink" title="兄弟选择器：给指选择器后面紧跟的那个选择器选中的标签设置属性"></a>兄弟选择器：给指选择器后面紧跟的那个选择器选中的标签设置属性</h3><p>使用+连接 不能选中被隔开的标签。只能选中紧跟其他的那个标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">选择器1+选择器2&#123;</div><div class="line">    属性:值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="通用兄弟选择器-给指定选择器后所有选中标签设置属性"><a href="#通用兄弟选择器-给指定选择器后所有选中标签设置属性" class="headerlink" title="通用兄弟选择器: 给指定选择器后所有选中标签设置属性"></a>通用兄弟选择器: 给指定选择器后所有选中标签设置属性</h3><p>选中指定后面选择器后指定的所有标签.无论有没有被隔开都可以选中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CSS 3 </div><div class="line">选择器1~选择器2&#123;    </div><div class="line">    属性:值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="序选择器：-CSS-3"><a href="#序选择器：-CSS-3" class="headerlink" title="序选择器： CSS 3"></a>序选择器： CSS 3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">p:first-child 选中同级别中第一个标签 </div><div class="line">p:last-child 选中同级别中最后一个标签 </div><div class="line">p:nth-child(n) 选中同级别中第n个标签</div><div class="line">p：nth-last-child(n) 选中同级别中倒数第n个标签。 </div><div class="line">p:first-of-type 选中同级别中 同类型的第一个标签p。</div><div class="line">p:last-of-tyoe:选中同级别中 同类型的最后一个标签p</div><div class="line">p:nth-of-type(n) 选中同级别中 同类型的第n个标签。</div><div class="line">p:nth-last-of-type(n) 选中同级别中同类型的 倒数第n个标签。</div><div class="line">p:only-of-type 选中同级别中  唯一类型的标签p</div><div class="line">p：nth-child(odd)  选中同级别中所有奇数标签</div><div class="line">p:nth-child(even)  选中同级别中所有偶数标签</div><div class="line">x和y是自定义, n是一个计数器, 从0开始递增</div><div class="line">p:nth-child(xn+y) </div><div class="line">p:nth-child(3n+0)</div></pre></td></tr></table></figure>
-<h3 id="选择器的权值"><a href="#选择器的权值" class="headerlink" title="选择器的权值"></a>选择器的权值</h3><p>属性选择器：常用于区分input属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">          //   1.根据指定属性名称找到对应标签  </div><div class="line">          //   2.根据指定的属性名称找到对应的标签，并且取属性/的值 然后设置属性</div><div class="line">p[id]&#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line">p[class=test]&#123;</div><div class="line">    color: blue;</div><div class="line">&#125;</div><div class="line">&lt;p id=&quot;identity2&quot; class=&quot;test&quot;&gt;我是段落2&lt;/p&gt;</div></pre></td></tr></table></figure>
-<h3 id="属性是以什么开头。"><a href="#属性是以什么开头。" class="headerlink" title="属性是以什么开头。"></a>属性是以什么开头。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[attribute|=value]  CSS2</div><div class="line">[attribute^=value]  CSS3</div><div class="line">//CSS2中的只能找到value开头,并且value是被-和其它内容隔开的</div><div class="line">//CSS3中的只要是以value开头的都可以找到, 无论有没有被-隔开</div></pre></td></tr></table></figure>
-<h3 id="属性的取值是以什么结尾的"><a href="#属性的取值是以什么结尾的" class="headerlink" title="属性的取值是以什么结尾的"></a>属性的取值是以什么结尾的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[attribute$=value] CSS3</div></pre></td></tr></table></figure>
-<h3 id="属性的取值是否包含某个特定的值得"><a href="#属性的取值是否包含某个特定的值得" class="headerlink" title="属性的取值是否包含某个特定的值得"></a>属性的取值是否包含某个特定的值得</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[attribute~=value] CSS2</div><div class="line">[attribute*=value] CSS3</div><div class="line">//CSS2中的只能找到独立的单词, 也就是包含value,并且value是被空格隔开的</div><div class="line">//CSS3中的只要包含value就可以找到</div></pre></td></tr></table></figure>
-<h3 id="通配符-：给当前所有标签设置属性。"><a href="#通配符-：给当前所有标签设置属性。" class="headerlink" title="通配符 ：给当前所有标签设置属性。"></a>通配符 ：给当前所有标签设置属性。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">    属性:值;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/11/CSS选择器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-vue-cli" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/10/vue-cli/">vue-cli</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/10/vue-cli/" class="archive-article-date">
-  	<time datetime="2017-02-10T13:12:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>//全局安装vue 支持vue命令<br>npm install vue-cli -g<br>//初始化项目<br>vue init webpack-simple 项目名称 //完成之后， 会帮你自己生项目目录<br>//切换到自己指定的项目目录当中<br>cd 项目名称</p>
-<p>//安装项目的依赖<br>npm install<br>//运行项目 执行package.json scripts-&gt;dev<br>npm run dev //同时开启了服务器</p>
-<p>查看端口号</p>
-<ul>
-<li>netstat -ano 列出所有端口 找到被暂用的端口8080</li>
-<li>etstat -aon|findstr“8080”，回车，记下最后一位数字，即PID，这里是9251。</li>
-<li>继续输入tasklist|findstr“9251”，回车，查看是哪个进程或者程序占用了1008端口，结果是：node.exe。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/10/vue-cli/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-nvm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/nvm/">nvm</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/nvm/" class="archive-article-date">
-  	<time datetime="2017-02-09T13:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.nvm-windows 下载<br><a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows/releases</a></p>
-<ul>
-<li>把nvm_noinstall.zip解压到比如c:/dev/nvm 中<br>3.右键以管理员的身份运行install.cmd.直接按回车,在C盘根目录下会生成一个setting,txt.并拷贝到C:/dev/nvm.修改内容:</li>
-</ul>
-<p>root: C:\dev\nvm<br>path: C:\dev\nodejs<br>arch: 64<br>proxy: none<br>node_mirror: <a href="http://npm.taobao.org/mirrors/node/" target="_blank" rel="external">http://npm.taobao.org/mirrors/node/</a><br>npm_mirror: <a href="https://npm.taobao.org/mirrors/npm/" target="_blank" rel="external">https://npm.taobao.org/mirrors/npm/</a></p>
-<ul>
-<li><p>配置环境变量<br>NVM_HOME nvm的安装目录<br>NVM_SYMLINK nodejs安装目录<br>添加到path<br>执行 nvm install 6.10.0 安装一个node版本<br>然后 nvm use 6.10.0 使用当前版本</p>
-</li>
-<li><p>npm安装<br>npm config set prefix “c:\dev\nvm\npm”</p>
-</li>
-</ul>
-<p>npm install npm –g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
-<p>6.配置npm环境变量<br>变量名: NPM_HOME变量值:c:\dev\nvm\npm(一定要放在NVM_SYMLINK之前)</p>
-<ul>
-<li>nrm 安装<br>npm install nrm –g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>常用命令<br>nrm ls<br>列出所有的镜像地址<br>nrm use taobao<br>切换镜像</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/nvm/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Vi编辑器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/08/Vi编辑器/">Vi编辑器</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/08/Vi编辑器/" class="archive-article-date">
-  	<time datetime="2017-02-08T13:05:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="vi编辑器，是linux下的一个编辑器。"><a href="#vi编辑器，是linux下的一个编辑器。" class="headerlink" title="vi编辑器，是linux下的一个编辑器。"></a>vi编辑器，是linux下的一个编辑器。</h2><h3 id="vi编辑下的三种模式"><a href="#vi编辑下的三种模式" class="headerlink" title="vi编辑下的三种模式"></a>vi编辑下的三种模式</h3><ul>
-<li>命令行模式</li>
-<li>插入模式</li>
-<li>低行模式<br>三种模式可以进行切换<br>按i或A进入插入模式<br>按Esc回到命令模式<br>按shift + : 进入低行模式。</li>
-</ul>
-<h3 id="VI编辑器常见命令。"><a href="#VI编辑器常见命令。" class="headerlink" title="VI编辑器常见命令。"></a>VI编辑器常见命令。</h3><p>ZZ（大写）保存并退出<br>u辙销操作，可多次使用<br>dd删除当前行<br>yy复制当前行<br>p 粘贴内容<br>ctrl+f向前翻页<br>ctrl+b向后翻页<br>i进入编辑模式，当前光标处插入<br>a进入编辑模式，当前光标后插入<br>A进入编辑模式，光标移动到行尾<br>o进入编辑模式，当前行下面插入新行<br>O进入编辑模式，当前行上面插入新行</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/08/Vi编辑器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-bower" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/07/bower/">bower</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/07/bower/" class="archive-article-date">
-  	<time datetime="2017-02-07T12:59:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Bower是一个软件，-是用来管理我们的静态资源的。twitter公司开发。它是使用Node-js开发的。所以要先安装Node-js"><a href="#Bower是一个软件，-是用来管理我们的静态资源的。twitter公司开发。它是使用Node-js开发的。所以要先安装Node-js" class="headerlink" title="Bower是一个软件， 是用来管理我们的静态资源的。twitter公司开发。它是使用Node.js开发的。所以要先安装Node.js"></a>Bower是一个软件， 是用来管理我们的静态资源的。twitter公司开发。它是使用Node.js开发的。所以要先安装Node.js</h5><h3 id="Bower要依赖NodeJS环境和git工具。"><a href="#Bower要依赖NodeJS环境和git工具。" class="headerlink" title="Bower要依赖NodeJS环境和git工具。"></a>Bower要依赖NodeJS环境和git工具。</h3><p>1.安装NodeJs软件。</p>
-<p>2.验证是否安装 执行命令：node -v npm -v.<br>Npm(nodejs package manager) 专门用来管理nodejs开发的工具的管理器。</p>
-<p>3.安装bower<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Npm install 工具名称（bower） 全局安装-g    [可以加上镜像地址]</div><div class="line"></div><div class="line">淘宝镜像地址：--registry=https://registry.npm.taobao.org</div><div class="line"></div><div class="line">全局安装代表安装完毕后，操作系统的任何一个场合都可以使用它。</div></pre></td></tr></table></figure></p>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
-<li>Bower install -g bower 安装bower<ul>
-<li>Bower search 查找资源信息</li>
-<li>Bower info 查看资源信息</li>
-<li>Bower uninstall 卸载资源</li>
-<li>Bower init 初始化，用来记录资源信息及依赖。</li>
-</ul>
-</li>
-</ul>
-<h3 id="bower特点"><a href="#bower特点" class="headerlink" title="bower特点"></a>bower特点</h3><ul>
-<li>允许我们下载指定的版本。<ul>
-<li>Bower info jquery 查看版本</li>
-<li>Bower install jquery#版本号</li>
-<li>可以帮我们自动的解决插件依赖。可以把依赖的库下载下来。</li>
-<li>下载是捆绑下载，卸载也是捆绑卸载。</li>
-<li>bower描述信息</li>
-<li>Bower通过描述信息来知道一个库依赖哪些库。</li>
-<li>会存在一个bower.json文件，里面就是一些描述信息。包括名字下载依赖等。是下载时， 帮我们写好的文件。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/07/bower/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/01/API-4-JavaScript常用代码/">展开全文 >></a>
         </p>
       
 
@@ -972,7 +351,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1062,11 +441,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">ang</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ang</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
