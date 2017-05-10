@@ -141,6 +141,53 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Angular-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/10/Angular-5/">Angular(5)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/10/Angular-5/" class="archive-article-date">
+  	<time datetime="2017-05-10T06:28:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/10/Angular-5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Angular-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -340,143 +387,6 @@
 
 
   
-    <article id="post-Angular-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/12/Angular-2/">Angular(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/12/Angular-2/" class="archive-article-date">
-  	<time datetime="2017-03-12T03:58:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、指令"><a href="#一、指令" class="headerlink" title="一、指令"></a>一、指令</h2><p>HTML在构建应用（App）时存在诸多不足之处，AngularJS通过扩展一系列的HTML属性或标签来弥补这些缺陷，所谓指令就是AngularJS自定义的HTML属性或标签，这些指令都是以ng-做为前缀的，例如ng-app、ng-controller、ng-repeat等。<br>ng:bind<br>ng_bind<br>ng-bind 推荐使用<br>x-ng-bind<br>data-ng-bind</p>
-<p>内置指令</p>
-<p>查看内置指令(自查)</p>
-<p><strong>自定义指令</strong><br>AngularJS允许根据实际业务需要自定义指令，通过angular全局对象下的directive方法实现。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;app&apos;,[]);</div><div class="line"> //    创建控制器</div><div class="line">   app.controller(&apos;myController&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">   &#125;]);</div><div class="line">    </div><div class="line">      //  自定义指令:</div><div class="line">      //  第一个参数 指令名称</div><div class="line">      //  第二个参数:回调函数</div><div class="line">   app.directive(&apos;nav&apos;,[function () &#123;</div><div class="line">       return&#123;</div><div class="line">         //    E:元素 A:属性 C:当做类 M:可以注释形式出</div><div class="line">           restrict:&apos;EA&apos;,</div><div class="line">           template:&apos;&lt;ul&gt;&lt;li&gt;列表&lt;/li&gt;&lt;li&gt;列表&lt;/li&gt;&lt;li&gt;列表&lt;/li&gt;&lt;/ul&gt;&apos;,</div><div class="line">           templateUrl:&apos;./nav.html&apos;,</div><div class="line">           replace:true //是否替换原标签</div><div class="line">       &#125;</div><div class="line">   &#125;]);</div><div class="line">   app.directive(&apos;navHead&apos;,[function () &#123;</div><div class="line">         return&#123;</div><div class="line">         restrict:&quot;EAC&quot;,//指令是以哪一种形式出现。</div><div class="line">		// 保存原有内容的标签ng-transclude</div><div class="line">         template:&quot;&lt;h1&gt;自定义指令，大标题&lt;/h1&gt; &lt;p&gt;p标签&lt;/p&gt;  &lt;div ng-transclude&gt;&lt;/div&gt;&quot;,</div><div class="line">         replace:false,//是否替换原标签</div><div class="line">         transclude:true//是否保留原有标签的内容。</div><div class="line">       &#125;</div><div class="line">   &#125;]);</div></pre></td></tr></table></figure>
-<h3 id="指令作用域-和修饰符"><a href="#指令作用域-和修饰符" class="headerlink" title="指令作用域 和修饰符"></a>指令作用域 和修饰符</h3><p>每自定义的一个指令时，都会有自己的作用域。* 指令，默认情况下，使用的是现一个作用域。$scope，是一个，无论哪边修改，都会改变。</p>
-<h3 id="指令可以单独隔离出来作用域"><a href="#指令可以单独隔离出来作用域" class="headerlink" title="指令可以单独隔离出来作用域"></a>指令可以单独隔离出来作用域</h3><ul>
-<li>scope : 是bool如果为bool类型，默认是false-&gt;使用的是同一个Scope<ul>
-<li>为true，会使用自己的Scope, 两个不是一个scope , 如果自己没有 该 属性，就会使用父作用域的属性</li>
-<li>还能是一个对象{}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div gzc-dir  age=&quot;&#123;&#123;age&#125;&#125;&quot;&gt;&lt;/div&gt;</div><div class="line">app.directive(&apos;gzcDir&apos;,function () &#123;</div><div class="line">      return&#123;</div><div class="line">          restrict:&apos;EA&apos;,</div><div class="line">          template:&apos;&lt;div&gt;&lt;p&gt;&#123;&#123;age&#125;&#125;&lt;/p&gt; &lt;/div&gt;&apos;,</div><div class="line">		  scope： true //有就用自己,没有就用父作用域</div><div class="line">		  scope : false//和父作用域关联，修改子作用域 父作用域也会改变</div><div class="line">          scope:&#123;&#125;, //隔离作用域，跟父作用域没有任何关系。如果想要与父作用域有关系 ，可以让父作用把数据传递进来。 </div><div class="line">      &#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="指令中的修饰符-amp"><a href="#指令中的修饰符-amp" class="headerlink" title="指令中的修饰符 @ = &amp;"></a>指令中的修饰符 @ = &amp;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">scope :&#123;</div><div class="line">         &quot;age&quot;:&apos;@&apos;   </div><div class="line">	//传递的是一个变量。  在传递数据时，必须得要使用&#123;&#123;&#125;&#125;   &lt;div gzc-dir  age=&quot;&#123;&#123;age&#125;&#125;&quot;&gt;&lt;/div&gt;.如果自己当中使用了传递进来的值 ，会被覆盖掉。</div><div class="line">          //属于单向传递，在指定当中， 是不能更改的。源数据修改时，指令当中的值，也会更改。</div><div class="line">  &quot;age&quot;:&apos;=&apos;</div><div class="line">//传递数据时， 使用以下格式  &lt;div gzC-dir address=&quot;address&quot;&gt;&lt;/div&gt;是双向的数据绑定，无论	改哪一边，都 会返影响。</div><div class="line">&quot;test&quot;:&apos;&amp; //传递父作用的方法。</div><div class="line">//&amp; or（&amp;attr）’，父作用域绑定，通过&amp;符号可以对父作用域进行绑定，已变在其中运行函数。意味着对这个值进行设置时会生成一个指向父级作用域的包装函数。</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
-<h3 id="指令中的controller-、link"><a href="#指令中的controller-、link" class="headerlink" title="指令中的controller 、link"></a>指令中的controller 、link</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">controller:function ($scope) &#123;</div><div class="line">       console.log(&apos;controller&apos;);</div><div class="line">            /* controller</div><div class="line">                处理指令的数据，业务逻辑都放到controller</div><div class="line">                在此时。DOm元素并没有加载完，所以在此拿不到dom。</div><div class="line">              */</div><div class="line">  link:function ($scope,ele,attr) &#123;</div><div class="line">              console.log(&apos;link&apos;);</div><div class="line">              /*</div><div class="line">                用到场景，关于一些DOM操作。都在link当中执行。</div><div class="line">                link方法 ，所有都已经加载完成了。</div><div class="line">                $scope:就是指令当中控制器的$scope,</div><div class="line">                ele:当前的DOM元素，已经是一个jq对象</div><div class="line">              */</div><div class="line">              console.log($scope);</div><div class="line">              console.log(ele);</div><div class="line">              console.log(attr);</div><div class="line">          &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="二、过滤器"><a href="#二、过滤器" class="headerlink" title="二、过滤器"></a>二、过滤器</h3><p>用来格式化数据用的</p>
-<p><strong>内置9个过滤器</strong></p>
-<blockquote>
-<p>过滤器名称    作用<br>currency    将数值格式化为货币格式<br>date    日期格式化，年（y）、月（M）、日（d）、星期（EEEE/EEE）、时（H/h）、分（m）、秒（s）、毫秒（.sss），也可以组合到一起使用。<br>filter    在给定数组中选择满足条件的一个子集，并返回一个新数组，其条件可以是一个字符串、对象、函数<br>json    将Javascrip对象转成JSON字符串。<br>limitTo    取出字符串或数组的前（正数）几位或后（负数）几位。<br>lowercase    将文本转换成小写格式<br>uppercase    将文本转换成大写格式<br>number    数字格式化，可控制小位位数<br>orderBy    对数组进行排序，第2个参数可控制方向</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;price|currency:&apos;&amp;&apos;&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;nowDate|date:&apos;yyyy/MM/dd h:m:s&apos;&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;course|filter:&apos;s&apos;&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;student|json&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;student|limitTo:-2&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;str|uppercase|lowercase&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;student|orderBy:&apos;age&apos;:false&#125;&#125;&lt;/p&gt; true 是降序，false是升序</div><div class="line">&lt;p&gt;&#123;&#123;num|number:2&#125;&#125;&lt;/p&gt; 在num当中不能出现非数字</div></pre></td></tr></table></figure>
-<h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;app&apos;,[]);</div><div class="line">   //自定义控制器</div><div class="line">   app.controller(&apos;controllerName&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">   &#125;]);</div><div class="line">   //自定义指令</div><div class="line">   app.directive(&apos;directiveName&apos;,[function () &#123;</div><div class="line">       return &#123;&#125;;&#125;]);</div><div class="line">   //自定义过滤器</div><div class="line">   //第一个参数:过滤器的名称</div><div class="line">   //第三个参数:回调函数</div><div class="line">   //返回值为一个函数(input 为自动传入的数据,它为管道符前面的内容)</div><div class="line">   app.filter(&apos;filterName&apos;,[function () &#123;</div><div class="line">       return function (input) &#123;</div><div class="line">           console.log(&apos;hello&apos;+ input);</div><div class="line">       &#125;</div><div class="line">   &#125;]);</div><div class="line">   app.filter(&apos;firstUppcase&apos;,[function () &#123;</div><div class="line">       return function (input) &#123;</div><div class="line">          // slice:从指定的位置，截取到末尾  返回第一个字母为大写的字符串</div><div class="line">          return input[0].toUpperCase()+input.slice(1)</div><div class="line">       &#125;;</div><div class="line">   &#125;]);</div></pre></td></tr></table></figure>
-<h3 id="三、服务-它是一个单例对象或函数，对外提供特定的功能。"><a href="#三、服务-它是一个单例对象或函数，对外提供特定的功能。" class="headerlink" title="三、服务 它是一个单例对象或函数，对外提供特定的功能。"></a>三、服务 它是一个单例对象或函数，对外提供特定的功能。</h3><p>angular在一开始就帮我们定义一些功能。我可以直接使用这些功能。<br>都是一个方法或者一个对象的形式来调用指定的功能。<br>想要使用这些服务。必须得要注入。<br>所谓服务是将一些通用性的功能逻辑进行封装方便使用，AngularJS允许将自定义服务。</p>
-<p><strong>内置服务</strong></p>
-<ul>
-<li>常用的内置服务<blockquote>
-<p>服务名称    作用<br>$http    服务向服务器发送请求，应用响应服务器传送过来的数据。<br>$timeout    $timeout 服务对应了 JS window.setTimeout 函数。<br>$interval    $interval 服务对应了 JS window.setInterval 函数。<br>$location    封装了浏览器原生的XMLHttpRequest对象<br>$filter    不在View当中过多和处理业务逻辑，在控制器当中处理完毕之后，直接显示到View。<br>$log    用log 输出各种状态信息</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>$http 服务<br>JSONP只能用get 用post就有跨域检查了。jsonp实际是在客户端动态添加了个然后将url指向要请求的地址，script是没有同源策略的。用这种办法自然只能是get了。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    app.controller(&apos;myController&apos;,[&apos;$scope&apos;,&apos;$http&apos;,function ($scope,$http) &#123;</div><div class="line">        $http(&#123;</div><div class="line">           url: &apos;get.php&apos;, //请求地址</div><div class="line">            method:&apos;get&apos;, //请求方式</div><div class="line">            params:&#123;  //get方式传递参数  在传递过程当中 会自动帮你转成 get.php?name=gzc</div><div class="line">                name:&apos;gzc&apos;</div><div class="line">            &#125;</div><div class="line">        &#125;).success(function (res) &#123;</div><div class="line">            alert(res);  //成功时回调</div><div class="line">        &#125;).error(function(error)&#123;</div><div class="line">               //失败时回调</div><div class="line">        &#125;);</div><div class="line">  		</div><div class="line">         //  1.post传参默认是以json形式进行传递 resful json  --&gt;     RESFUL json</div><div class="line">         //  2.要想以$_POST[] ,必须得要设置 请求头，为 formData  --&gt; SOAP   对象  </div><div class="line">         $http(&#123;</div><div class="line">               url:&apos;post.php&apos;,</div><div class="line">               method:&apos;post&apos;, </div><div class="line">               headers:&#123;</div><div class="line">                   &apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded&apos;</div><div class="line">               &#125;,</div><div class="line">               data:&apos;name=gc&amp;age=10&apos;</div><div class="line">           &#125;).success(function (res) &#123;</div><div class="line">              console.log(res);</div><div class="line">           &#125;).error(function (error) &#123;</div><div class="line">               console.log(error);</div><div class="line">           &#125;);</div></pre></td></tr></table></figure>
-<p><strong>在1.6版本中，已经取消了$http的success()和error()方法，用.then()和.catch()代替，所以上面的例子不<br>适合在新版本中。如果在新版本中使用success，会抛出异常：$http.get(…).success is not a function</strong></p>
-<blockquote>
-<p>$location 服务对JavaScript中的 window.location 对象的API进行了更优雅地封装。<br>服务配置 检索 $locationProvider并 把参数设置成以下这样：</p>
-<ul>
-<li>html5Mode(模式): {boolean}<ul>
-<li>true - HTML5模式。</li>
-<li>false - Hashbang模式，默认值。<ul>
-<li>hashPrefix(前缀): {string}</li>
-</ul>
-</li>
-<li>Hashbang模式的URL的前缀(在Hashbang模式中或者低级浏览器中使用)，默认为“!”<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">myApp.config([&apos;$routeProvider&apos;, &apos;$locationProvider&apos;,</div><div class="line">function($routeProvider, $locationProvider) &#123;</div><div class="line">// 配置前缀</div><div class="line">$locationProvider.hashPrefix(&apos;&apos;);</div><div class="line">// 开启HTML5模式</div><div class="line">$locationProvider.html5Mode(true);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<p><strong>$location的方法:</strong></p>
-<ul>
-<li>path() : 用来获取或设置页面当前的路径</li>
-</ul>
-<p>$location.path() // 返回当前路径<br>$location.path(‘/‘) // 把路径修改为’/‘路由。</p>
-<p>path() 方法直接和HTML5的历史API进行交互，所以用户可通过点击后退按钮退回到上一个页面</p>
-<ul>
-<li>replace() 方法用来设置跳转页面后用户不能点击后退按钮。<br>$location.path(‘/home’);<br>$location.replace();<br>$location.path(‘/home’).replace();</li>
-<li>absUrl() 方法用来获取编码后的完整URL</li>
-<li>hash() 方法用来获取URL中的hash片段。</li>
-<li>host() 方法用来获取URL中的主机</li>
-<li>port() 方法用来获取URL中的端口号</li>
-<li>protocol() 方法用来获取URL中的协议</li>
-<li>search() 方法用来获取URL中的查询串（从当前URL的?号开始（包括?号）的字符串$location.search()<br>也可以传入新的查询参数：<br>如果参数的类型是字符串，那么paramValue会作为该参数的值覆盖URL当中的对应值。<br>如果为null，对应的参数会被移除掉。</li>
-<li>url() $location.url(url, replace)<br><strong>没有参数时候作为get 获取url信息<br>有参数时候作为set设置信息</strong><h3 id="自定义服务"><a href="#自定义服务" class="headerlink" title="自定义服务"></a>自定义服务</h3></li>
-</ul>
-<p><strong>factory</strong><br>服务的工厂函数（ factory）用来生成一个单例的对象或函数，这个对象或函数就是服务，它会存在于应<br>用的整个生命周期内。当AngularJS应用加载服务时，这个函数会被执行并返回一个单例的服务对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//自定义服务</div><div class="line">//服务的本质 就是一个方法，或者是一个对象。</div><div class="line">app.factory(&apos;show&apos;,function () &#123;</div><div class="line">    function show1() &#123;</div><div class="line">        alert(&quot;show1&quot;);</div><div class="line">    &#125;</div><div class="line">    function show2() &#123;</div><div class="line">        alert(&quot;show2&quot;);</div><div class="line">    &#125;</div><div class="line">    return &#123;</div><div class="line">        show1:show1,</div><div class="line">        show2:show2    //直接以方法来调用。</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><strong>service</strong><br>service 类似于一个构造器， 通过 new 关键字实例化对象，将一些属性和方法直接添加到 this 上，service() 函数会在创建实例时通过 new 关键字来实例化服务对象。<br>service 对象时， this 会被作为返回值返回。它接受两个参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">app.service(&apos;showTime&apos;,[&apos;$filter&apos;,function ($filter) &#123;</div><div class="line">                  // 里面所有的功能要使用this来定义</div><div class="line">       this.cur_date = function () &#123;</div><div class="line">           var cur_date = new Date();</div><div class="line">           var date =  $filter(&apos;date&apos;);</div><div class="line">           return date(cur_date,&apos;yyyy-MM-dd h:m:s&apos;);</div><div class="line">       &#125;;</div><div class="line">       this.sayHello = function () &#123;</div><div class="line">           alert(&quot;hello world&quot;);</div><div class="line">       &#125;</div><div class="line">   &#125;]);</div><div class="line">var app = angular.module(&apos;app&apos;,[]);</div><div class="line">   //同样也是要注入自定义的服务</div><div class="line">   app.controller(&apos;myController&apos;,[&apos;$scope&apos;,&apos;showTime&apos;,function ($scope,showTime) &#123;</div><div class="line">       $scope.cur_date = showTime.cur_date();</div><div class="line">       //调用服务</div><div class="line">       showTime.sayHello();</div><div class="line">   &#125;]);</div></pre></td></tr></table></figure>
-<p><strong>provider对服务进行配置</strong><br>所有服务工厂都是由 $provider 服务（提供者）创建的， $provide 服务负责在运行时初始化这些提供者<br>（提供者是一个具有 $get() 方法的对象， $injector 通过调用 $get() 方法创建服务实例）。<br>AngularJS模块可以在被加载和执行之前对其自身进行配置。我们可以在应用的加载阶段配置不同的逻辑。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/配置过程</div><div class="line">// $http</div><div class="line">// $log</div><div class="line">// $filter</div><div class="line">// provider 在每一个服务当中都会有一个provider来对指定的功能进行配置。</div><div class="line">app.config([&apos;$logProvider&apos;,function ($logProvider) &#123;</div><div class="line">            $logProvider.debugEnabled(false);</div><div class="line">    &#125;]);</div><div class="line">    app.config([&apos;$filterProvider&apos;,function ($filterProvider) &#123;</div><div class="line">    $filterProvider.register(&apos;firstUpp&apos;,function () &#123;</div><div class="line">        //可以在配置过程当中,给过滤器添加过滤功能</div><div class="line">            return function (input) &#123;</div><div class="line">               return input[0].toUpperCase() + input.slice(1);</div><div class="line">            &#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>1.factory 就是创建一个对象，为它添加属性，然后把这个对象返回出来。你把 service 传进controller 之后，在 controller 里这个对象里的属性就可以通过 factory 使用了。<br>2.service 是用”new”关键字实例化的。因此，你应该给”this”添加属性，然后 service 返回”this”。把service传进controller之后，在controller里 “this” 上的属性就可以通过 service 来使用了。<br>3.provider 是唯一一种你可以传进 .config() 函数service。当你想要在 service 对象启用之前，先进行模块范围的配置，那就应该用 provider 。<br>Factory/service 是第一个注入时才实例化，而provider不是，它是在config之前就已实例化好</p>
-</blockquote>
-<p><strong>constant</strong><br>用来定义常量(constant()方法一旦定义了，就不能改变了)，可以将其注入到应用的其他部分当中。它可以接受两个参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">name (字符串)：需要注册的常量的名字</div><div class="line">value (常量)：常量值(值或对象)</div><div class="line">myApp.constant(&apos;key&apos;, &apos;value&apos;);</div></pre></td></tr></table></figure>
-<p><strong>value</strong><br>用来定义值，可修改。它接受两个参数：<br>name (字符串)：注册的服务名<br>value (值)：将这个值作为可以注入的实例返回。</p>
-<blockquote>
-<p>常量（ constant() 注册的）可以注入到配置函数中，而值（ value() 注册的）不行。<br>通常情况下，value 通常用来为应用设置初始值，而 constant() 来配置数据。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ag</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/12/Angular-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -565,19 +475,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ag</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,6 +492,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
