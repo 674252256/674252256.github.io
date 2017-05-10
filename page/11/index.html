@@ -141,6 +141,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Object的静态成员" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/28/Object的静态成员/">Object的静态成员</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/28/Object的静态成员/" class="archive-article-date">
+  	<time datetime="2017-01-28T11:57:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-Object-apply"><a href="#1-Object-apply" class="headerlink" title="1.Object.apply"></a>1.Object.apply</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">借用其它对象的函数  &lt;数组&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-Object-arguments"><a href="#2-Object-arguments" class="headerlink" title="2.Object.arguments"></a>2.Object.arguments</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">函数内部的一个隐藏参数，主要用来接收实参。</div></pre></td></tr></table></figure>
+<h4 id="3-Object-assign"><a href="#3-Object-assign" class="headerlink" title="3.Object.assign"></a>3.Object.assign</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">拷贝对象的属性的&lt;浅拷贝&gt;</div></pre></td></tr></table></figure>
+<h4 id="4-Object-bind"><a href="#4-Object-bind" class="headerlink" title="4.Object.bind"></a>4.Object.bind</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">绑定处理（call和apply很像）</div></pre></td></tr></table></figure>
+<h4 id="5-Object-call"><a href="#5-Object-call" class="headerlink" title="5.Object.call"></a>5.Object.call</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">借用其它对象的函数&lt;字符串&gt;</div></pre></td></tr></table></figure>
+<h4 id="6-Object-caller"><a href="#6-Object-caller" class="headerlink" title="6.Object.caller"></a>6.Object.caller</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">某个函数的调用函数，返回的是一个函数</div><div class="line">如果是在全局作用域中调用该方法，那么打印出来的是：是null而不是window</div></pre></td></tr></table></figure>
+<h4 id="7-Object-constructor"><a href="#7-Object-constructor" class="headerlink" title="7.Object.constructor"></a>7.Object.constructor</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">构造器属性，指向该对象的构造函数</div></pre></td></tr></table></figure>
+<h4 id="8-Object-create"><a href="#8-Object-create" class="headerlink" title="8.Object.create"></a>8.Object.create</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">创建对象，并且设置原型对象</div></pre></td></tr></table></figure>
+<h4 id="9-Object-getOwnPropertyDescriptor"><a href="#9-Object-getOwnPropertyDescriptor" class="headerlink" title="9.Object.getOwnPropertyDescriptor"></a>9.Object.getOwnPropertyDescriptor</h4><p>获得对象中某个实例属性的描述信息（是否可以配置，枚举，值，是否可以重写）<br>具体的描述信息如下：</p>
+<ul>
+<li>configurable:true是否是可以配置的（能不能删除属性或者是修改这个配置本身）</li>
+<li>enumerable:true 是否是可以枚举的（在for..in循环中是否能够遍历出来|keys()）</li>
+<li>value:”zhangsan” 属性对应的值</li>
+<li>writable:true 是否是可重写的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var o = &#123;name:&quot;zhangsan&quot;&#125;;</div><div class="line">    console.log(Object.getOwnPropertyDescriptor(o, &quot;name&quot;));</div><div class="line">~</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="10-Object-defineProperty用来设置属性的描述信息（修改已有的属性-新增属性）"><a href="#10-Object-defineProperty用来设置属性的描述信息（修改已有的属性-新增属性）" class="headerlink" title="10.Object.defineProperty用来设置属性的描述信息（修改已有的属性|新增属性）"></a>10.Object.defineProperty用来设置属性的描述信息（修改已有的属性|新增属性）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">001 修改已有的属性，默认情况下这三个值是true</div><div class="line">002 新增加属性     默认情况下，这三个属性的值都是false</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">console.log(Object.getOwnPropertyDescriptor(o, &quot;name&quot;));</div><div class="line"> //第一个参数:要设置的对象</div><div class="line"> //第二个参数：要设置的对象的属性</div><div class="line"> //第三个参数：描述信息（对象）</div><div class="line"> Object.defineProperty(o,&quot;name&quot;,&#123;</div><div class="line">     configurable:false,   //01 能否删除对象 02 能够再次修改该属性</div><div class="line">     //enumerable:true,</div><div class="line">     //value:&quot;zhangsan&quot;,</div><div class="line">     //writable:true,    //是否可以修改属性的值</div><div class="line"> &#125;);</div><div class="line"> for(var k in o)</div><div class="line"> &#123;</div><div class="line">     console.log(k, o[k]);</div><div class="line"> &#125;</div><div class="line"> o.name = &quot;李四&quot;;</div><div class="line"> console.log(o);</div><div class="line"> delete o.name;</div><div class="line"> console.log(o);</div></pre></td></tr></table></figure>
+<h4 id="11-Object-getOwnPropertyNames"><a href="#11-Object-getOwnPropertyNames" class="headerlink" title="11.Object.getOwnPropertyNames"></a>11.Object.getOwnPropertyNames</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> 不包含原型属性</div><div class="line">获得所有的实例属性（名称），返回值是一个数组</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;name:&quot;zhangsan&quot;,age:78&#125;;</div><div class="line">   console.log(Object.getOwnPropertyNames(obj));  //[name ,age]</div><div class="line">   console.log(Object.getPrototypeOf(obj) == Object.prototype); //true</div></pre></td></tr></table></figure>
+<h4 id="12-Object-getPrototypeOf"><a href="#12-Object-getPrototypeOf" class="headerlink" title="12.Object.getPrototypeOf"></a>12.Object.getPrototypeOf</h4><p>获得某个对象的原型对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1console.log(Object.getPrototypeOf(obj) == Object.prototype); //true</div></pre></td></tr></table></figure></p>
+<h4 id="13-Object-keys"><a href="#13-Object-keys" class="headerlink" title="13.Object.keys"></a>13.Object.keys</h4><p>获得对象的key 不包含原型属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">        this.name = &quot;momo&quot;</div><div class="line">    &#125;;</div><div class="line">    Person.prototype.say = &quot;say&quot;;</div><div class="line">    var p1 = new Person();</div><div class="line">    console.log(Object.keys(p1));    // name</div><div class="line">function Person()&#123;</div><div class="line">        this.name = &quot;momo&quot;</div><div class="line">    &#125;;</div><div class="line">    Person.prototype.say = &quot;say&quot;;</div><div class="line">    var p1 = new Person();</div><div class="line">    console.log(Object.keys(p1));    // name</div><div class="line">    console.log(Object.getOwnPropertyNames(p1)); // name</div></pre></td></tr></table></figure></p>
+<h4 id="14-Object-preventExtensions-Object-isExtensible-lt-判断某个对象能否扩展属性-gt"><a href="#14-Object-preventExtensions-Object-isExtensible-lt-判断某个对象能否扩展属性-gt" class="headerlink" title="14.Object.preventExtensions || Object.isExtensible &lt;判断某个对象能否扩展属性&gt;"></a>14.Object.preventExtensions || Object.isExtensible &lt;判断某个对象能否扩展属性&gt;</h4><p>禁止对象扩展，默认情况下对象可以动态的增加属性，如果设置了禁止扩展，那么将无法增加属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var o = &#123;&#125;;</div><div class="line">  o.name = &quot;names&quot;;</div><div class="line">  console.log(o);</div><div class="line">  Object.preventExtensions(o);</div><div class="line">  o.age = 30;</div><div class="line">  console.log(o);</div></pre></td></tr></table></figure></p>
+<h4 id="15-Object-seal-密封对象"><a href="#15-Object-seal-密封对象" class="headerlink" title="15.Object.seal 密封对象"></a>15.Object.seal 密封对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">禁止删除对象的属性，禁止修改对象的配置信息configurable，禁止扩展 </div><div class="line">var obj = &#123;des:&quot;des&quot;&#125;;</div><div class="line">Object.freeze(obj);</div><div class="line">obj.name = &quot;momo&quot;;</div><div class="line">obj.age = 20;</div><div class="line">console.log(obj);</div><div class="line">delete obj.des;</div><div class="line">console.log(obj);</div><div class="line">obj.des = &quot;能不能修改&quot;;</div><div class="line">console.log(obj);   // obj.des = &quot;能不能修改&quot;;</div></pre></td></tr></table></figure>
+<h4 id="16-Object-freeze-冻结对象"><a href="#16-Object-freeze-冻结对象" class="headerlink" title="16.Object.freeze 冻结对象"></a>16.Object.freeze 冻结对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;des:&quot;des&quot;&#125;;</div><div class="line">Object.freeze(obj);</div><div class="line">obj.name = &quot;momo&quot;;</div><div class="line">obj.age = 20;</div><div class="line">console.log(obj);</div><div class="line">delete obj.des;</div><div class="line">console.log(obj);</div><div class="line">obj.des = &quot;能不能修改&quot;;</div><div class="line">console.log(obj);   //momo</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/28/Object的静态成员/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-JS-6-继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -315,103 +397,9 @@
 
 
   
-    <article id="post-JS-4-面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/24/JS-4-面向对象/">JS(4) 面向对象</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/24/JS-4-面向对象/" class="archive-article-date">
-  	<time datetime="2017-01-24T04:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Javascript是一种基于对象（object-based）的语言,但是，它又不是一种真正的面向对象编程（OOP）语言，因为它的语法中没有class（类）。<br>JS中创建对象的方法,把”属性”（property）和”方法”（method），封装成一个对象的方法主要有：</p>
-<ul>
-<li>字面量方式：适用场合：只需简单创建单个对象,如果需要创建多个相似的对象，那么代码中冗余度太高.</li>
-<li>内置构造函数：弊端,与字面量方式相似,创建多个对象时,那么代码中冗余度太高（重复的代码太多）</li>
-<li>工厂函数：弊端, 如果创建多个不同类型的对象，难以分辨</li>
-</ul>
-<h3 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h3><h3 id="自定义构造函数方式创建对象内部的实现细节"><a href="#自定义构造函数方式创建对象内部的实现细节" class="headerlink" title="自定义构造函数方式创建对象内部的实现细节"></a>自定义构造函数方式创建对象内部的实现细节</h3><ul>
-<li>我们在使用new关键字调用构造哈函数的时候，内部默认会创建一个空的对象.</li>
-<li>默认会把这个空的对象赋值给this.</li>
-<li>通过this来设置新对象的属性和方法.</li>
-<li>在构造哈函数的最后，默认会把新创建的对象返回.<h3 id="自定义构造函数和工厂函数对比"><a href="#自定义构造函数和工厂函数对比" class="headerlink" title="自定义构造函数和工厂函数对比:"></a>自定义构造函数和工厂函数对比:</h3></li>
-<li>函数的名称不一样，构造函数首字母大写.</li>
-<li>自定义构造函数创建方式内部会自动的创建空对象并且赋值给this.</li>
-<li><p>默认会自动返回新创建的对象.</p>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值:"></a>返回值:</h3></li>
-<li><p>没有显示的return ,默认会把新创建的对象返回</p>
-</li>
-<li>显示的执行了return语句，就得看具体的情况</li>
-<li>返回的是值类型，那么直接忽略该返回，把新创建的对象返回</li>
-<li><p>返回的是引用类型的数据，会覆盖掉新创建的对象，直接返回引用数据类型的值</p>
-<h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3></li>
-<li><p>在使用构造函数创建对象的时候，默认会生成一个与构造函数相关联的对象，这个对象就是原型对象。默认情况下，该对象是一个空的对象（{}）。</p>
-<h3 id="原型对象的作用-使用构造函数创建的对象，能够自动拥有（可以使用）原型对象中所有的属性和方法。"><a href="#原型对象的作用-使用构造函数创建的对象，能够自动拥有（可以使用）原型对象中所有的属性和方法。" class="headerlink" title="原型对象的作用:使用构造函数创建的对象，能够自动拥有（可以使用）原型对象中所有的属性和方法。"></a>原型对象的作用:使用构造函数创建的对象，能够自动拥有（可以使用）原型对象中所有的属性和方法。</h3></li>
-</ul>
-<h3 id="如何访问原型对象"><a href="#如何访问原型对象" class="headerlink" title="如何访问原型对象"></a>如何访问原型对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">① 构造函数.prototype.属性</div><div class="line">② 对象.属性</div></pre></td></tr></table></figure>
-<h3 id="如何设置原型对象"><a href="#如何设置原型对象" class="headerlink" title="如何设置原型对象"></a>如何设置原型对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">① 可以像设置普通对象一样来利用对象的动态特性设置属性和方法</div><div class="line">② 使用字面量的方法来设置原型对象（直接替换）</div></pre></td></tr></table></figure>
-<h2 id="如果替换了原型对象，那么需要在原型对象中修正构造器属性constructor-test"><a href="#如果替换了原型对象，那么需要在原型对象中修正构造器属性constructor-test" class="headerlink" title="如果替换了原型对象，那么需要在原型对象中修正构造器属性constructor:test,"></a>如果替换了原型对象，那么需要在原型对象中修正构造器属性constructor:test,</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//设置原型对象</div><div class="line">//成员= 属性|方法</div><div class="line">//01 增加成员</div><div class="line">Person.prototype.des = &quot;sfdsfsddsf&quot;;</div><div class="line">Person.prototype.logName = function()&#123;</div><div class="line">     console.log(this.name);</div><div class="line">&#125;</div><div class="line">//02 修改成员</div><div class="line">Person.prototype.des = &quot;sfdsfsddsf++++&quot;;</div><div class="line">//console.log(Person.prototype);</div><div class="line">    var p1 = new Person();</div><div class="line">    console.log(p1.des);</div><div class="line">    p1.logName();</div><div class="line">//03 删除成员</div><div class="line">//delete关键字</div><div class="line">//语法  delete 对象.属性</div><div class="line">//console.log(delete p1.des);  //不能用这种方式删除原型对象上面的属性（删除的是自己的属性）</div><div class="line">    delete Person.prototype.des ;</div><div class="line">    console.log(p1.des);</div></pre></td></tr></table></figure>
-<h3 id="实例化："><a href="#实例化：" class="headerlink" title="实例化："></a>实例化：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">通过构造函数创建对象的过程，就称为实例化。</div></pre></td></tr></table></figure>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">通过构造函数创建的对象被称为该构造函数的实例。一般在说实例的时候，需要指定构造函数</div><div class="line">也就是说，我们通常会说这个对象是XXX构造函数实例。</div></pre></td></tr></table></figure>
-<p>构造函数.prototype</p>
-<h3 id="proto"><a href="#proto" class="headerlink" title="proto"></a>proto</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;&#125;</div><div class="line">Person.prototype.des = &quot;des&quot;;</div><div class="line">var p1 = new Person();</div><div class="line">console.log(Person.prototype == p1.__proto__);  //true</div></pre></td></tr></table></figure>
-<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>原型对象中的constructor属性指向对应的构造函数<br>实例对象中的constructor指向对应的构造函数,其中这里的constructor就是从原型中获取的即constructor时实例对象中的原型属性,而非实例属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//01 提供一个构造函数</div><div class="line">  function Person(name) &#123;</div><div class="line">      this.name = name;</div><div class="line">  &#125;</div><div class="line">  //02 设置构造函数的原型对象的属性</div><div class="line">  Person.prototype.sayHello = function () &#123;</div><div class="line">      console.log(&quot;hello&quot;);</div><div class="line">  &#125;;</div><div class="line">  Person.prototype.des = &quot;默认的描述信息&quot;;</div><div class="line">  //03 创建对象</div><div class="line">  var p1 = new Person();</div><div class="line">  function isProperty(obj, property) &#123;</div><div class="line">      return !obj.hasOwnProperty(property) &amp;&amp; (property in obj);</div><div class="line">  &#125;</div><div class="line">  console.log(isProperty(p1, &quot;constructor&quot;));    //true</div></pre></td></tr></table></figure></p>
-<h3 id="in-与-hasOwnProperty"><a href="#in-与-hasOwnProperty" class="headerlink" title="in 与 hasOwnProperty"></a>in 与 hasOwnProperty</h3><p>检查对象中是否有指定的属性(实例属性 + 原型属性)<br>hasOwnProperty 检查对象中是否存在指定的属性（实例属性）<br>常常判断某个属性是否是原型属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(&quot;des&quot; in obj);              //true</div><div class="line">console.log(obj.hasOwnProperty(&quot;des&quot;)); //false</div></pre></td></tr></table></figure></p>
-<h3 id="isPrototype与instanceof"><a href="#isPrototype与instanceof" class="headerlink" title="isPrototype与instanceof"></a>isPrototype与instanceof</h3><p>isPrototype判断是否是原型对象的<br>instanceof 判断某个对象是否是指定构造函数的实例对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line"> console.log(arr instanceof Array);      //true</div><div class="line">Person.prototype.name = &quot;test&quot;;</div><div class="line"> var p1 = new Person();</div><div class="line"> console.log(Person.prototype.isPrototypeOf(p1));    //rue</div></pre></td></tr></table></figure></p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h4><p>1 constructor:指向该对象的构造函数<br>2 hasOwnProperty:检测对象中是否存在某个实例属性<br>3 isPrototypeOf:判断某个对象是否是指定对象的原型对象(会判断整条原型链)<br>4 propertyIsEnumerable:判断该属性是否是可枚举 如果是可以枚举的,那么在使用for..in循环的时候可以打印出来<br>005 toString 返回一个对当前对象的字符串描述信息,并非一定是该对象的字符串形式<br>① object类型的对象 返回的什么 [obejct Object]<br>② 其他对象类型如函数 | 数组 ,返回对应的字符串形式<br>③ Number类型 可以传递参数(进制) 不传递参数:默认是十进制</p>
-<p>6 toLocaleString 大部分情况下的等价于toString方法，特殊情况下会做本地化处理<br>7 valueOf 返回对应的值<br>① 基本包装类型（String Number Boolean）,返回对应的基本类型的值<br>② object类型的，返回this(该对象本身)<br>③ date(日期类)，返回时间戳</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/24/JS-4-面向对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
     </nav>
   
 
@@ -497,11 +485,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ag</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,11 +501,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
