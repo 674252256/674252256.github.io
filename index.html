@@ -141,6 +141,53 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Angular-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/10/Angular-2/">Angular(2)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/10/Angular-2/" class="archive-article-date">
+  	<time datetime="2017-05-10T03:58:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/10/Angular-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Angular-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -252,7 +299,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ang</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ag</a>
         		</li>
       		
 		</ul>
@@ -363,71 +410,6 @@
 
 
   
-    <article id="post-检测-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/08/检测-2/">检测(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/08/检测-2/" class="archive-article-date">
-  	<time datetime="2017-03-08T00:34:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var str1 = new String(&quot;demo01&quot;);</div><div class="line">var str2 = new String(&quot;demo01&quot;);</div><div class="line">var str3 = str1;</div><div class="line">var str4 = &quot;demo01&quot;;</div><div class="line">//判断是否相等  基本包装类型(String Number Boolean)的对象</div><div class="line">console.log(str1 == str2);    //false(!!!!)</div><div class="line">console.log(str1 == str4);    //true(内部会隐式转换)</div><div class="line">console.log(str1 == str3);    //true</div><div class="line">console.log(str1 === str2);   //false</div><div class="line">console.log(str1 === str3);   //true</div><div class="line">console.log(str1 === str4);   //false</div><div class="line">var num1 = new Number(10);</div><div class="line">var num2 = 10;</div><div class="line">var num3 = new Number(10);</div><div class="line">console.log(num1 == num2);      //true</div><div class="line">console.log(num1 == num3);      //false</div></pre></td></tr></table></figure>
-<p>Function的原型对象是一个空的函数<br>这个空的函数也是一个对象，因此也有构造函数，它的构造函数是Function<br>推论：Function的原型对象是空函数，因此空函数的原型对象应该是自己（错误）是空的对象<br>空函数的原型对象 == Object.prototype<br>Function也是一个对象，因此也有构造函数，它的构造函数是谁？是自己Function<br>Function作为一个对象来说，也有自己的原型对象Function.<code>proto</code><br>Function对象的原型对象和其构造函数的原型对象是空函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">console.log(Function instanceof Function);     //true</div><div class="line">console.log(Function instanceof Object);       //true</div><div class="line">console.log(Object instanceof Object);         //true</div><div class="line">console.log(Object instanceof Function);        //true</div></pre></td></tr></table></figure>
-<h3 id="单说明静态成员和实例成员的差别"><a href="#单说明静态成员和实例成员的差别" class="headerlink" title="单说明静态成员和实例成员的差别"></a>单说明静态成员和实例成员的差别</h3><p>成员：属性 + 方法<br>实例成员:实例对象的属性和方法 （name + age）<br>原型成员:构造函数的原型对象上面的属性和方法（des + logDes）<br>静态成员:直接添加到构造函数上面的属性和方法（log + showLog）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Dog()&#123;</div><div class="line">        this.name = &quot;阿黄家的大黑狗&quot;;</div><div class="line">        this.age = 13</div><div class="line">    &#125;</div><div class="line">    Dog.prototype = &#123;</div><div class="line">        des:&quot;描述信息&quot;,</div><div class="line">        logDes:function()&#123;</div><div class="line">            console.log(this.des);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    Dog.log = &quot;log&quot;;</div><div class="line">    Dog.showLog = function()&#123;</div><div class="line">        console.log(this.log);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function f() &#123;&#125;</div><div class="line">  var parent = Object.getPrototypeOf(f);  //A</div><div class="line">				</div><div class="line">A  console.log(f.name);                   </div><div class="line">B  console.log(parent.name);</div></pre></td></tr></table></figure>
-<h3 id="即时函数与闭包"><a href="#即时函数与闭包" class="headerlink" title="即时函数与闭包"></a>即时函数与闭包</h3><p>闭包有两个作用，<br>第一，保存局部变量。<br>第二，形成私有属性与方法，比如module模式。<br>即时函数是为了形成块级作用域，来弥补js函数级作用域的局限，主要是为了模块化，很多库都这么来解决耦合。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">console.log(Boolean(&#123;&#125;));  //true</div><div class="line">console.log(Boolean([]));  //true</div><div class="line">console.log([] == false);  // true</div><div class="line">console.log(&#123;&#125; == false); //false</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">confirm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/08/检测-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -520,7 +502,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ang</a>
+                <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
               <li class="article-tag-list-item">
