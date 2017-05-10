@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JS(2) 基础知识 | Sky Club</title>
+  <title>检测(3) | Sky Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="null与undefined1 变量的值永远都不可能为null,除非我们手动的赋值为null2 当不在使用一个变量的时候可以设置这个变量的值为null 告诉系统把暂用的空间回收。3 undefined是一个表示”无”的原始值，转为数值时为NaN。12console.log(null == undefined);   //trueconsole.log(null === undefined);  /">
-<meta name="keywords" content="js">
+  <meta name="description" content="1.delete关键字作用:(1) 删除对象中的属性(2) 删除没有使用var关键字声明的全局变量注意:(1)返回值 布尔类型的值(我们可以通过该值来判断是否删除成功)(2)使用var关键字声明的变量无法被删除(3)删除对象中不存在的属性没有任何变化,但是返回值为true 2.instanceof &amp;lt;所有的对象都是Object构造函数（类型）的实例&amp;gt;判断某个对象是否是指定构造函数的实例">
+<meta name="keywords" content="confirm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS(2) 基础知识">
-<meta property="og:url" content="http://yoursite.com/2017/01/22/JS-2-基础知识/index.html">
+<meta property="og:title" content="检测(3)">
+<meta property="og:url" content="http://yoursite.com/2017/03/10/检测-3/index.html">
 <meta property="og:site_name" content="Sky Club">
-<meta property="og:description" content="null与undefined1 变量的值永远都不可能为null,除非我们手动的赋值为null2 当不在使用一个变量的时候可以设置这个变量的值为null 告诉系统把暂用的空间回收。3 undefined是一个表示”无”的原始值，转为数值时为NaN。12console.log(null == undefined);   //trueconsole.log(null === undefined);  /">
-<meta property="og:updated_time" content="2017-05-09T11:50:49.683Z">
+<meta property="og:description" content="1.delete关键字作用:(1) 删除对象中的属性(2) 删除没有使用var关键字声明的全局变量注意:(1)返回值 布尔类型的值(我们可以通过该值来判断是否删除成功)(2)使用var关键字声明的变量无法被删除(3)删除对象中不存在的属性没有任何变化,但是返回值为true 2.instanceof &amp;lt;所有的对象都是Object构造函数（类型）的实例&amp;gt;判断某个对象是否是指定构造函数的实例">
+<meta property="og:updated_time" content="2017-05-10T00:43:37.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS(2) 基础知识">
-<meta name="twitter:description" content="null与undefined1 变量的值永远都不可能为null,除非我们手动的赋值为null2 当不在使用一个变量的时候可以设置这个变量的值为null 告诉系统把暂用的空间回收。3 undefined是一个表示”无”的原始值，转为数值时为NaN。12console.log(null == undefined);   //trueconsole.log(null === undefined);  /">
+<meta name="twitter:title" content="检测(3)">
+<meta name="twitter:description" content="1.delete关键字作用:(1) 删除对象中的属性(2) 删除没有使用var关键字声明的全局变量注意:(1)返回值 布尔类型的值(我们可以通过该值来判断是否删除成功)(2)使用var关键字声明的变量无法被删除(3)删除对象中不存在的属性没有任何变化,但是返回值为true 2.instanceof &amp;lt;所有的对象都是Object构造函数（类型）的实例&amp;gt;判断某个对象是否是指定构造函数的实例">
   
     <link rel="alternative" href="/atom.xml" title="Sky Club" type="application/atom+xml">
   
@@ -144,32 +144,54 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JS-2-基础知识" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-检测-3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JS(2) 基础知识
+      检测(3)
     </h1>
   
 
         
-        <a href="/2017/01/22/JS-2-基础知识/" class="archive-article-date">
-  	<time datetime="2017-01-22T03:57:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-22</time>
+        <a href="/2017/03/10/检测-3/" class="archive-article-date">
+  	<time datetime="2017-03-10T00:39:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="null与undefined"><a href="#null与undefined" class="headerlink" title="null与undefined"></a>null与undefined</h3><p>1 变量的值永远都不可能为null,除非我们手动的赋值为null<br>2 当不在使用一个变量的时候可以设置这个变量的值为null 告诉系统把暂用的空间回收。<br>3 undefined是一个表示”无”的原始值，转为数值时为NaN。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(null == undefined);   //true</div><div class="line">console.log(null === undefined);  //false</div></pre></td></tr></table></figure></p>
-<h3 id="逻辑运算符-短路运算符"><a href="#逻辑运算符-短路运算符" class="headerlink" title="逻辑运算符(短路运算符)"></a>逻辑运算符(短路运算符)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">逻辑非</div><div class="line">符号:!</div><div class="line">操作符: !表达式</div><div class="line">结果:布尔类型的值,要么是true要么是false</div><div class="line"></div><div class="line">逻辑与</div><div class="line">符号:&amp;&amp;</div><div class="line">操作符:表达式1 &amp;&amp; 表达式2</div><div class="line">结果:并非是布尔类型的,而是表达式之一</div><div class="line">如果表达式1为真,那么就返回表达式2,否则就返回表达式1</div><div class="line"></div><div class="line">逻辑或</div><div class="line">符号:||</div><div class="line">操作符:表达式1 || 表达式2</div><div class="line">结果:并非是布尔类型的,而是表达式之一</div><div class="line">如果表达式1为真,那么就返回表达式1,否则就返回表达式2</div></pre></td></tr></table></figure>
-<h3 id="in关键字"><a href="#in关键字" class="headerlink" title="in关键字"></a>in关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">作用:</div><div class="line">    (1) 遍历对象</div><div class="line">    (2) 检测对象中是否存在指定的属性</div><div class="line">注意点:</div><div class="line">    在操作数组的时候,key--索引  value-元素</div></pre></td></tr></table></figure>
-<h3 id="delete关键字"><a href="#delete关键字" class="headerlink" title="delete关键字"></a>delete关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">作用:</div><div class="line">    作用:</div><div class="line">    (1) 删除对象中的属性</div><div class="line">    (2) 删除没有使用var声明的变量</div><div class="line">注意点:</div><div class="line">    (1)返回值  布尔类型</div><div class="line">    (2)不能删除使用var声明的全局变量,但是却可以删除直接定义在window上面的属性</div><div class="line">    (3)删除不存在的属性没有反应,返回值是true</div></pre></td></tr></table></figure>
-<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">try&#123;</div><div class="line">        //可能出错的代码</div><div class="line">    &#125;catch (e)&#123;</div><div class="line">        console.log(e,&quot;____&quot;);</div><div class="line">        //出错了就执行这个代码块</div><div class="line">    &#125;</div><div class="line">    finally</div><div class="line">    &#123;</div><div class="line">        //不管是否出错,都会执行这里的代码块</div><div class="line">        //一般在前端开发中不会使用,多多用于后端开发Node.js 主要用于在最后释放资源</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="DOM方法"><a href="#DOM方法" class="headerlink" title="DOM方法"></a>DOM方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">getAttribute() //获取属性</div><div class="line">setAttribute() //设置属性</div><div class="line">hasAttribute() //检测属性是否存在</div><div class="line">removeAttribute() //删除属性</div><div class="line">document.body.attributes[0] //&lt;body&gt;元素的第一个属性</div><div class="line">document.body.attributes.bgcolor // &lt;body&gt;元素的bgcolor属性</div><div class="line">document.body.attributes[&apos;ONLOAD&apos;] // &lt;body&gt;元素的onload属性。</div><div class="line">test.style.setProperty(&apos;background-color&apos;,&apos;red&apos;);</div><div class="line">test.style.getPropertyValue(&apos;background-color&apos;);</div><div class="line">test.style.removeProperty(&apos;background-color&apos;);</div><div class="line">window.getComputedStyle(t,null).lineHeight //30px</div><div class="line">window.getComputedStyle(t,&apos;:before&apos;).content // &quot;before&quot;</div><div class="line">//第一个参数是要获取其计算样式的元素，第二个参数也是必需的，通常是null或空字符串，但它也可以是命名CSS伪对象的字符串，如：“:before”，“:after”，“:first-line”或者“:first-letter”。</div><div class="line">t.className = t.className.replace(&apos;attention2&apos;,&apos;&apos;); //删除名为attention2的class</div></pre></td></tr></table></figure>
+        <h3 id="1-delete关键字"><a href="#1-delete关键字" class="headerlink" title="1.delete关键字"></a>1.delete关键字</h3><p>作用:<br>(1) 删除对象中的属性<br>(2) 删除没有使用var关键字声明的全局变量<br>注意:<br>(1)返回值 布尔类型的值(我们可以通过该值来判断是否删除成功)<br>(2)使用var关键字声明的变量无法被删除<br>(3)删除对象中不存在的属性没有任何变化,但是返回值为true</p>
+<h3 id="2-instanceof-lt-所有的对象都是Object构造函数（类型）的实例-gt"><a href="#2-instanceof-lt-所有的对象都是Object构造函数（类型）的实例-gt" class="headerlink" title="2.instanceof &lt;所有的对象都是Object构造函数（类型）的实例&gt;"></a>2.instanceof &lt;所有的对象都是Object构造函数（类型）的实例&gt;</h3><p>判断某个对象是否是指定构造函数的实例对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">  console.log(arr instanceof Array);      //true</div></pre></td></tr></table></figure>
+<h3 id="3-isPrototypeOf"><a href="#3-isPrototypeOf" class="headerlink" title="3.isPrototypeOf"></a>3.isPrototypeOf</h3><p>判断是否是某个实例对象的原型对象(检查整个原型链)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(Person.prototype.isPrototypeOf(p1));    //rue</div></pre></td></tr></table></figure>
+<h3 id="4-基本包装类型-String-Number-Boolean"><a href="#4-基本包装类型-String-Number-Boolean" class="headerlink" title="4.基本包装类型 (String ,Number ,Boolean )"></a>4.基本包装类型 (String ,Number ,Boolean )</h3><p>访问属性或者调用方法的时候</p>
+<ul>
+<li>内部会隐式的创建一个对象，利用该对象来访问属性或者是调用方法</li>
+<li>得到结果之后，把结果赋值给基本数据类型的值</li>
+<li><p>销毁这个创建的对象</p>
+<h3 id="5-toString-返回一个对当前对象的字符串描述信息-并非一定是该对象的字符串形式"><a href="#5-toString-返回一个对当前对象的字符串描述信息-并非一定是该对象的字符串形式" class="headerlink" title="5.toString 返回一个对当前对象的字符串描述信息,并非一定是该对象的字符串形式"></a>5.toString 返回一个对当前对象的字符串描述信息,并非一定是该对象的字符串形式</h3></li>
+<li><p>object类型的对象 返回的什么 [obejct Object]</p>
+</li>
+<li>其他对象类型如函数 | 数组 ,返回对应的字符串形式</li>
+<li>Number类型 可以传递参数(进制) 不传递参数:默认是十进制<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var a = &#123;&#125;;</div><div class="line">var b = &#123;name:&quot;张三&quot;&#125;;</div><div class="line">var c = &#123;&#125;;   </div><div class="line">c[&#123;&#125;] = &quot;测试01&quot;;   //c[&quot;[object Object]&quot;] = &quot;&quot;  在使用对象作为对象属性的时候，内部会调用该对象的tostring方法</div><div class="line">c[b] = &quot;测试02&quot;;   //c[&quot;[object Object]&quot;] = &quot;&quot;</div><div class="line">console.log(c[a]);  // 测试02</div><div class="line">console.log(c);     // [object Object]: &quot;测试</div><div class="line">var o = &#123;name:&quot;zhangsan&quot;&#125;;</div><div class="line">console.log(o.toString());    //[obejct Object]</div><div class="line">var arr = [&quot;demo01&quot;,&quot;demo02&quot;,&quot;demo03&quot;];</div><div class="line">console.log(arr.toString());  //demo01,demo02,demo03</div><div class="line">function demoTest()&#123;&#125;;</div><div class="line">//    console.log(demoTest.toString());  //function demoTest()&#123;&#125;</div><div class="line">var num = new Number(10);</div><div class="line">console.log(num.toString());  //20</div><div class="line">console.log(num.toString(2));  //1010 --- &gt; 1 * 2*2*2 + 0 *2*2 + 1*2 + 0*1 = 8 + 0 + 2 + 0 = 10</div><div class="line">console.log(num.toString(3));  //101  ---&gt; 1*3*3 + 0 * 3 + 1 *1 = 9 + 0 + 1 = 10</div><div class="line">console.log(num.toString(7));   //13  ---&gt; 1 * 7 + 3*1 = 10</div><div class="line">//toLocaleString 大部分情况下的等价于toString方法，特殊情况下会做本地化处理(添加一些本地信息)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="6-valueOf-返回对应的值"><a href="#6-valueOf-返回对应的值" class="headerlink" title="6.valueOf 返回对应的值"></a>6.valueOf 返回对应的值</h3><ul>
+<li>基本包装类型（String Number Boolean）,返回对应的基本类型的值</li>
+<li>object类型的，返回this(该对象本身)</li>
+<li>date(日期类)，返回时间戳<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = new String(&quot;tese&quot;);</div><div class="line">console.log(str.valueOf());  //tese</div><div class="line">var o = &#123;name:&quot;lisi&quot;&#125;;</div><div class="line">console.log(o.valueOf());  // object</div><div class="line">var date = new Date();   //当前的时间</div><div class="line">console.log(date.valueOf());//1488163624297时间戳，是一个绝对的值</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-判断一个对象的类型"><a href="#7-判断一个对象的类型" class="headerlink" title="7.判断一个对象的类型"></a>7.判断一个对象的类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.toString.call(arr)</div></pre></td></tr></table></figure>
+<h3 id="8-Number的调用"><a href="#8-Number的调用" class="headerlink" title="8.Number的调用"></a>8.Number的调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Number.prototype.sum = function(param)&#123;</div><div class="line">    return this + param;</div><div class="line">&#125;</div><div class="line">var num1= new Number(&quot;10&quot;);</div><div class="line">var num2 = 30;</div><div class="line">console.log(num1.sum(2));     //可以调用</div><div class="line">console.log(num1.sum(33));   //可以调用</div><div class="line">console.log(num2.sum(44));  //可以调用吗？ 74</div><div class="line">console.log((10).sum(11));      //可以调用吗？  （）表达式  21</div><div class="line"> console.log(10.sum(22));        //不可以调用 报错</div></pre></td></tr></table></figure>
+<p>变量的方式调用成功,表达式的方式调用成功,数值的方式调用失败</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>实例成员<br>成员：属性和方法<br>说明：实例对象上面添加的属性和方法<br>静态成员<br>构造函数：本身也是对象，所以构造函数自己也可以拥有属性和方法，这些属性和方法就是静态成员<br>原型成员<br>构造函数的原型对象上面的属性和方法（des + logDes）</p>
+<p>特权方法<br>可以访问构造函数内部的变量和函数，这种方法被称为特权方法<br>私有变量:<br>在构造函数内部声明的变量<br>私有方法:<br>在构造函数内部声明的函数</p>
 
       
 
@@ -183,7 +205,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">confirm</a>
         		</li>
       		
 		</ul>
@@ -239,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/22/JS-2-基础知识/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/10/检测-3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -253,18 +275,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/23/JS-3-基础知识/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JS(3) 基础知识
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/21/JS-1-基本概念/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS(1) 基本概念</div>
+    <a href="/2017/03/08/检测-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">检测(2)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -277,7 +290,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="JS-2-基础知识" data-title="JS(2) 基础知识" data-url="http://yoursite.com/2017/01/22/JS-2-基础知识/"></div>
+	<div class="ds-thread" data-thread-key="检测-3" data-title="检测(3)" data-url="http://yoursite.com/2017/03/10/检测-3/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -299,7 +312,7 @@
   
 
   
-  <div id="SOHUCS" sid="JS-2-基础知识" ></div> 
+  <div id="SOHUCS" sid="检测-3" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "true"; 

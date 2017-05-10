@@ -141,6 +141,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-检测-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/10/检测-3/">检测(3)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/10/检测-3/" class="archive-article-date">
+  	<time datetime="2017-03-10T00:39:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-delete关键字"><a href="#1-delete关键字" class="headerlink" title="1.delete关键字"></a>1.delete关键字</h3><p>作用:<br>(1) 删除对象中的属性<br>(2) 删除没有使用var关键字声明的全局变量<br>注意:<br>(1)返回值 布尔类型的值(我们可以通过该值来判断是否删除成功)<br>(2)使用var关键字声明的变量无法被删除<br>(3)删除对象中不存在的属性没有任何变化,但是返回值为true</p>
+<h3 id="2-instanceof-lt-所有的对象都是Object构造函数（类型）的实例-gt"><a href="#2-instanceof-lt-所有的对象都是Object构造函数（类型）的实例-gt" class="headerlink" title="2.instanceof &lt;所有的对象都是Object构造函数（类型）的实例&gt;"></a>2.instanceof &lt;所有的对象都是Object构造函数（类型）的实例&gt;</h3><p>判断某个对象是否是指定构造函数的实例对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">  console.log(arr instanceof Array);      //true</div></pre></td></tr></table></figure>
+<h3 id="3-isPrototypeOf"><a href="#3-isPrototypeOf" class="headerlink" title="3.isPrototypeOf"></a>3.isPrototypeOf</h3><p>判断是否是某个实例对象的原型对象(检查整个原型链)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(Person.prototype.isPrototypeOf(p1));    //rue</div></pre></td></tr></table></figure>
+<h3 id="4-基本包装类型-String-Number-Boolean"><a href="#4-基本包装类型-String-Number-Boolean" class="headerlink" title="4.基本包装类型 (String ,Number ,Boolean )"></a>4.基本包装类型 (String ,Number ,Boolean )</h3><p>访问属性或者调用方法的时候</p>
+<ul>
+<li>内部会隐式的创建一个对象，利用该对象来访问属性或者是调用方法</li>
+<li>得到结果之后，把结果赋值给基本数据类型的值</li>
+<li><p>销毁这个创建的对象</p>
+<h3 id="5-toString-返回一个对当前对象的字符串描述信息-并非一定是该对象的字符串形式"><a href="#5-toString-返回一个对当前对象的字符串描述信息-并非一定是该对象的字符串形式" class="headerlink" title="5.toString 返回一个对当前对象的字符串描述信息,并非一定是该对象的字符串形式"></a>5.toString 返回一个对当前对象的字符串描述信息,并非一定是该对象的字符串形式</h3></li>
+<li><p>object类型的对象 返回的什么 [obejct Object]</p>
+</li>
+<li>其他对象类型如函数 | 数组 ,返回对应的字符串形式</li>
+<li>Number类型 可以传递参数(进制) 不传递参数:默认是十进制<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var a = &#123;&#125;;</div><div class="line">var b = &#123;name:&quot;张三&quot;&#125;;</div><div class="line">var c = &#123;&#125;;   </div><div class="line">c[&#123;&#125;] = &quot;测试01&quot;;   //c[&quot;[object Object]&quot;] = &quot;&quot;  在使用对象作为对象属性的时候，内部会调用该对象的tostring方法</div><div class="line">c[b] = &quot;测试02&quot;;   //c[&quot;[object Object]&quot;] = &quot;&quot;</div><div class="line">console.log(c[a]);  // 测试02</div><div class="line">console.log(c);     // [object Object]: &quot;测试</div><div class="line">var o = &#123;name:&quot;zhangsan&quot;&#125;;</div><div class="line">console.log(o.toString());    //[obejct Object]</div><div class="line">var arr = [&quot;demo01&quot;,&quot;demo02&quot;,&quot;demo03&quot;];</div><div class="line">console.log(arr.toString());  //demo01,demo02,demo03</div><div class="line">function demoTest()&#123;&#125;;</div><div class="line">//    console.log(demoTest.toString());  //function demoTest()&#123;&#125;</div><div class="line">var num = new Number(10);</div><div class="line">console.log(num.toString());  //20</div><div class="line">console.log(num.toString(2));  //1010 --- &gt; 1 * 2*2*2 + 0 *2*2 + 1*2 + 0*1 = 8 + 0 + 2 + 0 = 10</div><div class="line">console.log(num.toString(3));  //101  ---&gt; 1*3*3 + 0 * 3 + 1 *1 = 9 + 0 + 1 = 10</div><div class="line">console.log(num.toString(7));   //13  ---&gt; 1 * 7 + 3*1 = 10</div><div class="line">//toLocaleString 大部分情况下的等价于toString方法，特殊情况下会做本地化处理(添加一些本地信息)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="6-valueOf-返回对应的值"><a href="#6-valueOf-返回对应的值" class="headerlink" title="6.valueOf 返回对应的值"></a>6.valueOf 返回对应的值</h3><ul>
+<li>基本包装类型（String Number Boolean）,返回对应的基本类型的值</li>
+<li>object类型的，返回this(该对象本身)</li>
+<li>date(日期类)，返回时间戳<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = new String(&quot;tese&quot;);</div><div class="line">console.log(str.valueOf());  //tese</div><div class="line">var o = &#123;name:&quot;lisi&quot;&#125;;</div><div class="line">console.log(o.valueOf());  // object</div><div class="line">var date = new Date();   //当前的时间</div><div class="line">console.log(date.valueOf());//1488163624297时间戳，是一个绝对的值</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-判断一个对象的类型"><a href="#7-判断一个对象的类型" class="headerlink" title="7.判断一个对象的类型"></a>7.判断一个对象的类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.toString.call(arr)</div></pre></td></tr></table></figure>
+<h3 id="8-Number的调用"><a href="#8-Number的调用" class="headerlink" title="8.Number的调用"></a>8.Number的调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Number.prototype.sum = function(param)&#123;</div><div class="line">    return this + param;</div><div class="line">&#125;</div><div class="line">var num1= new Number(&quot;10&quot;);</div><div class="line">var num2 = 30;</div><div class="line">console.log(num1.sum(2));     //可以调用</div><div class="line">console.log(num1.sum(33));   //可以调用</div><div class="line">console.log(num2.sum(44));  //可以调用吗？ 74</div><div class="line">console.log((10).sum(11));      //可以调用吗？  （）表达式  21</div><div class="line"> console.log(10.sum(22));        //不可以调用 报错</div></pre></td></tr></table></figure>
+<p>变量的方式调用成功,表达式的方式调用成功,数值的方式调用失败</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>实例成员<br>成员：属性和方法<br>说明：实例对象上面添加的属性和方法<br>静态成员<br>构造函数：本身也是对象，所以构造函数自己也可以拥有属性和方法，这些属性和方法就是静态成员<br>原型成员<br>构造函数的原型对象上面的属性和方法（des + logDes）</p>
+<p>特权方法<br>可以访问构造函数内部的变量和函数，这种方法被称为特权方法<br>私有变量:<br>在构造函数内部声明的变量<br>私有方法:<br>在构造函数内部声明的函数</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">confirm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/10/检测-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-检测-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -738,89 +824,6 @@
 
 
   
-    <article id="post-Flex布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/15/Flex布局/">Flex布局</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/15/Flex布局/" class="archive-article-date">
-  	<time datetime="2017-02-15T14:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">* Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</div><div class="line">* Webkit内核的浏览器，必须加上-webkit前缀。</div><div class="line"></div><div class="line">容器元素</div><div class="line">.box&#123;</div><div class="line">  display: flex;</div><div class="line">&#125;</div><div class="line">行内元素</div><div class="line">.box&#123;</div><div class="line">  display: inline-flex;</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">  display: -webkit-flex; /* Safari */</div><div class="line">  display: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
-<h3 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>属性决定主轴的方向（即项目的排列方向）。<br>row（默认值）：主轴为水平方向，起点在左端。<br>row-reverse：主轴为水平方向，起点在右端。<br>column：主轴为垂直方向，起点在上沿。<br>column-reverse：主轴为垂直方向，起点在下沿。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  flex-direction: row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br>nowrap（默认）：不换行。<br>wrap：换行，第一行在上方。<br>wrap-reverse：换行，第一行在下方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    flex-wrap: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>属性定义了项目在主轴上的对齐方式。<br>flex-start（默认值）：左对齐<br>flex-end：右对齐<br>center： 居中<br>space-between：两端对齐，项目之间的间隔都相等。<br>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">	justify-content: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>属性定义项目在交叉轴上如何对齐<br>flex-start：交叉轴的起点对齐。<br>flex-end：交叉轴的终点对齐。<br>center：交叉轴的中点对齐。<br>baseline: 项目的第一行文字的基线对齐。<br>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="align-content属性"><a href="#align-content属性" class="headerlink" title="align-content属性"></a>align-content属性</h3><p>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。<br>flex-start：与交叉轴的起点对齐。<br>flex-end：与交叉轴的终点对齐。<br>center：与交叉轴的中点对齐。<br>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。<br>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-content: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h3><h3 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h3><p>属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  order: &lt;integer&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-grow属性"><a href="#flex-grow属性" class="headerlink" title="flex-grow属性"></a>flex-grow属性</h3><p>属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-grow: &lt;number&gt;; /* default 0 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###flex-shrink属性</p>
-<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。负值对该属性无效。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-shrink: &lt;number&gt;; /* default 1 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-basis属性"><a href="#flex-basis属性" class="headerlink" title="flex-basis属性"></a>flex-basis属性</h3><p>属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-basis: &lt;length&gt; | auto; /* default auto */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-属性"><a href="#flex-属性" class="headerlink" title="flex-属性"></a>flex-属性</h3><p>属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line"> flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]</div><div class="line">&#125;</div><div class="line">//该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</div></pre></td></tr></table></figure>
-<h3 id="align-self属性"><a href="#align-self属性" class="headerlink" title="align-self属性"></a>align-self属性</h3><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  align-self: auto | flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/15/Flex布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -917,11 +920,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
