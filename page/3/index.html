@@ -141,6 +141,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-浏览器存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/04/浏览器存储/">浏览器存储</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/04/浏览器存储/" class="archive-article-date">
+  	<time datetime="2017-02-04T12:33:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="sessionStorage和localStorage"><a href="#sessionStorage和localStorage" class="headerlink" title="sessionStorage和localStorage"></a>sessionStorage和localStorage</h3><p>sessionStorage保存的数据用于浏览器的一次会话，当会话结束（通常是该窗口关闭），数据被清空；localStorage保存的数据长期存在，下一次访问该网站的时候，网页可以直接读取以前保存的数据。除了保存期限的长短不同，这两个对象的属性和方法完全一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每个域名的存储上限视浏览器而定，Chrome是2.5MB，Firefox和Opera是5MB，IE是10MB。其中，Firefox的存储空间由一级域名决定，而其他浏览器没有这个限制。也就是说，在Firefox中，a.example.com和b.example.com共享5MB的存储空间。另外，与Cookie一样，它们也受同域限制。某个网页存入的数据，只有同域下的网页才能读取</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//判断是否支持</div><div class="line">if (window.sessionStorage) &#123;</div><div class="line">    return true;</div><div class="line">  &#125; else &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">   </div><div class="line">  // localStorage</div><div class="line">if (window.localStorage) &#123;</div><div class="line">    return true;</div><div class="line">  &#125; else &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">//set</div><div class="line">sessionStorage.setItem(&quot;key&quot;,&quot;value&quot;);</div><div class="line">localStorage.setItem(&quot;key&quot;,&quot;value&quot;);</div><div class="line">//get</div><div class="line">var valueSession = sessionStorage.getItem(&quot;key&quot;);</div><div class="line">var valueLocal = localStorage.getItem(&quot;key&quot;);</div><div class="line">//清除单个</div><div class="line">sessionStorage.removeItem(&apos;key&apos;);</div><div class="line">localStorage.removeItem(&apos;key&apos;);</div><div class="line">//清除所有</div><div class="line">sessionStorage.clear();</div><div class="line">localStorage.clear(); </div><div class="line">//遍历</div><div class="line">for(var i = 0; i &lt; localStorage.length; i++)&#123;</div><div class="line">    console.log(localStorage.key(i));</div><div class="line">&#125;</div><div class="line">其中的key方法，根据位置（从0开始）获得键值。</div><div class="line">localStorage.key(1);</div></pre></td></tr></table></figure>
+<p>当储存的数据发生变化时，会触发storage事件。我们可以指定这个事件的回调函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.addEventListener(&quot;storage&quot;,onStorageChange);</div></pre></td></tr></table></figure></p>
+<p>回调函数接受一个event对象作为参数。这个event对象的key属性，保存发生变化的键名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function onStorageChange(e) &#123;</div><div class="line">     console.log(e.key);    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>除了key属性，event对象的属性还有三个：</p>
+<p>oldValue：更新前的值。如果该键为新增加，则这个属性为null。<br>newValue：更新后的值。如果该键被删除，则这个属性为null。<br>url：原始触发storage事件的那个网页的网址。</p>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>cookie: 回话跟踪技术 客户端<br>可以将一些数据存储在用户客户端本地<br>默认情况下, 一个网页是没有任何cookie信息的<br>注意点:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* cookie作用范围, 一次回话(浏览器被关闭) 那么cookie还在</div><div class="line">* cookie不能跨浏览器, (在IE中存储的cookie不能再谷歌中使用)</div><div class="line">* cookie不能跨域 (作用域, 域名)</div></pre></td></tr></table></figure></p>
+<p>cookie: 必须协议相同/二级域名相同/一级域名相同/端口号相同<br>如果其中有一个不同, 那么cookie都不可以共用</p>
+<p>.一个网页可以设置多个cookie<br>虽然一个网页可以添加多个cookie 但是每个网页的cookie的个数是有限制的, 每个网站的cookie也是有限制的<br>不能一次性设置多个cookie, 要想设置多个, 必须分开设置<br>可以通过expires=xxx;格式来设置过期时间<br>如果过期时间大于当前时间, 那么有效<br>如果过期时间小于当前时间, 那么自动失效<br>如果cookie是有效的, 那么浏览器关闭之后再打开, 还是有效<br>由于cookie的数据可以在浏览器中查找到, 所以不要将一些敏感的信息保存到cookie中</p>
+<h3 id="窗口的通信"><a href="#窗口的通信" class="headerlink" title="窗口的通信"></a>窗口的通信</h3><p>storage事件不在导致数据变化的当前页面触发。如果浏览器同时打开一个域名下面的多个页面，当其中的一个页面改变sessionStorage或localStorage的数据时，其他所有页面的storage事件会被触发，而原始页面并不触发storage事件。可以通过这种机制，实现多个窗口之间的通信。所有浏览器之中，只有IE浏览器除外，它会在所有页面触发storage事件。</p>
+<p>原文地址 <a href="http://javascript.ruanyifeng.com/bom/webstorage.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/bom/webstorage.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/04/浏览器存储/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-事件的代理和委托" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -858,70 +928,6 @@
 
 
   
-    <article id="post-JS-2-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/22/JS-2-基础知识/">JS(2) 基础知识</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/22/JS-2-基础知识/" class="archive-article-date">
-  	<time datetime="2017-01-22T03:57:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="null与undefined"><a href="#null与undefined" class="headerlink" title="null与undefined"></a>null与undefined</h3><p>1 变量的值永远都不可能为null,除非我们手动的赋值为null<br>2 当不在使用一个变量的时候可以设置这个变量的值为null 告诉系统把暂用的空间回收。<br>3 undefined是一个表示”无”的原始值，转为数值时为NaN。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(null == undefined);   //true</div><div class="line">console.log(null === undefined);  //false</div></pre></td></tr></table></figure></p>
-<h3 id="逻辑运算符-短路运算符"><a href="#逻辑运算符-短路运算符" class="headerlink" title="逻辑运算符(短路运算符)"></a>逻辑运算符(短路运算符)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">逻辑非</div><div class="line">符号:!</div><div class="line">操作符: !表达式</div><div class="line">结果:布尔类型的值,要么是true要么是false</div><div class="line"></div><div class="line">逻辑与</div><div class="line">符号:&amp;&amp;</div><div class="line">操作符:表达式1 &amp;&amp; 表达式2</div><div class="line">结果:并非是布尔类型的,而是表达式之一</div><div class="line">如果表达式1为真,那么就返回表达式2,否则就返回表达式1</div><div class="line"></div><div class="line">逻辑或</div><div class="line">符号:||</div><div class="line">操作符:表达式1 || 表达式2</div><div class="line">结果:并非是布尔类型的,而是表达式之一</div><div class="line">如果表达式1为真,那么就返回表达式1,否则就返回表达式2</div></pre></td></tr></table></figure>
-<h3 id="in关键字"><a href="#in关键字" class="headerlink" title="in关键字"></a>in关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">作用:</div><div class="line">    (1) 遍历对象</div><div class="line">    (2) 检测对象中是否存在指定的属性</div><div class="line">注意点:</div><div class="line">    在操作数组的时候,key--索引  value-元素</div></pre></td></tr></table></figure>
-<h3 id="delete关键字"><a href="#delete关键字" class="headerlink" title="delete关键字"></a>delete关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">作用:</div><div class="line">    作用:</div><div class="line">    (1) 删除对象中的属性</div><div class="line">    (2) 删除没有使用var声明的变量</div><div class="line">注意点:</div><div class="line">    (1)返回值  布尔类型</div><div class="line">    (2)不能删除使用var声明的全局变量,但是却可以删除直接定义在window上面的属性</div><div class="line">    (3)删除不存在的属性没有反应,返回值是true</div></pre></td></tr></table></figure>
-<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">try&#123;</div><div class="line">        //可能出错的代码</div><div class="line">    &#125;catch (e)&#123;</div><div class="line">        console.log(e,&quot;____&quot;);</div><div class="line">        //出错了就执行这个代码块</div><div class="line">    &#125;</div><div class="line">    finally</div><div class="line">    &#123;</div><div class="line">        //不管是否出错,都会执行这里的代码块</div><div class="line">        //一般在前端开发中不会使用,多多用于后端开发Node.js 主要用于在最后释放资源</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="DOM方法"><a href="#DOM方法" class="headerlink" title="DOM方法"></a>DOM方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">getAttribute() //获取属性</div><div class="line">setAttribute() //设置属性</div><div class="line">hasAttribute() //检测属性是否存在</div><div class="line">removeAttribute() //删除属性</div><div class="line">document.body.attributes[0] //&lt;body&gt;元素的第一个属性</div><div class="line">document.body.attributes.bgcolor // &lt;body&gt;元素的bgcolor属性</div><div class="line">document.body.attributes[&apos;ONLOAD&apos;] // &lt;body&gt;元素的onload属性。</div><div class="line">test.style.setProperty(&apos;background-color&apos;,&apos;red&apos;);</div><div class="line">test.style.getPropertyValue(&apos;background-color&apos;);</div><div class="line">test.style.removeProperty(&apos;background-color&apos;);</div><div class="line">window.getComputedStyle(t,null).lineHeight //30px</div><div class="line">window.getComputedStyle(t,&apos;:before&apos;).content // &quot;before&quot;</div><div class="line">//第一个参数是要获取其计算样式的元素，第二个参数也是必需的，通常是null或空字符串，但它也可以是命名CSS伪对象的字符串，如：“:before”，“:after”，“:first-line”或者“:first-letter”。</div><div class="line">t.className = t.className.replace(&apos;attention2&apos;,&apos;&apos;); //删除名为attention2的class</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/22/JS-2-基础知识/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1010,11 +1016,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
