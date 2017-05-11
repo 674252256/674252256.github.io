@@ -288,51 +288,49 @@
 
 
   
-    <article id="post-Object的静态成员" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/28/Object的静态成员/">Object的静态成员</a>
+      <a class="article-title" href="/2017/01/29/Java/">Java</a>
     </h1>
   
 
         
-        <a href="/2017/01/28/Object的静态成员/" class="archive-article-date">
-  	<time datetime="2017-01-28T11:57:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-28</time>
+        <a href="/2017/01/29/Java/" class="archive-article-date">
+  	<time datetime="2017-01-29T03:36:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-Object-apply"><a href="#1-Object-apply" class="headerlink" title="1.Object.apply"></a>1.Object.apply</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">借用其它对象的函数  &lt;数组&gt;</div></pre></td></tr></table></figure>
-<h4 id="2-Object-arguments"><a href="#2-Object-arguments" class="headerlink" title="2.Object.arguments"></a>2.Object.arguments</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">函数内部的一个隐藏参数，主要用来接收实参。</div></pre></td></tr></table></figure>
-<h4 id="3-Object-assign"><a href="#3-Object-assign" class="headerlink" title="3.Object.assign"></a>3.Object.assign</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">拷贝对象的属性的&lt;浅拷贝&gt;</div></pre></td></tr></table></figure>
-<h4 id="4-Object-bind"><a href="#4-Object-bind" class="headerlink" title="4.Object.bind"></a>4.Object.bind</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">绑定处理（call和apply很像）</div></pre></td></tr></table></figure>
-<h4 id="5-Object-call"><a href="#5-Object-call" class="headerlink" title="5.Object.call"></a>5.Object.call</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">借用其它对象的函数&lt;字符串&gt;</div></pre></td></tr></table></figure>
-<h4 id="6-Object-caller"><a href="#6-Object-caller" class="headerlink" title="6.Object.caller"></a>6.Object.caller</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">某个函数的调用函数，返回的是一个函数</div><div class="line">如果是在全局作用域中调用该方法，那么打印出来的是：是null而不是window</div></pre></td></tr></table></figure>
-<h4 id="7-Object-constructor"><a href="#7-Object-constructor" class="headerlink" title="7.Object.constructor"></a>7.Object.constructor</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">构造器属性，指向该对象的构造函数</div></pre></td></tr></table></figure>
-<h4 id="8-Object-create"><a href="#8-Object-create" class="headerlink" title="8.Object.create"></a>8.Object.create</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">创建对象，并且设置原型对象</div></pre></td></tr></table></figure>
-<h4 id="9-Object-getOwnPropertyDescriptor"><a href="#9-Object-getOwnPropertyDescriptor" class="headerlink" title="9.Object.getOwnPropertyDescriptor"></a>9.Object.getOwnPropertyDescriptor</h4><p>获得对象中某个实例属性的描述信息（是否可以配置，枚举，值，是否可以重写）<br>具体的描述信息如下：</p>
+        <h2 id="转换各种进制值"><a href="#转换各种进制值" class="headerlink" title="转换各种进制值"></a>转换各种进制值</h2><p><strong>十进制和二进制之间转换:</strong><br>十进制—&gt;二进制:<br>对于整数部分，用被除数反复除以2，除第一次外，每次除以2均取前一次商的整数部分作被除数并依次记下每次的余数。<br>另外，所得到的商的最后一位余数是所求二进制数的最高位。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-f5822d9e657218ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <ul>
-<li>configurable:true是否是可以配置的（能不能删除属性或者是修改这个配置本身）</li>
-<li>enumerable:true 是否是可以枚举的（在for..in循环中是否能够遍历出来|keys()）</li>
-<li>value:”zhangsan” 属性对应的值</li>
-<li>writable:true 是否是可重写的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var o = &#123;name:&quot;zhangsan&quot;&#125;;</div><div class="line">    console.log(Object.getOwnPropertyDescriptor(o, &quot;name&quot;));</div><div class="line">~</div></pre></td></tr></table></figure>
+<li><p>二进制—&gt;十进制:<br>进制数第1位的权值是2的0次方，第2位的权值是2的1次方，第2位的权值是2的2次方……公式：第N位 * 2的N-1次方,结果再相加.<br><img src="http://upload-images.jianshu.io/upload_images/3488771-bf0a9da46d201280.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>十进制和八进制之间转换:<br>十进制—&gt;八进制:<br>10进制数转换成8进制的方法，和转换为2进制的方法类似，唯一变化：除数由2变成8。<br>八进制—&gt;十进制:<br>进制数第1位的权值为8的0次方，第2位权值为8的1次方，第3位权值为8的2次方</p>
+</li>
+<li><p>十进制和十六进制之间转换:100<br>十进制—&gt;十六进制:<br>10进制数转换成16进制的方法，和转换为2进制的方法类似，唯一变化：除数由2变成16。<br>十六进制—&gt;十进制:<br>第0位的权值为16的0次方，第1位的权值为16的1次方，第2位的权值为16的2次方……</p>
+</li>
+<li><p>二进制和八进制之间转换:<br>二进制和十六进制之间转换:<br>八进制和十六进制之间转换:<br><img src="http://upload-images.jianshu.io/upload_images/3488771-1b958f88f8ffa560.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 </li>
 </ul>
-<h4 id="10-Object-defineProperty用来设置属性的描述信息（修改已有的属性-新增属性）"><a href="#10-Object-defineProperty用来设置属性的描述信息（修改已有的属性-新增属性）" class="headerlink" title="10.Object.defineProperty用来设置属性的描述信息（修改已有的属性|新增属性）"></a>10.Object.defineProperty用来设置属性的描述信息（修改已有的属性|新增属性）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">001 修改已有的属性，默认情况下这三个值是true</div><div class="line">002 新增加属性     默认情况下，这三个属性的值都是false</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">console.log(Object.getOwnPropertyDescriptor(o, &quot;name&quot;));</div><div class="line"> //第一个参数:要设置的对象</div><div class="line"> //第二个参数：要设置的对象的属性</div><div class="line"> //第三个参数：描述信息（对象）</div><div class="line"> Object.defineProperty(o,&quot;name&quot;,&#123;</div><div class="line">     configurable:false,   //01 能否删除对象 02 能够再次修改该属性</div><div class="line">     //enumerable:true,</div><div class="line">     //value:&quot;zhangsan&quot;,</div><div class="line">     //writable:true,    //是否可以修改属性的值</div><div class="line"> &#125;);</div><div class="line"> for(var k in o)</div><div class="line"> &#123;</div><div class="line">     console.log(k, o[k]);</div><div class="line"> &#125;</div><div class="line"> o.name = &quot;李四&quot;;</div><div class="line"> console.log(o);</div><div class="line"> delete o.name;</div><div class="line"> console.log(o);</div></pre></td></tr></table></figure>
-<h4 id="11-Object-getOwnPropertyNames"><a href="#11-Object-getOwnPropertyNames" class="headerlink" title="11.Object.getOwnPropertyNames"></a>11.Object.getOwnPropertyNames</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> 不包含原型属性</div><div class="line">获得所有的实例属性（名称），返回值是一个数组</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;name:&quot;zhangsan&quot;,age:78&#125;;</div><div class="line">   console.log(Object.getOwnPropertyNames(obj));  //[name ,age]</div><div class="line">   console.log(Object.getPrototypeOf(obj) == Object.prototype); //true</div></pre></td></tr></table></figure>
-<h4 id="12-Object-getPrototypeOf"><a href="#12-Object-getPrototypeOf" class="headerlink" title="12.Object.getPrototypeOf"></a>12.Object.getPrototypeOf</h4><p>获得某个对象的原型对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1console.log(Object.getPrototypeOf(obj) == Object.prototype); //true</div></pre></td></tr></table></figure></p>
-<h4 id="13-Object-keys"><a href="#13-Object-keys" class="headerlink" title="13.Object.keys"></a>13.Object.keys</h4><p>获得对象的key 不包含原型属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">        this.name = &quot;momo&quot;</div><div class="line">    &#125;;</div><div class="line">    Person.prototype.say = &quot;say&quot;;</div><div class="line">    var p1 = new Person();</div><div class="line">    console.log(Object.keys(p1));    // name</div><div class="line">function Person()&#123;</div><div class="line">        this.name = &quot;momo&quot;</div><div class="line">    &#125;;</div><div class="line">    Person.prototype.say = &quot;say&quot;;</div><div class="line">    var p1 = new Person();</div><div class="line">    console.log(Object.keys(p1));    // name</div><div class="line">    console.log(Object.getOwnPropertyNames(p1)); // name</div></pre></td></tr></table></figure></p>
-<h4 id="14-Object-preventExtensions-Object-isExtensible-lt-判断某个对象能否扩展属性-gt"><a href="#14-Object-preventExtensions-Object-isExtensible-lt-判断某个对象能否扩展属性-gt" class="headerlink" title="14.Object.preventExtensions || Object.isExtensible &lt;判断某个对象能否扩展属性&gt;"></a>14.Object.preventExtensions || Object.isExtensible &lt;判断某个对象能否扩展属性&gt;</h4><p>禁止对象扩展，默认情况下对象可以动态的增加属性，如果设置了禁止扩展，那么将无法增加属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var o = &#123;&#125;;</div><div class="line">  o.name = &quot;names&quot;;</div><div class="line">  console.log(o);</div><div class="line">  Object.preventExtensions(o);</div><div class="line">  o.age = 30;</div><div class="line">  console.log(o);</div></pre></td></tr></table></figure></p>
-<h4 id="15-Object-seal-密封对象"><a href="#15-Object-seal-密封对象" class="headerlink" title="15.Object.seal 密封对象"></a>15.Object.seal 密封对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">禁止删除对象的属性，禁止修改对象的配置信息configurable，禁止扩展 </div><div class="line">var obj = &#123;des:&quot;des&quot;&#125;;</div><div class="line">Object.freeze(obj);</div><div class="line">obj.name = &quot;momo&quot;;</div><div class="line">obj.age = 20;</div><div class="line">console.log(obj);</div><div class="line">delete obj.des;</div><div class="line">console.log(obj);</div><div class="line">obj.des = &quot;能不能修改&quot;;</div><div class="line">console.log(obj);   // obj.des = &quot;能不能修改&quot;;</div></pre></td></tr></table></figure>
-<h4 id="16-Object-freeze-冻结对象"><a href="#16-Object-freeze-冻结对象" class="headerlink" title="16.Object.freeze 冻结对象"></a>16.Object.freeze 冻结对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;des:&quot;des&quot;&#125;;</div><div class="line">Object.freeze(obj);</div><div class="line">obj.name = &quot;momo&quot;;</div><div class="line">obj.age = 20;</div><div class="line">console.log(obj);</div><div class="line">delete obj.des;</div><div class="line">console.log(obj);</div><div class="line">obj.des = &quot;能不能修改&quot;;</div><div class="line">console.log(obj);   //momo</div></pre></td></tr></table></figure>
+<h3 id="原码、反码和补码操作"><a href="#原码、反码和补码操作" class="headerlink" title="原码、反码和补码操作:"></a>原码、反码和补码操作:</h3><p>在计算机内，有符号数有3种表示法：<strong>原码、反码和补码</strong>,所有数据的运算都是采用补码进行的。<br>正数的原码，反码，补码都相同，负数稍微复杂。<br>操作5(101)和-5的二进制。<br>原码:<br>就是二进制定点表示法，即最高位为符号位，“0”表示正，“1”表示负，其余位表示数值的大小。<br>反码:<br>负数的反码是对其原码逐位取反，<strong>但符号位除外</strong>。<br>补码:<br>负数的补码是在其反码的末位加1。</p>
+<p><strong>求反码的时候，最高位是符号位不能改变。<br>  正数的符号位是0.<br>  负数的符号位是1.</strong></p>
+<p>  <img src="http://upload-images.jianshu.io/upload_images/3488771-02b25d44b0432615.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="Java的跨平台性原理"><a href="#Java的跨平台性原理" class="headerlink" title="Java的跨平台性原理"></a>Java的跨平台性原理</h3><p><strong>Java跨平台的原理：</strong><br>   1）：编译之后会生成与平台无关的字节码文件。</p>
+<p>   2）：得依赖不同平台的虚拟机（JVM）。</p>
+<p>   <strong>JVM是不跨平台的。</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-2e66d0aa2f48f296.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="JDK-JRE-JVM概述"><a href="#JDK-JRE-JVM概述" class="headerlink" title="JDK-JRE-JVM概述"></a>JDK-JRE-JVM概述</h3><blockquote>
+<p><strong>见Java模型概念图:</strong><br><strong>JRE(Java RuntimeEnvironment)：Java运行环境</strong>，如果要运行Java程序，就需要JRE的支持，JRE里包含JVM。<br><strong>JDK(Java DevelopmentKit)：Java开发工具</strong>，包含开发Java程序的所有工具,如javac和java等，JDK里包含JRE。<br>Java虚拟机（Java Virtual Machine），简称JVM，它是运行所有Java程序的虚拟计算机，好比是街机游戏的模拟器。<br>JVM是Java语言的运行环境，也是Java最具吸引力的特性之一。JVM用于读取并处理编译过的与平台无关的字节码(class)文件，从而实现Java的可移植性。但是值得注意的<strong>是Java虚拟机是不跨平台的。也就是说在Win下得装Win版的JVM，在Linux下装Linux版的JVM。</strong><br>见图:选择不同平台的JDK版本<br>JVM是Java程序的解释和执行器。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-1124ff7e33dea308.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
       
 
       
@@ -345,7 +343,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -355,7 +353,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/28/Object的静态成员/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/01/29/Java/">展开全文 >></a>
         </p>
       
 
@@ -458,11 +456,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ag</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,7 +472,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,7 +480,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
