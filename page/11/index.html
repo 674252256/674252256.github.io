@@ -141,6 +141,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS-作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/01/JS-作用域/">JS-作用域</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/01/JS-作用域/" class="archive-article-date">
+  	<time datetime="2017-02-01T12:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域:"></a>作用域:</h3><ul>
+<li>某个变量有（起）作用的范围 .</li>
+</ul>
+<h3 id="js中的作用域"><a href="#js中的作用域" class="headerlink" title="js中的作用域"></a>js中的作用域</h3><ul>
+<li>script标签构成的全局作用域.</li>
+<li>js中函数是唯一一个可以创建作用域的对象.</li>
+</ul>
+<h3 id="词法作用域-动态作用域"><a href="#词法作用域-动态作用域" class="headerlink" title="词法作用域-动态作用域"></a>词法作用域-动态作用域</h3><ul>
+<li>词法作用域：在变量声明的时候，它的作用域就已经确定了</li>
+<li>动态作用域：在程序运行的时候，由程序的当前上下文（执行环境）决定的</li>
+</ul>
+<h3 id="词法作用域的访问规则："><a href="#词法作用域的访问规则：" class="headerlink" title="词法作用域的访问规则："></a>词法作用域的访问规则：</h3><ul>
+<li>先在当前作用域中查找，如果找到就直接使用,如果没有找到，那么就到上一级作用域中查找，如果还没有找到那么就重复这个查找的过程，直到全局作用域</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/01/JS-作用域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-JS-严格模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -298,108 +370,9 @@
 
 
   
-    <article id="post-Node-js-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/27/Node-js-1/">Node.js(1)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/27/Node-js-1/" class="archive-article-date">
-  	<time datetime="2017-01-27T02:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Node.js不是一种独立的语言，与PHP、JSP、Python、Perl、Ruby的“既是语言，也是平台”不同，Node.js的使用JavaScript进行编程，运行在JavaScript引擎上（V8）。<br>适合:当应用程序需要处理大量并发的I/O，而在向客户端发出响应之前，应用程序内部并不需要进行非常复杂的处理的时候，Node.js非常适合。Node.js也非常适合与web socket配合，开发长连接的实时交互应用程序。</p>
-<p>与PHP、JSP等相比（PHP、JSP、.net都需要运行在服务器程序上Apache、Naginx、Tomcat、IIS。），Node.js跳过了Apache、Naginx、IIS等HTTP服务器，它自己不用建设在任何服务器软件之上。Node.js的许多设计理念与经典架构（LAMP = Linux + Apache + MySQL + PHP）有着很大的不同，可以提供强大的伸缩能力。一会儿我们就将看到，Node.js没有web容器。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.</p>
-<ul>
-<li><p>单线程<br>Node.js不为每个客户连接创建一个新的线程，而仅仅使用一个线程。当有用户连接了，就触发一个内部事件，通过非阻塞I/O、事件驱动机制，让Node.js程序宏观上也是并行的。使用Node.js，一个8GB内存的服务器，可以同时处理超过4万用户的连接。</p>
-</li>
-<li><p>非阻塞I/O non-blocking I/O<br>1.在传统的单线程处理机制中，在执行了访问数据库代码之后，整个线程都将暂停下来，等待数据库返回结果，才能执行后面的代码。也就是说，I/O阻塞了代码的执行，极大地降低了程序的执行效率。</p>
-</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/3488771-415b7f543ecd10e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3488771-db379860232e0570.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li><p>Node.js中采用了非阻塞型I/O机制，因此在执行了访问数据库的代码之后，将立即转而执行其后面的代码，把数据库返回结果的处理代码放在回调函数中，从而提高了程序的执行效率。<br>3.阻塞模式下，一个线程只能处理一项任务，要想提高吞吐量必须通过多线程。而非阻塞模式下，一个线程永远在执行计算操作，这个线程的CPU核心利用率永远是100%。所以，这是一种特别有哲理的解决方案：与其人多，但是好多人闲着；还不如一个人玩命，往死里干活儿。</p>
-</li>
-<li><p>事件驱动event-driven<br>在Node中，客户端请求建立连接，提交数据等行为，会触发相应的事件。在Node中，在一个时刻，只能执行一个事件回调函数，但是在执行一个事件回调函数的中途，可以转而处理其他事件（比如，又有新用户连接了），然后返回继续执行原事件的回调函数，这种处理机制，称为“事件环”机制。<br>Node.js底层是C++（V8也是C++写的）。底层代码中，近半数都用于事件队列、回调函数队列的构建。用事件驱动来完成服务器的任务调度，这是鬼才才能想到的。针尖上的舞蹈，用一个线程，担负起了处理非常多的任务的使命。</p>
-</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/3488771-7af2283cd4c112c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
-<li>单线程，单线程的好处，减少了内存开销，操作系统的内存换页。<br>如果某一个事情，进入了，但是被I/O阻塞了，所以这个线程就阻塞了。</li>
-<li>非阻塞I/O， 不会傻等I/O语句结束，而会执行后面的语句。<br>非阻塞就能解决问题了么？比如执行着小红的业务，执行过程中，小刚的I/O回调完成了，此时怎么办？？</li>
-<li>事件机制，事件环，不管是新用户的请求，还是老用户的I/O完成，都将以事件方式加入事件环，等待调度<h3 id="Node的配置"><a href="#Node的配置" class="headerlink" title="Node的配置"></a>Node的配置</h3></li>
-</ul>
-<p>配置环境变量： 就是在系统的任何目录下，都能运行c:\programfiles\nodejs里面的程序。<br>NVM_HOME = 当前 nvm.exe 所在目录<br>NVM_SYMLINK = node 快捷方式所在的目录<br>PATH += %NVM_HOME%;%NVM_SYMLINK%;<br>(PATH 变量,只要添加到 PATH 变量中的路径，都可以在任何目录下搜索)</p>
-<p>Node.js是服务器的程序，写的js语句，都将运行在服务器上。返回给客户的，都是已经处理好的纯html。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">1//require表示引包，引包就是引用自己的一个特殊功能</div><div class="line">2var http = require(&quot;http&quot;);</div><div class="line">3//创建服务器，参数是一个回调函数，表示如果有请求进来，要做什么</div><div class="line">4var server = http.createServer(function(req,res)&#123;</div><div class="line">5	//req表示请求，request;  res表示响应，response</div><div class="line">6	//设置HTTP头部，状态码是200，文件类型是html，字符集是utf8</div><div class="line">7	res.writeHead(200,&#123;&quot;Content-type&quot;:&quot;text/html;charset=UTF-8&quot;&#125;);</div><div class="line">8	res.end(&quot;哈哈哈哈，我买了一个iPhone&quot; + (1+2+3) + &quot;s&quot;);</div><div class="line">9&#125;);</div><div class="line">10</div><div class="line">11//运行服务器，监听3000端口（端口号可以任改）</div><div class="line">server.listen(3000,&quot;127.0.0.1&quot;);</div></pre></td></tr></table></figure>
-<p>Node.js没有根目录的概念，因为它根本没有任何的web容器！<br>让node.js提供一个静态服务，都非常难！<br>也就是说，node.js中，如果看见一个网址是<br>1127.0.0.1:3000/fang<br>不在是一定有一个文件夹，叫做fang了。可能/fang的物理文件，是同目录的test.html<br>URL和真实物理文件，是没有关系的。URL是通过了Node的顶层路由设计，呈递某一个静态文件的。</p>
-<h3 id="Node命令的基本用法"><a href="#Node命令的基本用法" class="headerlink" title="Node命令的基本用法"></a>Node命令的基本用法</h3><p>进入 REPL(Read, Eval, Print, Loop) 环境,类似 Chrome Developer Tools → Consoles特殊变量下划线（_）表示上一个命令的返回结果.通过 .exit 或执行 process.exit() 退出 REPL 交互   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node</div><div class="line">$ node --use_strict</div></pre></td></tr></table></figure>
-<ul>
-<li><p>执行脚本字符串：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -e &apos;console.log(&quot;Hello World&quot;)&apos;</div></pre></td></tr></table></figure>
-</li>
-<li><p>运行脚本文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ node index.js</div><div class="line">$ node path/index.js</div><div class="line">$ node path/inde</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看帮助：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node --help</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h3><p>• global：<br>– 类似于客户端 JavaScript 运行环境中的 window<br>• process：<br>– 用于获取当前的 Node 进程信息，一般用于获取环境变量之类<br>的信息<br>• console：<br>– Node 中内置的 console 模块，提供操作控制台的输入输出功<br>能，常见使用方式与客户端类似</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/27/Node-js-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
     </nav>
   
 
@@ -485,11 +458,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ag</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
               <li class="article-tag-list-item">
