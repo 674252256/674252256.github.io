@@ -298,35 +298,68 @@
 
 
   
-    <article id="post-JS-6-继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Node-js-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/26/JS-6-继承/">JS-6-继承</a>
+      <a class="article-title" href="/2017/01/27/Node-js-1/">Node.js(1)</a>
     </h1>
   
 
         
-        <a href="/2017/01/26/JS-6-继承/" class="archive-article-date">
-  	<time datetime="2017-01-26T11:52:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-26</time>
+        <a href="/2017/01/27/Node-js-1/" class="archive-article-date">
+  	<time datetime="2017-01-27T02:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>Object是所有对象的父级|父类型|超类型：js中所有的对象都直接或间接的继承自Object。<br>继承有两种方式：接口继承和实现继承，在js中只支持实现继承，实现继承主要依赖原型链来完成。<br>JavaScript中实现继承的几种方式:</p>
-<h4 id="1-拷贝属性"><a href="#1-拷贝属性" class="headerlink" title="1 拷贝属性"></a>1 拷贝属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for (var k  in obj1)</div><div class="line">&#123;</div><div class="line">    obj2[k] = obj1[k];</div><div class="line">&#125;</div><div class="line">console.log(obj2);</div><div class="line">如果属性的值是引用类型,那么子对象和父对象的数据共享,修改了某个对象对另外一个对象有影响.</div></pre></td></tr></table></figure>
-<h4 id="assign"><a href="#assign" class="headerlink" title="assign"></a>assign</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var o = &#123;&#125;;</div><div class="line">    var obj1 = &#123;name:&quot;name&quot;&#125;;</div><div class="line">    var obj2 = &#123;age:20&#125;;</div><div class="line">    var obj3 = &#123;car:&#123;type:&quot;猎人&quot;&#125;&#125;;</div><div class="line">// 第一个参数是目标对象,第二个,三个是要拷贝属性的对象;</div><div class="line">    Object.assign(o,obj2,obj1,obj3);</div><div class="line">    console.log(o);</div><div class="line">    obj3.car.type = &apos;盗贼&apos;;</div><div class="line">    console.log(o);</div></pre></td></tr></table></figure>
-<h3 id="2-原型式继承"><a href="#2-原型式继承" class="headerlink" title="2 原型式继承"></a>2 原型式继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function A()&#123;</div><div class="line">       this.name = &quot;gzc&quot;;</div><div class="line">       this.age = 26;</div><div class="line">   &#125;;</div><div class="line">   function B()&#123;&#125;;</div><div class="line">   A.prototype.des = &quot;gc&quot;;</div><div class="line">   //设置B的原型对象</div><div class="line">   B.prototype = A.prototype;</div><div class="line">   B.prototype.constructor = B;</div><div class="line">  无法得到实例的属性和方法,构造器属性默认指向父亲</div></pre></td></tr></table></figure>
-<h3 id="3-原型链继承"><a href="#3-原型链继承" class="headerlink" title="3 原型链继承"></a>3 原型链继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function A()&#123;</div><div class="line">      this.age = 25;</div><div class="line">      this.showAge = function()&#123;</div><div class="line">           console.log(this.age);</div><div class="line">     &#125;</div><div class="line">&#125;;</div><div class="line"> //设置A的属性和方法</div><div class="line"> A.prototype.logDes = function()&#123;</div><div class="line">     console.log(&quot;des&quot;);</div><div class="line"> &#125;</div><div class="line">function B()&#123;</div><div class="line">&#125;;</div><div class="line">//设置原型链继承</div><div class="line">B.prototype = new A();</div><div class="line">B.prototype.des = &quot;des&quot;;</div><div class="line">B.prototype.show = function()&#123;</div><div class="line">    console.log(&quot;show&quot;);</div><div class="line">&#125;;</div><div class="line">    * 在设置完原型链之后需要修正构造器属性的指向(Student.prototype.constructor)</div><div class="line">    * 要在设置完原型继承之后再来为原型对象添加属性和方法</div><div class="line">    * 要在设置完原型继承之后只能通过对象的动态特性来设置原型对象的属性和方法，不要使用字面量的方式</div></pre></td></tr></table></figure>
-<h3 id="4-借用构造函数继承"><a href="#4-借用构造函数继承" class="headerlink" title="4 借用构造函数继承"></a>4 借用构造函数继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;;</div><div class="line">function Boy(bookName,name,age)&#123;</div><div class="line">    this.bookName = bookName;</div><div class="line">    //借用构造函数</div><div class="line">    Person.call(this,name,age);</div><div class="line">&#125;</div><div class="line">//创建对象</div><div class="line">var boy = new Boy(&quot;LOL&quot;,&quot;gzc&quot;,22);</div><div class="line">var boy02 = new Boy(&quot;WOW&quot;,&quot;gc&quot;,30);</div><div class="line">console.log(boy);</div><div class="line">console.log(boy02);</div></pre></td></tr></table></figure>
-<h3 id="5-组合继承"><a href="#5-组合继承" class="headerlink" title="5 组合继承"></a>5 组合继承</h3><p>原型 + 借用构造函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">     this.name = name;</div><div class="line">     this.age = age;</div><div class="line">&#125;;</div><div class="line">Person.prototype.des = &quot;描述信息&quot;;</div><div class="line">Person.prototype.logDes = function()&#123;</div><div class="line">    console.log(this.des);</div><div class="line">&#125;;</div><div class="line">function Boy(bookName,name,age)&#123;</div><div class="line">   this.bookName = bookName;</div><div class="line"> //借用构造函数</div><div class="line">   Person.call(this,name,age);</div><div class="line">&#125;</div><div class="line">//设置原型继承</div><div class="line">//Boy.prototype = new Person();避免属性重复</div><div class="line">Boy.prototype = Person.prototype;</div><div class="line">//创建对象</div><div class="line">var boy = new Boy(&quot;LOL&quot;,&quot;gzc&quot;,22);</div><div class="line">var boy02 = new Boy(&quot;WOW&quot;,&quot;gc&quot;,30);</div><div class="line">console.log(boy);</div><div class="line">console.log(boy02);</div><div class="line">boy.logDes();</div></pre></td></tr></table></figure></p>
-<h3 id="专门的方法来实现继承-Object-creare"><a href="#专门的方法来实现继承-Object-creare" class="headerlink" title="专门的方法来实现继承(Object.creare)"></a>专门的方法来实现继承(Object.creare)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;name:&quot;gc&quot;&#125;;</div><div class="line">var obj2 = Object.create(obj);  //创建一个对象，并且设置这个对象的原型对象为obj</div><div class="line">console.log(obj2.name);</div></pre></td></tr></table></figure>
-<h3 id="完全拷贝-直接拷贝原型的成员"><a href="#完全拷贝-直接拷贝原型的成员" class="headerlink" title="完全拷贝(直接拷贝原型的成员)"></a>完全拷贝(直接拷贝原型的成员)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function deepCopy(obj1,obj2) &#123;</div><div class="line">   obj1 = obj1 || &#123;&#125;;</div><div class="line">   for (var i in obj2)</div><div class="line">   &#123;</div><div class="line">       if (obj2.hasOwnProperty(i))</div><div class="line">       &#123;</div><div class="line">           if( typeof obj2[i] == &quot;object&quot;)</div><div class="line">           &#123;</div><div class="line">               //判断是数组还是对象</div><div class="line">              obj1[i] = Array.isArray(obj2[i])?[]:&#123;&#125;;</div><div class="line">              //引用类型</div><div class="line">              deepCopy(obj1[i],obj2[i]);   //函数调用</div><div class="line">              &#125;else</div><div class="line">             &#123;</div><div class="line">                //值类型</div><div class="line">                obj1[i] = obj2[i];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+        <p>Node.js不是一种独立的语言，与PHP、JSP、Python、Perl、Ruby的“既是语言，也是平台”不同，Node.js的使用JavaScript进行编程，运行在JavaScript引擎上（V8）。<br>适合:当应用程序需要处理大量并发的I/O，而在向客户端发出响应之前，应用程序内部并不需要进行非常复杂的处理的时候，Node.js非常适合。Node.js也非常适合与web socket配合，开发长连接的实时交互应用程序。</p>
+<p>与PHP、JSP等相比（PHP、JSP、.net都需要运行在服务器程序上Apache、Naginx、Tomcat、IIS。），Node.js跳过了Apache、Naginx、IIS等HTTP服务器，它自己不用建设在任何服务器软件之上。Node.js的许多设计理念与经典架构（LAMP = Linux + Apache + MySQL + PHP）有着很大的不同，可以提供强大的伸缩能力。一会儿我们就将看到，Node.js没有web容器。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.</p>
+<ul>
+<li><p>单线程<br>Node.js不为每个客户连接创建一个新的线程，而仅仅使用一个线程。当有用户连接了，就触发一个内部事件，通过非阻塞I/O、事件驱动机制，让Node.js程序宏观上也是并行的。使用Node.js，一个8GB内存的服务器，可以同时处理超过4万用户的连接。</p>
+</li>
+<li><p>非阻塞I/O non-blocking I/O<br>1.在传统的单线程处理机制中，在执行了访问数据库代码之后，整个线程都将暂停下来，等待数据库返回结果，才能执行后面的代码。也就是说，I/O阻塞了代码的执行，极大地降低了程序的执行效率。</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-415b7f543ecd10e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-db379860232e0570.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><p>Node.js中采用了非阻塞型I/O机制，因此在执行了访问数据库的代码之后，将立即转而执行其后面的代码，把数据库返回结果的处理代码放在回调函数中，从而提高了程序的执行效率。<br>3.阻塞模式下，一个线程只能处理一项任务，要想提高吞吐量必须通过多线程。而非阻塞模式下，一个线程永远在执行计算操作，这个线程的CPU核心利用率永远是100%。所以，这是一种特别有哲理的解决方案：与其人多，但是好多人闲着；还不如一个人玩命，往死里干活儿。</p>
+</li>
+<li><p>事件驱动event-driven<br>在Node中，客户端请求建立连接，提交数据等行为，会触发相应的事件。在Node中，在一个时刻，只能执行一个事件回调函数，但是在执行一个事件回调函数的中途，可以转而处理其他事件（比如，又有新用户连接了），然后返回继续执行原事件的回调函数，这种处理机制，称为“事件环”机制。<br>Node.js底层是C++（V8也是C++写的）。底层代码中，近半数都用于事件队列、回调函数队列的构建。用事件驱动来完成服务器的任务调度，这是鬼才才能想到的。针尖上的舞蹈，用一个线程，担负起了处理非常多的任务的使命。</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-7af2283cd4c112c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
+<li>单线程，单线程的好处，减少了内存开销，操作系统的内存换页。<br>如果某一个事情，进入了，但是被I/O阻塞了，所以这个线程就阻塞了。</li>
+<li>非阻塞I/O， 不会傻等I/O语句结束，而会执行后面的语句。<br>非阻塞就能解决问题了么？比如执行着小红的业务，执行过程中，小刚的I/O回调完成了，此时怎么办？？</li>
+<li>事件机制，事件环，不管是新用户的请求，还是老用户的I/O完成，都将以事件方式加入事件环，等待调度<h3 id="Node的配置"><a href="#Node的配置" class="headerlink" title="Node的配置"></a>Node的配置</h3></li>
+</ul>
+<p>配置环境变量： 就是在系统的任何目录下，都能运行c:\programfiles\nodejs里面的程序。<br>NVM_HOME = 当前 nvm.exe 所在目录<br>NVM_SYMLINK = node 快捷方式所在的目录<br>PATH += %NVM_HOME%;%NVM_SYMLINK%;<br>(PATH 变量,只要添加到 PATH 变量中的路径，都可以在任何目录下搜索)</p>
+<p>Node.js是服务器的程序，写的js语句，都将运行在服务器上。返回给客户的，都是已经处理好的纯html。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">1//require表示引包，引包就是引用自己的一个特殊功能</div><div class="line">2var http = require(&quot;http&quot;);</div><div class="line">3//创建服务器，参数是一个回调函数，表示如果有请求进来，要做什么</div><div class="line">4var server = http.createServer(function(req,res)&#123;</div><div class="line">5	//req表示请求，request;  res表示响应，response</div><div class="line">6	//设置HTTP头部，状态码是200，文件类型是html，字符集是utf8</div><div class="line">7	res.writeHead(200,&#123;&quot;Content-type&quot;:&quot;text/html;charset=UTF-8&quot;&#125;);</div><div class="line">8	res.end(&quot;哈哈哈哈，我买了一个iPhone&quot; + (1+2+3) + &quot;s&quot;);</div><div class="line">9&#125;);</div><div class="line">10</div><div class="line">11//运行服务器，监听3000端口（端口号可以任改）</div><div class="line">server.listen(3000,&quot;127.0.0.1&quot;);</div></pre></td></tr></table></figure>
+<p>Node.js没有根目录的概念，因为它根本没有任何的web容器！<br>让node.js提供一个静态服务，都非常难！<br>也就是说，node.js中，如果看见一个网址是<br>1127.0.0.1:3000/fang<br>不在是一定有一个文件夹，叫做fang了。可能/fang的物理文件，是同目录的test.html<br>URL和真实物理文件，是没有关系的。URL是通过了Node的顶层路由设计，呈递某一个静态文件的。</p>
+<h3 id="Node命令的基本用法"><a href="#Node命令的基本用法" class="headerlink" title="Node命令的基本用法"></a>Node命令的基本用法</h3><p>进入 REPL(Read, Eval, Print, Loop) 环境,类似 Chrome Developer Tools → Consoles特殊变量下划线（_）表示上一个命令的返回结果.通过 .exit 或执行 process.exit() 退出 REPL 交互   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node</div><div class="line">$ node --use_strict</div></pre></td></tr></table></figure>
+<ul>
+<li><p>执行脚本字符串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -e &apos;console.log(&quot;Hello World&quot;)&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>运行脚本文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ node index.js</div><div class="line">$ node path/index.js</div><div class="line">$ node path/inde</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看帮助：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node --help</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h3><p>• global：<br>– 类似于客户端 JavaScript 运行环境中的 window<br>• process：<br>– 用于获取当前的 Node 进程信息，一般用于获取环境变量之类<br>的信息<br>• console：<br>– Node 中内置的 console 模块，提供操作控制台的输入输出功<br>能，常见使用方式与客户端类似</p>
+
       
 
       
@@ -339,7 +372,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
@@ -349,7 +382,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/26/JS-6-继承/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/01/27/Node-js-1/">展开全文 >></a>
         </p>
       
 
@@ -452,11 +485,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ag</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,6 +506,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
