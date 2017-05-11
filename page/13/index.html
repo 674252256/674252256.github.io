@@ -141,6 +141,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/29/Java/">Java</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/29/Java/" class="archive-article-date">
+  	<time datetime="2017-01-29T03:36:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="转换各种进制值"><a href="#转换各种进制值" class="headerlink" title="转换各种进制值"></a>转换各种进制值</h2><p><strong>十进制和二进制之间转换:</strong><br>十进制—&gt;二进制:<br>对于整数部分，用被除数反复除以2，除第一次外，每次除以2均取前一次商的整数部分作被除数并依次记下每次的余数。<br>另外，所得到的商的最后一位余数是所求二进制数的最高位。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-f5822d9e657218ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><p>二进制—&gt;十进制:<br>进制数第1位的权值是2的0次方，第2位的权值是2的1次方，第2位的权值是2的2次方……公式：第N位 * 2的N-1次方,结果再相加.<br><img src="http://upload-images.jianshu.io/upload_images/3488771-bf0a9da46d201280.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>十进制和八进制之间转换:<br>十进制—&gt;八进制:<br>10进制数转换成8进制的方法，和转换为2进制的方法类似，唯一变化：除数由2变成8。<br>八进制—&gt;十进制:<br>进制数第1位的权值为8的0次方，第2位权值为8的1次方，第3位权值为8的2次方</p>
+</li>
+<li><p>十进制和十六进制之间转换:100<br>十进制—&gt;十六进制:<br>10进制数转换成16进制的方法，和转换为2进制的方法类似，唯一变化：除数由2变成16。<br>十六进制—&gt;十进制:<br>第0位的权值为16的0次方，第1位的权值为16的1次方，第2位的权值为16的2次方……</p>
+</li>
+<li><p>二进制和八进制之间转换:<br>二进制和十六进制之间转换:<br>八进制和十六进制之间转换:<br><img src="http://upload-images.jianshu.io/upload_images/3488771-1b958f88f8ffa560.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+</ul>
+<h3 id="原码、反码和补码操作"><a href="#原码、反码和补码操作" class="headerlink" title="原码、反码和补码操作:"></a>原码、反码和补码操作:</h3><p>在计算机内，有符号数有3种表示法：<strong>原码、反码和补码</strong>,所有数据的运算都是采用补码进行的。<br>正数的原码，反码，补码都相同，负数稍微复杂。<br>操作5(101)和-5的二进制。<br>原码:<br>就是二进制定点表示法，即最高位为符号位，“0”表示正，“1”表示负，其余位表示数值的大小。<br>反码:<br>负数的反码是对其原码逐位取反，<strong>但符号位除外</strong>。<br>补码:<br>负数的补码是在其反码的末位加1。</p>
+<p><strong>求反码的时候，最高位是符号位不能改变。<br>  正数的符号位是0.<br>  负数的符号位是1.</strong></p>
+<p>  <img src="http://upload-images.jianshu.io/upload_images/3488771-02b25d44b0432615.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="Java的跨平台性原理"><a href="#Java的跨平台性原理" class="headerlink" title="Java的跨平台性原理"></a>Java的跨平台性原理</h3><p><strong>Java跨平台的原理：</strong><br>   1）：编译之后会生成与平台无关的字节码文件。</p>
+<p>   2）：得依赖不同平台的虚拟机（JVM）。</p>
+<p>   <strong>JVM是不跨平台的。</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-2e66d0aa2f48f296.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="JDK-JRE-JVM概述"><a href="#JDK-JRE-JVM概述" class="headerlink" title="JDK-JRE-JVM概述"></a>JDK-JRE-JVM概述</h3><blockquote>
+<p><strong>见Java模型概念图:</strong><br><strong>JRE(Java RuntimeEnvironment)：Java运行环境</strong>，如果要运行Java程序，就需要JRE的支持，JRE里包含JVM。<br><strong>JDK(Java DevelopmentKit)：Java开发工具</strong>，包含开发Java程序的所有工具,如javac和java等，JDK里包含JRE。<br>Java虚拟机（Java Virtual Machine），简称JVM，它是运行所有Java程序的虚拟计算机，好比是街机游戏的模拟器。<br>JVM是Java语言的运行环境，也是Java最具吸引力的特性之一。JVM用于读取并处理编译过的与平台无关的字节码(class)文件，从而实现Java的可移植性。但是值得注意的<strong>是Java虚拟机是不跨平台的。也就是说在Win下得装Win版的JVM，在Linux下装Linux版的JVM。</strong><br>见图:选择不同平台的JDK版本<br>JVM是Java程序的解释和执行器。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-1124ff7e33dea308.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-f9d6b80efb897c7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/29/Java/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Object的静态成员" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -322,72 +403,6 @@
 
 
   
-    <article id="post-JS-6-继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/26/JS-6-继承/">JS-6-继承</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/26/JS-6-继承/" class="archive-article-date">
-  	<time datetime="2017-01-26T11:52:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>Object是所有对象的父级|父类型|超类型：js中所有的对象都直接或间接的继承自Object。<br>继承有两种方式：接口继承和实现继承，在js中只支持实现继承，实现继承主要依赖原型链来完成。<br>JavaScript中实现继承的几种方式:</p>
-<h4 id="1-拷贝属性"><a href="#1-拷贝属性" class="headerlink" title="1 拷贝属性"></a>1 拷贝属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for (var k  in obj1)</div><div class="line">&#123;</div><div class="line">    obj2[k] = obj1[k];</div><div class="line">&#125;</div><div class="line">console.log(obj2);</div><div class="line">如果属性的值是引用类型,那么子对象和父对象的数据共享,修改了某个对象对另外一个对象有影响.</div></pre></td></tr></table></figure>
-<h4 id="assign"><a href="#assign" class="headerlink" title="assign"></a>assign</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var o = &#123;&#125;;</div><div class="line">    var obj1 = &#123;name:&quot;name&quot;&#125;;</div><div class="line">    var obj2 = &#123;age:20&#125;;</div><div class="line">    var obj3 = &#123;car:&#123;type:&quot;猎人&quot;&#125;&#125;;</div><div class="line">// 第一个参数是目标对象,第二个,三个是要拷贝属性的对象;</div><div class="line">    Object.assign(o,obj2,obj1,obj3);</div><div class="line">    console.log(o);</div><div class="line">    obj3.car.type = &apos;盗贼&apos;;</div><div class="line">    console.log(o);</div></pre></td></tr></table></figure>
-<h3 id="2-原型式继承"><a href="#2-原型式继承" class="headerlink" title="2 原型式继承"></a>2 原型式继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function A()&#123;</div><div class="line">       this.name = &quot;gzc&quot;;</div><div class="line">       this.age = 26;</div><div class="line">   &#125;;</div><div class="line">   function B()&#123;&#125;;</div><div class="line">   A.prototype.des = &quot;gc&quot;;</div><div class="line">   //设置B的原型对象</div><div class="line">   B.prototype = A.prototype;</div><div class="line">   B.prototype.constructor = B;</div><div class="line">  无法得到实例的属性和方法,构造器属性默认指向父亲</div></pre></td></tr></table></figure>
-<h3 id="3-原型链继承"><a href="#3-原型链继承" class="headerlink" title="3 原型链继承"></a>3 原型链继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function A()&#123;</div><div class="line">      this.age = 25;</div><div class="line">      this.showAge = function()&#123;</div><div class="line">           console.log(this.age);</div><div class="line">     &#125;</div><div class="line">&#125;;</div><div class="line"> //设置A的属性和方法</div><div class="line"> A.prototype.logDes = function()&#123;</div><div class="line">     console.log(&quot;des&quot;);</div><div class="line"> &#125;</div><div class="line">function B()&#123;</div><div class="line">&#125;;</div><div class="line">//设置原型链继承</div><div class="line">B.prototype = new A();</div><div class="line">B.prototype.des = &quot;des&quot;;</div><div class="line">B.prototype.show = function()&#123;</div><div class="line">    console.log(&quot;show&quot;);</div><div class="line">&#125;;</div><div class="line">    * 在设置完原型链之后需要修正构造器属性的指向(Student.prototype.constructor)</div><div class="line">    * 要在设置完原型继承之后再来为原型对象添加属性和方法</div><div class="line">    * 要在设置完原型继承之后只能通过对象的动态特性来设置原型对象的属性和方法，不要使用字面量的方式</div></pre></td></tr></table></figure>
-<h3 id="4-借用构造函数继承"><a href="#4-借用构造函数继承" class="headerlink" title="4 借用构造函数继承"></a>4 借用构造函数继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;;</div><div class="line">function Boy(bookName,name,age)&#123;</div><div class="line">    this.bookName = bookName;</div><div class="line">    //借用构造函数</div><div class="line">    Person.call(this,name,age);</div><div class="line">&#125;</div><div class="line">//创建对象</div><div class="line">var boy = new Boy(&quot;LOL&quot;,&quot;gzc&quot;,22);</div><div class="line">var boy02 = new Boy(&quot;WOW&quot;,&quot;gc&quot;,30);</div><div class="line">console.log(boy);</div><div class="line">console.log(boy02);</div></pre></td></tr></table></figure>
-<h3 id="5-组合继承"><a href="#5-组合继承" class="headerlink" title="5 组合继承"></a>5 组合继承</h3><p>原型 + 借用构造函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">     this.name = name;</div><div class="line">     this.age = age;</div><div class="line">&#125;;</div><div class="line">Person.prototype.des = &quot;描述信息&quot;;</div><div class="line">Person.prototype.logDes = function()&#123;</div><div class="line">    console.log(this.des);</div><div class="line">&#125;;</div><div class="line">function Boy(bookName,name,age)&#123;</div><div class="line">   this.bookName = bookName;</div><div class="line"> //借用构造函数</div><div class="line">   Person.call(this,name,age);</div><div class="line">&#125;</div><div class="line">//设置原型继承</div><div class="line">//Boy.prototype = new Person();避免属性重复</div><div class="line">Boy.prototype = Person.prototype;</div><div class="line">//创建对象</div><div class="line">var boy = new Boy(&quot;LOL&quot;,&quot;gzc&quot;,22);</div><div class="line">var boy02 = new Boy(&quot;WOW&quot;,&quot;gc&quot;,30);</div><div class="line">console.log(boy);</div><div class="line">console.log(boy02);</div><div class="line">boy.logDes();</div></pre></td></tr></table></figure></p>
-<h3 id="专门的方法来实现继承-Object-creare"><a href="#专门的方法来实现继承-Object-creare" class="headerlink" title="专门的方法来实现继承(Object.creare)"></a>专门的方法来实现继承(Object.creare)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;name:&quot;gc&quot;&#125;;</div><div class="line">var obj2 = Object.create(obj);  //创建一个对象，并且设置这个对象的原型对象为obj</div><div class="line">console.log(obj2.name);</div></pre></td></tr></table></figure>
-<h3 id="完全拷贝-直接拷贝原型的成员"><a href="#完全拷贝-直接拷贝原型的成员" class="headerlink" title="完全拷贝(直接拷贝原型的成员)"></a>完全拷贝(直接拷贝原型的成员)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function deepCopy(obj1,obj2) &#123;</div><div class="line">   obj1 = obj1 || &#123;&#125;;</div><div class="line">   for (var i in obj2)</div><div class="line">   &#123;</div><div class="line">       if (obj2.hasOwnProperty(i))</div><div class="line">       &#123;</div><div class="line">           if( typeof obj2[i] == &quot;object&quot;)</div><div class="line">           &#123;</div><div class="line">               //判断是数组还是对象</div><div class="line">              obj1[i] = Array.isArray(obj2[i])?[]:&#123;&#125;;</div><div class="line">              //引用类型</div><div class="line">              deepCopy(obj1[i],obj2[i]);   //函数调用</div><div class="line">              &#125;else</div><div class="line">             &#123;</div><div class="line">                //值类型</div><div class="line">                obj1[i] = obj2[i];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/26/JS-6-继承/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
@@ -480,11 +495,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
