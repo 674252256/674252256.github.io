@@ -141,6 +141,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Canvas-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/29/Canvas-2/">Canvas(2)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/29/Canvas-2/" class="archive-article-date">
+  	<time datetime="2017-03-29T03:29:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h3><p>scale() 方法缩放当前绘图，更大或更小<br>context.scale(scalewidth,scaleheight)<br>scalewidth : 缩放当前绘图的宽度 (1=100%, 0.5=50%, 2=200%, 依次类推)<br>scaleheight : 缩放当前绘图的高度 (1=100%, 0.5=50%, 2=200%, etc.)<br><strong>缩放的是整个画布，缩放后，继续绘制的图形会被放大或缩小。</strong></p>
+<h3 id="位移画布"><a href="#位移画布" class="headerlink" title="位移画布"></a>位移画布</h3><p>ctx.translate(x,y) 方法重新映射画布上的 (0,0) 位置<br>x： 添加到水平坐标（x）上的值<br>y： 添加到垂直坐标（y）上的值<br>发生位移后，相当于把画布的0,0坐标 更换到新的x,y的位置，所有绘制的新元素都被影响。<br>位移画布一般配合缩放和旋转等。</p>
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><p>context.rotate(angle); 方法旋转当前的绘图<br>注意参数是弧度（PI）<br>如需将角度转换为弧度，请使用 degrees*Math.PI/180 公式进行计算。</p>
+<h3 id="绘制环境保存和还原"><a href="#绘制环境保存和还原" class="headerlink" title="绘制环境保存和还原"></a>绘制环境保存和还原</h3><p>ctx.save() 保存当前环境的状态<br>可以把当前绘制环境进行保存到缓存中。<br>ctx.restore() 返回之前保存过的路径状态和属性<br>获取最近缓存的ctx<br>一般配合位移画布使用。</p>
+<h3 id="设置绘制环境的透明度"><a href="#设置绘制环境的透明度" class="headerlink" title="设置绘制环境的透明度"></a>设置绘制环境的透明度</h3><p>context.globalAlpha=number;<br>number:透明值。必须介于 0.0（完全透明） 与 1.0（不透明） 之间。<br>设置透明度是全局的透明度的样式。注意是全局的。</p>
+<h3 id="画布限定区域绘制"><a href="#画布限定区域绘制" class="headerlink" title="画布限定区域绘制"></a>画布限定区域绘制</h3><p>ctx.clip(); 方法从原始画布中剪切任意形状和尺寸<br>一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）<br>一般配合绘制环境的保存和还原。</p>
+<h3 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h3><ul>
+<li>基本绘图方式<br>context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);<br>参数说明：<br>sx,sy 裁剪的左上角坐标，<br>swidth：裁剪图片的高度。<br>sheight:裁剪的高度<h3 id="用JavaScript创建img对象"><a href="#用JavaScript创建img对象" class="headerlink" title="用JavaScript创建img对象"></a>用JavaScript创建img对象</h3></li>
+</ul>
+<p>第一种方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var img = document.getElementById(&quot;imgId&quot;);</div></pre></td></tr></table></figure>
+<p>第二种方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var img = new Image();//这个就是 img标签的dom对象</div><div class="line">img.src = &quot;imgs/arc.gif&quot;;</div><div class="line">img.alt = &quot;文本信息&quot;;</div><div class="line">img.onload = function() &#123;</div><div class="line">//图片加载完成后，执行此方法</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="创建线性渐变的样式"><a href="#创建线性渐变的样式" class="headerlink" title="创建线性渐变的样式"></a>创建线性渐变的样式</h3><p>线性渐变可以用于 矩形、圆形、文字等颜色样式。<br>ctx.createLinearGradient(x0,y0,x1,y1);<br>参数：x0,y0起始坐标，x1,y1结束坐标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//创建线性渐变的对象，</div><div class="line">var grd=ctx.createLinearGradient(0,0,170,0);</div><div class="line">grd.addColorStop(0,&quot;black&quot;);  //添加一个渐变颜色，第一个参数介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。</div><div class="line">grd.addColorStop(1,&quot;white&quot;);  //添加一个渐变颜色</div><div class="line">ctx.fillStyle =grd;           //关键点，把渐变设置到 填充的样式</div></pre></td></tr></table></figure>
+<h3 id="设置圆形渐变（径向渐变）"><a href="#设置圆形渐变（径向渐变）" class="headerlink" title="设置圆形渐变（径向渐变）"></a>设置圆形渐变（径向渐变）</h3><p>创建放射状/圆形渐变对象。可以填充文本、形状等<br>context.createRadialGradient(x0,y0,r0,x1,y1,r1);<br>参数详解：<br>x0: 渐变的开始圆的 x 坐标<br>y0: 渐变的开始圆的 y 坐标<br>r0: 开始圆的半径<br>x1: 渐变的结束圆的 x 坐标<br>y1: 渐变的结束圆的 y 坐标<br>r1: 结束圆的半径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var rlg = ctx.createRadialGradient(300,300,10,300,300,200);</div><div class="line">rlg.addColorStop(0, &apos;teal&apos;);    //添加一个渐变颜色</div><div class="line">rlg.addColorStop(.4, &apos;navy&apos;);</div><div class="line">rlg.addColorStop(1, &apos;purple&apos;);</div><div class="line">ctx.fillStyle = rlg;//设置 填充样式为延续渐变的样式</div><div class="line">ctx.fillRect(100, 100, 500, 500);</div></pre></td></tr></table></figure>
+<h3 id="设置圆形渐变"><a href="#设置圆形渐变" class="headerlink" title="设置圆形渐变"></a>设置圆形渐变</h3><p>ctx.createPattern(img,repeat) 方法在指定的方向内重复指定的元素了解<br>第一参数：设置平铺背景的图片，第二个背景平铺的方式。<br>image ： 规定要使用的图片、画布或视频元素。<br>repeat ： 默认。该模式在水平和垂直方向重复。<br>repeat-x ： 该模式只在水平方向重复。<br>repeat-y ： 该模式只在垂直方向重复。<br>no-repeat： 该模式只显示一次（不重复）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var ctx=c.getContext(&quot;2d&quot;);</div><div class="line">var img=document.getElementById(&quot;lamp&quot;);</div><div class="line">var pat=ctx.createPattern(img,&quot;repeat&quot;);</div><div class="line">ctx.rect(0,0,150,100);</div><div class="line">ctx.fillStyle=pat;//  把背景图设置给填充的样式</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/29/Canvas-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Canvas-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -294,74 +370,9 @@
 
 
   
-    <article id="post-Node-js-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/21/Node-js-2/">Node.js(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/21/Node-js-2/" class="archive-article-date">
-  	<time datetime="2017-03-21T02:46:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Node.js中，将很多的功能，划分为了一个个mudule，<br><strong>require</strong>表示引包，引包就是引用自己的一个特殊功能</p>
-<h3 id="Http模块"><a href="#Http模块" class="headerlink" title="Http模块"></a>Http模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//引用模块</div><div class="line">var http = require(&quot;http&quot;);</div><div class="line">//创建一个服务器，回调函数表示接收到请求之后做的事情</div><div class="line">var server = http.createServer(function(req,res)&#123;</div><div class="line">	//req参数表示请求，res表示响应</div><div class="line">	console.log(&quot;服务器接收到了请求&quot; + req.url);</div><div class="line">	//设置头部</div><div class="line">	res.writeHead(200,&#123;&quot;Content-Type&quot;:&quot;text/html;charset=UTF8&quot;&#125;);</div><div class="line">	res.write(&quot;&lt;h1&gt;我是主标题&lt;/h1&gt;&quot;);</div><div class="line">	res.end((1+2+3).toString());</div><div class="line">&#125;);</div><div class="line">//监听端口</div><div class="line">server.listen(3000,&quot;127.0.0.1&quot;);</div></pre></td></tr></table></figure>
-<h3 id="Url模块"><a href="#Url模块" class="headerlink" title="Url模块"></a>Url模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var http = require(&quot;http&quot;);</div><div class="line">var url = require(&quot;url&quot;);</div><div class="line">var server = http.createServer(function(req,res)&#123;</div><div class="line">	//url.parse()可以将一个完整的URL地址，分为很多部分：</div><div class="line">	//host、port、pathname、path、query</div><div class="line">	var pathname = url.parse(req.url).pathname;</div><div class="line">	//url.parse()如果第二个参数是true，那么就可以将所有的查询变为对象</div><div class="line">	//就可以直接打点得到这个参数</div><div class="line">	var query = url.parse(req.url,true).query;</div><div class="line">	//直接打点得到这个参数</div><div class="line">	var age = query.age;</div><div class="line">	</div><div class="line">	console.log(&quot;pathname:&quot; + pathname);</div><div class="line">	console.log(&quot;query:&quot; + query);</div><div class="line">	console.log(&quot;age:&quot; + age);</div><div class="line">	</div><div class="line">	res.end();</div><div class="line">&#125;);</div><div class="line">server.listen(3030,&quot;127.0.0.1&quot;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var http = require(&quot;http&quot;);</div><div class="line">var url = require(&quot;url&quot;);</div><div class="line">var server = http.createServer(function(req,res)&#123;</div><div class="line">	//得到查询部分，由于写了true，那么就是一个对象</div><div class="line">	var queryObj = url.parse(req.url,true).query;</div><div class="line">	var name = queryObj.name;</div><div class="line">	var age = queryObj.age;</div><div class="line">	var sex = queryObj.sex;</div><div class="line">	</div><div class="line">	res.end(&quot;服务器收到了表单请求&quot; + name + age + sex);</div><div class="line">&#125;);</div><div class="line">server.listen(3000,&quot;127.0.0.1&quot;);</div></pre></td></tr></table></figure>
-<h3 id="fs模块-文件读取"><a href="#fs模块-文件读取" class="headerlink" title="fs模块 文件读取"></a>fs模块 文件读取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//两个参数，第一个是完整路径，当前目录写./</div><div class="line">	//第二个参数，就是回调函数，表示文件读取成功之后，做的事情</div><div class="line">	fs.readFile(&quot;./test/1.txt&quot;,function(err,data)&#123;</div><div class="line">		if(err)&#123;</div><div class="line">			throw err;</div><div class="line">		&#125;</div><div class="line">		console.log(userid + &quot;文件读取完毕&quot;);</div><div class="line">			res.end(data);</div><div class="line">	&#125;);</div><div class="line">//两个参数，第一个是完整路径，当前目录写./</div><div class="line">	//第二个参数，就是回调函数，表示文件读取成功之后，做的事情</div><div class="line">	fs.readFile(&quot;./test/1.txt&quot;,function(err,data)&#123;</div><div class="line">		if(err)&#123;</div><div class="line">			throw err;</div><div class="line">		&#125;</div><div class="line">		console.log(userid + &quot;文件读取完毕&quot;);</div><div class="line">		res.end(data);</div><div class="line">	&#125;);</div><div class="line">	fs.mkdir(&quot;./album/aaa&quot;); //创建文件</div><div class="line">//stat检测状态</div><div class="line">	fs.stat(&quot;./album/bbb&quot;,function(err,data)&#123;</div><div class="line">		//检测这个路径，是不是一个文件夹</div><div class="line">		console.log(data.isDirectory());</div><div class="line">	&#125;);</div></pre></td></tr></table></figure>
-<p>字符串查询，用querystring处理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">querystring.parse(&apos;foo=bar&amp;baz=qux&amp;baz=quux&amp;corge&apos;)</div><div class="line">// returns</div><div class="line">&#123; foo: &apos;bar&apos;, baz: [&apos;qux&apos;, &apos;quux&apos;], corge: &apos;&apos; &#125;</div><div class="line">// Suppose gbkDecodeURIComponent function already exists,</div><div class="line">// it can decode `gbk` encoding string</div><div class="line">querystring.parse(&apos;w=%D6%D0%CE%C4&amp;foo=bar&apos;, null, null,</div><div class="line">  &#123; decodeURIComponent: gbkDecodeURIComponent &#125;)</div><div class="line">// returns</div><div class="line">&#123; w: &apos;中文&apos;, foo: &apos;bar&apos; &#125;</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/21/Node-js-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -447,11 +458,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ag</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,15 +474,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
