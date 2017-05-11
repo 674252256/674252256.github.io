@@ -141,6 +141,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-检测-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/08/检测-2/">检测(2)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/08/检测-2/" class="archive-article-date">
+  	<time datetime="2017-03-08T00:34:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var str1 = new String(&quot;demo01&quot;);</div><div class="line">var str2 = new String(&quot;demo01&quot;);</div><div class="line">var str3 = str1;</div><div class="line">var str4 = &quot;demo01&quot;;</div><div class="line">//判断是否相等  基本包装类型(String Number Boolean)的对象</div><div class="line">console.log(str1 == str2);    //false(!!!!)</div><div class="line">console.log(str1 == str4);    //true(内部会隐式转换)</div><div class="line">console.log(str1 == str3);    //true</div><div class="line">console.log(str1 === str2);   //false</div><div class="line">console.log(str1 === str3);   //true</div><div class="line">console.log(str1 === str4);   //false</div><div class="line">var num1 = new Number(10);</div><div class="line">var num2 = 10;</div><div class="line">var num3 = new Number(10);</div><div class="line">console.log(num1 == num2);      //true</div><div class="line">console.log(num1 == num3);      //false</div></pre></td></tr></table></figure>
+<p>Function的原型对象是一个空的函数<br>这个空的函数也是一个对象，因此也有构造函数，它的构造函数是Function<br>推论：Function的原型对象是空函数，因此空函数的原型对象应该是自己（错误）是空的对象<br>空函数的原型对象 == Object.prototype<br>Function也是一个对象，因此也有构造函数，它的构造函数是谁？是自己Function<br>Function作为一个对象来说，也有自己的原型对象Function.<code>proto</code><br>Function对象的原型对象和其构造函数的原型对象是空函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">console.log(Function instanceof Function);     //true</div><div class="line">console.log(Function instanceof Object);       //true</div><div class="line">console.log(Object instanceof Object);         //true</div><div class="line">console.log(Object instanceof Function);        //true</div></pre></td></tr></table></figure>
+<h3 id="单说明静态成员和实例成员的差别"><a href="#单说明静态成员和实例成员的差别" class="headerlink" title="单说明静态成员和实例成员的差别"></a>单说明静态成员和实例成员的差别</h3><p>成员：属性 + 方法<br>实例成员:实例对象的属性和方法 （name + age）<br>原型成员:构造函数的原型对象上面的属性和方法（des + logDes）<br>静态成员:直接添加到构造函数上面的属性和方法（log + showLog）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Dog()&#123;</div><div class="line">        this.name = &quot;阿黄家的大黑狗&quot;;</div><div class="line">        this.age = 13</div><div class="line">    &#125;</div><div class="line">    Dog.prototype = &#123;</div><div class="line">        des:&quot;描述信息&quot;,</div><div class="line">        logDes:function()&#123;</div><div class="line">            console.log(this.des);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    Dog.log = &quot;log&quot;;</div><div class="line">    Dog.showLog = function()&#123;</div><div class="line">        console.log(this.log);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function f() &#123;&#125;</div><div class="line">  var parent = Object.getPrototypeOf(f);  //A</div><div class="line">				</div><div class="line">A  console.log(f.name);                   </div><div class="line">B  console.log(parent.name);</div></pre></td></tr></table></figure>
+<h3 id="即时函数与闭包"><a href="#即时函数与闭包" class="headerlink" title="即时函数与闭包"></a>即时函数与闭包</h3><p>闭包有两个作用，<br>第一，保存局部变量。<br>第二，形成私有属性与方法，比如module模式。<br>即时函数是为了形成块级作用域，来弥补js函数级作用域的局限，主要是为了模块化，很多库都这么来解决耦合。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">console.log(Boolean(&#123;&#125;));  //true</div><div class="line">console.log(Boolean([]));  //true</div><div class="line">console.log([] == false);  // true</div><div class="line">console.log(&#123;&#125; == false); //false</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">confirm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/08/检测-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-检测-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -277,78 +342,6 @@
 
 
   
-    <article id="post-API-4-JavaScript常用代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/01/API-4-JavaScript常用代码/">API(4)JavaScript常用代码</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/01/API-4-JavaScript常用代码/" class="archive-article-date">
-  	<time datetime="2017-02-28T23:52:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>常用代码<br>字符串截取</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">substr(start [, length ])</div><div class="line">返回一个从指定位置开始的指定长度的子字符串</div><div class="line">substring(start, end)</div><div class="line">返回位于 String 对象中指定位置的子字符串。</div></pre></td></tr></table></figure>
-<p>页面跳转</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.navigate(&quot;top.jsp&quot;);</div><div class="line">window.history.back(-1);</div><div class="line">window.location.href=&quot;login.jsp?backurl=&quot;+window.location.href; </div><div class="line">self.location=&apos;top.htm&apos;;</div><div class="line">top.location=&apos;xx.jsp&apos;;</div></pre></td></tr></table></figure>
-<p>加载完成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">window.onload </div><div class="line">必须等页面内包括图片的所有元素加载完成后才能执行。</div><div class="line">不能同时编写多个，只执行一个</div><div class="line">$(document).ready()</div><div class="line">是DOM结构绘制完毕后就可以执行</div><div class="line">可以编写多个</div><div class="line">简写$(function()&#123;&#125;);</div><div class="line">$(window).load()等同与window.onload</div></pre></td></tr></table></figure>
-<p>刷新页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">history.go(0) </div><div class="line">location.reload() </div><div class="line">location=location </div><div class="line">location.assign(location) </div><div class="line">document.execCommand(&apos;Refresh&apos;) </div><div class="line">window.navigate(location) </div><div class="line">location.replace(location) </div><div class="line">document.URL=location.href</div></pre></td></tr></table></figure>
-<p>json转化和解析</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JSON.parse(&quot;&#123;a:&apos;111&apos;,b:&apos;ccc&apos;&#125;&quot;);  //解析</div><div class="line">eval(&quot;(&quot;+&quot;&quot;+&quot;)&quot;); //解析</div></pre></td></tr></table></figure>
-<p>时间转换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var day1 = parseInt(newDate().valueOf()/1000);//获得当前时间时间戳</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">day2 = new Date(day1*1000);</div><div class="line">alert(day2.getFullYear()+&quot;-&quot;+(day2.getMonth()+1)+&quot;-&quot;+day2.getDate()+&quot; &quot;+day2.getHours()+&quot;:&quot;+day2.getMinutes()+&quot;:&quot;+day2.getSeconds())</div><div class="line">d = new Date();</div><div class="line">s = d.getFullYear() + &quot;-&quot;;</div><div class="line">s += (&quot;0&quot;+(d.getMonth()+1)).slice(-2) + &quot;-&quot;;</div><div class="line">s += (&quot;0&quot;+d.getDate()).slice(-2) + &quot; &quot;;</div><div class="line">s += (&quot;0&quot;+d.getHours()).slice(-2) + &quot;:&quot;;</div><div class="line">s += (&quot;0&quot;+d.getMinutes()).slice(-2) + &quot;:&quot;;</div><div class="line">s += (&quot;0&quot;+d.getSeconds()).slice(-2) + &quot;.&quot;;</div><div class="line">s += (&quot;00&quot;+d.getMilliseconds()).slice(-3);</div></pre></td></tr></table></figure>
-<p>URI编码转换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var a=&quot;&apos;:&apos;&quot;;</div><div class="line">en = encodeURI(a);    //编码</div><div class="line">a = decodeURI(en);    //解码</div><div class="line">HTML编码转换</div><div class="line">function htmlEncode(value)&#123;</div><div class="line">  return $(&apos;&lt;div/&gt;&apos;).text(value).html();</div><div class="line">&#125;</div><div class="line">function htmlDecode(value)&#123;</div><div class="line">  return $(&apos;&lt;div/&gt;&apos;).html(value).text();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/01/API-4-JavaScript常用代码/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -437,15 +430,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,10 +455,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
