@@ -141,6 +141,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Canvas-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/03/Canvas-3/">Canvas(3)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/03/Canvas-3/" class="archive-article-date">
+  	<time datetime="2017-04-03T02:13:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="性能优化："><a href="#性能优化：" class="headerlink" title="性能优化："></a>性能优化：</h3><ul>
+<li>画布渲染画布<br>context.drawImage(img,x,y);<br>img参数也可以是画布，也就是把一个画布整体的渲染到另外一个画布上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var canvas1 = document.querySelector(&apos;#cavsElem1&apos;);</div><div class="line">var canvas2 = document.querySelector(&apos;#cavsElem2&apos;);</div><div class="line">var ctx1 = canvas1.getContext(&apos;2d&apos;);</div><div class="line">var ctx2 = canvas2.getContext(&apos;2d&apos;);</div><div class="line">ctx1.fillRect(20, 20, 40, 40);      //在第一个画布上绘制矩形</div><div class="line">ctx2.drawImage(canvas1, 10, 10);    //将第一个画布整体绘制到第二个画布上</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Canvas画布转为base64编码保存"><a href="#Canvas画布转为base64编码保存" class="headerlink" title="Canvas画布转为base64编码保存"></a>Canvas画布转为base64编码保存</h3><p>把canvas绘制的内容输出成base64内容。<br>语法：canvas.toDataURL(type, encoderOptions);<br>例如：canvas.toDataURL(“image/jpg”,1);<br>参数说明：<br>type，设置输出的类型，比如 image/png image/jpeg等<br>encoderOptions： 0-1之间的数字，用于标识输出图片的质量，1表示无损压缩，类型为： image/jpeg 或者image/webp才起作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var canvas = document.getElementById(&quot;canvas&quot;);</div><div class="line">var dataURL = canvas.toDataURL();</div><div class="line">console.log(dataURL);</div><div class="line">// &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNby</div><div class="line">// blAAAADElEQVQImWNgoBMAAABpAAFEI8ARAAAAAElFTkSuQmCC&quot;</div><div class="line">var img = document.querySelector(&quot;#img-demo&quot;);//拿到图片的dom对象</div><div class="line">img.src = canvas.toDataURL(&quot;image/png&quot;);      //将画布的内容给图片标签显示</div></pre></td></tr></table></figure>
+<h3 id="合成属性"><a href="#合成属性" class="headerlink" title="合成属性"></a>合成属性</h3><p>Composite(组合),就是对你在绘图中,后绘制的图形与先绘制的图形之间的组合显示效果,比如在国画中,你先画一笔红色,再来一笔绿色,相交的部分是一种混色,而在油画中,绿色就会覆盖掉相交部分的红色,这在程序绘图中的处理就是Composite,Canvas API中对应的函数就是globalCompositeOperation,这个属性是全局的,所以在使用的时候要注意save和restore.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.globalCompositeOperation = &apos;destination-out&apos;;</div></pre></td></tr></table></figure>
+<ul>
+<li>source-over 默认,相交部分由后绘制图形的填充(颜色,渐变,纹理)覆盖,全部浏览器通过</li>
+<li>source-in 只绘制相交部分,由后绘制图形的填充覆盖,其余部分透明</li>
+<li>source-out 只绘制后绘制图形不相交的部分,由后绘制图形的填充覆盖,其余部分透明</li>
+<li>source-atop 后绘制图形不相交的部分透明,相交部分由后绘制图形的填充覆盖,全部浏览器通过</li>
+<li>destination-over相交部分由先绘制图形的填充(颜色,渐变,纹理)覆盖,全部浏览器通过</li>
+<li>destination-in只绘制相交部分,由先绘制图形的填充覆盖,其余部分透明</li>
+<li>destination-out只绘制先绘制图形不相交的部分,由先绘制图形的填充覆盖,其余部分透明,全部浏览器通过</li>
+<li>destination-atop先绘制图形不相交的部分透明,相交部分由先绘制图形的填充覆盖</li>
+<li>lighter 相交部分由根据先后图形填充来增加亮度,全部浏览器通过</li>
+<li>darker 相交部分由根据先后图形填充来降低亮度</li>
+<li>copy 只绘制后绘制图形,只有opera通过</li>
+<li>xor 相交部分透明,全部浏览器通过<br><img src="http://upload-images.jianshu.io/upload_images/3488771-890f2fdaaef1861b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/03/Canvas-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Java-变量-基本类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -342,96 +422,6 @@
 
 
   
-    <article id="post-Canvas-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/28/Canvas-1/">Canvas(1)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/28/Canvas-1/" class="archive-article-date">
-  	<time datetime="2017-03-28T03:22:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Canvas是一个矩形区域的画布，可以用JS控制每一个像素在上面绘画。拥有多种绘制路径、矩形、圆形、字符以及添加图像的js方法.</p>
-<h3 id="浏览器不兼容处理"><a href="#浏览器不兼容处理" class="headerlink" title="浏览器不兼容处理"></a>浏览器不兼容处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&quot;canvas&quot;&gt;</div><div class="line">你的浏览器不支持canvas，请升级浏览器.浏览器不支持，显示此行文本</div><div class="line">&lt;/canvas&gt;</div></pre></td></tr></table></figure>
-<h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><p>Context是canvas的绘图上下文(具有绘制操作api入口或者集合).是js操作canvas的接口.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获得画布</div><div class="line">var canvas  = document.getElementById( &apos;cavsElem&apos; );</div><div class="line">//：2d小写，二维， 3d：webgl</div><div class="line">var ctx = canvas.getContext( &apos;2d&apos; );</div></pre></td></tr></table></figure>
-<ul>
-<li><p>绘制起点(moveTo)<br>语法：ctx.moveTo(x, y);<br>解释：设置上下文绘制路径的起点。<br>参数：x,y 都是相对于 canvas盒子的最左上角。<br>注意：绘制线段前必须先设置起点，不然绘制无效</p>
-</li>
-<li><p>绘制直线(lineTO)<br>语法：ctx.lineTo(x, y);<br>解释：从x,y的位置绘制一条直线到起点或者上一个线头点。<br>参数：x,y 线头点坐标。</p>
-</li>
-<li><p>路径开始和闭合<br>开始路径：ctx.beginPath();<br>闭合路径：ctx.closePath();<br>解释：如果复杂路径绘制，必须使用路径开始和结束。<br>closePath:闭合路径会自动把最后的线头和开始的线头连在一起。<br>beginPath: 核心的作用是将不同绘制的形状进行隔离，每次执行此方法，表示重新绘制一个路径,跟之前的绘制的路径可以进行分开样式设置和管理。</p>
-</li>
-<li><p>描边(stroke)<br>语法：ctx.stroke();<br>解释：根据路径绘制线。路径只是草稿，真正绘制线必须执行stroke</p>
-</li>
-</ul>
-<h3 id="canvas绘制的基本步骤："><a href="#canvas绘制的基本步骤：" class="headerlink" title="canvas绘制的基本步骤："></a>canvas绘制的基本步骤：</h3><p>第一步：获得上下文 =&gt;canvasElem.getContext(‘2d’);<br>第二步：开始路径规划 =&gt;ctx.beginPath()<br>第三步：移动起始点 =&gt;ctx.moveTo(x, y)<br>第四步：绘制(点、线、面、图片…) =&gt;ctx.lineTo(x, y)<br>第五步：闭合路径 =&gt;ctx.closePath();<br>第六步：绘制描边 =&gt;ctx.stroke()</p>
-<h3 id="创建矩形"><a href="#创建矩形" class="headerlink" title="创建矩形"></a>创建矩形</h3><ul>
-<li>创建矩形 rect()<br>语法：ctx.rect(x, y, width, height);</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ctx.rect(100, 100, 200, 100);</div><div class="line">ctx.lineWidth = 5;</div><div class="line">ctx.strokeStyle = &apos;red&apos;;</div><div class="line">//2.1 描边</div><div class="line">ctx.stroke();</div><div class="line">//2.2 填充颜色</div><div class="line">ctx.fillStyle = &apos;blue&apos;;</div><div class="line">//填充</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
-<ul>
-<li>快速创建矩形strokeRect()<br>语法：ctx.rect(x, y, width, height);</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 快速创建矩形 ,这个方法描述完路径以后,立即进行描边处理</div><div class="line">ctx.strokeRect(350, 100, 200, 100);</div><div class="line">//注意:再绘制之前,一定要设置描边或者颜色,才起作用</div><div class="line">ctx.fillStyle = &apos;yellow&apos;;</div><div class="line">// 快速创建填充矩形</div><div class="line">ctx.fillRect(350, 100, 200, 100);</div><div class="line">// 清除矩形区域</div><div class="line">ctx.clearRect(350, 100, 50,50);</div></pre></td></tr></table></figure>
-<ul>
-<li><p>绘制文字</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> //绘制字体</div><div class="line">ctx.font = &quot;100px &apos;微软雅黑&apos;&quot;;</div><div class="line">ctx.strokeStyle = &apos;red&apos;;</div><div class="line">ctx.lineWidth = 3;</div><div class="line">//绘制无填充字体</div><div class="line">ctx.strokeText(&apos;WOW&apos;, 200, 200);</div><div class="line">ctx.fillStyle = &apos;purple&apos;;</div><div class="line">//绘制填充字体</div><div class="line">ctx.fillText(&apos;SeeMyGo&apos;, 200, 200);</div><div class="line">//修改文字垂直对齐方式</div><div class="line">ctx.textAlign = &apos;right&apos;;</div><div class="line">//修改文字水平对齐方式</div><div class="line">ctx.textBaseline = &apos;top&apos;;</div><div class="line">    </div><div class="line">//阴影模糊效果</div><div class="line">ctx.shadowColor = &apos;orange&apos;;</div><div class="line">//阴影的偏移</div><div class="line">ctx.shadowOffsetX = -10;</div><div class="line">ctx.shadowOffsetY = -20;</div><div class="line">//模糊范围</div><div class="line">ctx.shadowBlur = 10;</div></pre></td></tr></table></figure>
-</li>
-<li><p>绘制弧线 / 圆形<br>语法：ctx.arc(x,y,r,sAngle,eAngle,counterclockwise);<br>x,y：圆心坐标。<br>r：半径大小。<br>sAngle:绘制开始的角度。 圆心到最右边点是0度，顺时针方向弧度增大。<br>eAngel:结束的角度，注意是弧度。π<br>counterclockwise：是否是逆时针。true是逆时针，false：顺时针(默认)<br>弧度和角度的转换公式： rad = deg*Math.PI/180;</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ctx.arc(200, 200, 100, 0, 90 * Math.PI/180, false); </div><div class="line">ctx.lineWidth = 3;</div><div class="line">ctx.strokeStyle = &apos;red&apos;;</div><div class="line">//描边</div><div class="line">ctx.stroke();</div><div class="line">//填充颜色</div><div class="line">ctx.fillStyle = &apos;blue&apos;;</div><div class="line">//填充</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
-<p>三角函数的补充<br>Math.sin(弧度); //夹角对面的边 和 斜边的比值<br>Math.cos(弧度); //夹角侧边 与斜边的比值<br>圆形上面的点的坐标的计算公式<br>x =x0 + Math.cos(rad) R;//x0和y0是圆心点坐标<br>y =y0 + Math.sin(rad) R;//注意都是弧度<br><img src="http://upload-images.jianshu.io/upload_images/3488771-e71ad1ae2a20bc4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/28/Canvas-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -520,6 +510,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
@@ -532,19 +526,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">

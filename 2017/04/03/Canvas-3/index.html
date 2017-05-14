@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>常用API(1)节点、document | Sky Club</title>
+  <title>Canvas(3) | Sky Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="节点属性12345678910111213Node.nodeName //返回节点名称，只读Node.nodeType //返回节点类型的常数值，只读Node.nodeValue //返回Text或Comment节点的文本值，只读Node.textContent //返回当前节点和它的所有后代节点的文本内容，可读写Node.baseURI //返回当前网页的绝对路径Node.ownerDocume">
-<meta name="keywords" content="api">
+  <meta name="description" content="性能优化： 画布渲染画布context.drawImage(img,x,y);img参数也可以是画布，也就是把一个画布整体的渲染到另外一个画布上。123456var canvas1 = document.querySelector(&amp;apos;#cavsElem1&amp;apos;);var canvas2 = document.querySelector(&amp;apos;#cavsElem2&amp;apos;)">
+<meta name="keywords" content="canvas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用API(1)节点、document">
-<meta property="og:url" content="http://yoursite.com/2017/02/22/常用API-1-节点、document/index.html">
+<meta property="og:title" content="Canvas(3)">
+<meta property="og:url" content="http://yoursite.com/2017/04/03/Canvas-3/index.html">
 <meta property="og:site_name" content="Sky Club">
-<meta property="og:description" content="节点属性12345678910111213Node.nodeName //返回节点名称，只读Node.nodeType //返回节点类型的常数值，只读Node.nodeValue //返回Text或Comment节点的文本值，只读Node.textContent //返回当前节点和它的所有后代节点的文本内容，可读写Node.baseURI //返回当前网页的绝对路径Node.ownerDocume">
-<meta property="og:updated_time" content="2017-05-09T23:40:38.978Z">
+<meta property="og:description" content="性能优化： 画布渲染画布context.drawImage(img,x,y);img参数也可以是画布，也就是把一个画布整体的渲染到另外一个画布上。123456var canvas1 = document.querySelector(&amp;apos;#cavsElem1&amp;apos;);var canvas2 = document.querySelector(&amp;apos;#cavsElem2&amp;apos;)">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3488771-890f2fdaaef1861b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-05-14T02:16:17.210Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用API(1)节点、document">
-<meta name="twitter:description" content="节点属性12345678910111213Node.nodeName //返回节点名称，只读Node.nodeType //返回节点类型的常数值，只读Node.nodeValue //返回Text或Comment节点的文本值，只读Node.textContent //返回当前节点和它的所有后代节点的文本内容，可读写Node.baseURI //返回当前网页的绝对路径Node.ownerDocume">
+<meta name="twitter:title" content="Canvas(3)">
+<meta name="twitter:description" content="性能优化： 画布渲染画布context.drawImage(img,x,y);img参数也可以是画布，也就是把一个画布整体的渲染到另外一个画布上。123456var canvas1 = document.querySelector(&amp;apos;#cavsElem1&amp;apos;);var canvas2 = document.querySelector(&amp;apos;#cavsElem2&amp;apos;)">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3488771-890f2fdaaef1861b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Sky Club" type="application/atom+xml">
   
@@ -144,29 +146,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-常用API-1-节点、document" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Canvas-3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      常用API(1)节点、document
+      Canvas(3)
     </h1>
   
 
         
-        <a href="/2017/02/22/常用API-1-节点、document/" class="archive-article-date">
-  	<time datetime="2017-02-21T23:37:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-22</time>
+        <a href="/2017/04/03/Canvas-3/" class="archive-article-date">
+  	<time datetime="2017-04-03T02:13:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Node.nodeName //返回节点名称，只读</div><div class="line">Node.nodeType //返回节点类型的常数值，只读</div><div class="line">Node.nodeValue //返回Text或Comment节点的文本值，只读</div><div class="line">Node.textContent //返回当前节点和它的所有后代节点的文本内容，可读写</div><div class="line">Node.baseURI //返回当前网页的绝对路径</div><div class="line">Node.ownerDocument //返回当前节点所在的顶层文档对象，即document</div><div class="line">Node.nextSibling //返回紧跟在当前节点后面的第一个兄弟节点</div><div class="line">Node.previousSibling //返回当前节点前面的、距离最近的一个兄弟节点</div><div class="line">Node.parentNode //返回当前节点的父节点</div><div class="line">Node.parentElement //返回当前节点的父Element节点</div><div class="line">Node.childNodes //返回当前节点的所有子节点</div><div class="line">Node.firstChild //返回当前节点的第一个子节点</div><div class="line">Node.lastChild //返回当前节点的最后一个子节点</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//parentNode接口</div><div class="line">Node.children //返回指定节点的所有Element子节点</div><div class="line">Node.firstElementChild //返回当前节点的第一个Element子节点</div><div class="line">Node.lastElementChild //返回当前节点的最后一个Element子节点</div><div class="line">Node.childElementCount //返回当前节点所有Element子节点的数目。</div><div class="line">//操作</div><div class="line">Node.appendChild(node) //向节点添加最后一个子节点</div><div class="line">Node.hasChildNodes() //返回布尔值，表示当前节点是否有子节点</div><div class="line">Node.cloneNode(true); // 默认为false(克隆节点), true(克隆节点及其属性，以及后代)</div><div class="line">Node.insertBefore(newNode,oldNode) // 在指定子节点之前插入新的子节点</div><div class="line">Node.removeChild(node) //删除节点，在要删除节点的父节点上操作</div><div class="line">Node.replaceChild(newChild,oldChild) //替换节点</div><div class="line">Node.contains(node) //返回一个布尔值，表示参数节点是否为当前节点的后代节点。</div><div class="line">Node.compareDocumentPosition(node) //返回一个7个比特位的二进制值，表示参数节点和当前节点的关系</div><div class="line">Node.isEqualNode(noe) //返回布尔值，用于检查两个节点是否相等。所谓相等的节点，指的是两个节点的类型相同、属性相同、子节点相同。</div><div class="line">Node.normalize() //用于清理当前节点内部的所有Text节点。它会去除空的文本节点，并且将毗邻的文本节点合并成一个。</div><div class="line">//ChildNode接口</div><div class="line">Node.remove() //用于删除当前节点</div><div class="line">Node.before() //</div><div class="line">Node.after()</div><div class="line">Node.replaceWith()</div></pre></td></tr></table></figure>
-<h3 id="Document节点的属性"><a href="#Document节点的属性" class="headerlink" title="Document节点的属性"></a>Document节点的属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">document.doctype //</div><div class="line">document.documentElement //返回当前文档的根节点</div><div class="line">document.defaultView //返回document对象所在的window对象</div><div class="line">document.body //返回当前文档的&lt;body&gt;节点</div><div class="line">document.head //返回当前文档的&lt;head&gt;节点</div><div class="line">document.activeElement //返回当前文档中获得焦点的那个元素。</div><div class="line">document.links //返回当前文档的所有a元素</div><div class="line">document.forms //返回页面中所有表单元素</div><div class="line">document.images //返回页面中所有图片元素</div><div class="line">document.embeds //返回网页中所有嵌入对象</div><div class="line">document.scripts //返回当前文档的所有脚本</div><div class="line">document.styleSheets //返回当前网页的所有样式表</div><div class="line"></div><div class="line">//文档信息属性</div><div class="line">document.documentURI //表示当前文档的网址</div><div class="line">document.URL //返回当前文档的网址</div><div class="line">document.domain //返回当前文档的域名</div><div class="line">document.lastModified //返回当前文档最后修改的时间戳</div><div class="line">document.location //返回location对象，提供当前文档的URL信息</div><div class="line">document.referrer //返回当前文档的访问来源</div><div class="line">document.title //返回当前文档的标题</div><div class="line">document.characterSet属性返回渲染当前文档的字符集，比如UTF-8、ISO-8859-1。</div><div class="line">document.readyState //返回当前文档的状态</div><div class="line">document.designMode //控制当前文档是否可编辑，可读写</div><div class="line">document.compatMode //返回浏览器处理文档的模式</div><div class="line">document.cookie //用来操作Cookie</div><div class="line"></div><div class="line">//查找节点</div><div class="line">document.open() //用于新建并打开一个文档</div><div class="line">document.close() //不安比open方法所新建的文档</div><div class="line">document.write() //用于向当前文档写入内容</div><div class="line">document.writeIn() //用于向当前文档写入内容，尾部添加换行符</div><div class="line">document.querySelector(selectors) //接受一个CSS选择器作为参数，返回第一个匹配该选择器的元素节点。</div><div class="line">document.querySelectorAll(selectors) //接受一个CSS选择器作为参数，返回所有匹配该选择器的元素节点。</div><div class="line">document.getElementsByTagName(tagName) //返回所有指定HTML标签的元素</div><div class="line">document.getElementsByClassName(className) //返回包括了所有class名字符合指定条件的元素</div><div class="line">document.getElementsByName(name) //用于选择拥有name属性的HTML元素（比如&lt;form&gt;、&lt;radio&gt;、&lt;img&gt;、&lt;frame&gt;、&lt;embed&gt;和&lt;object&gt;等）</div><div class="line">document.getElementById(id) //返回匹配指定id属性的元素节点。</div><div class="line">document.elementFromPoint(x,y) //返回位于页面指定位置最上层的Element子节点。</div><div class="line"></div><div class="line">//生成节点</div><div class="line">document.createElement(tagName) //用来生成HTML元素节点。</div><div class="line">document.createTextNode(text) //用来生成文本节点</div><div class="line">document.createAttribute(name) //生成一个新的属性对象节点，并返回它。</div><div class="line">document.createDocumentFragment() //生成一个DocumentFragment对象</div><div class="line"></div><div class="line">//事件方法</div><div class="line">document.createEvent(type) //生成一个事件对象，该对象能被element.dispatchEvent()方法使用</div><div class="line">document.addEventListener(type,listener,capture) //注册事件</div><div class="line">document.removeEventListener(type,listener,capture) //注销事件</div><div class="line">document.dispatchEvent(event) //触发事件</div><div class="line"></div><div class="line">//其他</div><div class="line">document.hasFocus() //返回一个布尔值，表示当前文档之中是否有元素被激活或获得焦点.</div><div class="line">document.adoptNode(externalNode) //将某个节点，从其原来所在的文档移除，插入当前文档，并返回插入后的新节点。</div><div class="line">document.importNode(externalNode, deep) //从外部文档拷贝指定节点，插入当前文档。</div></pre></td></tr></table></figure>
+        <h3 id="性能优化："><a href="#性能优化：" class="headerlink" title="性能优化："></a>性能优化：</h3><ul>
+<li>画布渲染画布<br>context.drawImage(img,x,y);<br>img参数也可以是画布，也就是把一个画布整体的渲染到另外一个画布上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var canvas1 = document.querySelector(&apos;#cavsElem1&apos;);</div><div class="line">var canvas2 = document.querySelector(&apos;#cavsElem2&apos;);</div><div class="line">var ctx1 = canvas1.getContext(&apos;2d&apos;);</div><div class="line">var ctx2 = canvas2.getContext(&apos;2d&apos;);</div><div class="line">ctx1.fillRect(20, 20, 40, 40);      //在第一个画布上绘制矩形</div><div class="line">ctx2.drawImage(canvas1, 10, 10);    //将第一个画布整体绘制到第二个画布上</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Canvas画布转为base64编码保存"><a href="#Canvas画布转为base64编码保存" class="headerlink" title="Canvas画布转为base64编码保存"></a>Canvas画布转为base64编码保存</h3><p>把canvas绘制的内容输出成base64内容。<br>语法：canvas.toDataURL(type, encoderOptions);<br>例如：canvas.toDataURL(“image/jpg”,1);<br>参数说明：<br>type，设置输出的类型，比如 image/png image/jpeg等<br>encoderOptions： 0-1之间的数字，用于标识输出图片的质量，1表示无损压缩，类型为： image/jpeg 或者image/webp才起作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var canvas = document.getElementById(&quot;canvas&quot;);</div><div class="line">var dataURL = canvas.toDataURL();</div><div class="line">console.log(dataURL);</div><div class="line">// &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNby</div><div class="line">// blAAAADElEQVQImWNgoBMAAABpAAFEI8ARAAAAAElFTkSuQmCC&quot;</div><div class="line">var img = document.querySelector(&quot;#img-demo&quot;);//拿到图片的dom对象</div><div class="line">img.src = canvas.toDataURL(&quot;image/png&quot;);      //将画布的内容给图片标签显示</div></pre></td></tr></table></figure>
+<h3 id="合成属性"><a href="#合成属性" class="headerlink" title="合成属性"></a>合成属性</h3><p>Composite(组合),就是对你在绘图中,后绘制的图形与先绘制的图形之间的组合显示效果,比如在国画中,你先画一笔红色,再来一笔绿色,相交的部分是一种混色,而在油画中,绿色就会覆盖掉相交部分的红色,这在程序绘图中的处理就是Composite,Canvas API中对应的函数就是globalCompositeOperation,这个属性是全局的,所以在使用的时候要注意save和restore.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.globalCompositeOperation = &apos;destination-out&apos;;</div></pre></td></tr></table></figure>
+<ul>
+<li>source-over 默认,相交部分由后绘制图形的填充(颜色,渐变,纹理)覆盖,全部浏览器通过</li>
+<li>source-in 只绘制相交部分,由后绘制图形的填充覆盖,其余部分透明</li>
+<li>source-out 只绘制后绘制图形不相交的部分,由后绘制图形的填充覆盖,其余部分透明</li>
+<li>source-atop 后绘制图形不相交的部分透明,相交部分由后绘制图形的填充覆盖,全部浏览器通过</li>
+<li>destination-over相交部分由先绘制图形的填充(颜色,渐变,纹理)覆盖,全部浏览器通过</li>
+<li>destination-in只绘制相交部分,由先绘制图形的填充覆盖,其余部分透明</li>
+<li>destination-out只绘制先绘制图形不相交的部分,由先绘制图形的填充覆盖,其余部分透明,全部浏览器通过</li>
+<li>destination-atop先绘制图形不相交的部分透明,相交部分由先绘制图形的填充覆盖</li>
+<li>lighter 相交部分由根据先后图形填充来增加亮度,全部浏览器通过</li>
+<li>darker 相交部分由根据先后图形填充来降低亮度</li>
+<li>copy 只绘制后绘制图形,只有opera通过</li>
+<li>xor 相交部分透明,全部浏览器通过<br><img src="http://upload-images.jianshu.io/upload_images/3488771-890f2fdaaef1861b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+
       
 
       
@@ -179,7 +201,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
         		</li>
       		
 		</ul>
@@ -235,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/22/常用API-1-节点、document/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/03/Canvas-3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -249,18 +271,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/02/25/常用API-2-、Element/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          常用API(2)、Element
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/19/Github-Hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Github+Hexo</div>
+    <a href="/2017/04/01/Java-变量-基本类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java-变量/基本类型</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -273,7 +286,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="常用API-1-节点、document" data-title="常用API(1)节点、document" data-url="http://yoursite.com/2017/02/22/常用API-1-节点、document/"></div>
+	<div class="ds-thread" data-thread-key="Canvas-3" data-title="Canvas(3)" data-url="http://yoursite.com/2017/04/03/Canvas-3/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

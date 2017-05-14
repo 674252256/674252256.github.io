@@ -141,6 +141,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Canvas-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/28/Canvas-1/">Canvas(1)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/28/Canvas-1/" class="archive-article-date">
+  	<time datetime="2017-03-28T03:22:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Canvas是一个矩形区域的画布，可以用JS控制每一个像素在上面绘画。拥有多种绘制路径、矩形、圆形、字符以及添加图像的js方法.</p>
+<h3 id="浏览器不兼容处理"><a href="#浏览器不兼容处理" class="headerlink" title="浏览器不兼容处理"></a>浏览器不兼容处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&quot;canvas&quot;&gt;</div><div class="line">你的浏览器不支持canvas，请升级浏览器.浏览器不支持，显示此行文本</div><div class="line">&lt;/canvas&gt;</div></pre></td></tr></table></figure>
+<h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><p>Context是canvas的绘图上下文(具有绘制操作api入口或者集合).是js操作canvas的接口.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获得画布</div><div class="line">var canvas  = document.getElementById( &apos;cavsElem&apos; );</div><div class="line">//：2d小写，二维， 3d：webgl</div><div class="line">var ctx = canvas.getContext( &apos;2d&apos; );</div></pre></td></tr></table></figure>
+<ul>
+<li><p>绘制起点(moveTo)<br>语法：ctx.moveTo(x, y);<br>解释：设置上下文绘制路径的起点。<br>参数：x,y 都是相对于 canvas盒子的最左上角。<br>注意：绘制线段前必须先设置起点，不然绘制无效</p>
+</li>
+<li><p>绘制直线(lineTO)<br>语法：ctx.lineTo(x, y);<br>解释：从x,y的位置绘制一条直线到起点或者上一个线头点。<br>参数：x,y 线头点坐标。</p>
+</li>
+<li><p>路径开始和闭合<br>开始路径：ctx.beginPath();<br>闭合路径：ctx.closePath();<br>解释：如果复杂路径绘制，必须使用路径开始和结束。<br>closePath:闭合路径会自动把最后的线头和开始的线头连在一起。<br>beginPath: 核心的作用是将不同绘制的形状进行隔离，每次执行此方法，表示重新绘制一个路径,跟之前的绘制的路径可以进行分开样式设置和管理。</p>
+</li>
+<li><p>描边(stroke)<br>语法：ctx.stroke();<br>解释：根据路径绘制线。路径只是草稿，真正绘制线必须执行stroke</p>
+</li>
+</ul>
+<h3 id="canvas绘制的基本步骤："><a href="#canvas绘制的基本步骤：" class="headerlink" title="canvas绘制的基本步骤："></a>canvas绘制的基本步骤：</h3><p>第一步：获得上下文 =&gt;canvasElem.getContext(‘2d’);<br>第二步：开始路径规划 =&gt;ctx.beginPath()<br>第三步：移动起始点 =&gt;ctx.moveTo(x, y)<br>第四步：绘制(点、线、面、图片…) =&gt;ctx.lineTo(x, y)<br>第五步：闭合路径 =&gt;ctx.closePath();<br>第六步：绘制描边 =&gt;ctx.stroke()</p>
+<h3 id="创建矩形"><a href="#创建矩形" class="headerlink" title="创建矩形"></a>创建矩形</h3><ul>
+<li>创建矩形 rect()<br>语法：ctx.rect(x, y, width, height);</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ctx.rect(100, 100, 200, 100);</div><div class="line">ctx.lineWidth = 5;</div><div class="line">ctx.strokeStyle = &apos;red&apos;;</div><div class="line">//2.1 描边</div><div class="line">ctx.stroke();</div><div class="line">//2.2 填充颜色</div><div class="line">ctx.fillStyle = &apos;blue&apos;;</div><div class="line">//填充</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
+<ul>
+<li>快速创建矩形strokeRect()<br>语法：ctx.rect(x, y, width, height);</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 快速创建矩形 ,这个方法描述完路径以后,立即进行描边处理</div><div class="line">ctx.strokeRect(350, 100, 200, 100);</div><div class="line">//注意:再绘制之前,一定要设置描边或者颜色,才起作用</div><div class="line">ctx.fillStyle = &apos;yellow&apos;;</div><div class="line">// 快速创建填充矩形</div><div class="line">ctx.fillRect(350, 100, 200, 100);</div><div class="line">// 清除矩形区域</div><div class="line">ctx.clearRect(350, 100, 50,50);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>绘制文字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> //绘制字体</div><div class="line">ctx.font = &quot;100px &apos;微软雅黑&apos;&quot;;</div><div class="line">ctx.strokeStyle = &apos;red&apos;;</div><div class="line">ctx.lineWidth = 3;</div><div class="line">//绘制无填充字体</div><div class="line">ctx.strokeText(&apos;WOW&apos;, 200, 200);</div><div class="line">ctx.fillStyle = &apos;purple&apos;;</div><div class="line">//绘制填充字体</div><div class="line">ctx.fillText(&apos;SeeMyGo&apos;, 200, 200);</div><div class="line">//修改文字垂直对齐方式</div><div class="line">ctx.textAlign = &apos;right&apos;;</div><div class="line">//修改文字水平对齐方式</div><div class="line">ctx.textBaseline = &apos;top&apos;;</div><div class="line">    </div><div class="line">//阴影模糊效果</div><div class="line">ctx.shadowColor = &apos;orange&apos;;</div><div class="line">//阴影的偏移</div><div class="line">ctx.shadowOffsetX = -10;</div><div class="line">ctx.shadowOffsetY = -20;</div><div class="line">//模糊范围</div><div class="line">ctx.shadowBlur = 10;</div></pre></td></tr></table></figure>
+</li>
+<li><p>绘制弧线 / 圆形<br>语法：ctx.arc(x,y,r,sAngle,eAngle,counterclockwise);<br>x,y：圆心坐标。<br>r：半径大小。<br>sAngle:绘制开始的角度。 圆心到最右边点是0度，顺时针方向弧度增大。<br>eAngel:结束的角度，注意是弧度。π<br>counterclockwise：是否是逆时针。true是逆时针，false：顺时针(默认)<br>弧度和角度的转换公式： rad = deg*Math.PI/180;</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ctx.arc(200, 200, 100, 0, 90 * Math.PI/180, false); </div><div class="line">ctx.lineWidth = 3;</div><div class="line">ctx.strokeStyle = &apos;red&apos;;</div><div class="line">//描边</div><div class="line">ctx.stroke();</div><div class="line">//填充颜色</div><div class="line">ctx.fillStyle = &apos;blue&apos;;</div><div class="line">//填充</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
+<p>三角函数的补充<br>Math.sin(弧度); //夹角对面的边 和 斜边的比值<br>Math.cos(弧度); //夹角侧边 与斜边的比值<br>圆形上面的点的坐标的计算公式<br>x =x0 + Math.cos(rad) R;//x0和y0是圆心点坐标<br>y =y0 + Math.sin(rad) R;//注意都是弧度<br><img src="http://upload-images.jianshu.io/upload_images/3488771-e71ad1ae2a20bc4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/28/Canvas-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Java-第一个程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -281,71 +371,6 @@
 
 
   
-    <article id="post-Node-js-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/21/Node-js-2/">Node.js(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/21/Node-js-2/" class="archive-article-date">
-  	<time datetime="2017-03-21T02:46:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Node.js中，将很多的功能，划分为了一个个mudule，<br><strong>require</strong>表示引包，引包就是引用自己的一个特殊功能</p>
-<h3 id="Http模块"><a href="#Http模块" class="headerlink" title="Http模块"></a>Http模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//引用模块</div><div class="line">var http = require(&quot;http&quot;);</div><div class="line">//创建一个服务器，回调函数表示接收到请求之后做的事情</div><div class="line">var server = http.createServer(function(req,res)&#123;</div><div class="line">	//req参数表示请求，res表示响应</div><div class="line">	console.log(&quot;服务器接收到了请求&quot; + req.url);</div><div class="line">	//设置头部</div><div class="line">	res.writeHead(200,&#123;&quot;Content-Type&quot;:&quot;text/html;charset=UTF8&quot;&#125;);</div><div class="line">	res.write(&quot;&lt;h1&gt;我是主标题&lt;/h1&gt;&quot;);</div><div class="line">	res.end((1+2+3).toString());</div><div class="line">&#125;);</div><div class="line">//监听端口</div><div class="line">server.listen(3000,&quot;127.0.0.1&quot;);</div></pre></td></tr></table></figure>
-<h3 id="Url模块"><a href="#Url模块" class="headerlink" title="Url模块"></a>Url模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var http = require(&quot;http&quot;);</div><div class="line">var url = require(&quot;url&quot;);</div><div class="line">var server = http.createServer(function(req,res)&#123;</div><div class="line">	//url.parse()可以将一个完整的URL地址，分为很多部分：</div><div class="line">	//host、port、pathname、path、query</div><div class="line">	var pathname = url.parse(req.url).pathname;</div><div class="line">	//url.parse()如果第二个参数是true，那么就可以将所有的查询变为对象</div><div class="line">	//就可以直接打点得到这个参数</div><div class="line">	var query = url.parse(req.url,true).query;</div><div class="line">	//直接打点得到这个参数</div><div class="line">	var age = query.age;</div><div class="line">	</div><div class="line">	console.log(&quot;pathname:&quot; + pathname);</div><div class="line">	console.log(&quot;query:&quot; + query);</div><div class="line">	console.log(&quot;age:&quot; + age);</div><div class="line">	</div><div class="line">	res.end();</div><div class="line">&#125;);</div><div class="line">server.listen(3030,&quot;127.0.0.1&quot;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var http = require(&quot;http&quot;);</div><div class="line">var url = require(&quot;url&quot;);</div><div class="line">var server = http.createServer(function(req,res)&#123;</div><div class="line">	//得到查询部分，由于写了true，那么就是一个对象</div><div class="line">	var queryObj = url.parse(req.url,true).query;</div><div class="line">	var name = queryObj.name;</div><div class="line">	var age = queryObj.age;</div><div class="line">	var sex = queryObj.sex;</div><div class="line">	</div><div class="line">	res.end(&quot;服务器收到了表单请求&quot; + name + age + sex);</div><div class="line">&#125;);</div><div class="line">server.listen(3000,&quot;127.0.0.1&quot;);</div></pre></td></tr></table></figure>
-<h3 id="fs模块-文件读取"><a href="#fs模块-文件读取" class="headerlink" title="fs模块 文件读取"></a>fs模块 文件读取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//两个参数，第一个是完整路径，当前目录写./</div><div class="line">	//第二个参数，就是回调函数，表示文件读取成功之后，做的事情</div><div class="line">	fs.readFile(&quot;./test/1.txt&quot;,function(err,data)&#123;</div><div class="line">		if(err)&#123;</div><div class="line">			throw err;</div><div class="line">		&#125;</div><div class="line">		console.log(userid + &quot;文件读取完毕&quot;);</div><div class="line">			res.end(data);</div><div class="line">	&#125;);</div><div class="line">//两个参数，第一个是完整路径，当前目录写./</div><div class="line">	//第二个参数，就是回调函数，表示文件读取成功之后，做的事情</div><div class="line">	fs.readFile(&quot;./test/1.txt&quot;,function(err,data)&#123;</div><div class="line">		if(err)&#123;</div><div class="line">			throw err;</div><div class="line">		&#125;</div><div class="line">		console.log(userid + &quot;文件读取完毕&quot;);</div><div class="line">		res.end(data);</div><div class="line">	&#125;);</div><div class="line">	fs.mkdir(&quot;./album/aaa&quot;); //创建文件</div><div class="line">//stat检测状态</div><div class="line">	fs.stat(&quot;./album/bbb&quot;,function(err,data)&#123;</div><div class="line">		//检测这个路径，是不是一个文件夹</div><div class="line">		console.log(data.isDirectory());</div><div class="line">	&#125;);</div></pre></td></tr></table></figure>
-<p>字符串查询，用querystring处理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">querystring.parse(&apos;foo=bar&amp;baz=qux&amp;baz=quux&amp;corge&apos;)</div><div class="line">// returns</div><div class="line">&#123; foo: &apos;bar&apos;, baz: [&apos;qux&apos;, &apos;quux&apos;], corge: &apos;&apos; &#125;</div><div class="line">// Suppose gbkDecodeURIComponent function already exists,</div><div class="line">// it can decode `gbk` encoding string</div><div class="line">querystring.parse(&apos;w=%D6%D0%CE%C4&amp;foo=bar&apos;, null, null,</div><div class="line">  &#123; decodeURIComponent: gbkDecodeURIComponent &#125;)</div><div class="line">// returns</div><div class="line">&#123; w: &apos;中文&apos;, foo: &apos;bar&apos; &#125;</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/21/Node-js-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -434,6 +459,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
@@ -446,19 +475,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
