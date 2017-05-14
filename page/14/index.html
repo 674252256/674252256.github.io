@@ -141,6 +141,65 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/02/JSON/">JSON</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/02/JSON/" class="archive-article-date">
+  	<time datetime="2017-02-02T12:28:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JSON是一种轻量级的数据结构，用来表示、存储、传输数据.<br>键值对集合.json中key需要添加双引号.</p>
+<h3 id="把JSON数据转换为对象"><a href="#把JSON数据转换为对象" class="headerlink" title="把JSON数据转换为对象"></a>把JSON数据转换为对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var obj = JSON.parse(&quot;&#123;\&quot;name\&quot;:\&quot;默默的备胎\&quot;&#125;&quot;);</div><div class="line">console.log(obj);</div><div class="line">//把对象转换为json数据</div><div class="line">var str = JSON.stringify(obj);</div><div class="line">console.log(str);</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/02/JSON/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-JS-作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -288,87 +347,6 @@
 
 
   
-    <article id="post-Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/29/Java/">Java</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/29/Java/" class="archive-article-date">
-  	<time datetime="2017-01-29T03:36:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="转换各种进制值"><a href="#转换各种进制值" class="headerlink" title="转换各种进制值"></a>转换各种进制值</h2><p><strong>十进制和二进制之间转换:</strong><br>十进制—&gt;二进制:<br>对于整数部分，用被除数反复除以2，除第一次外，每次除以2均取前一次商的整数部分作被除数并依次记下每次的余数。<br>另外，所得到的商的最后一位余数是所求二进制数的最高位。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-f5822d9e657218ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li><p>二进制—&gt;十进制:<br>进制数第1位的权值是2的0次方，第2位的权值是2的1次方，第2位的权值是2的2次方……公式：第N位 * 2的N-1次方,结果再相加.<br><img src="http://upload-images.jianshu.io/upload_images/3488771-bf0a9da46d201280.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li><p>十进制和八进制之间转换:<br>十进制—&gt;八进制:<br>10进制数转换成8进制的方法，和转换为2进制的方法类似，唯一变化：除数由2变成8。<br>八进制—&gt;十进制:<br>进制数第1位的权值为8的0次方，第2位权值为8的1次方，第3位权值为8的2次方</p>
-</li>
-<li><p>十进制和十六进制之间转换:100<br>十进制—&gt;十六进制:<br>10进制数转换成16进制的方法，和转换为2进制的方法类似，唯一变化：除数由2变成16。<br>十六进制—&gt;十进制:<br>第0位的权值为16的0次方，第1位的权值为16的1次方，第2位的权值为16的2次方……</p>
-</li>
-<li><p>二进制和八进制之间转换:<br>二进制和十六进制之间转换:<br>八进制和十六进制之间转换:<br><img src="http://upload-images.jianshu.io/upload_images/3488771-1b958f88f8ffa560.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-</ul>
-<h3 id="原码、反码和补码操作"><a href="#原码、反码和补码操作" class="headerlink" title="原码、反码和补码操作:"></a>原码、反码和补码操作:</h3><p>在计算机内，有符号数有3种表示法：<strong>原码、反码和补码</strong>,所有数据的运算都是采用补码进行的。<br>正数的原码，反码，补码都相同，负数稍微复杂。<br>操作5(101)和-5的二进制。<br>原码:<br>就是二进制定点表示法，即最高位为符号位，“0”表示正，“1”表示负，其余位表示数值的大小。<br>反码:<br>负数的反码是对其原码逐位取反，<strong>但符号位除外</strong>。<br>补码:<br>负数的补码是在其反码的末位加1。</p>
-<p><strong>求反码的时候，最高位是符号位不能改变。<br>  正数的符号位是0.<br>  负数的符号位是1.</strong></p>
-<p>  <img src="http://upload-images.jianshu.io/upload_images/3488771-02b25d44b0432615.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="Java的跨平台性原理"><a href="#Java的跨平台性原理" class="headerlink" title="Java的跨平台性原理"></a>Java的跨平台性原理</h3><p><strong>Java跨平台的原理：</strong><br>   1）：编译之后会生成与平台无关的字节码文件。</p>
-<p>   2）：得依赖不同平台的虚拟机（JVM）。</p>
-<p>   <strong>JVM是不跨平台的。</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3488771-2e66d0aa2f48f296.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="JDK-JRE-JVM概述"><a href="#JDK-JRE-JVM概述" class="headerlink" title="JDK-JRE-JVM概述"></a>JDK-JRE-JVM概述</h3><blockquote>
-<p><strong>见Java模型概念图:</strong><br><strong>JRE(Java RuntimeEnvironment)：Java运行环境</strong>，如果要运行Java程序，就需要JRE的支持，JRE里包含JVM。<br><strong>JDK(Java DevelopmentKit)：Java开发工具</strong>，包含开发Java程序的所有工具,如javac和java等，JDK里包含JRE。<br>Java虚拟机（Java Virtual Machine），简称JVM，它是运行所有Java程序的虚拟计算机，好比是街机游戏的模拟器。<br>JVM是Java语言的运行环境，也是Java最具吸引力的特性之一。JVM用于读取并处理编译过的与平台无关的字节码(class)文件，从而实现Java的可移植性。但是值得注意的<strong>是Java虚拟机是不跨平台的。也就是说在Win下得装Win版的JVM，在Linux下装Linux版的JVM。</strong><br>见图:选择不同平台的JDK版本<br>JVM是Java程序的解释和执行器。</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/3488771-1124ff7e33dea308.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3488771-f9d6b80efb897c7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/29/Java/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
@@ -457,6 +435,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
@@ -466,10 +448,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">

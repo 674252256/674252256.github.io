@@ -141,6 +141,144 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React-Native-2-环境配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/11/React-Native-2-环境配置/"> React Native(2)环境配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/11/React-Native-2-环境配置/" class="archive-article-date">
+  	<time datetime="2017-04-11T02:56:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="如果你使用的是Mac-OS系统-请参照以下步骤"><a href="#如果你使用的是Mac-OS系统-请参照以下步骤" class="headerlink" title="如果你使用的是Mac OS系统,请参照以下步骤"></a>如果你使用的是Mac OS系统,请参照以下步骤</h3><p><strong>安装前注意：<br>1）在Max OS X 10.11（El Capitan)版本中，homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复：<br>sudo chown -R <code>whoami</code> /usr/local<br>2）如果命令行提示command not found，请加上sudo获得最高权限</strong></p>
+<h3 id="一、环境需求"><a href="#一、环境需求" class="headerlink" title="一、环境需求"></a>一、环境需求</h3><ul>
+<li>一、环境需求<ul>
+<li><strong>1.1  安装Homebrew</strong><br>   Homebrew是OS X的套件(包)管理器，用于安装Node.js和一些其他必须的工具软件。</li>
+</ul>
+</li>
+</ul>
+<p><strong>安装方式:</strong><br>      ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="external">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)”</p>
+<ul>
+<li><p><strong>1.2 安装npm 和 Node.js</strong><br>   Node.js最好安装5.0及其以上更高版本，node安装成功后npm自动也就有了，直接下载安装Node.js，网址：<a href="https://nodejs.org/en/download/）。" target="_blank" rel="external">https://nodejs.org/en/download/）。</a><br>brew install node</p>
+</li>
+<li><p><strong>1.3  安装WatchMan</strong><br>   WatchMan是由Facebook提供的监视文件系统变更的工具。安装此工具可以提高开发时的性能（packager可以快速捕捉文件的变化从而实现实时刷新）。<br>brew install watchman<br><strong>验证是否安装成功</strong></p>
+</li>
+</ul>
+<ul>
+<li><strong>1.4  安装Flow</strong><pre><code>flow是一个 JavaScript 的静态类型检查器。这一语法并不属于ES标准，只是Facebook自家的代码规范。所以新手可以直接跳过（即不需要安装这一工具，也不建议去费力学习flow相关语法）。
+</code></pre><strong>brew install flow</strong><br><strong>验证是否安装成功</strong></li>
+</ul>
+<h3 id="二、React-Native安装"><a href="#二、React-Native安装" class="headerlink" title="二、React Native安装"></a>二、React Native安装</h3><ul>
+<li><strong>2.1  Yarn、React Native的命令行工具（react-native-cli）</strong><pre><code>Yarn是Facebook提供的替代npm的工具，可以加速node模块的下载。React Native的命令行工具用于执行创建、初始化、更新项目、运行打包服务（packager）等任务。
+</code></pre><strong>npm install -g yarn react-native-cli</strong></li>
+</ul>
+<p><strong>如果你使用的是Windows系统,请参照以下步骤</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">一、确保所有的命令行操作都在管理员权限下操作</div><div class="line"></div><div class="line"></div><div class="line">二、需要安装的插件</div><div class="line">2.1 Chocolatey</div><div class="line">     Chocolatey是一个Windows上的包管理器，类似于Mac上的watchMan。一般的安装步骤应该是下面这样, 如果国内访问失败, 请使用翻墙工具:</div><div class="line">@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((new-object net.webclient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))&quot; &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin</div><div class="line"></div><div class="line">2.2  Python 2</div><div class="line">choco install python2</div><div class="line"></div><div class="line"></div><div class="line">2.3 Node</div><div class="line">打开命令提示符窗口，使用Chocolatey来安装NodeJS.</div><div class="line">choco install nodejs.install</div><div class="line">安装完node后建议设置npm镜像以加速后面的过程（或使用科学上网工具）。</div><div class="line">npm config set registry https://registry.npm.taobao.org --globalnpm config set disturl https://npm.taobao.org/dist --global</div></pre></td></tr></table></figure></p>
+<p><strong> 以下步骤为公共步骤 </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">三、 ios开发环境需求</div><div class="line">Xcode 8 及其以上更高版本</div><div class="line"></div><div class="line">四、 Android开发环境需求</div><div class="line">      安装最新版的JDK:</div><div class="line">       你可以在命令行中输入 javac -version来查看你当前安装的JDK版本。下载安装地址：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html （资料中已经存放）</div><div class="line">       建议安装Android studio，在安装过程中请严格执行以下选项：</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>1）选择 Custom 选项</p>
+</li>
+<li><p>2）勾选Performance和Android Virtual Device</p>
+</li>
+<li><p>3）安装完成后，在Android Studio的启动欢迎界面中选择Configure | SDK Manage</p>
+</li>
+<li><p>4）在SDK Platforms窗口中，选择Show Package Details，然后在Android 6.0 (Marshmallow)中勾选Google APIs、Android SDK Platform 23、Intel x86 Atom System Image、Intel x86 Atom_64 System Image以及Google APIs Intel x86 Atom_64 System Image。</p>
+</li>
+<li>5）在SDK Tools窗口中，选择Show Package Details，然后在Android SDK Build Tools中勾选Android SDK Build-Tools 23.0.1（必须是这个版本）。然后还要勾选最底部的Android Support Repository。</li>
+<li><p>6）ANDROID_HOME环境变量<br>确保ANDROID_HOME环境变量正确地指向了你安装的Android SDK的路径。具体的做法是把下面的命令加入到~/.bash_profile文件中，使用  vi ~/.bash_profile。<br><strong>如果你不是通过Android Studio安装的sdk，则其路径可能不同，请自行确定清楚。</strong><br>export ANDROID_HOME=~/Library/Android/sdk<br>然后使用下列命令使其立即生效：<br><strong>source</strong> ~/.bash_profile<br>可以使用<strong>echo $ANDROID_HOME</strong>检查此变量是否已正确设置。</p>
+</li>
+<li><p>4.1  安装Genymotion</p>
+<pre><code>Genymotion是一个第三方模拟器，它比Google官方的模拟器更易设置且性能更好。但是，它只针对个人用户免费。
+</code></pre><ul>
+<li>1）下载并安装Genymotion<a href="https://www.genymotion.com/" target="_blank" rel="external">https://www.genymotion.com/</a></li>
+<li>2）打开Genymotion,如果你尚未安装VirtualBox,它有可能会提示你安装</li>
+<li>3）创建一个模拟器并启动</li>
+<li>4）按下⌘+M可以打开开发者菜单(在安装并启动了ReactNative应用之后)</li>
+</ul>
+</li>
+<li><p>4.2  Gradle Daemon<br>  开启Gradle Daemon可以极大地提升java代码的增量编译速度。<br>  touch ~/.gradle/gradle.properties&amp;&amp;echo”org.gradle.daemon=true” &gt;&gt; ~/.gradle/gradle.properties</p>
+</li>
+</ul>
+<h3 id="五、-React-Native的第一个应用"><a href="#五、-React-Native的第一个应用" class="headerlink" title="五、 React Native的第一个应用"></a>五、 React Native的第一个应用</h3><ul>
+<li>5.1 执行命令,生成一个工程<br> <strong>react-native init 项目名称</strong><br>   注意:由于众所周知的网络原因，需要等待一段时间（具体视网络情况而定）。react-native命令行从npm官方源拖代码时会遇上麻烦，可以将npm仓库源替换为国内镜像：<br><strong>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>npm config set disturl <a href="https://npm.taobao.org/dist" target="_blank" rel="external">https://npm.taobao.org/dist</a></strong><ul>
+<li>5.2  运行截图<br><img src="http://upload-images.jianshu.io/upload_images/3488771-70051de51fc5d354.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>5.3 目录结构截图<br><strong>目录结构分析:</strong></li>
+<li>a）默认生成android和ios两个平台的原生项目；</li>
+<li>b）其中，index.android.js和index.ios.js文件为Android和iOS的空壳应用文件；</li>
+<li>c）此外，node_modules文件夹，是为Node.js存放和管理npm包资源，也包含React Native框架文件。<h3 id="六、运行工程文件"><a href="#六、运行工程文件" class="headerlink" title="六、运行工程文件"></a>六、运行工程文件</h3> 不管是 iOS 还是 Android，在开发调试阶段，都需要在 Mac 上启动一个 HTTP 服务，称为<strong>DebugServer</strong>，默认运行在<strong>8081</strong>端口，APP 通 Debug Server 加载 js。</li>
+<li>6.1 打开Xcode，运行你的第一个React Native创建的iOS应用<br><img src="http://upload-images.jianshu.io/upload_images/3488771-f41c78b740b3bdd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>6.2 把React Native创建的应用跑在Android上<ul>
+<li>a) 命令行执行cd SeeMyGoProduct,路径切换到项目主目录</li>
+<li>b) 命令行执行react-native run-android进行加载运行android 应用。</li>
+<li>c) 使用编辑器进行打开和修改index.android.js文件，接着通过菜单按钮选择Reload JS来进行刷新修改</li>
+</ul>
+</li>
+</ul>
+<h3 id="七、管理React-Native库的版本"><a href="#七、管理React-Native库的版本" class="headerlink" title="七、管理React Native库的版本"></a>七、管理React Native库的版本</h3><pre><code>在开发中，会经常的去控制React Native的版本库，得以适配各种条件下的开发，那该如何查看、控制ReactNative的版本呢？
+</code></pre><ul>
+<li>7.1 查看本地的React Native的版本<br>命令行输入<br> react-native –version<br>命令行效果</li>
+<li>7.2 更新本地的React Native的版本<br>  命令行输入<br>  npm update -g react-native-cli</li>
+<li>7.3 查询react-native的npm包最新版本<br>   NPM的全称是Node Package Manager ，是一个NodeJS包管理和分发工具，已经成为了非官方的发布Node模块（包）的标准。<br>  npm包地址 ：<br><strong><a href="https://www.npmjs.com/package/react-native" target="_blank" rel="external">https://www.npmjs.com/package/react-native</a></strong><br><strong>npm info react-native</strong><br>  查询效果在项目中查看</li>
+<li>7.4 升级或者降级npm包的版本<br><strong>npm install –save react-native@0.18</strong></li>
+<li>7.5 更新项目templates文件（可选）<pre><code>新的npm包会包含更新在运行react-native init命令生成的一些动态文件，例如init创建项目的时候会生成iOS和Android的子项目，我们可以通过以下的命令进行获取最新的代码
+</code></pre>   命令行查询<br><strong>react-native upgrade</strong></li>
+</ul>
+<h3 id="八、WebStom设置React-Native代码提示"><a href="#八、WebStom设置React-Native代码提示" class="headerlink" title="八、WebStom设置React Native代码提示"></a>八、WebStom设置React Native代码提示</h3><ul>
+<li>8.1 从gitHub上下载xml插件<br><strong>git clone</strong><br><strong><a href="https://github.com/virtoolswebplayer/ReactNative-LiveTemplat" target="_blank" rel="external">https://github.com/virtoolswebplayer/ReactNative-LiveTemplat</a></strong></li>
+<li>8.2  安装<br>将<strong>ReactNative.xml</strong>复制到~/Library/Preferences/WebStorm10/templates，然后重启**WebStrom</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">react native</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/11/React-Native-2-环境配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-React-Native-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -299,86 +437,6 @@
 
 
   
-    <article id="post-Canvas-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/03/Canvas-3/">Canvas(3)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/03/Canvas-3/" class="archive-article-date">
-  	<time datetime="2017-04-03T02:13:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="性能优化："><a href="#性能优化：" class="headerlink" title="性能优化："></a>性能优化：</h3><ul>
-<li>画布渲染画布<br>context.drawImage(img,x,y);<br>img参数也可以是画布，也就是把一个画布整体的渲染到另外一个画布上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var canvas1 = document.querySelector(&apos;#cavsElem1&apos;);</div><div class="line">var canvas2 = document.querySelector(&apos;#cavsElem2&apos;);</div><div class="line">var ctx1 = canvas1.getContext(&apos;2d&apos;);</div><div class="line">var ctx2 = canvas2.getContext(&apos;2d&apos;);</div><div class="line">ctx1.fillRect(20, 20, 40, 40);      //在第一个画布上绘制矩形</div><div class="line">ctx2.drawImage(canvas1, 10, 10);    //将第一个画布整体绘制到第二个画布上</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Canvas画布转为base64编码保存"><a href="#Canvas画布转为base64编码保存" class="headerlink" title="Canvas画布转为base64编码保存"></a>Canvas画布转为base64编码保存</h3><p>把canvas绘制的内容输出成base64内容。<br>语法：canvas.toDataURL(type, encoderOptions);<br>例如：canvas.toDataURL(“image/jpg”,1);<br>参数说明：<br>type，设置输出的类型，比如 image/png image/jpeg等<br>encoderOptions： 0-1之间的数字，用于标识输出图片的质量，1表示无损压缩，类型为： image/jpeg 或者image/webp才起作用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var canvas = document.getElementById(&quot;canvas&quot;);</div><div class="line">var dataURL = canvas.toDataURL();</div><div class="line">console.log(dataURL);</div><div class="line">// &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNby</div><div class="line">// blAAAADElEQVQImWNgoBMAAABpAAFEI8ARAAAAAElFTkSuQmCC&quot;</div><div class="line">var img = document.querySelector(&quot;#img-demo&quot;);//拿到图片的dom对象</div><div class="line">img.src = canvas.toDataURL(&quot;image/png&quot;);      //将画布的内容给图片标签显示</div></pre></td></tr></table></figure>
-<h3 id="合成属性"><a href="#合成属性" class="headerlink" title="合成属性"></a>合成属性</h3><p>Composite(组合),就是对你在绘图中,后绘制的图形与先绘制的图形之间的组合显示效果,比如在国画中,你先画一笔红色,再来一笔绿色,相交的部分是一种混色,而在油画中,绿色就会覆盖掉相交部分的红色,这在程序绘图中的处理就是Composite,Canvas API中对应的函数就是globalCompositeOperation,这个属性是全局的,所以在使用的时候要注意save和restore.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.globalCompositeOperation = &apos;destination-out&apos;;</div></pre></td></tr></table></figure>
-<ul>
-<li>source-over 默认,相交部分由后绘制图形的填充(颜色,渐变,纹理)覆盖,全部浏览器通过</li>
-<li>source-in 只绘制相交部分,由后绘制图形的填充覆盖,其余部分透明</li>
-<li>source-out 只绘制后绘制图形不相交的部分,由后绘制图形的填充覆盖,其余部分透明</li>
-<li>source-atop 后绘制图形不相交的部分透明,相交部分由后绘制图形的填充覆盖,全部浏览器通过</li>
-<li>destination-over相交部分由先绘制图形的填充(颜色,渐变,纹理)覆盖,全部浏览器通过</li>
-<li>destination-in只绘制相交部分,由先绘制图形的填充覆盖,其余部分透明</li>
-<li>destination-out只绘制先绘制图形不相交的部分,由先绘制图形的填充覆盖,其余部分透明,全部浏览器通过</li>
-<li>destination-atop先绘制图形不相交的部分透明,相交部分由先绘制图形的填充覆盖</li>
-<li>lighter 相交部分由根据先后图形填充来增加亮度,全部浏览器通过</li>
-<li>darker 相交部分由根据先后图形填充来降低亮度</li>
-<li>copy 只绘制后绘制图形,只有opera通过</li>
-<li>xor 相交部分透明,全部浏览器通过<br><img src="http://upload-images.jianshu.io/upload_images/3488771-890f2fdaaef1861b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/03/Canvas-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -467,6 +525,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
@@ -476,10 +538,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">

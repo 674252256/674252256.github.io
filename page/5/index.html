@@ -141,6 +141,129 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Angular-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/14/Angular-3/">Angular(3)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/14/Angular-3/" class="archive-article-date">
+  	<time datetime="2017-03-14T06:11:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Angular除了用 ng-include 指令在视图中引用多个模板外，AngularJS还提供了 ngRoute 路由模块，它允许我们<br>将视图分解成布局和模板视图，然后根据用户当前访问的URL来展示对应的视图，从而实现单页面应用的页面<br>跳转功能。</p>
+</blockquote>
+<h3 id="一、模板"><a href="#一、模板" class="headerlink" title="一、模板"></a>一、模板</h3><p>AngularJS提供了一套完整的模板系统。在模板系统中，可以包含AngularJS的指令、数据绑定、表单控件和过<br>滤器。<br>在页面中，我们可以通过包含( ng-include )的方式来加载这些模板页。<br><strong>外链模板</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-include=&quot;&apos;example.html&apos;&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>script模板</strong></p>
+<p>通过” type “类型为” text/ng-template “的 script 元素来构建一个模板，在模板内放置内容(可以包含AngularJS的指令、数据绑定、表单控件和过滤器)。<br>通过添加元素的” src “属性，导入一个外部文件作为绑定数据的模板，在绑定模板时，还需使用”ng-include “指令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/ng-template&quot; id=&quot;myTemplate&quot;&gt;</div><div class="line">&#123;&#123; person.name &#125;&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;div ng-controller=&quot;myController&quot;&gt;</div><div class="line">	&lt;h1 my-directive=&quot;&quot;&gt;&lt;/h1&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt; script &gt;</div><div class="line">	var myApp = angular.module(&apos;myApp&apos;, [&apos;ngRoute&apos;]);</div><div class="line">	myApp.controller(&apos;myController&apos;,</div><div class="line">		function($scope) &#123;</div><div class="line">			$scope.person = &#123;</div><div class="line">			name: &apos;angular template&apos;</div><div class="line">			&#125;;</div><div class="line">		&#125;).directive(&apos;myDirective&apos;,</div><div class="line">			function() &#123;</div><div class="line">				return &#123;</div><div class="line">					restrict: &apos;ECA&apos;,</div><div class="line">					templateUrl: &apos;myTemplate&apos;</div><div class="line">				&#125;;</div><div class="line">		&#125;);</div><div class="line">&lt; /script&gt;</div></pre></td></tr></table></figure>
+<p>外链模板<br>ng-view 指令可以精确地指定当前路由所对应的模板在DOM中的渲染位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller=&quot;TestController&quot;&gt;</div><div class="line">	&lt;div ng-view&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var myApp = angular.module(&apos;myApp&apos;, [&apos;ngRoute&apos;]);</div><div class="line">myApp.config([&apos;$routeProvider&apos;, &apos;$locationProvider&apos;,</div><div class="line">	function($routeProvider, $locationProvider) &#123;</div><div class="line">		$locationProvider.hashPrefix(&apos;&apos;);</div><div class="line">		$routeProvider.when(&apos;/&apos;, &#123;</div><div class="line">		templateUrl: &apos;main.html&apos;</div><div class="line">&#125;).otherwise(&#123;</div><div class="line">		redirectTo: &apos;/&apos;</div><div class="line">	&#125;);</div><div class="line">&#125;]);</div><div class="line">	myApp.controller(&apos;TestController&apos;,</div><div class="line">	function($scope) &#123;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>ng-view就是用来放置外链模板的，而在配置块中，我们通过ngRoute 路由模块来配置路由，根据地址来加载模块。<br>ng-view 是由 ngRoute 模块提供的一个特殊指令，它的独特作用是在HTML中给 $route 对应的视图内容占位。它会创建自己的作用域并将模板嵌套在内部。<br>注意： ng-view 是一个优先级为1000的终极指令。AngularJS不会运行同一个元素上的低优先级指令。</p>
+</blockquote>
+<p>ngView 指令遵循以下规则：</p>
+<ul>
+<li>创建一个新的作用域</li>
+<li>移除上一个视图，同时上一个作用域也会被清除</li>
+<li>将新的作用域同当前模板关联在一起</li>
+<li>如果路由中有相关的定义，那么就把对应的控制器同当前作用域关联起来</li>
+<li>触发$viewContentLoader事件</li>
+<li>如果提供了onload属性，调用该属性所指定的函数</li>
+</ul>
+<h3 id="二、路由使用"><a href="#二、路由使用" class="headerlink" title="二、路由使用"></a>二、路由使用</h3><p><strong>1.6版本对路由做了更新，要像以前一样使用路由，必须加上<br>$locationProvider.hashPrefix(‘’);</strong></p>
+<blockquote>
+<p>在单页WEB应用中，我们通过给同一个url添加不同的标识符，从而实现不同页面的跳转功能。<br>标识符是由一个#号（#号代表着网页的一个位置）和相应的字符串组成 。<br>我们称#号及后面的内容称为url中的hash片段，它们都不会发送到服务端，址都是一样的。如果只改变#号后面的内容，刷新不会导致网页的重载。</p>
+</blockquote>
+<h3 id="三、AngularJS的-routeProvider-服务来定义路由，它提供的-when-和-otherwise-两个方法来定义应用的路由。"><a href="#三、AngularJS的-routeProvider-服务来定义路由，它提供的-when-和-otherwise-两个方法来定义应用的路由。" class="headerlink" title="三、AngularJS的 $routeProvider 服务来定义路由，它提供的 when 和 otherwise 两个方法来定义应用的路由。"></a>三、AngularJS的 $routeProvider 服务来定义路由，它提供的 when 和 otherwise 两个方法来定义应用的路由。</h3><p><strong>when()</strong><br>方法用来添加一个特定的路由，它可以接受两个参数：when(path, route)<br>path：路由路径，这个路径会与$location.path(当前URL的路径)进行匹配。<br>route：配置对象，决定了当第一个参数中的路由能够匹配时具体做些什么。</p>
+<blockquote>
+<p>配置对象中可以设置<br>1.controller： name | function<br>如果配置对象中设置了 controller 属性，那么这个指定的控制器会与路由所创建的新作用域关联在一起。<br>2.template: ‘HTML’<br>值是一个字符串，代表一个Html模板，AngularJS会将配置对象中的HTML模板渲染到对应的具有 ng-view指令的DOM元素中。<br>3.templateUrl: path<br>值是一个字符串，代表一个存着Html模板的路径，AngularJS会将模板的内容渲染到对应的具有 ng-view 指令的DOM元素中。<br>4.redirectTo: path | funciton<br>如果 redirectTo 属性的值是一个字符串，那么路径会被替换成这个值，并根据这个目标路径触发路由变化。<br>如果 redirectTo 属性的值是一个函数，那么路径会被替换成函数的返回值，并根据这个目标路径触发路由变化 redirectTo: function(route, path, search) {}<br>可以传入是三个参数：当前路径的路由参数，当前路径，当前URL中的查询串<br>5.reloadOnSearch值是一个布尔值，为true的时候 $location.search() 发生变化时就会重新加载路由location.search 是从当前URL的?号开始（包括?号）的字符串。<br>6.resolve 属性是一个对象。如果设置了resolve属性，AngularJS会将列表（对象）中所有的属性都注入到控制器的依赖</p>
+</blockquote>
+<p><strong>otherwise()</strong><br>可以将所有意外路径进行重定向的捕获器</p>
+<h3 id="使用路由步骤"><a href="#使用路由步骤" class="headerlink" title="使用路由步骤:"></a>使用路由步骤:</h3><p>1.引入angular-route.js<br>2.实例化模块时,注入ngRoute模块<br>3.配置路由模块<br>4.布局模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;angular-route.js&quot;&gt;&lt;/script&gt;</div><div class="line">    var app = angular.module(&apos;app&apos;,[&apos;ngRoute&apos;]);</div><div class="line">    app.config([&apos;$routeProvider&apos;,function ($routeProvider) &#123;</div><div class="line">	//$locationProvider.hashPrefix(&apos;&apos;); 1.6更新 需要添加</div><div class="line">        //配置路由的目的</div><div class="line">        //监听哪些锚点，如果是对应的锚点，要去引入什么样的模块。</div><div class="line">        $routeProvider.when(&apos;/index&apos;,&#123;</div><div class="line">            templateUrl:&apos;template/index_tpl.html&apos;, // 找到文件之后，会把文件当中所有的内容，放到ng-view占位的标签当中。</div><div class="line">            controller:&quot;gzcController&quot;</div><div class="line">        &#125;).when(&apos;/music&apos;,&#123;</div><div class="line">            templateUrl:&apos;template/music_tpl.html&apos;,</div><div class="line">            controller:&apos;musicController&apos;</div><div class="line">        &#125;).when(&apos;/singer&apos;,&#123;</div><div class="line">            templateUrl:&apos;template/singer_tpl.html&apos;,</div><div class="line">            controller:&apos;singerController&apos;</div><div class="line">        &#125;).otherwise(&#123;</div><div class="line">            // 设置默认锚点跳转</div><div class="line">            redirectTo:&apos;/index&apos;</div><div class="line">        &#125;)</div><div class="line">    &#125;]);</div><div class="line">    // 定义控制器</div><div class="line">     app.controller(&apos;gzcController&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">        $scope.name = &quot;index&quot;;</div><div class="line">     &#125;]);</div><div class="line">     app.controller(&apos;musicController&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">         $scope.name = &quot;music&quot;;</div><div class="line">     &#125;]);</div><div class="line">     app.controller(&apos;singerController&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">         $scope.name = &quot;singer&quot;;</div><div class="line">     &#125;]);</div><div class="line">     &lt;body ng-app=&quot;app&quot; ng-controller=&quot;gzcController&quot;&gt;</div><div class="line">     &lt;div class=&quot;nav&quot;&gt;</div><div class="line">         &lt;ul&gt;</div><div class="line">             &lt;li&gt;&lt;a href=&quot;#/index&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li&gt;&lt;a href=&quot;#/music&quot;&gt;音乐&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li&gt;&lt;a href=&quot;#/singer&quot;&gt;歌手&lt;/a&gt;&lt;/li&gt;</div><div class="line">         &lt;/ul&gt;</div><div class="line">     &lt;/div&gt;</div><div class="line">     &lt;div class=&quot;content&quot; ng-view&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="路由传参："><a href="#路由传参：" class="headerlink" title="路由传参："></a>路由传参：</h3><p>传参两步：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* 1.配置时，定义参数$routeProvider.when(&apos;/index/:id)</div><div class="line">* 2.跳转时，传递对应的参数   &lt;a href=&quot;#/index/1&quot;&gt;首页&lt;/a&gt;</div><div class="line">* 3.获取参数： 在绑定的控制器当中，注入服务$routeParams</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">app.controller(&apos;indexController&apos;,[&apos;$scope&apos;,&apos;$routeParams&apos;,function ($scope,$routeParams) &#123;</div><div class="line">   /*1.创建模块</div><div class="line">   * 1。注入路由</div><div class="line">   * */</div><div class="line">  var app =  angular.module(&apos;app&apos;,[&apos;ngRoute&apos;]);</div><div class="line">   /*2.配置路由*/</div><div class="line">  app.config([&apos;$routeProvider&apos;,function ($routeProvider) &#123;</div><div class="line">      $routeProvider.when(&apos;/index/:id&apos;,&#123;</div><div class="line">         templateUrl:&apos;music_tpl.html&apos;,</div><div class="line">          controller:&apos;gzcController&apos;</div><div class="line">      &#125;).otherwise(&#123;</div><div class="line">          redirectTo:&apos;/index/1&apos;</div><div class="line">      &#125;);</div><div class="line">  &#125;]);</div><div class="line">  /*2.创建控制器*/</div><div class="line">  app.controller(&apos;gzcController&apos;,[&apos;$scope&apos;,&apos;$routeParams&apos;,&apos;$http&apos;,function ($scope,$routeParams,$http) &#123;</div><div class="line">      $http(&#123;</div><div class="line">          url:&apos;listMusic.php&apos;,</div><div class="line">          method:&apos;get&apos;,</div><div class="line">          params:&#123;</div><div class="line">              id:$routeParams.id</div><div class="line">          &#125;</div><div class="line">      &#125;).success(function (res) &#123;</div><div class="line">          $scope.listM = res;</div><div class="line">      &#125;)</div><div class="line">  &#125;]);</div></pre></td></tr></table></figure>
+<h3 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式:"></a>路由模式:</h3><p>$location 服务有两种用来控制地址栏URL格式的配置： Hashbang模式 （默认）和 HTML5模式 （使用HTML5历史API）。应用会使用两种模式中相同的API，并且$location服务会使用需要的URL片段和浏览器API来帮助改变URL或者进行历史管理。</p>
+<p><strong>标签模式(Hashbang)</strong><br>标签(hashbang)是AngularJS用来同你的应用内部进行链接的技巧。标签模式是HTML5模式的降级方案，URL<br>路径会以#符号开头。AngularJS将默认使用标签模式。<br><a href="http://example.com/#!/index" target="_blank" rel="external">http://example.com/#!/index</a><br>如果要显式指定配置并使用标签模式，需要子啊应用模块的 config 函数中进行配置。<br>myApp.config([‘$locationProvider’, function($locationProvider) {<br>$locationProvider.html5Mode(false);<br>});<br>我们还可以使用hashPrefix()方法来修改标签模式下标签默认的前缀!符号。<br>myApp.config([‘$locationProvider’, function($locationProvider) {<br>$locationProvider.hasPrefix(‘!’);<br>});</p>
+<blockquote>
+<p>1.6版本对路由做了更新，要像以前一样使用路由，必须加上<br>$locationProvider.hashPrefix(‘’); 。</p>
+</blockquote>
+<p><strong>HTML5模式</strong><br>在HTML5模式中， $location服务的读写器和浏览器的URL地址通过HTML5历史API交互，这使你能用<br>开启HTML5模式：<br>$locationProvider.html5Mode(true);</p>
+<h3 id="路由事件"><a href="#路由事件" class="headerlink" title="路由事件"></a>路由事件</h3><p>$route 服务在路由过程中的每个阶段都会触发不同的事件，可以为这些事件设置监听器并做出响应。路由事件都是系统自动从 $rootScope 广播下去的，我们最好的做法是在 $rootScope 中监听，而最佳设置的地方就是 run 方法，这样可以保证不会漏掉任何路由变化。</p>
+<p><strong>(1) $routeChangeStart</strong><br>AngularJS在路由变化之前会广播 $routeChagneStart 事件。在这一阶段，路由服务会开始加载路由变化<br>所需要的所有依赖，并且模板和 resolve 键中的promise也会被 resolve 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myApp.run([&apos;$rootScope&apos;, &apos;$location&apos;, function($rootScope, $location) &#123;</div><div class="line">$rootScope.$on(&apos;$routeChangeStart&apos;, function(event, next, current) &#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>$routeChangeStart的回调函数中带有三个参数：</p>
+<ul>
+<li>event：原始的AngularJS event对象</li>
+<li>next：将要导航到的下一个URL</li>
+<li>current：路由变化前的URL</li>
+</ul>
+<p><strong>(2) $routeChangeSuccess</strong><br>AngularJS会在路由的依赖被加载后广播 $routeChageSuccess 事件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myApp.run([&apos;$rootScope&apos;, &apos;$location&apos;, function($rootScope, $location) &#123;</div><div class="line">$rootScope.$on(&apos;$routeChangeSuccess&apos;, function(event, next, previous) &#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>$routeChangeSuccess有三个参数 :</p>
+<ul>
+<li>event： 原始的AngularJS event对象</li>
+<li>next：用户当前所处的路由</li>
+<li>previous：上一个路由（如果当前路由是第一个，则为undefined）<br>(3) $routeChangeErrorAngularJS在任何一个promise被拒绝或者失败时广播 $routeChagneError 事件。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myApp.run([&apos;$rootScope&apos;, &apos;$location&apos;, function($rootScope, $location) &#123;</div><div class="line">$rootScope.$on(&apos;$routeChangeError&apos;, function(current, previous, rejection) &#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>$routeChangeError事件有三个参数 :</p>
+<ul>
+<li>当前路由的信息</li>
+<li>上一个路由的信息</li>
+<li>被拒绝的promise的错误信息</li>
+</ul>
+<p><strong>(4) $routeUpdate</strong><br>AngularJS在reloadOnSearch属性被设置为false的情况下，重新适应某个控制器的实例时，会广播$routeupdate 事件</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ag</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/14/Angular-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Angular-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -414,92 +537,6 @@
 
 
   
-    <article id="post-检测-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/10/检测-3/">检测(3)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/10/检测-3/" class="archive-article-date">
-  	<time datetime="2017-03-10T00:39:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-delete关键字"><a href="#1-delete关键字" class="headerlink" title="1.delete关键字"></a>1.delete关键字</h3><p>作用:<br>(1) 删除对象中的属性<br>(2) 删除没有使用var关键字声明的全局变量<br>注意:<br>(1)返回值 布尔类型的值(我们可以通过该值来判断是否删除成功)<br>(2)使用var关键字声明的变量无法被删除<br>(3)删除对象中不存在的属性没有任何变化,但是返回值为true</p>
-<h3 id="2-instanceof-lt-所有的对象都是Object构造函数（类型）的实例-gt"><a href="#2-instanceof-lt-所有的对象都是Object构造函数（类型）的实例-gt" class="headerlink" title="2.instanceof &lt;所有的对象都是Object构造函数（类型）的实例&gt;"></a>2.instanceof &lt;所有的对象都是Object构造函数（类型）的实例&gt;</h3><p>判断某个对象是否是指定构造函数的实例对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">  console.log(arr instanceof Array);      //true</div></pre></td></tr></table></figure>
-<h3 id="3-isPrototypeOf"><a href="#3-isPrototypeOf" class="headerlink" title="3.isPrototypeOf"></a>3.isPrototypeOf</h3><p>判断是否是某个实例对象的原型对象(检查整个原型链)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(Person.prototype.isPrototypeOf(p1));    //rue</div></pre></td></tr></table></figure>
-<h3 id="4-基本包装类型-String-Number-Boolean"><a href="#4-基本包装类型-String-Number-Boolean" class="headerlink" title="4.基本包装类型 (String ,Number ,Boolean )"></a>4.基本包装类型 (String ,Number ,Boolean )</h3><p>访问属性或者调用方法的时候</p>
-<ul>
-<li>内部会隐式的创建一个对象，利用该对象来访问属性或者是调用方法</li>
-<li>得到结果之后，把结果赋值给基本数据类型的值</li>
-<li><p>销毁这个创建的对象</p>
-<h3 id="5-toString-返回一个对当前对象的字符串描述信息-并非一定是该对象的字符串形式"><a href="#5-toString-返回一个对当前对象的字符串描述信息-并非一定是该对象的字符串形式" class="headerlink" title="5.toString 返回一个对当前对象的字符串描述信息,并非一定是该对象的字符串形式"></a>5.toString 返回一个对当前对象的字符串描述信息,并非一定是该对象的字符串形式</h3></li>
-<li><p>object类型的对象 返回的什么 [obejct Object]</p>
-</li>
-<li>其他对象类型如函数 | 数组 ,返回对应的字符串形式</li>
-<li>Number类型 可以传递参数(进制) 不传递参数:默认是十进制<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var a = &#123;&#125;;</div><div class="line">var b = &#123;name:&quot;张三&quot;&#125;;</div><div class="line">var c = &#123;&#125;;   </div><div class="line">c[&#123;&#125;] = &quot;测试01&quot;;   //c[&quot;[object Object]&quot;] = &quot;&quot;  在使用对象作为对象属性的时候，内部会调用该对象的tostring方法</div><div class="line">c[b] = &quot;测试02&quot;;   //c[&quot;[object Object]&quot;] = &quot;&quot;</div><div class="line">console.log(c[a]);  // 测试02</div><div class="line">console.log(c);     // [object Object]: &quot;测试</div><div class="line">var o = &#123;name:&quot;zhangsan&quot;&#125;;</div><div class="line">console.log(o.toString());    //[obejct Object]</div><div class="line">var arr = [&quot;demo01&quot;,&quot;demo02&quot;,&quot;demo03&quot;];</div><div class="line">console.log(arr.toString());  //demo01,demo02,demo03</div><div class="line">function demoTest()&#123;&#125;;</div><div class="line">//    console.log(demoTest.toString());  //function demoTest()&#123;&#125;</div><div class="line">var num = new Number(10);</div><div class="line">console.log(num.toString());  //20</div><div class="line">console.log(num.toString(2));  //1010 --- &gt; 1 * 2*2*2 + 0 *2*2 + 1*2 + 0*1 = 8 + 0 + 2 + 0 = 10</div><div class="line">console.log(num.toString(3));  //101  ---&gt; 1*3*3 + 0 * 3 + 1 *1 = 9 + 0 + 1 = 10</div><div class="line">console.log(num.toString(7));   //13  ---&gt; 1 * 7 + 3*1 = 10</div><div class="line">//toLocaleString 大部分情况下的等价于toString方法，特殊情况下会做本地化处理(添加一些本地信息)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="6-valueOf-返回对应的值"><a href="#6-valueOf-返回对应的值" class="headerlink" title="6.valueOf 返回对应的值"></a>6.valueOf 返回对应的值</h3><ul>
-<li>基本包装类型（String Number Boolean）,返回对应的基本类型的值</li>
-<li>object类型的，返回this(该对象本身)</li>
-<li>date(日期类)，返回时间戳<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = new String(&quot;tese&quot;);</div><div class="line">console.log(str.valueOf());  //tese</div><div class="line">var o = &#123;name:&quot;lisi&quot;&#125;;</div><div class="line">console.log(o.valueOf());  // object</div><div class="line">var date = new Date();   //当前的时间</div><div class="line">console.log(date.valueOf());//1488163624297时间戳，是一个绝对的值</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="7-判断一个对象的类型"><a href="#7-判断一个对象的类型" class="headerlink" title="7.判断一个对象的类型"></a>7.判断一个对象的类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.toString.call(arr)</div></pre></td></tr></table></figure>
-<h3 id="8-Number的调用"><a href="#8-Number的调用" class="headerlink" title="8.Number的调用"></a>8.Number的调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Number.prototype.sum = function(param)&#123;</div><div class="line">    return this + param;</div><div class="line">&#125;</div><div class="line">var num1= new Number(&quot;10&quot;);</div><div class="line">var num2 = 30;</div><div class="line">console.log(num1.sum(2));     //可以调用</div><div class="line">console.log(num1.sum(33));   //可以调用</div><div class="line">console.log(num2.sum(44));  //可以调用吗？ 74</div><div class="line">console.log((10).sum(11));      //可以调用吗？  （）表达式  21</div><div class="line"> console.log(10.sum(22));        //不可以调用 报错</div></pre></td></tr></table></figure>
-<p>变量的方式调用成功,表达式的方式调用成功,数值的方式调用失败</p>
-<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>实例成员<br>成员：属性和方法<br>说明：实例对象上面添加的属性和方法<br>静态成员<br>构造函数：本身也是对象，所以构造函数自己也可以拥有属性和方法，这些属性和方法就是静态成员<br>原型成员<br>构造函数的原型对象上面的属性和方法（des + logDes）</p>
-<p>特权方法<br>可以访问构造函数内部的变量和函数，这种方法被称为特权方法<br>私有变量:<br>在构造函数内部声明的变量<br>私有方法:<br>在构造函数内部声明的函数</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">confirm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/10/检测-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -588,6 +625,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ag</a>
               </li>
              
@@ -597,10 +638,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
