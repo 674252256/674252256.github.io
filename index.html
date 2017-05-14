@@ -307,32 +307,46 @@
 
 
   
-    <article id="post-Node-js-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java-第一个程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/24/Node-js-3/">Node.js(3)</a>
+      <a class="article-title" href="/2017/03/27/Java-第一个程序/">Java-第一个程序</a>
     </h1>
   
 
         
-        <a href="/2017/03/24/Node-js-3/" class="archive-article-date">
-  	<time datetime="2017-03-24T03:15:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-24</time>
+        <a href="/2017/03/27/Java-第一个程序/" class="archive-article-date">
+  	<time datetime="2017-03-27T01:32:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><ul>
-<li>在Node.js中，以模块为单位划分所有功能，并且提供了一个完整的模块加载机制，这时的我们可以将应用程序划分为各个不同的部分。</li>
-<li>狭义的说，每一个JavaScript文件都是一个模块；而多个JavaScript文件之间可以相互require，他们共同实现了一个功能，他们整体对外，又称为一个广义上的模块<br><strong>一个JavaScript文件中定义的变量、函数，都只在这个文件内部有效。当需要从此JS文件外部引用这些变量、函数时，必须使用exports对象进行暴露。使用者要用require()命令引用这个JS文件。</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var msg = &quot;你好&quot;;</div><div class="line">exports.msg = msg;</div><div class="line">//msg这个变量，是一个js文件内部才有作用域的变量。</div><div class="line">//如果别人想用这个变量，那么就要用exports进行暴露。</div><div class="line">//使用者</div><div class="line">var foo = require(&quot;./test/foo.js&quot;);</div><div class="line">console.log(foo.msg);</div></pre></td></tr></table></figure>
-</li>
+        <p><strong>一般而言，编写的第一个程序，习惯叫做HelloWorld.</strong></p>
+<h2 id="需求：在控制台界面，输出：你好师姐。"><a href="#需求：在控制台界面，输出：你好师姐。" class="headerlink" title="需求：在控制台界面，输出：你好师姐。    "></a>需求：在控制台界面，输出：<strong>你好师姐。</strong>    </h2><p>开发步骤：</p>
+<ul>
+<li>1：在E:\Will\01_JavaSE\资料和视频\day01\codes目录下：<pre><code>新建文本文档，起名为123.java。
+注意：java是文件得后缀名（拓展名）。
+![](http://upload-images.jianshu.io/upload_images/3488771-11aeb9df6d107706.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+</code></pre></li>
+<li>2：使用记事本打开在123.java文件，键入以下代码：<br>   <img src="http://upload-images.jianshu.io/upload_images/3488771-139cee8caf5e1d74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>3：打开命令控制台窗口，并进入当前源文件所在的目录，对123.java文件做编译。</li>
+<li><img src="http://upload-images.jianshu.io/upload_images/3488771-e0bb02f5ce9c99d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 </ul>
-<h3 id="exports"><a href="#exports" class="headerlink" title="exports"></a>exports</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var msg = &quot;你好&quot;;</div><div class="line">var info = &quot;呵呵&quot;;</div><div class="line">function showInfo()&#123;</div><div class="line">    console.log(info);</div><div class="line">&#125;</div><div class="line">exports.msg = msg;</div><div class="line">exports.info = info;</div><div class="line">exports.showInfo = showInfo;</div><div class="line">使用者只需要 require 一次</div><div class="line">var foo = require(&quot;./test/foo.js&quot;);</div><div class="line">相当于增加了顶层变量。所有的函数、变量都要从这个顶层变量走：</div><div class="line">console.log(foo.msg);</div><div class="line">console.log(foo.info);</div><div class="line">foo.showInfo();</div></pre></td></tr></table></figure>
+<p><strong>改变了源文件必须重新编译<br>编译成功之后，会生成Hello.class文件（字节码文件）。</strong></p>
+<ul>
+<li>4：启动JVM，并加载Hello.class这份字节码，并解释执行。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-37096d451f7afd5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p><strong>注意：java  类名，不能是java  类名.class.</strong><br>      上述错误，是该类缺少main方法。</p>
+<ul>
+<li>5：修正代码如下，再编译运行。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-018d7aa9ec3209ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3488771-da59744d74616081.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3488771-5574a3a8eae445ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+
       
 
       
@@ -345,7 +359,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -355,7 +369,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/24/Node-js-3/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/27/Java-第一个程序/">展开全文 >></a>
         </p>
       
 
@@ -372,7 +386,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -462,19 +476,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,6 +493,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
