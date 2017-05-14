@@ -141,6 +141,66 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-常用API-1-节点、document" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/22/常用API-1-节点、document/">常用API(1)节点、document</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/22/常用API-1-节点、document/" class="archive-article-date">
+  	<time datetime="2017-02-21T23:37:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Node.nodeName //返回节点名称，只读</div><div class="line">Node.nodeType //返回节点类型的常数值，只读</div><div class="line">Node.nodeValue //返回Text或Comment节点的文本值，只读</div><div class="line">Node.textContent //返回当前节点和它的所有后代节点的文本内容，可读写</div><div class="line">Node.baseURI //返回当前网页的绝对路径</div><div class="line">Node.ownerDocument //返回当前节点所在的顶层文档对象，即document</div><div class="line">Node.nextSibling //返回紧跟在当前节点后面的第一个兄弟节点</div><div class="line">Node.previousSibling //返回当前节点前面的、距离最近的一个兄弟节点</div><div class="line">Node.parentNode //返回当前节点的父节点</div><div class="line">Node.parentElement //返回当前节点的父Element节点</div><div class="line">Node.childNodes //返回当前节点的所有子节点</div><div class="line">Node.firstChild //返回当前节点的第一个子节点</div><div class="line">Node.lastChild //返回当前节点的最后一个子节点</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//parentNode接口</div><div class="line">Node.children //返回指定节点的所有Element子节点</div><div class="line">Node.firstElementChild //返回当前节点的第一个Element子节点</div><div class="line">Node.lastElementChild //返回当前节点的最后一个Element子节点</div><div class="line">Node.childElementCount //返回当前节点所有Element子节点的数目。</div><div class="line">//操作</div><div class="line">Node.appendChild(node) //向节点添加最后一个子节点</div><div class="line">Node.hasChildNodes() //返回布尔值，表示当前节点是否有子节点</div><div class="line">Node.cloneNode(true); // 默认为false(克隆节点), true(克隆节点及其属性，以及后代)</div><div class="line">Node.insertBefore(newNode,oldNode) // 在指定子节点之前插入新的子节点</div><div class="line">Node.removeChild(node) //删除节点，在要删除节点的父节点上操作</div><div class="line">Node.replaceChild(newChild,oldChild) //替换节点</div><div class="line">Node.contains(node) //返回一个布尔值，表示参数节点是否为当前节点的后代节点。</div><div class="line">Node.compareDocumentPosition(node) //返回一个7个比特位的二进制值，表示参数节点和当前节点的关系</div><div class="line">Node.isEqualNode(noe) //返回布尔值，用于检查两个节点是否相等。所谓相等的节点，指的是两个节点的类型相同、属性相同、子节点相同。</div><div class="line">Node.normalize() //用于清理当前节点内部的所有Text节点。它会去除空的文本节点，并且将毗邻的文本节点合并成一个。</div><div class="line">//ChildNode接口</div><div class="line">Node.remove() //用于删除当前节点</div><div class="line">Node.before() //</div><div class="line">Node.after()</div><div class="line">Node.replaceWith()</div></pre></td></tr></table></figure>
+<h3 id="Document节点的属性"><a href="#Document节点的属性" class="headerlink" title="Document节点的属性"></a>Document节点的属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">document.doctype //</div><div class="line">document.documentElement //返回当前文档的根节点</div><div class="line">document.defaultView //返回document对象所在的window对象</div><div class="line">document.body //返回当前文档的&lt;body&gt;节点</div><div class="line">document.head //返回当前文档的&lt;head&gt;节点</div><div class="line">document.activeElement //返回当前文档中获得焦点的那个元素。</div><div class="line">document.links //返回当前文档的所有a元素</div><div class="line">document.forms //返回页面中所有表单元素</div><div class="line">document.images //返回页面中所有图片元素</div><div class="line">document.embeds //返回网页中所有嵌入对象</div><div class="line">document.scripts //返回当前文档的所有脚本</div><div class="line">document.styleSheets //返回当前网页的所有样式表</div><div class="line"></div><div class="line">//文档信息属性</div><div class="line">document.documentURI //表示当前文档的网址</div><div class="line">document.URL //返回当前文档的网址</div><div class="line">document.domain //返回当前文档的域名</div><div class="line">document.lastModified //返回当前文档最后修改的时间戳</div><div class="line">document.location //返回location对象，提供当前文档的URL信息</div><div class="line">document.referrer //返回当前文档的访问来源</div><div class="line">document.title //返回当前文档的标题</div><div class="line">document.characterSet属性返回渲染当前文档的字符集，比如UTF-8、ISO-8859-1。</div><div class="line">document.readyState //返回当前文档的状态</div><div class="line">document.designMode //控制当前文档是否可编辑，可读写</div><div class="line">document.compatMode //返回浏览器处理文档的模式</div><div class="line">document.cookie //用来操作Cookie</div><div class="line"></div><div class="line">//查找节点</div><div class="line">document.open() //用于新建并打开一个文档</div><div class="line">document.close() //不安比open方法所新建的文档</div><div class="line">document.write() //用于向当前文档写入内容</div><div class="line">document.writeIn() //用于向当前文档写入内容，尾部添加换行符</div><div class="line">document.querySelector(selectors) //接受一个CSS选择器作为参数，返回第一个匹配该选择器的元素节点。</div><div class="line">document.querySelectorAll(selectors) //接受一个CSS选择器作为参数，返回所有匹配该选择器的元素节点。</div><div class="line">document.getElementsByTagName(tagName) //返回所有指定HTML标签的元素</div><div class="line">document.getElementsByClassName(className) //返回包括了所有class名字符合指定条件的元素</div><div class="line">document.getElementsByName(name) //用于选择拥有name属性的HTML元素（比如&lt;form&gt;、&lt;radio&gt;、&lt;img&gt;、&lt;frame&gt;、&lt;embed&gt;和&lt;object&gt;等）</div><div class="line">document.getElementById(id) //返回匹配指定id属性的元素节点。</div><div class="line">document.elementFromPoint(x,y) //返回位于页面指定位置最上层的Element子节点。</div><div class="line"></div><div class="line">//生成节点</div><div class="line">document.createElement(tagName) //用来生成HTML元素节点。</div><div class="line">document.createTextNode(text) //用来生成文本节点</div><div class="line">document.createAttribute(name) //生成一个新的属性对象节点，并返回它。</div><div class="line">document.createDocumentFragment() //生成一个DocumentFragment对象</div><div class="line"></div><div class="line">//事件方法</div><div class="line">document.createEvent(type) //生成一个事件对象，该对象能被element.dispatchEvent()方法使用</div><div class="line">document.addEventListener(type,listener,capture) //注册事件</div><div class="line">document.removeEventListener(type,listener,capture) //注销事件</div><div class="line">document.dispatchEvent(event) //触发事件</div><div class="line"></div><div class="line">//其他</div><div class="line">document.hasFocus() //返回一个布尔值，表示当前文档之中是否有元素被激活或获得焦点.</div><div class="line">document.adoptNode(externalNode) //将某个节点，从其原来所在的文档移除，插入当前文档，并返回插入后的新节点。</div><div class="line">document.importNode(externalNode, deep) //从外部文档拷贝指定节点，插入当前文档。</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/22/常用API-1-节点、document/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Github-Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -273,93 +333,9 @@
 
 
   
-    <article id="post-Flex布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/15/Flex布局/">Flex布局</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/15/Flex布局/" class="archive-article-date">
-  	<time datetime="2017-02-15T14:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">* Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</div><div class="line">* Webkit内核的浏览器，必须加上-webkit前缀。</div><div class="line"></div><div class="line">容器元素</div><div class="line">.box&#123;</div><div class="line">  display: flex;</div><div class="line">&#125;</div><div class="line">行内元素</div><div class="line">.box&#123;</div><div class="line">  display: inline-flex;</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">  display: -webkit-flex; /* Safari */</div><div class="line">  display: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3488771-48cb14608a6801f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>属性决定主轴的方向（即项目的排列方向）。<br>row（默认值）：主轴为水平方向，起点在左端。<br>row-reverse：主轴为水平方向，起点在右端。<br>column：主轴为垂直方向，起点在上沿。<br>column-reverse：主轴为垂直方向，起点在下沿。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  flex-direction: row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br>nowrap（默认）：不换行。<br>wrap：换行，第一行在上方。<br>wrap-reverse：换行，第一行在下方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    flex-wrap: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>属性定义了项目在主轴上的对齐方式。<br>flex-start（默认值）：左对齐<br>flex-end：右对齐<br>center： 居中<br>space-between：两端对齐，项目之间的间隔都相等。<br>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">	justify-content: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>属性定义项目在交叉轴上如何对齐<br>flex-start：交叉轴的起点对齐。<br>flex-end：交叉轴的终点对齐。<br>center：交叉轴的中点对齐。<br>baseline: 项目的第一行文字的基线对齐。<br>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="align-content属性"><a href="#align-content属性" class="headerlink" title="align-content属性"></a>align-content属性</h3><p>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。<br>flex-start：与交叉轴的起点对齐。<br>flex-end：与交叉轴的终点对齐。<br>center：与交叉轴的中点对齐。<br>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。<br>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-content: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h3><h3 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h3><p>属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  order: &lt;integer&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-grow属性"><a href="#flex-grow属性" class="headerlink" title="flex-grow属性"></a>flex-grow属性</h3><p>属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-grow: &lt;number&gt;; /* default 0 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###flex-shrink属性</p>
-<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。负值对该属性无效。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-shrink: &lt;number&gt;; /* default 1 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-basis属性"><a href="#flex-basis属性" class="headerlink" title="flex-basis属性"></a>flex-basis属性</h3><p>属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-basis: &lt;length&gt; | auto; /* default auto */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="flex-属性"><a href="#flex-属性" class="headerlink" title="flex-属性"></a>flex-属性</h3><p>属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line"> flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]</div><div class="line">&#125;</div><div class="line">//该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</div></pre></td></tr></table></figure>
-<h3 id="align-self属性"><a href="#align-self属性" class="headerlink" title="align-self属性"></a>align-self属性</h3><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  align-self: auto | flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/15/Flex布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -445,7 +421,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,7 +429,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">

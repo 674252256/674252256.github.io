@@ -141,6 +141,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LESS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/12/LESS/">LESS</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/12/LESS/" class="archive-article-date">
+  	<time datetime="2017-02-12T13:26:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="LESS-是一种动态样式语言，将-CSS-赋予了动态语言的特性，如-变量，-继承，-运算，-函数-LESS-既可以在-客户端-上运行-也可以借助Node-js或者Rhino在服务端运行。"><a href="#LESS-是一种动态样式语言，将-CSS-赋予了动态语言的特性，如-变量，-继承，-运算，-函数-LESS-既可以在-客户端-上运行-也可以借助Node-js或者Rhino在服务端运行。" class="headerlink" title="LESS 是一种动态样式语言，将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 也可以借助Node.js或者Rhino在服务端运行。"></a>LESS 是一种动态样式语言，将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 也可以借助Node.js或者Rhino在服务端运行。</h3><p>在这里可以给大家推线一款编译器, koala这个由国人编写的，用于编译sass、less、coffee利器，实时编译、错误提示、跨平台、支持多语言，最重要的是作者很负责且koala完全免费。</p>
+<h3 id="less的语法常用的有以下几种："><a href="#less的语法常用的有以下几种：" class="headerlink" title="less的语法常用的有以下几种："></a>less的语法常用的有以下几种：</h3><ul>
+<li><p>变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@nice-blue: #5B83AD;</div><div class="line">@light-blue: @nice-blue + #111;</div><div class="line">header &#123; color: @light-blue; &#125;	</div><div class="line">输出</div><div class="line">#header &#123; color: #6c94be; &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>混合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">.bordered &#123;</div><div class="line">		border-top: dotted 1px black;</div><div class="line">			border-bottom: solid 2px black;</div><div class="line">&#125;</div><div class="line">		</div><div class="line">使用</div><div class="line">#menu a &#123;</div><div class="line">  color: #111;</div><div class="line">  .bordered;</div><div class="line">&#125;</div><div class="line">		</div><div class="line">混合可以选择带参数或者给参数是指一个默认值。</div><div class="line">		</div><div class="line">.border-radius (@radius:5px) &#123;</div><div class="line">     border-radius: @radius;</div><div class="line">    -moz-border-radius: @radius;</div><div class="line">    -webkit-border-radius: @radius;</div><div class="line">&#125;</div><div class="line">		</div><div class="line">#header &#123;</div><div class="line">			.border-radius(4px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>导引 导引中可用的全部比较运算有： &gt;、&gt;= 、= 、=&lt; 、&lt;、is*函式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">when 关键字</div><div class="line">.mixin (@a) when (lightness(@a) &gt;= 50%) &#123;</div><div class="line">  background-color: black;</div><div class="line">&#125;</div><div class="line">.mixin (@a) when (lightness(@a) &lt; 50%) &#123;</div><div class="line">  background-color: white;</div><div class="line">&#125;</div><div class="line">.mixin (@a) &#123;</div><div class="line">  color: @a;</div><div class="line">&#125;</div><div class="line">	</div><div class="line">.mixin (@a, @b: 0) when (isnumber(@b)) &#123; ... &#125;</div><div class="line">.mixin (@a, @b: black) when (iscolor(@b)) &#123; ... &#125;</div><div class="line">	</div><div class="line">and关键字实现与条件</div><div class="line">.mixin (@a) when (isnumber(@a)) and (@a &gt; 0) &#123; ... &#125;</div><div class="line">	</div><div class="line">not关键字实现或条件</div><div class="line">.mixin (@b) when not (@b &gt; 0) &#123; ... &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>嵌套</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#header &#123; color: black; &#125;</div><div class="line">#header .navigation &#123;</div><div class="line">  font-size: 12px;</div><div class="line">&#125;</div><div class="line">#header .logo &#123; </div><div class="line">  width: 300px; </div><div class="line">&#125;</div><div class="line">#header .logo:hover &#123;</div><div class="line">  text-decoration: none;</div><div class="line">&#125;</div><div class="line">		</div><div class="line">#header &#123;</div><div class="line">  color: black;</div><div class="line">  .navigation &#123;</div><div class="line">    font-size: 12px;</div><div class="line">  &#125;</div><div class="line">  .logo &#123;</div><div class="line">    width: 300px;</div><div class="line">    &amp;:hover &#123; text-decoration: none &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@base: 5%;</div><div class="line">@filler: @base * 2;</div><div class="line">@other: @base + @filler;</div><div class="line">color: #888 / 4;</div><div class="line">background-color: @base-color + #111;</div><div class="line">height: 100% / 2 + @filler;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Color 函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">lighten(@color, 10%);</div><div class="line">@base: #f04615;</div><div class="line">.class &#123;</div><div class="line">  color: saturate(@base, 5%);</div><div class="line">  background-color: lighten(spin(@base, 8), 25%);</div><div class="line">&#125;</div><div class="line">		</div><div class="line">在一种颜色的通道上创建另一种颜色</div><div class="line">@new: hsl(hue(@old), 45%, 90%);</div></pre></td></tr></table></figure>
+</li>
+<li><p>Math 函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">round(1.67); // returns `2`</div><div class="line">ceil(2.4);   // returns `3`</div><div class="line">floor(2.6);  // returns `2`</div><div class="line">percentage(0.5); // returns `50%`</div></pre></td></tr></table></figure>
+</li>
+<li><p>命名空间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#bundle &#123;</div><div class="line">  .button () &#123;</div><div class="line">    display: block;</div><div class="line">    border: 1px solid black;</div><div class="line">    background-color: grey;</div><div class="line">    &amp;:hover &#123; background-color: white &#125;</div><div class="line">  &#125;</div><div class="line">  .tab &#123; ... &#125;</div><div class="line">  .citation &#123; ... &#125;</div><div class="line">&#125;</div><div class="line">#header a &#123;</div><div class="line">	  color: orange;</div><div class="line">	  #bundle &gt; .button;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>作用域：LESS 中的作用域跟其他编程语言非常类似，首先会从本地查找变量或者混合模块，如果没找到的话会去父级作用域中查找，直到找到为止.</p>
+</li>
+</ul>
+<p>less 中文网 <a href="http://lesscss.cn/" target="_blank" rel="external">http://lesscss.cn/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/12/LESS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-CSS选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -299,83 +387,9 @@
 
 
   
-    <article id="post-nvm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/nvm/">nvm</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/nvm/" class="archive-article-date">
-  	<time datetime="2017-02-09T13:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.nvm-windows 下载<br><a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows/releases</a></p>
-<ul>
-<li>把nvm_noinstall.zip解压到比如c:/dev/nvm 中<br>3.右键以管理员的身份运行install.cmd.直接按回车,在C盘根目录下会生成一个setting,txt.并拷贝到C:/dev/nvm.修改内容:</li>
-</ul>
-<p>root: C:\dev\nvm<br>path: C:\dev\nodejs<br>arch: 64<br>proxy: none<br>node_mirror: <a href="http://npm.taobao.org/mirrors/node/" target="_blank" rel="external">http://npm.taobao.org/mirrors/node/</a><br>npm_mirror: <a href="https://npm.taobao.org/mirrors/npm/" target="_blank" rel="external">https://npm.taobao.org/mirrors/npm/</a></p>
-<ul>
-<li><p>配置环境变量<br>NVM_HOME nvm的安装目录<br>NVM_SYMLINK nodejs安装目录<br>添加到path<br>执行 nvm install 6.10.0 安装一个node版本<br>然后 nvm use 6.10.0 使用当前版本</p>
-</li>
-<li><p>npm安装<br>npm config set prefix “c:\dev\nvm\npm”</p>
-</li>
-</ul>
-<p>npm install npm –g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
-<p>6.配置npm环境变量<br>变量名: NPM_HOME变量值:c:\dev\nvm\npm(一定要放在NVM_SYMLINK之前)</p>
-<ul>
-<li>nrm 安装<br>npm install nrm –g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>常用命令<br>nrm ls<br>列出所有的镜像地址<br>nrm use taobao<br>切换镜像</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/nvm/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
     </nav>
   
 
@@ -461,7 +475,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,7 +483,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">

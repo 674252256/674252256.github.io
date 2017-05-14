@@ -141,6 +141,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-运算符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/04/Java-运算符/">Java-运算符</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/04/Java-运算符/" class="archive-article-date">
+  	<time datetime="2017-04-04T02:18:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><blockquote>
+<p>Arithmetic operators<br><strong>用来处理四则运算的符号</strong><br>加号：在操作数值、字符、字符串时其结果是不同的，<strong>当两个字符相加得到的是ASCII码表值，当两个字符串相加时表示将两个字符串连接在一起，从而组成新的字符串。</strong><br>除号：<strong>整数在使用除号操作时，得到的结果仍为整数（小数部分忽略），当整数除以0的时候，会引发算术异常。</strong><br>正无穷大(Infinity):当一个正浮点类型数除以0时,或者正整数除以0.0时;<br>负无穷大(-Infinity):当一个负浮点类型数除以0时,或者负整数除以0.0时;<br>aN(Not a Number):当0.0除以0.0时;<br><strong>取模(求余数)：模数的符号忽略不计，结果的正负取决于被模数.</strong><br>注意：无穷大和NaN都属于double浮点类型,但是所有正无穷大都是相等的,所有负无穷大也是相等的,NaN永远不相等,也不等于自己.</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-b02a566c7ba1d6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">++和--详解: 都只能操作变量,不能操作常量.</div><div class="line">++: 表示当前操作变量自己累加1.</div><div class="line">--:   表示当前操作变量自己减去1.</div><div class="line">自增：++，递增操作符，使变量值增加1，有前置和后置之分，只能操作变量。</div><div class="line">自减： -- ，递减操作符，使变量值减去1，有前置和后置之分，只能操作变量。</div><div class="line">自增和自减具体操作是一样的，仅仅是一个是加1，一个是减1而已，现在单讲++：</div><div class="line">代码 result ++和 ++result，都将使result变量的值加1。</div><div class="line">唯一的区别是：</div><div class="line">前置（++result）:   表示对result加1之后的结果进行运算，</div><div class="line">后置（result++）:   表示对result变量加1之前的值（原始值）进行运算。</div><div class="line">如果仅仅执行简单的递增操作（只写result++或++result），那么选用任意一个都可以。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int a1 = 5;</div><div class="line">a1 = a1 + 1;//6</div><div class="line">int temp = a1;</div><div class="line">int b1 = temp;//6</div><div class="line">--------------------------</div><div class="line">int a1 = 5;</div><div class="line">int temp = a1;//5</div><div class="line">a1 = a1 + 1;//6</div><div class="line">int b1 = temp;//5</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-c91bee058a840263.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p><img src="http://upload-images.jianshu.io/upload_images/3488771-444fd73b8f0b5d0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">assigning operator</div><div class="line">专门为变量指定值或重新指定值</div><div class="line">-------------------------------------------------------------</div><div class="line">注意Java支持同时给多个变量赋值，好比支持同时声明多个变量一样，但因影响代码可读性，故也不推荐。</div><div class="line">加等于：x  +=  5; 相当于 x  =  x  +  5，但还包括隐式类型转换。</div><div class="line">public class Hello&#123; </div><div class="line"> public static void main(String[] args)&#123; </div><div class="line"> int a, b, c;   //不推荐</div><div class="line"> a = b = c = 5; //不推荐</div><div class="line"> short s = 5;</div><div class="line"> //s = s + 3;//编译出错，需要强转  s = (short)(s + 3); </div><div class="line"> s += 3;//编译OK，隐式类型转换</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-90295a19e4886b91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p><img src="http://upload-images.jianshu.io/upload_images/3488771-a0856e9a8a80674d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>comparison operator<br>用于比较<strong>两个变量或常量之间的关系，比较运算符的结果是boolean类型,其操作格式为:</strong><br><strong>boolean</strong>  result = <strong>表达式A   比较运算符   表达式B;</strong><br>==：等于，若比较的是两个操作数都是数值类型，即使他们的类型不同，只要值相同就返回true。<br>当然==也可以比较引用数据类型，留到后面讲。<br>instanceof：在讲面向对象的时候，再细讲。</p>
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><p>ternary operator<br>现在给一个小数，需要求出其四舍五入之后的结果，怎么完成该功能？<br>思路：取得整数部分，再取得小数部分，再判断小数部分和0.5的大小关系，若大于等于，结果就是整数部分加1，否则就是整数部分。<br>三元运算符，表示有三个元素参与的表达式，所以又称为三目运算符，其语义表示if-else.<br><strong>语法格式：X  ?  Y ：Z， 其<br>中x为boolean类型表达式，先计算X的值，若X结果为true则整个三目运算表达式的结果是Y，否则就是Z。三目运算符结果的类型由Y和Z决定。</strong></p>
+</blockquote>
+<p><strong>Test:<br> 1):两个数求最大值/最小值;<br> 2):判断一个数的是奇数还是偶数.</strong><br><img src="http://upload-images.jianshu.io/upload_images/3488771-e324538b32647a7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p><img src="http://upload-images.jianshu.io/upload_images/3488771-7434d615d911c03a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>logical operator<br>分析下列语句什么意思：<br><strong>约好小明与小强周末聚会：二者都来聚会才是我期待的结果。</strong><br>小明或小强周末来聚会：二者只要有一个聚会就是我期待的结果。<br>用<strong>于操作两个boolean类型的变量或常量，结果类型也是boolean。<br>语法格式为:boolean  result = 表达式A   逻辑运算符   表达式B;</strong></p>
+<ul>
+<li>&amp;：表示并且，当操作数A和B都为true结果才为true，否则结果result 是false。<ul>
+<li>&amp;&amp;：和&amp;结果相同，具有短路效果，如果左边操作数A是false，result 一定为false，且不运行B的运算。</li>
+<li>|：表示或者，A和B都为false结果result为false，只要有A或B是true，结果就是true。</li>
+<li>||：和|结果相同，具有短路效果，如果左边操作数A是true，result一定为true，且不运行B的运算。</li>
+<li>^：判断A和B是否不同，不同则为true，相同则为false。</li>
+<li>!：取反，!true结果是false，!fasle结果是true。<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;&lt;：将操作数的二进制码整体左移指定位数，左移之后的空使用“0”来补充。</div><div class="line">&gt;&gt;：将操作数的二进制码整体右移指定位数，右移之后的空使用“符号位”来补充：</div><div class="line"> 若是正数使用“0”补充；</div><div class="line"> 若是负数使用“1”补充；（操作负数：取反，求补，操作，取反，求补）</div><div class="line">&gt;&gt;&gt;：将操作数的二进制码整体右移指定位数，右移之后的空位使用“0”来补充。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-5335e7e52e2a8aad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="运算符的操作优先级"><a href="#运算符的操作优先级" class="headerlink" title="运算符的操作优先级"></a>运算符的操作优先级</h3><p><strong>以前学运算符的时候，老师都会教我们运算操作的优先级，比如“先乘除后加减”等，在Java里我们学了这么多的运算符，那到底先执行哪个运算符呢，<br>一起来看下Java运算符的优先级吧。</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-c23ee0ad94cd6ae5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/04/Java-运算符/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Canvas-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -346,85 +437,9 @@
 
 
   
-    <article id="post-Canvas-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/29/Canvas-2/">Canvas(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/29/Canvas-2/" class="archive-article-date">
-  	<time datetime="2017-03-29T03:29:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h3><p>scale() 方法缩放当前绘图，更大或更小<br>context.scale(scalewidth,scaleheight)<br>scalewidth : 缩放当前绘图的宽度 (1=100%, 0.5=50%, 2=200%, 依次类推)<br>scaleheight : 缩放当前绘图的高度 (1=100%, 0.5=50%, 2=200%, etc.)<br><strong>缩放的是整个画布，缩放后，继续绘制的图形会被放大或缩小。</strong></p>
-<h3 id="位移画布"><a href="#位移画布" class="headerlink" title="位移画布"></a>位移画布</h3><p>ctx.translate(x,y) 方法重新映射画布上的 (0,0) 位置<br>x： 添加到水平坐标（x）上的值<br>y： 添加到垂直坐标（y）上的值<br>发生位移后，相当于把画布的0,0坐标 更换到新的x,y的位置，所有绘制的新元素都被影响。<br>位移画布一般配合缩放和旋转等。</p>
-<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><p>context.rotate(angle); 方法旋转当前的绘图<br>注意参数是弧度（PI）<br>如需将角度转换为弧度，请使用 degrees*Math.PI/180 公式进行计算。</p>
-<h3 id="绘制环境保存和还原"><a href="#绘制环境保存和还原" class="headerlink" title="绘制环境保存和还原"></a>绘制环境保存和还原</h3><p>ctx.save() 保存当前环境的状态<br>可以把当前绘制环境进行保存到缓存中。<br>ctx.restore() 返回之前保存过的路径状态和属性<br>获取最近缓存的ctx<br>一般配合位移画布使用。</p>
-<h3 id="设置绘制环境的透明度"><a href="#设置绘制环境的透明度" class="headerlink" title="设置绘制环境的透明度"></a>设置绘制环境的透明度</h3><p>context.globalAlpha=number;<br>number:透明值。必须介于 0.0（完全透明） 与 1.0（不透明） 之间。<br>设置透明度是全局的透明度的样式。注意是全局的。</p>
-<h3 id="画布限定区域绘制"><a href="#画布限定区域绘制" class="headerlink" title="画布限定区域绘制"></a>画布限定区域绘制</h3><p>ctx.clip(); 方法从原始画布中剪切任意形状和尺寸<br>一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）<br>一般配合绘制环境的保存和还原。</p>
-<h3 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h3><ul>
-<li>基本绘图方式<br>context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);<br>参数说明：<br>sx,sy 裁剪的左上角坐标，<br>swidth：裁剪图片的高度。<br>sheight:裁剪的高度<h3 id="用JavaScript创建img对象"><a href="#用JavaScript创建img对象" class="headerlink" title="用JavaScript创建img对象"></a>用JavaScript创建img对象</h3></li>
-</ul>
-<p>第一种方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var img = document.getElementById(&quot;imgId&quot;);</div></pre></td></tr></table></figure>
-<p>第二种方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var img = new Image();//这个就是 img标签的dom对象</div><div class="line">img.src = &quot;imgs/arc.gif&quot;;</div><div class="line">img.alt = &quot;文本信息&quot;;</div><div class="line">img.onload = function() &#123;</div><div class="line">//图片加载完成后，执行此方法</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="创建线性渐变的样式"><a href="#创建线性渐变的样式" class="headerlink" title="创建线性渐变的样式"></a>创建线性渐变的样式</h3><p>线性渐变可以用于 矩形、圆形、文字等颜色样式。<br>ctx.createLinearGradient(x0,y0,x1,y1);<br>参数：x0,y0起始坐标，x1,y1结束坐标</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//创建线性渐变的对象，</div><div class="line">var grd=ctx.createLinearGradient(0,0,170,0);</div><div class="line">grd.addColorStop(0,&quot;black&quot;);  //添加一个渐变颜色，第一个参数介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。</div><div class="line">grd.addColorStop(1,&quot;white&quot;);  //添加一个渐变颜色</div><div class="line">ctx.fillStyle =grd;           //关键点，把渐变设置到 填充的样式</div></pre></td></tr></table></figure>
-<h3 id="设置圆形渐变（径向渐变）"><a href="#设置圆形渐变（径向渐变）" class="headerlink" title="设置圆形渐变（径向渐变）"></a>设置圆形渐变（径向渐变）</h3><p>创建放射状/圆形渐变对象。可以填充文本、形状等<br>context.createRadialGradient(x0,y0,r0,x1,y1,r1);<br>参数详解：<br>x0: 渐变的开始圆的 x 坐标<br>y0: 渐变的开始圆的 y 坐标<br>r0: 开始圆的半径<br>x1: 渐变的结束圆的 x 坐标<br>y1: 渐变的结束圆的 y 坐标<br>r1: 结束圆的半径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var rlg = ctx.createRadialGradient(300,300,10,300,300,200);</div><div class="line">rlg.addColorStop(0, &apos;teal&apos;);    //添加一个渐变颜色</div><div class="line">rlg.addColorStop(.4, &apos;navy&apos;);</div><div class="line">rlg.addColorStop(1, &apos;purple&apos;);</div><div class="line">ctx.fillStyle = rlg;//设置 填充样式为延续渐变的样式</div><div class="line">ctx.fillRect(100, 100, 500, 500);</div></pre></td></tr></table></figure>
-<h3 id="设置圆形渐变"><a href="#设置圆形渐变" class="headerlink" title="设置圆形渐变"></a>设置圆形渐变</h3><p>ctx.createPattern(img,repeat) 方法在指定的方向内重复指定的元素了解<br>第一参数：设置平铺背景的图片，第二个背景平铺的方式。<br>image ： 规定要使用的图片、画布或视频元素。<br>repeat ： 默认。该模式在水平和垂直方向重复。<br>repeat-x ： 该模式只在水平方向重复。<br>repeat-y ： 该模式只在垂直方向重复。<br>no-repeat： 该模式只显示一次（不重复）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var ctx=c.getContext(&quot;2d&quot;);</div><div class="line">var img=document.getElementById(&quot;lamp&quot;);</div><div class="line">var pat=ctx.createPattern(img,&quot;repeat&quot;);</div><div class="line">ctx.rect(0,0,150,100);</div><div class="line">ctx.fillStyle=pat;//  把背景图设置给填充的样式</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/29/Canvas-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -510,7 +525,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,7 +533,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
