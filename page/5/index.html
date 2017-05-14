@@ -141,6 +141,142 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Angular-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/11/Angular-1/">Angular(1)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/11/Angular-1/" class="archive-article-date">
+  	<time datetime="2017-03-11T00:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>AngularJS采用模块化的方式组织代码，将一些通用逻辑封装成一个对象或函数，实现最大程度的复用<br>这导致了使用者和被使用者之间存在依赖关系。<br>所谓依赖注入是指在运行时自动查找依赖关系<br>然后将查找到依赖传递给使用者的一种机制。</p>
+</blockquote>
+<h3 id="一、依赖注入"><a href="#一、依赖注入" class="headerlink" title="一、依赖注入:"></a>一、依赖注入:</h3><ul>
+<li><p>行内式注入<br>以数组形式明确声明依赖，数组元素都是包含依赖名称的字符串，数组最后一个元素是依赖注入的目标函数<br><strong>推荐使用行内式注入</strong>.</p>
+</li>
+<li><p>推断式注入<br>没有明确声明依赖，AngularJS会将函数参数名称当成是依赖的名称<br>这种方式会带来一个问题，当代码经过压缩后函数的参数被压缩，这样便会造成依赖无法找到。</p>
+</li>
+<li><p>显示注入<br>通过 $inject 属性来实现显式注入声明的功能。函数对象的 $inject 属性是一个数组，数组元素的<br>类型是字符串，它们的值就是需要被注入的服务的名称。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> var app = angular.module(&apos;app&apos;,[]);</div><div class="line">  // 自定义控制器</div><div class="line">  // 1.行内式注入</div><div class="line">   app.controller(&apos;controllerName&apos;,[&apos;$scope&apos;,&apos;$http&apos;,function ($scope,$http) &#123;</div><div class="line">       $scope.name = &quot;GZC&quot;;</div><div class="line">   &#125;]);</div><div class="line">  // 2.推断式注入</div><div class="line">  app.controller(&apos;GZCController&apos;,function ($scope,$http) &#123;</div><div class="line">      $scope.name = &apos;GZC&apos;;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  //3 .显示注入  inject</div><div class="line">var MyController = function($scope, myService) &#123;&#125;;</div><div class="line">MyController.$inject = [&apos;$scope&apos;, &apos;myService&apos;];</div><div class="line">   myApp.controller(&apos;TestController&apos;, MyController);</div></pre></td></tr></table></figure>
+<h3 id="二、初始化全局变量"><a href="#二、初始化全局变量" class="headerlink" title="二、初始化全局变量"></a>二、初始化全局变量</h3><p>一个AngularJS的应用（App）在启动时会自动创建一个根作用域$rootScope<br>这个根作用域在整个应用范围（ng-app所在标签以内）都是可以被访问到的<br>使用ng-init=“属性名称=属性值” 使用ng-init创建的就是根作用域.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;app&quot; ng-init=&quot;name=&apos;init&apos;&quot;&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="三、模块"><a href="#三、模块" class="headerlink" title="三、模块"></a>三、模块</h3><p>AngularJS提供了一个全局对象angular，在此全局对象下存在若干的方法 其中angular.module()方法用来定义一个模块。<br><strong>第一个参数：模块名称。 第二个参数：依赖模块名称</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;app&apos;,[]);</div></pre></td></tr></table></figure></p>
+<h3 id="四、控制器"><a href="#四、控制器" class="headerlink" title="四、控制器"></a>四、控制器</h3><p>控制器（Controller）作为连接模型（Model）和视图（View）的桥梁存在<br>所以当我们定义好了控制器以后也就定义好了模型和视图。<br><strong>第一个参数：控制器的名称，<br>第二个参数：依赖的服务app.controller(‘名称’[‘$scope’,function($scope){}]）;</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.controller(&apos;myController&apos;,[&apos;$scope&apos;,function ($scope)&#123;&#125;]);</div></pre></td></tr></table></figure></p>
+<p><strong>模块是不可嵌套使用的。 控制器之间是可以嵌套使用。</strong><br>作用域：先去找自己，自己有，使用自己的。 如果自己没有，找父控制器,用ng-init 定义全局作用域。范围是整个模块。$rootScope</p>
+<h3 id="五、数据绑定"><a href="#五、数据绑定" class="headerlink" title="五、数据绑定"></a>五、数据绑定</h3><p>绑定方式有三种:</p>
+<ul>
+<li>使用插值语法: 加载时，-&gt;会造成闪烁。可以使用ng-cloak来避免闪烁</li>
+<li>使用ng-bind:ng-bind=“模型属性”-&gt;不会造成闪烁,只能绑定一个属性</li>
+<li>使用ng-bind-template=“,”-&gt;可以绑定多值, 不会闪烁<h3 id="六、引入jQuery"><a href="#六、引入jQuery" class="headerlink" title="六、引入jQuery"></a>六、引入jQuery</h3></li>
+</ul>
+<p>引入jQuery时要放到angular之前，否则使用的自带jQLite。angular内置的jqLite 它只有jQuery当中一部分功能。<br><strong>如果引用了jQury.js 那么 angular.element它就是原生jQuery. $();</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;jquery-3.1.1.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">   var app = angular.module(&apos;app&apos;,[]);</div><div class="line">   var box =  document.querySelector(&apos;.box&apos;);</div><div class="line">   var btn =  document.querySelector(&apos;.btn&apos;);</div><div class="line">   box = angular.element(box); 把js对象转成jQuery</div><div class="line">  //  jqLite它里面并没有jQuery里面的所有功能。只是集成了部分功能。</div><div class="line">  //  如果说自己导入了jQuery库，那么通过angular.element获取的对象就是原生的jQuery</div><div class="line">   btn = angular.element(btn);</div><div class="line">   btn.on(&apos;click&apos;,function () &#123;</div><div class="line">       box.animate(&#123;</div><div class="line">          fontSize:&apos;40px&apos;</div><div class="line">       &#125;);</div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
+<h3 id="七、作用域"><a href="#七、作用域" class="headerlink" title="七、作用域"></a>七、作用域</h3><blockquote>
+<p>通过ng-controller指令可以创建一个子作用域，新建的作用域可以访问其父作用域的数据。作用域能存储数据模型、为表达式提供上下文环境和监听表达式的变化并且传播事件，它是页面视图与控制<br>器之间的重要桥梁。</p>
+</blockquote>
+<p><strong>$scope 的实质就是一个作用域对象，用来定义应用业务逻辑、控制器方法和视图属性的地方。<br>子级可以访问父级的元素。<br>父级不能访问子级的元素。</strong></p>
+<ul>
+<li><p>作用域特点 :</p>
+<ul>
+<li>提供了一个 $watch 方法来监听数据模型的变化。</li>
+<li>提供一个 $apply方法，为各种类型的数据模型改变提供支撑，将它们引入到Angular控制器的范围<br>中。</li>
+<li>为表达式提供了执行的环境，一个表达式必须在拥有该表达式属性的作用域中执行才更加合适，作用域通过提供$scope对象，使所有的表达式都拥有对应的执行环境，也就是执行的上下文对象。<br>注： $rootScope 是AngularJS最接近全局作用域的对象。</li>
+</ul>
+</li>
+<li><p>作用域的层级：</p>
+<ul>
+<li>与DOM树状结构类似，作用域也拥有自己的层级，并且与DOM的树状结构相辅相成，它的顶层作用域只有一个（$rootScope），而下面的子级作用域可以创建多个</li>
+</ul>
+</li>
+<li><p>作用域事件传播 ：</p>
+<ul>
+<li>使用$emit来冒泡事件</li>
+<li>使用$broadcast向下传递事件</li>
+</ul>
+</li>
+</ul>
+<p><strong>$watch</strong><br>$watch是一个scope函数，用于监听模型变化，当你的模型数据发生变化时它会通知你。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$watch(watchExpression, listener, objectEquality);</div></pre></td></tr></table></figure></p>
+<ul>
+<li>watchExpression：监听的对象，它可以是一个angular表达式如’name’，或函数如function(){return $scope.name}。</li>
+<li>listener：当watchExpression变化时，会被调用的函数或者表达式,它接收3个参数：<ul>
+<li>newValue(新值)</li>
+<li>oldValue(旧值)</li>
+<li>scope(作用域的引用)</li>
+</ul>
+</li>
+<li>objectEquality：是否深度监听，如果设置为true，它告诉Angular检查所监控的对象中每一个属性的变化.如果你希望监控数组的个别元素或者对象的属性而不是一个普通的值, 那么你应该使用它。（即是否使用<br>angular.equals方法进行比较。）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;app&quot; ng-controller=&quot;myController&quot;&gt;</div><div class="line">&lt;input type=&quot;text&quot; ng-model=&quot;persion.age&quot;&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script src=&quot;angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    app.controller(&apos;myController&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">        如果是一个对象。在监听时，要在最后添加一个参数：true</div><div class="line">        如果不添加，是监听不到的。</div><div class="line">        默认情况，对象监听是地址。 对象值修改了， 地址没有改变。</div><div class="line">        var count = 0;</div><div class="line">        var unWatch = $scope.$watch(&apos;persion.age&apos;,function (newValue,oldValue) &#123;</div><div class="line">           console.log(&apos;新值：&apos;+ newValue+&apos;旧值：&apos;+oldValue);</div><div class="line">           count++;</div><div class="line">           if (count &gt; 5)&#123;</div><div class="line">               取消监听</div><div class="line">               unWatch();</div><div class="line">           &#125;</div><div class="line">        &#125;,true);</div><div class="line">    &#125;]);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>太多的$watch将会导致性能问题，$watch如果不再使用，我们最好将其释放掉。</p>
+<p><strong>$apply</strong><br>AngularJS 外部的控制器（DOM 事件、外部的回调函数如 jQuery UI 空间等）调用了 AngularJS 函数之后，必须调用$apply。在这种情况下，你需要命令 AngularJS 刷新自已（模型、视图等） ，$apply 就是用来做这件事情的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$scope.$apply(expression);</div></pre></td></tr></table></figure></p>
+<p>$apply 方法作用：Scope提供$apply方法传播Model的变化。<br>$apply方法注意事项：只要可以，请把要执行的代码和函数传递给$apply去执行，而不要自已执行那些函数然后再调用$apply。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;  </div><div class="line">&lt;body ng-app=&quot;app&quot; ng-controller=&quot;myController&quot;&gt;</div><div class="line">    &lt;div&gt;&#123;&#123;name&#125;&#125;&#123;&#123;age&#125;&#125;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script src=&quot;angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    app.controller(&apos;myController&apos;,[&apos;$scope&apos;,function($scope)&#123;</div><div class="line">        setTimeout(function()&#123;</div><div class="line">			//如果不写$apply 直接在定时器内 $scope.name = &apos;gzc&apos;,不会改变</div><div class="line">            $scope.$apply(function()&#123;</div><div class="line">                $scope.name = &apos;gzc&apos;;</div><div class="line">                 $scope.age = 25;</div><div class="line">            &#125;)</div><div class="line">        &#125;,5000)</div><div class="line">    &#125;])</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>$scope</strong>生命周期</p>
+<ul>
+<li><p>创建 : 在创建控制器指令时，AngularJS会创建一个新的作用域，并且在新建控制器或指令时将作用域传递进入。</p>
+<ul>
+<li>在创建阶段，创建了一个digest循环来与浏览器的事件循环交互。digest循环负责把对模型的更改更新到DOM元素，并且执行任何已注册的监视函数（$scope.$digest()）。</li>
+</ul>
+</li>
+<li><p>链接 : 当Angular开始运行时，所有的 $scope 对象都会附加或者链接到视图中。所有创建 $scope 对象的函数也，会将自身附加到视图中。这些作用域将会注册当Angular应用上下文中发生变化时需要运行的函数。这些函数被称为 $watch 函数，Angular通过这些函数获知何时启动事件循环。</p>
+</li>
+<li><p>更新 : 当事件循环运行时，它通常执行在顶层 $scope 对象（$rootScope），每个子作用域都执行自己的脏值检测。每个监控函数都会检查变化。如果检查到任意变化，一个名为$apply()的作用域函数更新模型，并调用$digest()函数来更新DOM和监视器。。</p>
+</li>
+<li><p>销毁 ：当一个作用域在视图中不再需要时，AngularJS库会自动调用$destroy()方法来从浏览器内存中删除该作用域。$destory()方法停止$digest()调用并删除监视器，允许内存被浏览器垃圾收集器回收。</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-70e014ac3c82f3fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ag</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/11/Angular-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-检测-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -299,74 +435,9 @@
 
 
   
-    <article id="post-检测-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/08/检测-2/">检测(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/08/检测-2/" class="archive-article-date">
-  	<time datetime="2017-03-08T00:34:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var str1 = new String(&quot;demo01&quot;);</div><div class="line">var str2 = new String(&quot;demo01&quot;);</div><div class="line">var str3 = str1;</div><div class="line">var str4 = &quot;demo01&quot;;</div><div class="line">//判断是否相等  基本包装类型(String Number Boolean)的对象</div><div class="line">console.log(str1 == str2);    //false(!!!!)</div><div class="line">console.log(str1 == str4);    //true(内部会隐式转换)</div><div class="line">console.log(str1 == str3);    //true</div><div class="line">console.log(str1 === str2);   //false</div><div class="line">console.log(str1 === str3);   //true</div><div class="line">console.log(str1 === str4);   //false</div><div class="line">var num1 = new Number(10);</div><div class="line">var num2 = 10;</div><div class="line">var num3 = new Number(10);</div><div class="line">console.log(num1 == num2);      //true</div><div class="line">console.log(num1 == num3);      //false</div></pre></td></tr></table></figure>
-<p>Function的原型对象是一个空的函数<br>这个空的函数也是一个对象，因此也有构造函数，它的构造函数是Function<br>推论：Function的原型对象是空函数，因此空函数的原型对象应该是自己（错误）是空的对象<br>空函数的原型对象 == Object.prototype<br>Function也是一个对象，因此也有构造函数，它的构造函数是谁？是自己Function<br>Function作为一个对象来说，也有自己的原型对象Function.<code>proto</code><br>Function对象的原型对象和其构造函数的原型对象是空函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">console.log(Function instanceof Function);     //true</div><div class="line">console.log(Function instanceof Object);       //true</div><div class="line">console.log(Object instanceof Object);         //true</div><div class="line">console.log(Object instanceof Function);        //true</div></pre></td></tr></table></figure>
-<h3 id="单说明静态成员和实例成员的差别"><a href="#单说明静态成员和实例成员的差别" class="headerlink" title="单说明静态成员和实例成员的差别"></a>单说明静态成员和实例成员的差别</h3><p>成员：属性 + 方法<br>实例成员:实例对象的属性和方法 （name + age）<br>原型成员:构造函数的原型对象上面的属性和方法（des + logDes）<br>静态成员:直接添加到构造函数上面的属性和方法（log + showLog）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Dog()&#123;</div><div class="line">        this.name = &quot;阿黄家的大黑狗&quot;;</div><div class="line">        this.age = 13</div><div class="line">    &#125;</div><div class="line">    Dog.prototype = &#123;</div><div class="line">        des:&quot;描述信息&quot;,</div><div class="line">        logDes:function()&#123;</div><div class="line">            console.log(this.des);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    Dog.log = &quot;log&quot;;</div><div class="line">    Dog.showLog = function()&#123;</div><div class="line">        console.log(this.log);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function f() &#123;&#125;</div><div class="line">  var parent = Object.getPrototypeOf(f);  //A</div><div class="line">				</div><div class="line">A  console.log(f.name);                   </div><div class="line">B  console.log(parent.name);</div></pre></td></tr></table></figure>
-<h3 id="即时函数与闭包"><a href="#即时函数与闭包" class="headerlink" title="即时函数与闭包"></a>即时函数与闭包</h3><p>闭包有两个作用，<br>第一，保存局部变量。<br>第二，形成私有属性与方法，比如module模式。<br>即时函数是为了形成块级作用域，来弥补js函数级作用域的局限，主要是为了模块化，很多库都这么来解决耦合。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">console.log(Boolean(&#123;&#125;));  //true</div><div class="line">console.log(Boolean([]));  //true</div><div class="line">console.log([] == false);  // true</div><div class="line">console.log(&#123;&#125; == false); //false</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">confirm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/08/检测-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -472,11 +543,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
