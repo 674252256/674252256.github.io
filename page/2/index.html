@@ -141,6 +141,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-第一个程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/27/Java-第一个程序/">Java-第一个程序</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/27/Java-第一个程序/" class="archive-article-date">
+  	<time datetime="2017-03-27T01:32:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一般而言，编写的第一个程序，习惯叫做HelloWorld.</strong></p>
+<h2 id="需求：在控制台界面，输出：你好师姐。"><a href="#需求：在控制台界面，输出：你好师姐。" class="headerlink" title="需求：在控制台界面，输出：你好师姐。    "></a>需求：在控制台界面，输出：<strong>你好师姐。</strong>    </h2><p>开发步骤：</p>
+<ul>
+<li>1：在E:\Will\01_JavaSE\资料和视频\day01\codes目录下：<pre><code>新建文本文档，起名为123.java。
+注意：java是文件得后缀名（拓展名）。
+![](http://upload-images.jianshu.io/upload_images/3488771-11aeb9df6d107706.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+</code></pre></li>
+<li>2：使用记事本打开在123.java文件，键入以下代码：<br>   <img src="http://upload-images.jianshu.io/upload_images/3488771-139cee8caf5e1d74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>3：打开命令控制台窗口，并进入当前源文件所在的目录，对123.java文件做编译。</li>
+<li><img src="http://upload-images.jianshu.io/upload_images/3488771-e0bb02f5ce9c99d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p><strong>改变了源文件必须重新编译<br>编译成功之后，会生成Hello.class文件（字节码文件）。</strong></p>
+<ul>
+<li>4：启动JVM，并加载Hello.class这份字节码，并解释执行。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-37096d451f7afd5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p><strong>注意：java  类名，不能是java  类名.class.</strong><br>      上述错误，是该类缺少main方法。</p>
+<ul>
+<li>5：修正代码如下，再编译运行。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-018d7aa9ec3209ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3488771-da59744d74616081.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3488771-5574a3a8eae445ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/27/Java-第一个程序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Node-js-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -269,70 +346,6 @@
 
 
   
-    <article id="post-Angular-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/18/Angular-5/">Angular(5)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/18/Angular-5/" class="archive-article-date">
-  	<time datetime="2017-03-18T06:28:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-6版本与之前版本的差别"><a href="#1-6版本与之前版本的差别" class="headerlink" title="1.6版本与之前版本的差别"></a>1.6版本与之前版本的差别</h3><p><strong>$http 请求</strong><br>1.以前使用success error<br><strong>现在 then catch</strong><br>2.返回值。<br>以前：直接返回响应结果。<br><strong>现在：返回的所有内容都在一个对象当中。 返回值res.data</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;app&apos;,[]);</div><div class="line"> app.controller(&apos;xmgController&apos;,[&apos;$scope&apos;,&apos;$http&apos;,function ($scope,$http) &#123;</div><div class="line">     //http://datainfo.duapp.com/shopdata/getGoods.php</div><div class="line">     $http(&#123;</div><div class="line">        url:&apos;get.php&apos;,</div><div class="line">         method:&apos;get&apos;,</div><div class="line">         params:&#123;</div><div class="line">            name:&apos;xmg&apos;</div><div class="line">         &#125;</div><div class="line">     &#125;).then(function (res) &#123;</div><div class="line">         console.log(res.data);</div><div class="line">     &#125;).catch(function (err) &#123;</div><div class="line">     &#125;);</div><div class="line"> &#125;]);</div></pre></td></tr></table></figure>
-<p> 跨域</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"> angular.module(&apos;app&apos;)</div><div class="line">.config([&apos;$sceDelegateProvider&apos;,function ($sceDelegateProvider) &#123;</div><div class="line">     </div><div class="line">    // 设置白名单</div><div class="line">    $sceDelegateProvider.resourceUrlWhitelist([</div><div class="line">        &apos;self&apos;,</div><div class="line">        &apos;http://localhost/**&apos;</div><div class="line">    ]);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
-<p><strong>路由</strong></p>
-<p>$locationProvider.hashPrefix(‘’);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">myApp.config([&apos;$routeProvider&apos;, &apos;$locationProvider&apos;,</div><div class="line">    function($routeProvider, $locationProvider) &#123;</div><div class="line">        $locationProvider.hashPrefix(&apos;&apos;);</div><div class="line">        $routeProvider.when(&apos;/&apos;, &#123;</div><div class="line">templateUrl: &apos;main.html&apos;</div><div class="line">&#125;).when(&apos;/test&apos;, &#123;</div><div class="line">templateUrl: &apos;test.html&apos;</div><div class="line">&#125;).otherwise(&#123;</div><div class="line">redirectTo: &apos;/&apos;</div><div class="line">&#125;);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ag</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/18/Angular-5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -425,10 +438,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -437,15 +446,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">

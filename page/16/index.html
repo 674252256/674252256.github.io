@@ -141,6 +141,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS-2-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/22/JS-2-基础知识/">JS(2) 基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/22/JS-2-基础知识/" class="archive-article-date">
+  	<time datetime="2017-01-22T03:57:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="null与undefined"><a href="#null与undefined" class="headerlink" title="null与undefined"></a>null与undefined</h3><p>1 变量的值永远都不可能为null,除非我们手动的赋值为null<br>2 当不在使用一个变量的时候可以设置这个变量的值为null 告诉系统把暂用的空间回收。<br>3 undefined是一个表示”无”的原始值，转为数值时为NaN。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(null == undefined);   //true</div><div class="line">console.log(null === undefined);  //false</div></pre></td></tr></table></figure></p>
+<h3 id="逻辑运算符-短路运算符"><a href="#逻辑运算符-短路运算符" class="headerlink" title="逻辑运算符(短路运算符)"></a>逻辑运算符(短路运算符)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">逻辑非</div><div class="line">符号:!</div><div class="line">操作符: !表达式</div><div class="line">结果:布尔类型的值,要么是true要么是false</div><div class="line"></div><div class="line">逻辑与</div><div class="line">符号:&amp;&amp;</div><div class="line">操作符:表达式1 &amp;&amp; 表达式2</div><div class="line">结果:并非是布尔类型的,而是表达式之一</div><div class="line">如果表达式1为真,那么就返回表达式2,否则就返回表达式1</div><div class="line"></div><div class="line">逻辑或</div><div class="line">符号:||</div><div class="line">操作符:表达式1 || 表达式2</div><div class="line">结果:并非是布尔类型的,而是表达式之一</div><div class="line">如果表达式1为真,那么就返回表达式1,否则就返回表达式2</div></pre></td></tr></table></figure>
+<h3 id="in关键字"><a href="#in关键字" class="headerlink" title="in关键字"></a>in关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">作用:</div><div class="line">    (1) 遍历对象</div><div class="line">    (2) 检测对象中是否存在指定的属性</div><div class="line">注意点:</div><div class="line">    在操作数组的时候,key--索引  value-元素</div></pre></td></tr></table></figure>
+<h3 id="delete关键字"><a href="#delete关键字" class="headerlink" title="delete关键字"></a>delete关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">作用:</div><div class="line">    作用:</div><div class="line">    (1) 删除对象中的属性</div><div class="line">    (2) 删除没有使用var声明的变量</div><div class="line">注意点:</div><div class="line">    (1)返回值  布尔类型</div><div class="line">    (2)不能删除使用var声明的全局变量,但是却可以删除直接定义在window上面的属性</div><div class="line">    (3)删除不存在的属性没有反应,返回值是true</div></pre></td></tr></table></figure>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">try&#123;</div><div class="line">        //可能出错的代码</div><div class="line">    &#125;catch (e)&#123;</div><div class="line">        console.log(e,&quot;____&quot;);</div><div class="line">        //出错了就执行这个代码块</div><div class="line">    &#125;</div><div class="line">    finally</div><div class="line">    &#123;</div><div class="line">        //不管是否出错,都会执行这里的代码块</div><div class="line">        //一般在前端开发中不会使用,多多用于后端开发Node.js 主要用于在最后释放资源</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="DOM方法"><a href="#DOM方法" class="headerlink" title="DOM方法"></a>DOM方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">getAttribute() //获取属性</div><div class="line">setAttribute() //设置属性</div><div class="line">hasAttribute() //检测属性是否存在</div><div class="line">removeAttribute() //删除属性</div><div class="line">document.body.attributes[0] //&lt;body&gt;元素的第一个属性</div><div class="line">document.body.attributes.bgcolor // &lt;body&gt;元素的bgcolor属性</div><div class="line">document.body.attributes[&apos;ONLOAD&apos;] // &lt;body&gt;元素的onload属性。</div><div class="line">test.style.setProperty(&apos;background-color&apos;,&apos;red&apos;);</div><div class="line">test.style.getPropertyValue(&apos;background-color&apos;);</div><div class="line">test.style.removeProperty(&apos;background-color&apos;);</div><div class="line">window.getComputedStyle(t,null).lineHeight //30px</div><div class="line">window.getComputedStyle(t,&apos;:before&apos;).content // &quot;before&quot;</div><div class="line">//第一个参数是要获取其计算样式的元素，第二个参数也是必需的，通常是null或空字符串，但它也可以是命名CSS伪对象的字符串，如：“:before”，“:after”，“:first-line”或者“:first-letter”。</div><div class="line">t.className = t.className.replace(&apos;attention2&apos;,&apos;&apos;); //删除名为attention2的class</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/22/JS-2-基础知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-JS-1-基本概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -368,10 +432,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -380,15 +440,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">

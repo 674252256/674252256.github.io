@@ -141,6 +141,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Ng-1-5-常用指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/03/Ng-1-5-常用指令/">Ng(1.5)-常用指令</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/03/Ng-1-5-常用指令/" class="archive-article-date">
+  	<time datetime="2017-03-02T23:56:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngApp 定义应用程序的根元素。</div><div class="line"></div><div class="line">ngController 定义应用的控制器对象</div><div class="line"></div><div class="line">ngModel	绑定 HTML 控制器的值到应用数据</div><div class="line"></div><div class="line">ngInclude 在应用中包含 HTML 文件</div><div class="line"></div><div class="line">ngList 用来把作用域中的数组对象转换为分隔符分隔的字符串(逗号是默认的分隔符)</div><div class="line"></div><div class="line">ngNonBindable 当一个元素中存在这个指令时，AngularJS在编译时不编译或绑定元素的内容</div><div class="line"></div><div class="line">ngTransclude 用来把元素标志为装置点，供使用transclude选项来包装其他元素的指令使用</div><div class="line"></div><div class="line">ngView 把当前路由的已呈现的模板包含在主布局文件</div><div class="line"></div><div class="line">ngOpen 用于设置 details 列表的 open 属性</div><div class="line"></div><div class="line">ngPluralize 根据本地化规则显示信息</div><div class="line"></div><div class="line">ngHref 为元素指定链接</div><div class="line"></div><div class="line">ngSrc 指定元素的 src 属性</div><div class="line"></div><div class="line">ngSrcset 指定元素的 srcset 属性</div><div class="line"></div><div class="line">ngCloak 在应用正要加载时防止其闪烁</div></pre></td></tr></table></figure>
+<h3 id="扩展表单元素"><a href="#扩展表单元素" class="headerlink" title="扩展表单元素"></a>扩展表单元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">form/ngForm	指定 HTML 表单继承控制器表单</div><div class="line"></div><div class="line">ngReadonly 指定元素的 readonly 属性，定元素是否被选中</div><div class="line"></div><div class="line">ngRequired 设置必填</div><div class="line"></div><div class="line">ngSelected 指定元素的 selected 属性中</div><div class="line"></div><div class="line">ngMinlength	定义最小值</div><div class="line"></div><div class="line">ngMaxlength	定义最大值</div><div class="line"></div><div class="line">ngPattern 定义正则匹配</div><div class="line"></div><div class="line">ngTrueValue	用来设置选中复选框时的值</div><div class="line"></div><div class="line">ngFalseValue 用来设置不选中时复选框的值</div><div class="line"></div><div class="line">ngOptions 在 select 列表中指定 options</div></pre></td></tr></table></figure>
+<h3 id="把模型绑定到页面"><a href="#把模型绑定到页面" class="headerlink" title="把模型绑定到页面"></a>把模型绑定到页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngBind 绑定 HTML 元素到应用程序数据</div><div class="line"></div><div class="line">ngBindHtml 绑定 HTML 元素的 innerHTML 到应用程序数据，并移除 HTML字符串中危险字符</div><div class="line"></div><div class="line">ngBindTemplate 规定要使用模板替换的文本内容</div><div class="line"></div><div class="line">ngClass	指定 HTML 元素使用的 CSS 类</div><div class="line"></div><div class="line">ngClassEven	类似 ng-class，但只在偶数行起作用</div><div class="line"></div><div class="line">ngClassOdd 类似 ng-class，但只在奇数行起作用</div><div class="line"></div><div class="line">ngDisabled 规定一个元素是否被禁用</div><div class="line"></div><div class="line">ngHide 隐藏或显示 HTML 元素</div><div class="line"></div><div class="line">ngShow 显示或隐藏 HTML 元素</div><div class="line"></div><div class="line">ngIf 如果条件为 false 移除 HTML 元素</div><div class="line"></div><div class="line">ngRepeat 用来遍历集合(数组)，给每个元素生成模板实例</div><div class="line"></div><div class="line">ngInit 定义应用的初始化值</div><div class="line"></div><div class="line">ngStyle	指定元素的 style 属性</div><div class="line"></div><div class="line">ngSwitch 规定显示或隐藏子元素的条件</div><div class="line"></div><div class="line">ngValue	规定 input 元素的值</div></pre></td></tr></table></figure>
+<h3 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngBlur 规定 blur 事件的行为</div><div class="line"></div><div class="line">ngFocus 规定聚焦事件的行为</div><div class="line"></div><div class="line">ngChange 规定在内容改变时要执行的表达式</div><div class="line"></div><div class="line">ngClick	点击事件</div><div class="line"></div><div class="line">ngCopy 规定拷贝事件的行为</div><div class="line"></div><div class="line">ngPaste	规定粘贴事件的行为</div><div class="line"></div><div class="line">ngCut 规定剪切事件的行为</div><div class="line"></div><div class="line">ngDblclick 规定双击事件的行为</div><div class="line"></div><div class="line">ngKeydown 规定按下按键事件的行为</div><div class="line"></div><div class="line">ngKeypress 规定按下按键事件的行为</div><div class="line"></div><div class="line">ngKeyup	规定松开按键事件的行为</div><div class="line"></div><div class="line">ngMousedown	规定按下鼠标按键时的行为</div><div class="line"></div><div class="line">ngMouseenter 规定鼠标指针穿过元素时的行为</div><div class="line"></div><div class="line">ngMouseleave 规定鼠标指针离开元素时的行为</div><div class="line"></div><div class="line">ngMousemove	规定鼠标指针在指定的元素中移动时的行为</div><div class="line"></div><div class="line">ngMouseover	规定鼠标指针位于元素上方时的行为</div><div class="line"></div><div class="line">ngMouseup 规定当在元素上松开鼠标按钮时的行为</div><div class="line"></div><div class="line">ngSubmit 规定 onsubmit 事件发生时执行的表达式</div></pre></td></tr></table></figure>
+<h3 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngSwipeLeft	左滑事件</div><div class="line"></div><div class="line">ngSwipeRight 右滑事件</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/03/Ng-1-5-常用指令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-API-4-JavaScript常用代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -278,73 +340,6 @@
 
 
   
-    <article id="post-常用API-2-、Element" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/常用API-2-、Element/">常用API(2)、Element</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/25/常用API-2-、Element/" class="archive-article-date">
-  	<time datetime="2017-02-24T23:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Element节点的属性"><a href="#Element节点的属性" class="headerlink" title="Element节点的属性"></a>Element节点的属性</h2><h3 id="特性属性"><a href="#特性属性" class="headerlink" title="特性属性"></a>特性属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Element.attributes //返回当前元素节点的所有属性节点</div><div class="line">Element.id //返回指定元素的id属性，可读写</div><div class="line">Element.tagName //返回指定元素的大写标签名</div><div class="line">Element.innerHTML //返回该元素包含的HTML代码，可读写</div><div class="line">Element.outerHTML //返回指定元素节点的所有HTML代码，包括它自身和包含的的所有子元素，可读写</div><div class="line">Element.className //返回当前元素的class属性，可读写</div><div class="line">Element.classList //返回当前元素节点的所有class集合</div><div class="line">Element.dataset //返回元素节点中所有的data-*属性。</div></pre></td></tr></table></figure>
-<h3 id="尺寸属性"><a href="#尺寸属性" class="headerlink" title="尺寸属性"></a>尺寸属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Element.clientHeight //返回元素节点可见部分的高度</div><div class="line">Element.clientWidth //返回元素节点可见部分的宽度</div><div class="line">Element.clientLeft //返回元素节点左边框的宽度</div><div class="line">Element.clientTop //返回元素节点顶部边框的宽度</div><div class="line">Element.scrollHeight //返回元素节点的总高度</div><div class="line">Element.scrollWidth //返回元素节点的总宽度</div><div class="line">Element.scrollLeft //返回元素节点的水平滚动条向右滚动的像素数值,通过设置这个属性可以改变元素的滚动位置</div><div class="line">Element.scrollTop //返回元素节点的垂直滚动向下滚动的像素数值</div><div class="line">Element.offsetHeight //返回元素的垂直高度(包含border,padding)</div><div class="line">Element.offsetWidth //返回元素的水平宽度(包含border,padding)</div><div class="line">Element.offsetLeft //返回当前元素左上角相对于Element.offsetParent节点的垂直偏移</div><div class="line">Element.offsetTop //返回水平位移</div><div class="line">Element.style //返回元素节点的行内样式</div></pre></td></tr></table></figure>
-<h3 id="节点相关属性"><a href="#节点相关属性" class="headerlink" title="节点相关属性"></a>节点相关属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Element.children //包括当前元素节点的所有子元素</div><div class="line">Element.childElementCount //返回当前元素节点包含的子HTML元素节点的个数</div><div class="line">Element.firstElementChild //返回当前节点的第一个Element子节点</div><div class="line">Element.lastElementChild //返回当前节点的最后一个Element子节点</div><div class="line">Element.nextElementSibling //返回当前元素节点的下一个兄弟HTML元素节点</div><div class="line">Element.previousElementSibling //返回当前元素节点的前一个兄弟HTML节点</div><div class="line">Element.offsetParent //返回当前元素节点的最靠近的、并且CSS的position属性不等于static的父元素。</div></pre></td></tr></table></figure>
-<h3 id="Element节点的方法"><a href="#Element节点的方法" class="headerlink" title="Element节点的方法"></a>Element节点的方法</h3><h3 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">getBoundingClientRect()</div><div class="line">// getBoundingClientRect返回一个对象，包含top,left,right,bottom,width,height // width、height 元素自身宽高</div><div class="line">// top 元素上外边界距窗口最上面的距离</div><div class="line">// right 元素右外边界距窗口最上面的距离</div><div class="line">// bottom 元素下外边界距窗口最上面的距离</div><div class="line">// left 元素左外边界距窗口最上面的距离</div><div class="line">// width 元素自身宽(包含border,padding)</div><div class="line">// height 元素自身高(包含border,padding)</div><div class="line">getClientRects() //返回当前元素在页面上形参的所有矩形</div><div class="line">// 元素在页面上的偏移量</div><div class="line">var rect = el.getBoundingClientRect()</div><div class="line">return &#123;</div><div class="line">top: rect.top + document.body.scrollTop,</div><div class="line">left: rect.left + document.body.scrollLeft</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="属性方法"><a href="#属性方法" class="headerlink" title="属性方法"></a>属性方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Element.getAttribute()：读取指定属性</div><div class="line">Element.setAttribute()：设置指定属性</div><div class="line">Element.hasAttribute()：返回一个布尔值，表示当前元素节点是否有指定的属性</div><div class="line">Element.removeAttribute()：移除指定属性</div></pre></td></tr></table></figure>
-<h3 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Element.querySelector()</div><div class="line">Element.querySelectorAll()</div><div class="line">Element.getElementsByTagName()</div><div class="line">Element.getElementsByClassName()</div></pre></td></tr></table></figure>
-<h3 id="事件方法"><a href="#事件方法" class="headerlink" title="事件方法"></a>事件方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Element.addEventListener()：添加事件的回调函数</div><div class="line">Element.removeEventListener()：移除事件监听函数</div><div class="line">Element.dispatchEvent()：触发事件</div><div class="line">//ie8</div><div class="line">Element.attachEvent(oneventName,listener)</div><div class="line">Element.detachEvent(oneventName,listener)</div><div class="line">// event对象</div><div class="line">var event = window.event||event;</div><div class="line">// 事件的目标节点</div><div class="line">var target = event.target || event.srcElement;</div><div class="line">// 事件代理</div><div class="line">ul.addEventListener(&apos;click&apos;, function(event) &#123;</div><div class="line">if (event.target.tagName.toLowerCase() === &apos;li&apos;) &#123;</div><div class="line">console.log(event.target.innerHTML)</div><div class="line">   &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Element.scrollIntoView() //滚动当前元素，进入浏览器的可见区域</div><div class="line">//解析HTML字符串，然后将生成的节点插入DOM树的指定位置。</div><div class="line">Element.insertAdjacentHTML(where, htmlString);</div><div class="line">Element.insertAdjacentHTML(&apos;beforeBegin&apos;, htmlString); // 在该元素前插入</div><div class="line">Element.insertAdjacentHTML(&apos;afterBegin&apos;, htmlString); // 在该元素第一个子元素前插入</div><div class="line">Element.insertAdjacentHTML(&apos;beforeEnd&apos;, htmlString); // 在该元素最后一个子元素后面插入</div><div class="line">Element.insertAdjacentHTML(&apos;afterEnd&apos;, htmlString); // 在该元素后插入</div><div class="line">Element.remove() //用于将当前元素节点从DOM中移除</div><div class="line">Element.focus() //用于将当前页面的焦点，转移到指定元素上</div></pre></td></tr></table></figure>
-<h3 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//ie8以下</div><div class="line">Element.className //获取元素节点的类名</div><div class="line">Element.className += &apos; &apos; + newClassName //新增一个类名</div><div class="line">//判断是否有某个类名</div><div class="line">function hasClass(element,className)&#123;</div><div class="line">return new RegExp(className,&apos;gi&apos;).test(element.className);</div><div class="line">&#125;</div><div class="line">//移除class</div><div class="line">function removeClass(element,className)&#123;</div><div class="line">element.className = element.className.replace(new RegExp(&apos;(^|\\b)&apos; + className.split(&apos; &apos;).join(&apos;|&apos;) + &apos;(\\b|$)&apos;, &apos;gi&apos;),&apos;</div><div class="line">&apos;);</div><div class="line">&#125;</div><div class="line">//ie10</div><div class="line">element.classList.add(className) //新增</div><div class="line">element.classList.remove(className) //删除</div><div class="line">element.classList.contains(className) //是否包含</div><div class="line">element.classList.toggle(className) //toggle class</div></pre></td></tr></table></figure>
-<h3 id="style操作"><a href="#style操作" class="headerlink" title="style操作"></a>style操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">element.setAttribute(&apos;style&apos;,&apos;&apos;)</div><div class="line">element.style.backgroundColor = &apos;red&apos;</div><div class="line">element.style.cssText //用来读写或删除整个style属性</div><div class="line">element.style.setProperty(propertyName,value) //设置css属性</div><div class="line">element.style.getPropertyValue(property) //获取css属性</div><div class="line">element.style.removeProperty(property) //删除css属性</div><div class="line">操作非内联样式</div><div class="line">//ie8</div><div class="line">element.currentStyle[attrName]</div><div class="line">//ie9+</div><div class="line">window.getComputedStyle(el,null)[attrName]</div><div class="line">window.getComputedStyle(el,null).getPropertyValue(attrName)</div><div class="line">//伪类</div><div class="line">window.getComputedStyle(el,&apos;:after&apos;)[attrName]</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/25/常用API-2-、Element/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -437,10 +432,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -449,15 +440,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">

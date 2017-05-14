@@ -141,6 +141,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-bower" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/07/bower/">bower</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/07/bower/" class="archive-article-date">
+  	<time datetime="2017-02-07T12:59:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Bower是一个软件，-是用来管理我们的静态资源的。twitter公司开发。它是使用Node-js开发的。所以要先安装Node-js"><a href="#Bower是一个软件，-是用来管理我们的静态资源的。twitter公司开发。它是使用Node-js开发的。所以要先安装Node-js" class="headerlink" title="Bower是一个软件， 是用来管理我们的静态资源的。twitter公司开发。它是使用Node.js开发的。所以要先安装Node.js"></a>Bower是一个软件， 是用来管理我们的静态资源的。twitter公司开发。它是使用Node.js开发的。所以要先安装Node.js</h5><h3 id="Bower要依赖NodeJS环境和git工具。"><a href="#Bower要依赖NodeJS环境和git工具。" class="headerlink" title="Bower要依赖NodeJS环境和git工具。"></a>Bower要依赖NodeJS环境和git工具。</h3><p>1.安装NodeJs软件。</p>
+<p>2.验证是否安装 执行命令：node -v npm -v.<br>Npm(nodejs package manager) 专门用来管理nodejs开发的工具的管理器。</p>
+<p>3.安装bower<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Npm install 工具名称（bower） 全局安装-g    [可以加上镜像地址]</div><div class="line"></div><div class="line">淘宝镜像地址：--registry=https://registry.npm.taobao.org</div><div class="line"></div><div class="line">全局安装代表安装完毕后，操作系统的任何一个场合都可以使用它。</div></pre></td></tr></table></figure></p>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
+<li>Bower install -g bower 安装bower<ul>
+<li>Bower search 查找资源信息</li>
+<li>Bower info 查看资源信息</li>
+<li>Bower uninstall 卸载资源</li>
+<li>Bower init 初始化，用来记录资源信息及依赖。</li>
+</ul>
+</li>
+</ul>
+<h3 id="bower特点"><a href="#bower特点" class="headerlink" title="bower特点"></a>bower特点</h3><ul>
+<li>允许我们下载指定的版本。<ul>
+<li>Bower info jquery 查看版本</li>
+<li>Bower install jquery#版本号</li>
+<li>可以帮我们自动的解决插件依赖。可以把依赖的库下载下来。</li>
+<li>下载是捆绑下载，卸载也是捆绑卸载。</li>
+<li>bower描述信息</li>
+<li>Bower通过描述信息来知道一个库依赖哪些库。</li>
+<li>会存在一个bower.json文件，里面就是一些描述信息。包括名字下载依赖等。是下载时， 帮我们写好的文件。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/07/bower/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-gulp基本用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -285,76 +367,6 @@
 
 
   
-    <article id="post-浏览器存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/04/浏览器存储/">浏览器存储</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/04/浏览器存储/" class="archive-article-date">
-  	<time datetime="2017-02-04T12:33:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="sessionStorage和localStorage"><a href="#sessionStorage和localStorage" class="headerlink" title="sessionStorage和localStorage"></a>sessionStorage和localStorage</h3><p>sessionStorage保存的数据用于浏览器的一次会话，当会话结束（通常是该窗口关闭），数据被清空；localStorage保存的数据长期存在，下一次访问该网站的时候，网页可以直接读取以前保存的数据。除了保存期限的长短不同，这两个对象的属性和方法完全一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每个域名的存储上限视浏览器而定，Chrome是2.5MB，Firefox和Opera是5MB，IE是10MB。其中，Firefox的存储空间由一级域名决定，而其他浏览器没有这个限制。也就是说，在Firefox中，a.example.com和b.example.com共享5MB的存储空间。另外，与Cookie一样，它们也受同域限制。某个网页存入的数据，只有同域下的网页才能读取</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//判断是否支持</div><div class="line">if (window.sessionStorage) &#123;</div><div class="line">    return true;</div><div class="line">  &#125; else &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">   </div><div class="line">  // localStorage</div><div class="line">if (window.localStorage) &#123;</div><div class="line">    return true;</div><div class="line">  &#125; else &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">//set</div><div class="line">sessionStorage.setItem(&quot;key&quot;,&quot;value&quot;);</div><div class="line">localStorage.setItem(&quot;key&quot;,&quot;value&quot;);</div><div class="line">//get</div><div class="line">var valueSession = sessionStorage.getItem(&quot;key&quot;);</div><div class="line">var valueLocal = localStorage.getItem(&quot;key&quot;);</div><div class="line">//清除单个</div><div class="line">sessionStorage.removeItem(&apos;key&apos;);</div><div class="line">localStorage.removeItem(&apos;key&apos;);</div><div class="line">//清除所有</div><div class="line">sessionStorage.clear();</div><div class="line">localStorage.clear(); </div><div class="line">//遍历</div><div class="line">for(var i = 0; i &lt; localStorage.length; i++)&#123;</div><div class="line">    console.log(localStorage.key(i));</div><div class="line">&#125;</div><div class="line">其中的key方法，根据位置（从0开始）获得键值。</div><div class="line">localStorage.key(1);</div></pre></td></tr></table></figure>
-<p>当储存的数据发生变化时，会触发storage事件。我们可以指定这个事件的回调函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.addEventListener(&quot;storage&quot;,onStorageChange);</div></pre></td></tr></table></figure></p>
-<p>回调函数接受一个event对象作为参数。这个event对象的key属性，保存发生变化的键名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function onStorageChange(e) &#123;</div><div class="line">     console.log(e.key);    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>除了key属性，event对象的属性还有三个：</p>
-<p>oldValue：更新前的值。如果该键为新增加，则这个属性为null。<br>newValue：更新后的值。如果该键被删除，则这个属性为null。<br>url：原始触发storage事件的那个网页的网址。</p>
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>cookie: 回话跟踪技术 客户端<br>可以将一些数据存储在用户客户端本地<br>默认情况下, 一个网页是没有任何cookie信息的<br>注意点:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* cookie作用范围, 一次回话(浏览器被关闭) 那么cookie还在</div><div class="line">* cookie不能跨浏览器, (在IE中存储的cookie不能再谷歌中使用)</div><div class="line">* cookie不能跨域 (作用域, 域名)</div></pre></td></tr></table></figure></p>
-<p>cookie: 必须协议相同/二级域名相同/一级域名相同/端口号相同<br>如果其中有一个不同, 那么cookie都不可以共用</p>
-<p>.一个网页可以设置多个cookie<br>虽然一个网页可以添加多个cookie 但是每个网页的cookie的个数是有限制的, 每个网站的cookie也是有限制的<br>不能一次性设置多个cookie, 要想设置多个, 必须分开设置<br>可以通过expires=xxx;格式来设置过期时间<br>如果过期时间大于当前时间, 那么有效<br>如果过期时间小于当前时间, 那么自动失效<br>如果cookie是有效的, 那么浏览器关闭之后再打开, 还是有效<br>由于cookie的数据可以在浏览器中查找到, 所以不要将一些敏感的信息保存到cookie中</p>
-<h3 id="窗口的通信"><a href="#窗口的通信" class="headerlink" title="窗口的通信"></a>窗口的通信</h3><p>storage事件不在导致数据变化的当前页面触发。如果浏览器同时打开一个域名下面的多个页面，当其中的一个页面改变sessionStorage或localStorage的数据时，其他所有页面的storage事件会被触发，而原始页面并不触发storage事件。可以通过这种机制，实现多个窗口之间的通信。所有浏览器之中，只有IE浏览器除外，它会在所有页面触发storage事件。</p>
-<p>原文地址 <a href="http://javascript.ruanyifeng.com/bom/webstorage.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/bom/webstorage.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/04/浏览器存储/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
@@ -447,10 +459,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -459,15 +467,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
