@@ -141,6 +141,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/09/Java-配置/">Java-配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/09/Java-配置/" class="archive-article-date">
+  	<time datetime="2017-03-09T06:51:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="搭建Java的开发和运行环境"><a href="#搭建Java的开发和运行环境" class="headerlink" title="搭建Java的开发和运行环境"></a>搭建Java的开发和运行环境</h3><p><strong>根据不同的系统，选择不同的JDK版本。<br>步骤1:安装JDK，安装游戏模拟器。</strong><br>步骤2:配置PATH环境变量:<br><img src="http://upload-images.jianshu.io/upload_images/3488771-8e5abdfb14c8536b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>PATH变量用于指定Java开发工具的位置,如D:\OpenSources\jdk1.8.0_45\bin  .<br>配置环境变量的过程和教研使用截图方式.</p>
+<p>安装JDK注意：<br>1):jdk不要安装在带中文的路径下,最好也是不包含空格字符的英文路径;<br>2):避免C:\WINDOWS\system32出现所有名字以java开头的文件，有，删之；<br>3):常见问题：“javac不是内部或者外部命令”，原因是path配置错误。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-039bb9ebda3bafd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3488771-f2c4baff65e6c073.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p><strong>bin:存放了Java的操作工具，比如编译工具javac,启动JVM的java等。</strong><br>db:存放了Java测试的数据库derby，企业不用。<br>include：存储C++的头文件。<br>jre:Java的运行环境，里面有JVM。<br>lib:Java运行和以来的核心库。<br>src.zip：Java的源代码。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-b9297b94268f36d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3488771-b572748cacc1ed41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="classpath环境变量"><a href="#classpath环境变量" class="headerlink" title="classpath环境变量"></a>classpath环境变量</h3><blockquote>
+<p><strong>CLASSPATH顾名思义就是class文件的路径，表示JVM从哪里去寻找class文件。</strong><br>CLASSPATH = c:\test就表示执行java命令时去c:\test目录中去找需要被执行的class文件。<br><strong>在java5之前CLASSPATH没有默认值，要是设置成当前路径的话，得使用“.”，</strong><br>若CLASSPATH=.;c:\test，就表示先在当前目录找class文件，要是没找到就去c:\test目录找(当一个变量有多个值时，多个值之间用英文的分号隔开)。<br>从Java5开始CLASSPATH默认就是当前路径，一般情况下不需再指定。<br><strong>若使用Java5以前的版本，设置CLASSPATH应该是：<br>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar </strong><br>dt.jar是关于运行环境的类库，主要是swing的包；tools.jar是工具类库；<br>后来SUN公司改进了JDK设计，JRE会自动搜索当前路径下的jar包，并自动加载dt.jar和tools.jar。那么从Java5开始，再也不必为设置CLASSPATH变量感到头疼了。<br>暂时不需要配置，就让CLASSPATH默认表示当前目录路径。</p>
+<ul>
+<li>如何把编译出来的class文件存放到指定的目录:<br>使用javac -d C:\myclasses Hello.java</li>
+</ul>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-13221660880789d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/09/Java-配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-检测-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -280,68 +352,6 @@
 
 
   
-    <article id="post-Ng-1-5-常用指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/03/Ng-1-5-常用指令/">Ng(1.5)-常用指令</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/03/Ng-1-5-常用指令/" class="archive-article-date">
-  	<time datetime="2017-03-02T23:56:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngApp 定义应用程序的根元素。</div><div class="line"></div><div class="line">ngController 定义应用的控制器对象</div><div class="line"></div><div class="line">ngModel	绑定 HTML 控制器的值到应用数据</div><div class="line"></div><div class="line">ngInclude 在应用中包含 HTML 文件</div><div class="line"></div><div class="line">ngList 用来把作用域中的数组对象转换为分隔符分隔的字符串(逗号是默认的分隔符)</div><div class="line"></div><div class="line">ngNonBindable 当一个元素中存在这个指令时，AngularJS在编译时不编译或绑定元素的内容</div><div class="line"></div><div class="line">ngTransclude 用来把元素标志为装置点，供使用transclude选项来包装其他元素的指令使用</div><div class="line"></div><div class="line">ngView 把当前路由的已呈现的模板包含在主布局文件</div><div class="line"></div><div class="line">ngOpen 用于设置 details 列表的 open 属性</div><div class="line"></div><div class="line">ngPluralize 根据本地化规则显示信息</div><div class="line"></div><div class="line">ngHref 为元素指定链接</div><div class="line"></div><div class="line">ngSrc 指定元素的 src 属性</div><div class="line"></div><div class="line">ngSrcset 指定元素的 srcset 属性</div><div class="line"></div><div class="line">ngCloak 在应用正要加载时防止其闪烁</div></pre></td></tr></table></figure>
-<h3 id="扩展表单元素"><a href="#扩展表单元素" class="headerlink" title="扩展表单元素"></a>扩展表单元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">form/ngForm	指定 HTML 表单继承控制器表单</div><div class="line"></div><div class="line">ngReadonly 指定元素的 readonly 属性，定元素是否被选中</div><div class="line"></div><div class="line">ngRequired 设置必填</div><div class="line"></div><div class="line">ngSelected 指定元素的 selected 属性中</div><div class="line"></div><div class="line">ngMinlength	定义最小值</div><div class="line"></div><div class="line">ngMaxlength	定义最大值</div><div class="line"></div><div class="line">ngPattern 定义正则匹配</div><div class="line"></div><div class="line">ngTrueValue	用来设置选中复选框时的值</div><div class="line"></div><div class="line">ngFalseValue 用来设置不选中时复选框的值</div><div class="line"></div><div class="line">ngOptions 在 select 列表中指定 options</div></pre></td></tr></table></figure>
-<h3 id="把模型绑定到页面"><a href="#把模型绑定到页面" class="headerlink" title="把模型绑定到页面"></a>把模型绑定到页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngBind 绑定 HTML 元素到应用程序数据</div><div class="line"></div><div class="line">ngBindHtml 绑定 HTML 元素的 innerHTML 到应用程序数据，并移除 HTML字符串中危险字符</div><div class="line"></div><div class="line">ngBindTemplate 规定要使用模板替换的文本内容</div><div class="line"></div><div class="line">ngClass	指定 HTML 元素使用的 CSS 类</div><div class="line"></div><div class="line">ngClassEven	类似 ng-class，但只在偶数行起作用</div><div class="line"></div><div class="line">ngClassOdd 类似 ng-class，但只在奇数行起作用</div><div class="line"></div><div class="line">ngDisabled 规定一个元素是否被禁用</div><div class="line"></div><div class="line">ngHide 隐藏或显示 HTML 元素</div><div class="line"></div><div class="line">ngShow 显示或隐藏 HTML 元素</div><div class="line"></div><div class="line">ngIf 如果条件为 false 移除 HTML 元素</div><div class="line"></div><div class="line">ngRepeat 用来遍历集合(数组)，给每个元素生成模板实例</div><div class="line"></div><div class="line">ngInit 定义应用的初始化值</div><div class="line"></div><div class="line">ngStyle	指定元素的 style 属性</div><div class="line"></div><div class="line">ngSwitch 规定显示或隐藏子元素的条件</div><div class="line"></div><div class="line">ngValue	规定 input 元素的值</div></pre></td></tr></table></figure>
-<h3 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngBlur 规定 blur 事件的行为</div><div class="line"></div><div class="line">ngFocus 规定聚焦事件的行为</div><div class="line"></div><div class="line">ngChange 规定在内容改变时要执行的表达式</div><div class="line"></div><div class="line">ngClick	点击事件</div><div class="line"></div><div class="line">ngCopy 规定拷贝事件的行为</div><div class="line"></div><div class="line">ngPaste	规定粘贴事件的行为</div><div class="line"></div><div class="line">ngCut 规定剪切事件的行为</div><div class="line"></div><div class="line">ngDblclick 规定双击事件的行为</div><div class="line"></div><div class="line">ngKeydown 规定按下按键事件的行为</div><div class="line"></div><div class="line">ngKeypress 规定按下按键事件的行为</div><div class="line"></div><div class="line">ngKeyup	规定松开按键事件的行为</div><div class="line"></div><div class="line">ngMousedown	规定按下鼠标按键时的行为</div><div class="line"></div><div class="line">ngMouseenter 规定鼠标指针穿过元素时的行为</div><div class="line"></div><div class="line">ngMouseleave 规定鼠标指针离开元素时的行为</div><div class="line"></div><div class="line">ngMousemove	规定鼠标指针在指定的元素中移动时的行为</div><div class="line"></div><div class="line">ngMouseover	规定鼠标指针位于元素上方时的行为</div><div class="line"></div><div class="line">ngMouseup 规定当在元素上松开鼠标按钮时的行为</div><div class="line"></div><div class="line">ngSubmit 规定 onsubmit 事件发生时执行的表达式</div></pre></td></tr></table></figure>
-<h3 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">指令名称	作用</div><div class="line"></div><div class="line">ngSwipeLeft	左滑事件</div><div class="line"></div><div class="line">ngSwipeRight 右滑事件</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/03/Ng-1-5-常用指令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
@@ -430,7 +440,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -438,15 +448,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,6 +461,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">

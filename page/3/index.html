@@ -141,6 +141,131 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-变量-基本类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/01/Java-变量-基本类型/">Java-变量/基本类型</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/01/Java-变量-基本类型/" class="archive-article-date">
+  	<time datetime="2017-04-01T01:47:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>字面量和常量</strong></p>
+<ul>
+<li><p>常量：程序中固定不变化的值。</p>
+</li>
+<li><p>常量分类:<br>字面值常量: 比如：整数常量1，2，3，小数常量3.14，布尔常量false，true等。.<br>字面量,就表示直接给出的一个值(可以是整数,小数,true,false等等),直接量.</p>
+</li>
+</ul>
+<p><strong>变量的定义和基本使用</strong></p>
+<ul>
+<li>变量的定义:表示存储空间，可用来<strong>存放某一类型的常量，没有固定值，并可以重复使用</strong>，也可以用来存储某种类型的未知数据。</li>
+<li>变量的特点：<ul>
+<li>①　占据着内存中的某一块存储区域；</li>
+<li>②　该区域有自己的名称（变量名）和类型（数据类型）；</li>
+<li>③　可以被重复使用;</li>
+<li>④　该区域的数据可以在同一类型范围内不断变化；</li>
+</ul>
+</li>
+<li>变量的定义：<br>先定义变量,再赋值:<br>数据类型  变量名;<br>变量名 = 值;<br>或在声明时同时赋值:<br><strong>数据类型  变量名  =  初始化值；</strong></li>
+</ul>
+<p><strong>注：格式是固定的，记住格式，以不变应万变。</strong><br>不推荐:同时定义多个变量.<br>解决两个操作数求和，差，积，商的问题：</p>
+<p><strong>变量分类-作用域-使用规则:</strong></p>
+<ul>
+<li>变量的分类:<ul>
+<li>随着变量定义在类中的位置不同，故把变量分成两大类：</li>
+<li>成员变量：直接定义在类里的变量，又称为全局变量或字段。</li>
+<li>局部变量：变量除了成员变量之外，其他就是局部变量。根据定义的位置不同有<strong>3种表现形式：方法形参，方法内变量，代码块变量</strong>。</li>
+</ul>
+</li>
+</ul>
+<p>变量作用域:<br>指变量的存在范围，只有在这个范围内，程序代码才能访问它。当一个变量被定义时,它的作用域就确定了:<br><strong>作用域是定义开始到定义所在的花括号结束;</strong></p>
+<ul>
+<li>变量使用规则:<ul>
+<li>1．变量必须先声明，并且初始化后才能使用；</li>
+<li>2．声明变量必须有数据类型</li>
+<li>3．同一作用域内变量名不能重复定义</li>
+</ul>
+</li>
+</ul>
+<h3 id="Java表达式"><a href="#Java表达式" class="headerlink" title="Java表达式"></a>Java表达式</h3><p><strong>表达式(expression)</strong>:是由数字、运算符、数字分组符号（括号）、常量、变量等以能求得结果的有意义排列的组合。<br>用运算符号连接的变量/常量可称为表达式。那么也就是说表达式是由常量、变量、运算符、括号组成能求得值的有意义结果的语句。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">如：</div><div class="line">a + b</div><div class="line">3.14 + a</div><div class="line">(x + y) * z + 100</div><div class="line">表达式中操作数进行运算得到的最终结果就是表达式的结果。。</div><div class="line">表达式的运算顺序（大多和数学一样，参照后面的运算符操作优先级：</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-a61fcc97f67e2673.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="数据类型和分类"><a href="#数据类型和分类" class="headerlink" title="数据类型和分类"></a>数据类型和分类</h3><p><img src="http://upload-images.jianshu.io/upload_images/3488771-bca10d1594744283.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p><img src="http://upload-images.jianshu.io/upload_images/3488771-dcda9fd0f82efebb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p><strong>boolean类型：通常用于逻辑运算和程序流程控制(条件选择/循环)</strong>。<br><strong>该类型的值只能是true 或 false，表示真或假。</strong><br>不可以使用0或非0的整数来代替false和true，区分于C语言。<br>（其实在JVM中对boolean的处理也是用0表示false，非0表示true的。）<br>false和true是boolean的常量。<br>整数类型(byte-short-int-long):<br>byte、short、int、long类型：<br>整型常量的四种表示形式：<br>①　二进制整数：0B或0b开头（Java7的新特性），如：int a = 0B110;<br>②　八进制整数：要求以0开头，如 int a = 012;<br>③　十进制整数：如：int a = 17;<br>④　十六进制整数：要求0X或0x开头，如int a = 0x12;</p>
+</blockquote>
+<p><strong>Java语言的整型常量默认是int型，声明long型变量后加上‘l’或‘L，因小写的l容易和数字1相混淆，建议使用大写L。<br>默认情况下,一个整型的字面量默认是int类型.</strong><br><img src="http://upload-images.jianshu.io/upload_images/3488771-229c6d50419367b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">小数类型(float-double):</div><div class="line">float、double类型：</div><div class="line">表示小数类型又称为浮点类型，其中float表示单精度类型，double表示双精度类型，但是二者都不能表示精确的小数。</div><div class="line">Java的浮点类型常量有两种表现形式：</div><div class="line">十进制形式： 例如：3.14 ，168.0， .618</div><div class="line">科学计数法形式： 例如：3.14e2， 3.14E2， 1000E-2</div><div class="line">科学计数法表达式返回的结果是double类型。</div><div class="line"></div><div class="line">默认情况下,一个浮点类型的字面量默认是double类型.若要声明一个常量为float型，则需在常量后加上f  或 F，double常量后面的D或d可省略。</div><div class="line">注意：Java里只有浮点型的变量才可以接受科学计算式结果：</div><div class="line"></div><div class="line">因为float和double都不能精确的表示小数，那么在精度要求高的系统比如银行系统里，那怎么表示精确的小数呢？后面我们会讲BigDecimal类型，它表示任意精度的数据。</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">字符类型(char):字符,字母和符号.</div><div class="line">char类型：表示16位的无符号整数或者Unicode字符，Java对字符采用Unicode字符编码。</div><div class="line">Unicode收集了世界上所有语言文字中的符号，是一种跨平台的编码方式，Java的字符占两个字节，可以表示一个汉字。</div><div class="line">什么是编码？</div><div class="line">计算机只能表示0和1两个数，于是人们做规定使用一个数字去表示一个特定的字符，比如a使用97表示。</div><div class="line">char前256个字符和ASCII（美国信息交互标准编码）码中的字符重复。</div><div class="line">-----------------------------------------------------------------------------------------------</div><div class="line">char常量有3种表示形式：</div><div class="line">①　直接使用单个字符来指定字符常量，格式如&apos;◆&apos;、&apos;A&apos;，&apos;7&apos;；</div><div class="line">②　直接作为十进制整数数值使用，但是数据范围在[0，65535]，格式如97，但是打印出来的值依然是ASCII码表对于的符号,如97打印出来是字符a。</div><div class="line">③　和2一样，只不过表示的是16进制的数值，格式如&apos;\uX&apos;，X表示16进制整数；如：97的16进制是61。那么表示为‘\u0061’打印出来也是a。</div><div class="line">所以有人说char本质上也是整型，也是有道理的。</div><div class="line">char前256个字符和ASCII（美国信息交互标准编码）码中的字符重复，可查表。</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-72c366eeb4f4c6b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="最常用的引用类型-String"><a href="#最常用的引用类型-String" class="headerlink" title="最常用的引用类型-String"></a>最常用的引用类型-String</h3><blockquote>
+<p>除了8种基本数据类型，其他所有类型都是引用数据类型，包括类、接口、数组。引用数据类型默认初始值都是null。<br>String是一个类，表示字符串（后面详讲），所谓字符串，就是一串字符，也就是N个字符连接在一起（N可以表示0或多个），好比羊肉串。</p>
+<h2 id="字符串都得使用-“”-括起来的，连接字符串使用-“-”符号。"><a href="#字符串都得使用-“”-括起来的，连接字符串使用-“-”符号。" class="headerlink" title="字符串都得使用 “” 括起来的，连接字符串使用 “+”符号。"></a>字符串都得使用 “” 括起来的，连接字符串使用 “+”符号。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">字符串拼接:字符串和任意数据类型相连接,结果都是字符串类型.</div><div class="line">转义符号练习: 输出:  &quot;你好世界&quot; </div><div class="line"></div><div class="line"> System.out.println(8 + 7 + &quot;Hello&quot;);//结果是</div><div class="line"> System.out.println(&quot;Hello&quot; + 7 + 8);//结果是</div><div class="line"> System.out.println(7 + &quot;Hello&quot; + 8);//结果是</div><div class="line"> String str = 17 + &quot;ABC&quot;;//组成一个新的字符串</div><div class="line"> System.out.println(str);</div><div class="line"> String str2 = (String)17 + &quot;ABC&quot;;//编译错误: 不可转换的类型</div></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="数据过大和溢出"><a href="#数据过大和溢出" class="headerlink" title="数据过大和溢出"></a>数据过大和溢出</h3><blockquote>
+<p>当要表示的数据超出数据类型的临界范围时，称为溢出。溢出情况发生时程序并没有做数据范围检查处理，此时会出现数据紊乱情况。<br>int最大值<br>int intMax = 2147483647;<br>分析数据发生紊乱的原因.</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-f3fe0e06b00f2c89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="基本数据类型转换"><a href="#基本数据类型转换" class="headerlink" title="基本数据类型转换"></a>基本数据类型转换</h3><h2 id="gt-在8大基本数据类型中-boolean不属于数值类型-不参与转换"><a href="#gt-在8大基本数据类型中-boolean不属于数值类型-不参与转换" class="headerlink" title="&gt;在8大基本数据类型中,boolean不属于数值类型,不参与转换."></a>&gt;在8大基本数据类型中,boolean不属于数值类型,不参与转换.</h2><p>转换规则其实就是各自数据类型的空间大小.看图</p>
+<p>把不同的数据类型看出是不同容量的容器.<br>byte是1个字节,最多只能装1斤水.<br>short是2个字节,最多只能装2斤水.</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-a8cb0f7805332e03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p><strong>自动类型转换，也称为“隐式类型转换:</strong><br>当把小数据范围类型的数值或变量赋给另一个大数据范围类型变量，系统可以完成自动类型转型。这好比把装一斤水容器里的水倒进可以装两斤水的容器里一样。<br><strong>再次强调:boolean 类型是不可以转换为其他数据类型。</strong><br><strong>一般的,byte,short,char不参与转换操作.<br>我们直接把byte,short,char直接付给int类型.</strong></p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3488771-083d199ebd1699ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p><strong>强制类型转换，也称为“显示类型转换”:</strong><br>当把大范围类型的数值或变量赋给另一个小范围类型变量时，此时系统不能自动完成转换，需要加上强制转换符，但这样的操作可能造成数据精度的降低或溢出，所以使用时要格外注意。<br>这就好比把装两斤水容器里的水倒在可以装一斤水的容器里，是可能造成水溢出的。<br>若要坚持把4斤苹果塞进一个装3斤的袋子里，我们要怎么办？动用暴力。<br>强制类型转换，可能造成溢出和精度损失。</p>
+</blockquote>
+<p><strong>问题:<br>为什么byte c = 5这是符合强转类型转换条件的，可为什么没转呢？</strong><br><img src="http://upload-images.jianshu.io/upload_images/3488771-1ef888b3223bc05a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/01/Java-变量-基本类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Canvas-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -307,83 +432,6 @@
 
 
   
-    <article id="post-Java-第一个程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/27/Java-第一个程序/">Java-第一个程序</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/27/Java-第一个程序/" class="archive-article-date">
-  	<time datetime="2017-03-27T01:32:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>一般而言，编写的第一个程序，习惯叫做HelloWorld.</strong></p>
-<h2 id="需求：在控制台界面，输出：你好师姐。"><a href="#需求：在控制台界面，输出：你好师姐。" class="headerlink" title="需求：在控制台界面，输出：你好师姐。    "></a>需求：在控制台界面，输出：<strong>你好师姐。</strong>    </h2><p>开发步骤：</p>
-<ul>
-<li>1：在E:\Will\01_JavaSE\资料和视频\day01\codes目录下：<pre><code>新建文本文档，起名为123.java。
-注意：java是文件得后缀名（拓展名）。
-![](http://upload-images.jianshu.io/upload_images/3488771-11aeb9df6d107706.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-</code></pre></li>
-<li>2：使用记事本打开在123.java文件，键入以下代码：<br>   <img src="http://upload-images.jianshu.io/upload_images/3488771-139cee8caf5e1d74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>3：打开命令控制台窗口，并进入当前源文件所在的目录，对123.java文件做编译。</li>
-<li><img src="http://upload-images.jianshu.io/upload_images/3488771-e0bb02f5ce9c99d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<p><strong>改变了源文件必须重新编译<br>编译成功之后，会生成Hello.class文件（字节码文件）。</strong></p>
-<ul>
-<li>4：启动JVM，并加载Hello.class这份字节码，并解释执行。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-37096d451f7afd5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<p><strong>注意：java  类名，不能是java  类名.class.</strong><br>      上述错误，是该类缺少main方法。</p>
-<ul>
-<li>5：修正代码如下，再编译运行。<br><img src="http://upload-images.jianshu.io/upload_images/3488771-018d7aa9ec3209ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3488771-da59744d74616081.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3488771-5574a3a8eae445ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/27/Java-第一个程序/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -472,7 +520,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -480,15 +528,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,6 +541,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
